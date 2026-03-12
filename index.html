@@ -1,1070 +1,2058 @@
 <!DOCTYPE html>
-<html dir="rtl" lang="he">
+<html lang="he" dir="rtl">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>סם שפיגל | תסריטאות שנה א׳ סמסטר ב׳</title>
-  <style>
-    /* ── Reset & Base ── */
-    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-    :root {
-      --bg: #0f1117;
-      --surface: #1a1d27;
-      --surface2: #22263a;
-      --border: #2e3347;
-      --text: #e8eaf0;
-      --text-muted: #7b82a0;
-      --text-dim: #4a5072;
-      --accent: #6366f1;
-      --green: #10b981;
-      --yellow: #f59e0b;
-      --red: #ef4444;
-      --radius: 10px;
-      --shadow: 0 2px 12px rgba(0,0,0,0.4);
-    }
-    html { font-size: 15px; }
-    body {
-      font-family: -apple-system, 'Segoe UI', Arial, sans-serif;
-      background: var(--bg);
-      color: var(--text);
-      min-height: 100vh;
-      line-height: 1.5;
-    }
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>◊°◊ù ◊©◊§◊ô◊í◊ú ‚Äî ◊ì◊©◊ë◊ï◊®◊ì ◊õ◊ô◊™◊™◊ô</title>
+<link href="https://fonts.googleapis.com/css2?family=Heebo:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+/* ===== CSS VARIABLES ===== */
+:root {
+  --bg-base: #0F0F13;
+  --bg-surface: #1A1A24;
+  --bg-surface2: #22223A;
+  --bg-glass: rgba(255,255,255,0.04);
+  --border: rgba(255,255,255,0.08);
+  --border-hover: rgba(255,255,255,0.15);
+  --accent: #7C6FF7;
+  --accent-glow: rgba(124,111,247,0.3);
+  --text-1: #F0F0F8;
+  --text-2: #8888AA;
+  --text-3: #55556A;
+  --status-future: #6FBBF7;
+  --status-today: #F7D06F;
+  --status-now: #6FF7C4;
+  --status-past: #55556A;
+  --priority-high: #F76F6F;
+  --priority-mid: #F7D06F;
+  --priority-low: #6FF7C4;
+  --c-tachkir: #7C6FF7;
+  --c-location: #F7926F;
+  --c-short-story: #6FF7C4;
+  --c-israeli-cinema: #F7D06F;
+  --c-film-history: #F76F9B;
+  --c-kids-series: #6FBBF7;
+  --c-scenes: #A8F76F;
+  --c-web-series: #F76F6F;
+  --c-directing: #C46FF7;
+  --spring: cubic-bezier(0.34, 1.56, 0.64, 1);
+  --ease: cubic-bezier(0.4, 0, 0.2, 1);
+  --radius-sm: 8px;
+  --radius-md: 12px;
+  --radius-lg: 16px;
+  --radius-xl: 24px;
+}
 
-    /* ── Header ── */
-    header {
-      background: var(--surface);
-      border-bottom: 1px solid var(--border);
-      padding: 0 20px;
-      position: sticky;
-      top: 0;
-      z-index: 100;
-    }
-    .header-inner {
-      max-width: 1100px;
-      margin: 0 auto;
-      display: flex;
-      align-items: center;
-      gap: 16px;
-      padding: 12px 0;
-      flex-wrap: wrap;
-    }
-    .logo {
-      font-size: 1.15rem;
-      font-weight: 700;
-      color: var(--text);
-      display: flex;
-      align-items: center;
-      gap: 8px;
-    }
-    .logo span { color: var(--accent); }
-    .header-controls {
-      display: flex;
-      align-items: center;
-      gap: 10px;
-      flex-wrap: wrap;
-      margin-right: auto;
-    }
-    .btn-group {
-      display: flex;
-      background: var(--surface2);
-      border-radius: 8px;
-      overflow: hidden;
-      border: 1px solid var(--border);
-    }
-    .btn-group button {
-      background: none;
-      border: none;
-      color: var(--text-muted);
-      padding: 6px 14px;
-      cursor: pointer;
-      font-size: 0.85rem;
-      font-family: inherit;
-      transition: all 0.15s;
-    }
-    .btn-group button.active {
-      background: var(--accent);
-      color: #fff;
-    }
-    .btn-group button:hover:not(.active) { background: var(--border); color: var(--text); }
+/* ===== RESET & BASE ===== */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+body {
+  font-family: 'Heebo', sans-serif;
+  direction: rtl;
+  background: var(--bg-base);
+  color: var(--text-1);
+  min-height: 100vh;
+  overflow-x: hidden;
+  line-height: 1.5;
+}
+button { font-family: inherit; cursor: pointer; border: none; background: none; color: inherit; }
+input, textarea, select { font-family: inherit; color: var(--text-1); background: var(--bg-surface); border: 1px solid var(--border); border-radius: var(--radius-sm); padding: 8px 12px; outline: none; }
+input:focus, textarea:focus, select:focus { border-color: var(--accent); }
+a { color: var(--accent); text-decoration: none; }
+::-webkit-scrollbar { width: 6px; }
+::-webkit-scrollbar-track { background: transparent; }
+::-webkit-scrollbar-thumb { background: var(--border-hover); border-radius: 3px; }
 
-    .last-update {
-      font-size: 0.75rem;
-      color: var(--text-dim);
-    }
+/* ===== GLASS CARD ===== */
+.glass-card {
+  background: var(--bg-glass);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+}
 
-    /* ── Main ── */
-    main {
-      max-width: 1100px;
-      margin: 0 auto;
-      padding: 20px;
-    }
+/* ===== TOPBAR ===== */
+#topbar {
+  position: sticky; top: 0; z-index: 100;
+  display: flex; align-items: center; gap: 12px;
+  padding: 12px 24px;
+  background: rgba(15,15,19,0.85);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border-bottom: 1px solid var(--border);
+}
+.logo { font-size: 1.2rem; font-weight: 700; white-space: nowrap; }
+.search-bar {
+  flex: 1; max-width: 400px;
+  position: relative;
+}
+.search-bar input {
+  width: 100%; padding: 8px 36px 8px 12px;
+  border-radius: var(--radius-xl);
+  background: var(--bg-surface);
+  font-size: 0.85rem;
+}
+.search-bar::before {
+  content: ''; position: absolute; right: 12px; top: 50%; transform: translateY(-50%);
+  width: 14px; height: 14px;
+  border: 2px solid var(--text-3); border-radius: 50%;
+  pointer-events: none;
+}
+.topbar-actions { display: flex; gap: 8px; margin-right: auto; align-items: center; }
+.topbar-actions button {
+  padding: 6px 14px; border-radius: var(--radius-sm);
+  background: var(--bg-surface); border: 1px solid var(--border);
+  font-size: 0.82rem; transition: all 0.2s var(--ease);
+  white-space: nowrap;
+}
+.topbar-actions button:hover { border-color: var(--accent); background: var(--bg-surface2); }
+#fab-add {
+  width: 36px; height: 36px; border-radius: 50%;
+  background: var(--accent); color: #fff;
+  font-size: 1.3rem; display: flex; align-items: center; justify-content: center;
+  border: none !important;
+  box-shadow: 0 4px 15px var(--accent-glow);
+  transition: transform 0.2s var(--spring);
+}
+#fab-add:hover { transform: scale(1.1); }
 
-    /* ── Today Banner ── */
-    .today-banner {
-      background: var(--surface);
-      border: 1px solid var(--border);
-      border-radius: var(--radius);
-      padding: 14px 18px;
-      margin-bottom: 20px;
-    }
-    .today-banner h2 {
-      font-size: 1rem;
-      color: var(--text-muted);
-      font-weight: 500;
-      margin-bottom: 10px;
-    }
-    .today-banner h2 strong { color: var(--text); }
-    .now-card {
-      background: linear-gradient(135deg, #10b98122, #06b6d422);
-      border: 1px solid #10b98155;
-      border-radius: 8px;
-      padding: 12px 16px;
-      display: flex;
-      align-items: center;
-      gap: 12px;
-    }
-    .now-dot {
-      width: 10px; height: 10px;
-      background: var(--green);
-      border-radius: 50%;
-      animation: pulse 1.5s infinite;
-      flex-shrink: 0;
-    }
-    @keyframes pulse {
-      0%, 100% { opacity: 1; transform: scale(1); }
-      50% { opacity: 0.5; transform: scale(1.3); }
-    }
-    .today-empty { color: var(--text-muted); font-size: 0.9rem; }
+/* ===== MAIN CONTAINER ===== */
+.main-container { max-width: 1200px; margin: 0 auto; padding: 20px 24px 100px; }
 
-    /* ── Section ── */
-    .section-title {
-      font-size: 0.9rem;
-      font-weight: 600;
-      color: var(--text-muted);
-      text-transform: uppercase;
-      letter-spacing: 0.05em;
-      margin-bottom: 12px;
-    }
+/* ===== SECTION HEADERS ===== */
+.section-header {
+  display: flex; align-items: center; gap: 10px;
+  margin-bottom: 16px; padding-bottom: 8px;
+  border-bottom: 1px solid var(--border);
+}
+.section-header h2 { font-size: 1.1rem; font-weight: 600; }
+.section-header .section-badge {
+  font-size: 0.75rem; padding: 2px 8px;
+  background: var(--accent); color: #fff;
+  border-radius: var(--radius-xl);
+}
 
-    /* ── Week Grid ── */
-    .week-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 16px;
-      margin-bottom: 24px;
-    }
-    @media (max-width: 640px) { .week-grid { grid-template-columns: 1fr; } }
-    .day-column {
-      background: var(--surface);
-      border: 1px solid var(--border);
-      border-radius: var(--radius);
-      overflow: hidden;
-    }
-    .day-header {
-      padding: 10px 14px;
-      border-bottom: 1px solid var(--border);
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-    }
-    .day-name { font-weight: 600; font-size: 0.95rem; }
-    .day-date { font-size: 0.8rem; color: var(--text-muted); }
-    .day-today-badge {
-      background: var(--accent);
-      color: #fff;
-      font-size: 0.7rem;
-      padding: 2px 8px;
-      border-radius: 20px;
-    }
+/* ===== PINBOARD ===== */
+#pinboard {
+  display: flex; gap: 12px; overflow-x: auto;
+  padding: 16px 0; margin-bottom: 20px;
+  scroll-snap-type: x mandatory;
+}
+#pinboard::-webkit-scrollbar { height: 4px; }
+.pin-card {
+  flex: 0 0 auto; min-width: 200px; max-width: 280px;
+  padding: 12px 16px; border-radius: var(--radius-md);
+  background: var(--bg-surface); border: 1px solid var(--border);
+  display: flex; gap: 10px; align-items: flex-start;
+  scroll-snap-align: start;
+  transition: all 0.2s var(--ease);
+  cursor: pointer;
+  position: relative;
+}
+.pin-card:hover { border-color: var(--border-hover); transform: translateY(-2px); }
+.pin-card.dragging { opacity: 0.5; }
+.pin-icon { font-size: 1.3rem; flex-shrink: 0; }
+.pin-body { flex: 1; min-width: 0; }
+.pin-title { font-size: 0.85rem; font-weight: 500; margin-bottom: 2px; }
+.pin-sub { font-size: 0.72rem; color: var(--text-3); overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.pin-actions {
+  display: flex; gap: 4px; opacity: 0;
+  transition: opacity 0.2s;
+  position: absolute; top: 8px; left: 8px;
+}
+.pin-card:hover .pin-actions { opacity: 1; }
+.pin-actions button { font-size: 0.75rem; padding: 2px; }
+.pin-announcement { border-right: 3px solid; }
+.pin-red { border-color: var(--priority-high); }
+.pin-yellow { border-color: var(--priority-mid); }
+.pin-green { border-color: var(--priority-low); }
+.pin-blue { border-color: var(--status-future); }
+.countdown-days { font-size: 0.8rem; font-weight: 600; color: var(--accent); margin: 4px 0; }
+.countdown-bar { height: 4px; background: var(--bg-base); border-radius: 2px; overflow: hidden; }
+.countdown-fill { height: 100%; background: var(--accent); border-radius: 2px; transition: width 0.5s; }
+#pinboard-add {
+  flex: 0 0 auto; min-width: 60px;
+  display: flex; align-items: center; justify-content: center;
+  border: 1px dashed var(--border); border-radius: var(--radius-md);
+  color: var(--text-3); font-size: 1.5rem;
+  transition: all 0.2s;
+}
+#pinboard-add:hover { border-color: var(--accent); color: var(--accent); }
 
-    /* ── Event Card ── */
-    .event-card {
-      padding: 10px 14px;
-      border-bottom: 1px solid var(--border);
-      position: relative;
-      transition: background 0.15s;
-    }
-    .event-card:last-child { border-bottom: none; }
-    .event-card:hover { background: var(--surface2); }
-    .event-card.past { opacity: 0.5; }
-    .event-card.now {
-      background: #10b98110;
-      border-right: 3px solid var(--green);
-    }
-    .event-card.cancelled {
-      opacity: 0.4;
-      text-decoration: line-through;
-    }
-    .event-card.postponed { border-right: 3px solid var(--yellow); }
+/* ===== WIDGETS ROW ===== */
+.widgets-row {
+  display: grid; grid-template-columns: 1fr 1fr; gap: 16px;
+  margin-bottom: 24px;
+}
+.widget {
+  padding: 16px 20px; border-radius: var(--radius-lg);
+  background: var(--bg-surface); border: 1px solid var(--border);
+}
+.widget h3 { font-size: 0.9rem; font-weight: 600; margin-bottom: 12px; color: var(--text-2); }
+.widget-event {
+  display: flex; align-items: center; gap: 10px;
+  padding: 8px 0;
+  border-bottom: 1px solid var(--border);
+}
+.widget-event:last-child { border-bottom: none; }
+.widget-event .we-color { width: 4px; height: 32px; border-radius: 2px; flex-shrink: 0; }
+.widget-event .we-info { flex: 1; }
+.widget-event .we-title { font-size: 0.82rem; font-weight: 500; }
+.widget-event .we-time { font-size: 0.72rem; color: var(--text-3); }
+.widget-now { position: relative; overflow: hidden; }
+.widget-now::before {
+  content: ''; position: absolute; top: 0; right: 0; bottom: 0; width: 3px;
+  background: var(--status-now);
+  box-shadow: 0 0 12px var(--status-now);
+}
+.widget-empty { color: var(--text-3); font-size: 0.82rem; padding: 12px 0; text-align: center; }
 
-    .event-allday {
-      padding: 4px 14px;
-      font-size: 0.78rem;
-      background: #8b5cf620;
-      color: #a78bfa;
-      border-bottom: 1px solid var(--border);
-      display: flex;
-      align-items: center;
-      gap: 6px;
-    }
+/* ===== CALENDAR ===== */
+#calendar-section { margin-bottom: 24px; }
+#calendar-toolbar {
+  display: flex; flex-wrap: wrap; gap: 10px; align-items: center;
+  margin-bottom: 16px; padding: 12px 16px;
+  background: var(--bg-surface); border-radius: var(--radius-md);
+  border: 1px solid var(--border);
+}
+.cal-nav { display: flex; align-items: center; gap: 8px; }
+.cal-nav button {
+  width: 32px; height: 32px; border-radius: var(--radius-sm);
+  background: var(--bg-surface2); display: flex; align-items: center; justify-content: center;
+  font-size: 0.9rem; transition: background 0.2s;
+}
+.cal-nav button:hover { background: var(--accent); }
+#week-label { font-size: 0.85rem; font-weight: 600; min-width: 120px; text-align: center; }
+#today-btn {
+  padding: 4px 12px; border-radius: var(--radius-sm);
+  background: var(--accent); color: #fff; font-size: 0.75rem; font-weight: 500;
+}
+.view-tabs { display: flex; gap: 4px; }
+.view-tabs button {
+  padding: 4px 12px; border-radius: var(--radius-sm);
+  font-size: 0.78rem; background: var(--bg-surface2);
+  transition: all 0.2s;
+}
+.view-tabs button.active { background: var(--accent); color: #fff; }
+#course-filters { display: flex; gap: 6px; flex-wrap: wrap; }
+.course-chip {
+  padding: 3px 10px; border-radius: var(--radius-xl);
+  font-size: 0.72rem; border: 1px solid; cursor: pointer;
+  transition: all 0.2s; opacity: 0.5;
+}
+.course-chip.active { opacity: 1; }
+#group-filter { display: flex; gap: 4px; }
+#group-filter button {
+  padding: 3px 10px; border-radius: var(--radius-xl);
+  font-size: 0.72rem; background: var(--bg-surface2);
+  transition: all 0.2s;
+}
+#group-filter button.active { background: var(--accent); color: #fff; }
+#calendar-search {
+  padding: 6px 12px; border-radius: var(--radius-xl);
+  font-size: 0.78rem; width: 150px;
+}
 
-    .course-dot {
-      width: 8px; height: 8px;
-      border-radius: 50%;
-      flex-shrink: 0;
-      display: inline-block;
-    }
-    .event-top {
-      display: flex;
-      align-items: center;
-      gap: 8px;
-      margin-bottom: 3px;
-    }
-    .lesson-num {
-      font-size: 0.7rem;
-      color: var(--text-dim);
-      font-weight: 600;
-      background: var(--surface2);
-      padding: 1px 6px;
-      border-radius: 4px;
-      flex-shrink: 0;
-    }
-    .event-title { font-weight: 600; font-size: 0.9rem; flex: 1; }
-    .status-badge {
-      font-size: 0.65rem;
-      padding: 2px 6px;
-      border-radius: 4px;
-      flex-shrink: 0;
-    }
-    .badge-now { background: #10b98130; color: var(--green); }
-    .badge-today { background: #f59e0b30; color: var(--yellow); }
-    .badge-soon { background: #6366f130; color: #a5b4fc; }
-    .badge-past { background: var(--surface2); color: var(--text-dim); }
-    .badge-cancelled { background: #ef444420; color: var(--red); }
-    .badge-postponed { background: #f59e0b20; color: var(--yellow); }
+/* Calendar Body ‚Äî Weekly */
+.cal-weekly {
+  display: grid; grid-template-columns: repeat(5, 1fr); gap: 12px;
+}
+.cal-day-col {
+  background: var(--bg-surface); border-radius: var(--radius-md);
+  border: 1px solid var(--border); overflow: hidden;
+}
+.cal-day-header {
+  padding: 10px 12px; text-align: center;
+  border-bottom: 1px solid var(--border);
+  font-size: 0.82rem; font-weight: 600;
+}
+.cal-day-header.today { background: var(--accent); color: #fff; }
+.cal-day-header .day-name { font-size: 0.72rem; color: var(--text-3); font-weight: 400; }
+.cal-day-header.today .day-name { color: rgba(255,255,255,0.7); }
+.cal-day-events { padding: 8px; display: flex; flex-direction: column; gap: 8px; min-height: 100px; }
 
-    .event-meta {
-      display: flex;
-      gap: 10px;
-      font-size: 0.78rem;
-      color: var(--text-muted);
-      flex-wrap: wrap;
-    }
-    .event-meta span { display: flex; align-items: center; gap: 3px; }
+/* Calendar Event Card */
+.cal-event {
+  padding: 10px 12px; border-radius: var(--radius-sm);
+  background: var(--bg-surface2); border: 1px solid var(--border);
+  border-right: 3px solid var(--course-color, var(--accent));
+  transition: all 0.2s var(--ease);
+  cursor: pointer;
+  font-size: 0.78rem;
+}
+.cal-event:hover { transform: translateY(-1px); border-color: var(--border-hover); }
+.cal-event.event-now {
+  border-right: 3px solid var(--course-color, var(--accent));
+  background: linear-gradient(90deg, color-mix(in srgb, var(--course-color, var(--accent)) 15%, transparent) 0%, transparent 100%);
+  animation: glowPulse 2s ease-in-out infinite;
+}
+@keyframes glowPulse {
+  0%, 100% { box-shadow: 0 0 8px color-mix(in srgb, var(--course-color, var(--accent)) 40%, transparent); }
+  50% { box-shadow: 0 0 20px color-mix(in srgb, var(--course-color, var(--accent)) 60%, transparent); }
+}
+.event-badges { display: flex; gap: 4px; margin-bottom: 6px; flex-wrap: wrap; }
+.badge {
+  padding: 1px 7px; border-radius: var(--radius-xl);
+  font-size: 0.65rem; font-weight: 500;
+}
+.badge-lesson { background: rgba(124,111,247,0.2); color: var(--accent); }
+.badge-future { background: rgba(111,187,247,0.15); color: var(--status-future); }
+.badge-today { background: rgba(247,208,111,0.15); color: var(--status-today); }
+.badge-now { background: rgba(111,247,196,0.15); color: var(--status-now); }
+.badge-past { background: rgba(85,85,106,0.2); color: var(--status-past); }
+.badge-task { background: rgba(247,111,107,0.15); color: var(--priority-high); }
+.badge-custom { background: rgba(124,111,247,0.15); color: var(--accent); }
+.badge-priority-high { background: rgba(247,111,111,0.2); color: var(--priority-high); }
+.badge-priority-mid { background: rgba(247,208,111,0.2); color: var(--priority-mid); }
+.badge-priority-low { background: rgba(111,247,196,0.2); color: var(--priority-low); }
+.event-title { font-weight: 500; margin-bottom: 4px; line-height: 1.3; }
+.event-meta { display: flex; gap: 8px; color: var(--text-3); font-size: 0.72rem; flex-wrap: wrap; }
+.event-desc { color: var(--text-2); font-size: 0.72rem; margin-top: 4px; }
+.event-tasks { margin-top: 6px; }
+.tasks-toggle {
+  font-size: 0.72rem; color: var(--text-2);
+  display: flex; align-items: center; gap: 4px;
+}
+.tasks-list { margin-top: 4px; display: none; flex-direction: column; gap: 4px; }
+.tasks-list.open { display: flex; }
+.task-chip {
+  padding: 3px 8px; border-radius: var(--radius-sm);
+  background: var(--bg-glass); font-size: 0.7rem;
+  display: flex; align-items: center; gap: 4px;
+}
+.event-actions { display: flex; gap: 6px; margin-top: 8px; }
+.event-actions button {
+  padding: 3px 8px; border-radius: var(--radius-sm);
+  background: var(--bg-glass); font-size: 0.7rem;
+  transition: background 0.2s;
+}
+.event-actions button:hover { background: var(--accent); color: #fff; }
+.event-footer {
+  display: flex; justify-content: space-between; align-items: center; margin-top: 6px;
+}
+.added-by { font-size: 0.68rem; color: var(--text-3); }
+.progress-live {
+  display: none; height: 3px; background: var(--bg-base);
+  border-radius: 2px; margin-top: 6px; overflow: hidden;
+}
+.progress-live-fill { height: 100%; background: var(--status-now); border-radius: 2px; transition: width 1s linear; }
+.event-now .progress-live { display: block; }
 
-    /* ── List View ── */
-    .list-view { display: flex; flex-direction: column; gap: 10px; margin-bottom: 24px; }
-    .list-day-header {
-      font-size: 0.85rem;
-      font-weight: 600;
-      color: var(--text-muted);
-      padding: 6px 0;
-      border-bottom: 1px solid var(--border);
-    }
-    .list-event {
-      background: var(--surface);
-      border: 1px solid var(--border);
-      border-radius: var(--radius);
-      padding: 12px 16px;
-      display: flex;
-      align-items: center;
-      gap: 14px;
-      transition: background 0.15s;
-    }
-    .list-event:hover { background: var(--surface2); }
-    .list-event.past { opacity: 0.5; }
-    .list-event.now { border-color: var(--green); background: #10b98108; }
-    .list-course-bar {
-      width: 4px;
-      border-radius: 2px;
-      align-self: stretch;
-      flex-shrink: 0;
-    }
-    .list-event-body { flex: 1; }
-    .list-event-title { font-weight: 600; font-size: 0.95rem; margin-bottom: 4px; }
-    .list-event-meta { font-size: 0.8rem; color: var(--text-muted); display: flex; gap: 12px; flex-wrap: wrap; }
+/* Calendar ‚Äî Monthly */
+.cal-monthly { display: grid; grid-template-columns: repeat(7, 1fr); gap: 4px; }
+.cal-month-cell {
+  min-height: 80px; padding: 6px;
+  background: var(--bg-surface); border-radius: var(--radius-sm);
+  border: 1px solid var(--border);
+}
+.cal-month-cell.other-month { opacity: 0.3; }
+.cal-month-cell.today-cell { border-color: var(--accent); }
+.month-date { font-size: 0.75rem; font-weight: 600; margin-bottom: 4px; }
+.month-dots { display: flex; gap: 3px; flex-wrap: wrap; }
+.month-dot { width: 8px; height: 8px; border-radius: 50%; }
 
-    /* ── Tasks ── */
-    .tasks-section { margin-bottom: 24px; }
-    .tasks-header {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      margin-bottom: 12px;
-    }
-    .add-task-btn {
-      background: var(--accent);
-      color: #fff;
-      border: none;
-      padding: 6px 14px;
-      border-radius: 6px;
-      cursor: pointer;
-      font-size: 0.85rem;
-      font-family: inherit;
-    }
-    .add-task-btn:hover { background: #4f52d9; }
-    .task-card {
-      background: var(--surface);
-      border: 1px solid var(--border);
-      border-radius: var(--radius);
-      padding: 12px 16px;
-      margin-bottom: 8px;
-      display: flex;
-      align-items: center;
-      gap: 14px;
-    }
-    .task-course-dot { width: 10px; height: 10px; border-radius: 50%; flex-shrink: 0; }
-    .task-body { flex: 1; }
-    .task-title { font-weight: 600; font-size: 0.9rem; margin-bottom: 3px; }
-    .task-meta { font-size: 0.78rem; color: var(--text-muted); display: flex; gap: 10px; }
-    .task-deadline { font-size: 0.75rem; }
-    .task-deadline.urgent { color: var(--red); }
-    .task-deadline.soon { color: var(--yellow); }
-    .task-deadline.ok { color: var(--green); }
-    .task-status {
-      font-size: 0.7rem;
-      padding: 2px 8px;
-      border-radius: 4px;
-      flex-shrink: 0;
-    }
-    .status-open { background: #6366f120; color: #a5b4fc; }
-    .status-submitted { background: #10b98120; color: var(--green); }
-    .status-overdue { background: #ef444420; color: var(--red); }
-    .tasks-empty {
-      color: var(--text-muted);
-      font-size: 0.9rem;
-      text-align: center;
-      padding: 30px;
-      background: var(--surface);
-      border: 1px solid var(--border);
-      border-radius: var(--radius);
-    }
+/* Calendar ‚Äî List */
+.cal-list { display: flex; flex-direction: column; gap: 8px; }
+.cal-list-day { font-size: 0.85rem; font-weight: 600; padding: 8px 0; border-bottom: 1px solid var(--border); }
+.cal-list-event {
+  display: flex; gap: 12px; align-items: center;
+  padding: 10px 14px; border-radius: var(--radius-sm);
+  background: var(--bg-surface); border: 1px solid var(--border);
+  cursor: pointer; transition: all 0.2s;
+}
+.cal-list-event:hover { border-color: var(--border-hover); }
+.cal-list-color { width: 4px; height: 36px; border-radius: 2px; flex-shrink: 0; }
+.cal-list-info { flex: 1; }
+.cal-list-title { font-size: 0.82rem; font-weight: 500; }
+.cal-list-time { font-size: 0.72rem; color: var(--text-3); }
 
-    /* ── Add Task Modal ── */
-    .modal-overlay {
-      position: fixed; inset: 0;
-      background: rgba(0,0,0,0.7);
-      z-index: 200;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      padding: 20px;
-      opacity: 0;
-      pointer-events: none;
-      transition: opacity 0.2s;
-    }
-    .modal-overlay.open { opacity: 1; pointer-events: all; }
-    .modal {
-      background: var(--surface);
-      border: 1px solid var(--border);
-      border-radius: 14px;
-      padding: 24px;
-      width: 100%;
-      max-width: 480px;
-      transform: translateY(20px);
-      transition: transform 0.2s;
-    }
-    .modal-overlay.open .modal { transform: translateY(0); }
-    .modal h3 { font-size: 1.1rem; margin-bottom: 18px; }
-    .form-group { margin-bottom: 14px; }
-    .form-group label { display: block; font-size: 0.82rem; color: var(--text-muted); margin-bottom: 5px; }
-    .form-group input,
-    .form-group select,
-    .form-group textarea {
-      width: 100%;
-      background: var(--surface2);
-      border: 1px solid var(--border);
-      border-radius: 7px;
-      padding: 8px 12px;
-      color: var(--text);
-      font-family: inherit;
-      font-size: 0.9rem;
-    }
-    .form-group input:focus,
-    .form-group select:focus { outline: none; border-color: var(--accent); }
-    .modal-actions { display: flex; gap: 10px; justify-content: flex-end; margin-top: 18px; }
-    .btn-cancel {
-      background: var(--surface2);
-      border: 1px solid var(--border);
-      color: var(--text-muted);
-      padding: 8px 16px;
-      border-radius: 7px;
-      cursor: pointer;
-      font-family: inherit;
-    }
-    .btn-save {
-      background: var(--accent);
-      border: none;
-      color: #fff;
-      padding: 8px 18px;
-      border-radius: 7px;
-      cursor: pointer;
-      font-family: inherit;
-      font-weight: 600;
-    }
-    .btn-save:hover { background: #4f52d9; }
+/* Calendar ‚Äî Course view */
+.cal-course-tabs { display: flex; gap: 6px; margin-bottom: 12px; flex-wrap: wrap; }
+.cal-course-tab {
+  padding: 6px 14px; border-radius: var(--radius-xl);
+  font-size: 0.78rem; border: 1px solid; cursor: pointer;
+  transition: all 0.2s;
+}
+.cal-course-tab.active { color: #fff; }
+.cal-course-content { display: flex; flex-direction: column; gap: 8px; }
 
-    /* ── Course Pills ── */
-    .courses-legend {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 8px;
-      margin-bottom: 20px;
-    }
-    .course-pill {
-      display: flex;
-      align-items: center;
-      gap: 6px;
-      background: var(--surface);
-      border: 1px solid var(--border);
-      border-radius: 20px;
-      padding: 4px 10px;
-      font-size: 0.78rem;
-      cursor: pointer;
-      transition: all 0.15s;
-    }
-    .course-pill.hidden-course { opacity: 0.35; }
-    .course-pill:hover { border-color: var(--text-muted); }
+/* ===== SUMMARIES ===== */
+#summaries-section { margin-bottom: 24px; }
+.summaries-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 12px; }
+.summary-card {
+  padding: 14px 16px; border-radius: var(--radius-md);
+  background: var(--bg-surface); border: 1px solid var(--border);
+  border-right: 3px solid var(--course-color, var(--accent));
+}
+.summary-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 10px; }
+.summary-title { font-size: 0.85rem; font-weight: 500; }
+.summary-lesson { font-size: 0.72rem; color: var(--text-3); }
+.summary-links { display: flex; flex-direction: column; gap: 6px; }
+.summary-link {
+  display: flex; align-items: center; gap: 8px;
+  padding: 6px 10px; border-radius: var(--radius-sm);
+  background: var(--bg-glass); font-size: 0.78rem;
+  transition: background 0.2s;
+}
+.summary-link:hover { background: var(--bg-surface2); }
+.summary-link-icon { font-size: 1rem; }
+.summary-link-info { flex: 1; }
+.summary-link-title { font-weight: 500; }
+.summary-link-by { font-size: 0.68rem; color: var(--text-3); }
+.summary-add {
+  padding: 6px; text-align: center; border: 1px dashed var(--border);
+  border-radius: var(--radius-sm); font-size: 0.75rem; color: var(--text-3);
+  transition: all 0.2s; margin-top: 8px;
+}
+.summary-add:hover { border-color: var(--accent); color: var(--accent); }
 
-    /* ── Footer ── */
-    footer {
-      text-align: center;
-      padding: 20px;
-      color: var(--text-dim);
-      font-size: 0.75rem;
-      border-top: 1px solid var(--border);
-      margin-top: 10px;
-    }
+/* ===== KANBAN ===== */
+#kanban-section { margin-bottom: 24px; }
+.kanban-board { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
+.kanban-col {
+  background: var(--bg-surface); border-radius: var(--radius-md);
+  border: 1px solid var(--border); padding: 12px; min-height: 200px;
+}
+.kanban-col.drag-over { border-color: var(--accent); background: rgba(124,111,247,0.05); }
+.kanban-col-header {
+  display: flex; align-items: center; gap: 8px;
+  padding-bottom: 10px; margin-bottom: 10px;
+  border-bottom: 1px solid var(--border);
+}
+.kanban-col-title { font-size: 0.85rem; font-weight: 600; }
+.kanban-col-count {
+  font-size: 0.7rem; padding: 1px 7px;
+  background: var(--bg-surface2); border-radius: var(--radius-xl);
+  color: var(--text-2);
+}
+.kanban-cards { display: flex; flex-direction: column; gap: 8px; }
+.kanban-card {
+  padding: 10px 12px; border-radius: var(--radius-sm);
+  background: var(--bg-surface2); border: 1px solid var(--border);
+  cursor: grab; transition: all 0.2s var(--ease);
+  border-right: 3px solid var(--course-color, var(--text-3));
+}
+.kanban-card:hover { border-color: var(--border-hover); }
+.kanban-card.dragging { opacity: 0.5; transform: scale(1.03); cursor: grabbing; }
+.kanban-card-title { font-size: 0.82rem; font-weight: 500; margin-bottom: 4px; }
+.kanban-card-meta { font-size: 0.7rem; color: var(--text-3); display: flex; gap: 8px; }
+.kanban-card-priority {
+  display: inline-block; width: 8px; height: 8px; border-radius: 50%; margin-left: 4px;
+}
 
-    /* ── By Course View ── */
-    .by-course-view { display: flex; flex-direction: column; gap: 16px; margin-bottom: 24px; }
-    .course-section {
-      background: var(--surface);
-      border: 1px solid var(--border);
-      border-radius: var(--radius);
-      overflow: hidden;
-    }
-    .course-section-header {
-      display: flex;
-      align-items: center;
-      gap: 10px;
-      padding: 12px 16px;
-      border-bottom: 1px solid var(--border);
-    }
-    .course-section-header .course-name { font-weight: 600; }
-    .course-section-header .course-teacher { font-size: 0.8rem; color: var(--text-muted); margin-right: auto; }
-    .course-count { font-size: 0.75rem; color: var(--text-dim); }
-    .no-events { padding: 14px 16px; color: var(--text-muted); font-size: 0.85rem; }
-  </style>
+/* ===== ARCHIVE ===== */
+#archive-section { margin-bottom: 24px; }
+#archive-section.collapsed .archive-body { display: none; }
+.archive-toggle {
+  display: flex; align-items: center; gap: 8px;
+  font-size: 0.85rem; font-weight: 500; color: var(--text-2);
+  cursor: pointer; padding: 8px 0;
+}
+.archive-body { margin-top: 12px; }
+.archive-list { display: flex; flex-direction: column; gap: 6px; }
+.archive-item {
+  display: flex; align-items: center; gap: 10px;
+  padding: 8px 12px; border-radius: var(--radius-sm);
+  background: var(--bg-surface); border: 1px solid var(--border);
+  opacity: 0.6; font-size: 0.8rem;
+}
+.archive-item .event-title { text-decoration: line-through; }
+
+/* ===== MODALS ===== */
+.modal-overlay {
+  position: fixed; inset: 0; z-index: 1000;
+  background: rgba(0,0,0,0.7); backdrop-filter: blur(8px);
+  display: none; align-items: center; justify-content: center;
+  padding: 20px;
+}
+.modal-overlay.open { display: flex; }
+.modal {
+  background: var(--bg-surface); border: 1px solid var(--border);
+  border-radius: var(--radius-lg); padding: 24px;
+  max-width: 500px; width: 100%; max-height: 80vh; overflow-y: auto;
+  animation: modalIn 0.3s var(--spring);
+}
+@keyframes modalIn { from { opacity: 0; transform: scale(0.95) translateY(10px); } }
+.modal-header {
+  display: flex; justify-content: space-between; align-items: center;
+  margin-bottom: 20px;
+}
+.modal-header h3 { font-size: 1.05rem; font-weight: 600; }
+.modal-close { font-size: 1.2rem; opacity: 0.5; transition: opacity 0.2s; }
+.modal-close:hover { opacity: 1; }
+.modal-body { display: flex; flex-direction: column; gap: 14px; }
+.form-group { display: flex; flex-direction: column; gap: 4px; }
+.form-group label { font-size: 0.78rem; color: var(--text-2); font-weight: 500; }
+.form-group input, .form-group textarea, .form-group select { width: 100%; }
+.form-group textarea { min-height: 80px; resize: vertical; }
+.form-actions { display: flex; gap: 8px; justify-content: flex-end; margin-top: 8px; }
+.btn-primary {
+  padding: 8px 20px; border-radius: var(--radius-sm);
+  background: var(--accent); color: #fff; font-weight: 500;
+  transition: all 0.2s;
+}
+.btn-primary:hover { background: #6B5CE6; }
+.btn-secondary {
+  padding: 8px 20px; border-radius: var(--radius-sm);
+  background: var(--bg-surface2); border: 1px solid var(--border);
+  transition: all 0.2s;
+}
+.btn-secondary:hover { border-color: var(--border-hover); }
+
+/* Wizard */
+.wizard-choices { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+.wizard-choice {
+  padding: 20px; border-radius: var(--radius-md);
+  background: var(--bg-surface2); border: 2px solid var(--border);
+  text-align: center; font-size: 0.9rem; font-weight: 500;
+  transition: all 0.2s var(--spring); cursor: pointer;
+}
+.wizard-choice:hover { border-color: var(--accent); transform: translateY(-2px); }
+.wizard-choice .choice-icon { font-size: 2rem; margin-bottom: 8px; display: block; }
+.wizard-courses { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; }
+.wizard-course {
+  padding: 12px; border-radius: var(--radius-md);
+  border: 2px solid var(--border); text-align: center;
+  font-size: 0.8rem; font-weight: 500; cursor: pointer;
+  transition: all 0.2s var(--spring);
+}
+.wizard-course:hover { border-color: var(--course-color); transform: scale(1.03); }
+.wizard-course.selected { border-color: var(--course-color); background: color-mix(in srgb, var(--course-color) 15%, transparent); }
+.wizard-events { display: flex; flex-direction: column; gap: 8px; }
+.wizard-event {
+  padding: 10px 14px; border-radius: var(--radius-sm);
+  background: var(--bg-surface2); border: 1px solid var(--border);
+  cursor: pointer; transition: all 0.2s;
+}
+.wizard-event:hover { border-color: var(--accent); }
+.wizard-event.selected { border-color: var(--accent); background: rgba(124,111,247,0.1); }
+.wizard-steps { display: flex; gap: 8px; margin-bottom: 16px; }
+.wizard-step {
+  width: 32px; height: 32px; border-radius: 50%;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 0.8rem; font-weight: 600;
+  background: var(--bg-surface2); border: 2px solid var(--border);
+}
+.wizard-step.active { border-color: var(--accent); color: var(--accent); }
+.wizard-step.done { border-color: var(--status-now); color: var(--status-now); background: rgba(111,247,196,0.1); }
+.priority-buttons { display: flex; gap: 8px; }
+.priority-btn {
+  flex: 1; padding: 8px; border-radius: var(--radius-sm);
+  text-align: center; font-size: 0.8rem; font-weight: 500;
+  border: 2px solid var(--border); transition: all 0.2s;
+}
+.priority-btn.selected { border-width: 2px; }
+.priority-btn[data-p="high"].selected { border-color: var(--priority-high); color: var(--priority-high); background: rgba(247,111,111,0.1); }
+.priority-btn[data-p="mid"].selected { border-color: var(--priority-mid); color: var(--priority-mid); background: rgba(247,208,111,0.1); }
+.priority-btn[data-p="low"].selected { border-color: var(--priority-low); color: var(--priority-low); background: rgba(111,247,196,0.1); }
+
+/* ===== ICS MODAL ===== */
+.ics-url-box {
+  padding: 12px; border-radius: var(--radius-sm);
+  background: var(--bg-base); border: 1px solid var(--border);
+  font-size: 0.75rem; word-break: break-all;
+  direction: ltr; text-align: left;
+  user-select: all; color: var(--text-2);
+}
+.ics-instructions { font-size: 0.8rem; color: var(--text-2); line-height: 1.6; }
+.ics-instructions ol { padding-right: 20px; }
+
+/* ===== SETTINGS MODAL ===== */
+.settings-section { margin-bottom: 16px; }
+.settings-section h4 { font-size: 0.85rem; margin-bottom: 8px; color: var(--text-2); }
+
+/* ===== TOAST ===== */
+.toast {
+  position: fixed; bottom: 24px; left: 50%; z-index: 9999;
+  transform: translateX(-50%) translateY(20px);
+  background: var(--bg-surface2); border: 1px solid var(--border);
+  border-radius: var(--radius-md); padding: 10px 20px;
+  color: var(--text-1); font-size: 0.85rem;
+  opacity: 0; transition: all 0.3s var(--spring);
+  pointer-events: none;
+}
+.toast.visible { opacity: 1; transform: translateX(-50%) translateY(0); }
+
+/* ===== CONFETTI ===== */
+.confetti-dot {
+  position: fixed; top: -10px; width: 8px; height: 8px;
+  border-radius: 50%; z-index: 9999;
+  animation: confettiFall 2s ease-in forwards;
+}
+@keyframes confettiFall {
+  0% { transform: translateY(0) rotate(0deg); opacity: 1; }
+  100% { transform: translateY(100vh) rotate(720deg); opacity: 0; }
+}
+
+/* ===== MOBILE NAV ===== */
+#mobile-nav {
+  display: none; position: fixed; bottom: 0; left: 0; right: 0;
+  z-index: 100; background: rgba(15,15,19,0.95);
+  backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px);
+  border-top: 1px solid var(--border);
+  padding: 8px 0 calc(8px + env(safe-area-inset-bottom));
+  justify-content: space-around;
+}
+#mobile-nav button {
+  display: flex; flex-direction: column; align-items: center; gap: 2px;
+  font-size: 1.2rem; padding: 6px 12px; border-radius: var(--radius-sm);
+  transition: all 0.2s;
+}
+#mobile-nav button.active { color: var(--accent); }
+#mobile-nav button span { font-size: 0.6rem; color: var(--text-3); }
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 768px) {
+  #topbar { padding: 10px 14px; gap: 8px; }
+  .search-bar { max-width: 180px; }
+  .topbar-actions { gap: 4px; }
+  #btn-add-ical span, #btn-settings span { display: none; }
+  .main-container { padding: 14px 14px 120px; }
+  .widgets-row { grid-template-columns: 1fr; }
+  .cal-weekly { grid-template-columns: 1fr; }
+  .cal-day-col { display: none; }
+  .cal-day-col.today-col, .cal-day-col.show-mobile { display: block; }
+  .kanban-board { grid-template-columns: 1fr; }
+  .summaries-grid { grid-template-columns: 1fr; }
+  #mobile-nav { display: flex; }
+  .wizard-courses { grid-template-columns: repeat(2, 1fr); }
+  #calendar-toolbar { flex-direction: column; align-items: stretch; }
+  .view-tabs { justify-content: center; }
+  #course-filters { justify-content: center; }
+  #group-filter { justify-content: center; }
+}
+
+/* ===== LIGHT THEME ===== */
+body.light {
+  --bg-base: #F5F5FA;
+  --bg-surface: #FFFFFF;
+  --bg-surface2: #EDEDF5;
+  --bg-glass: rgba(0,0,0,0.03);
+  --border: rgba(0,0,0,0.08);
+  --border-hover: rgba(0,0,0,0.15);
+  --text-1: #1A1A2E;
+  --text-2: #6666880;
+  --text-3: #9999AA;
+}
+</style>
 </head>
 <body>
 
-<!-- ══ HEADER ══ -->
-<header>
-  <div class="header-inner">
-    <div class="logo">🎬 <span>סם שפיגל</span> | תסריטאות א׳ ב׳</div>
-    <div class="header-controls">
-      <div class="btn-group" id="viewToggle">
-        <button class="active" data-view="week" onclick="setView('week')">📅 שבועי</button>
-        <button data-view="list" onclick="setView('list')">📋 רשימה</button>
-        <button data-view="course" onclick="setView('course')">📚 לפי קורס</button>
-      </div>
-      <div class="btn-group" id="groupToggle">
-        <button data-group="all" onclick="setGroup('all')">הכל</button>
-        <button data-group="A" onclick="setGroup('A')">קבוצה א׳</button>
-        <button class="active" data-group="B" onclick="setGroup('B')">קבוצה ב׳</button>
-      </div>
-      <span class="last-update" id="lastUpdate">טוען...</span>
-    </div>
+<!-- ===== TOPBAR ===== -->
+<header id="topbar">
+  <div class="logo">üé¨ ◊°◊ù ◊©◊§◊ô◊í◊ú</div>
+  <div class="search-bar">
+    <input type="search" id="global-search" placeholder="◊ó◊ô◊§◊ï◊© ◊©◊ô◊¢◊ï◊®◊ô◊ù, ◊û◊©◊ô◊û◊ï◊™...">
+  </div>
+  <div class="topbar-actions">
+    <button id="btn-add-ical" onclick="showICalModal()">üìÖ <span>◊î◊ï◊°◊£ ◊ú◊ô◊ï◊û◊ü</span></button>
+    <button id="btn-settings" onclick="openModal('modal-settings')">‚öôÔ∏è <span>◊î◊í◊ì◊®◊ï◊™</span></button>
+    <button id="fab-add" onclick="openTaskWizard()">Ôºã</button>
   </div>
 </header>
 
-<!-- ══ MAIN ══ -->
-<main>
+<div class="main-container">
 
-  <!-- Today Banner -->
-  <div class="today-banner" id="todayBanner">
-    <h2>היום: <strong id="todayLabel">טוען...</strong></h2>
-    <div id="nowContainer"><div class="today-empty">אין שיעורים כרגע</div></div>
+  <!-- ===== PINBOARD ===== -->
+  <div class="section-header">
+    <h2>üìå ◊§◊ô◊†◊ë◊ï◊®◊ì</h2>
+    <span class="section-badge" id="pin-count">0</span>
   </div>
+  <section id="pinboard">
+    <button id="pinboard-add" onclick="openModal('modal-link-add')">Ôºã</button>
+  </section>
 
-  <!-- Course Legend -->
-  <div class="courses-legend" id="courseLegend"></div>
-
-  <!-- Views -->
-  <div id="weekView" class="view-panel"></div>
-  <div id="listView" class="view-panel" style="display:none"></div>
-  <div id="courseView" class="view-panel" style="display:none"></div>
-
-  <!-- Tasks -->
-  <div class="tasks-section">
-    <div class="tasks-header">
-      <div class="section-title">✅ משימות</div>
-      <button class="add-task-btn" onclick="openTaskModal()">+ הוסף משימה</button>
+  <!-- ===== WIDGETS ROW ===== -->
+  <div class="widgets-row">
+    <div class="widget" id="widget-today">
+      <h3>üìç ◊î◊ô◊ï◊ù</h3>
+      <div id="today-content"></div>
     </div>
-    <div id="tasksList"></div>
+    <div class="widget" id="widget-upcoming">
+      <h3>‚è≥ ◊î◊ß◊®◊ï◊ë (72 ◊©◊¢◊ï◊™)</h3>
+      <div id="upcoming-content"></div>
+    </div>
   </div>
 
-</main>
+  <!-- ===== CALENDAR ===== -->
+  <section id="calendar-section">
+    <div class="section-header">
+      <h2>üóìÔ∏è ◊ú◊ï◊ó ◊©◊†◊î</h2>
+    </div>
+    <div id="calendar-toolbar">
+      <div class="cal-nav">
+        <button id="prev-week" onclick="navWeek(-1)">‚Üí</button>
+        <span id="week-label"></span>
+        <button id="next-week" onclick="navWeek(1)">‚Üê</button>
+        <button id="today-btn" onclick="goToday()">◊î◊ô◊ï◊ù</button>
+      </div>
+      <div class="view-tabs">
+        <button data-view="weekly" class="active" onclick="setView('weekly')">◊©◊ë◊ï◊¢◊ô</button>
+        <button data-view="monthly" onclick="setView('monthly')">◊ó◊ï◊ì◊©◊ô</button>
+        <button data-view="list" onclick="setView('list')">◊®◊©◊ô◊û◊î</button>
+        <button data-view="course" onclick="setView('course')">◊ú◊§◊ô ◊ß◊ï◊®◊°</button>
+      </div>
+      <div id="course-filters"></div>
+      <div id="group-filter">
+        <button data-group="all" onclick="setGroup('all')">◊î◊õ◊ú</button>
+        <button data-group="a" onclick="setGroup('a')">◊ß◊ë◊ï◊¶◊î ◊ê</button>
+        <button data-group="b" onclick="setGroup('b')">◊ß◊ë◊ï◊¶◊î ◊ë</button>
+      </div>
+      <input type="search" id="calendar-search" placeholder="üîç ◊ó◊ô◊§◊ï◊©..." oninput="renderCalendar()">
+    </div>
+    <div id="calendar-body"></div>
+  </section>
 
-<!-- ══ ADD TASK MODAL ══ -->
-<div class="modal-overlay" id="taskModal">
+  <!-- ===== SUMMARIES ===== -->
+  <section id="summaries-section">
+    <div class="section-header">
+      <h2>üìö ◊°◊ô◊õ◊ï◊û◊ô ◊©◊ô◊¢◊ï◊®◊ô◊ù</h2>
+      <span class="section-badge" id="summaries-count">0</span>
+    </div>
+    <div class="summaries-grid" id="summaries-grid"></div>
+  </section>
+
+  <!-- ===== KANBAN ===== -->
+  <section id="kanban-section">
+    <div class="section-header">
+      <h2>üóÇÔ∏è ◊ß◊†◊ë◊ü ◊ê◊ô◊©◊ô</h2>
+    </div>
+    <div class="kanban-board">
+      <div class="kanban-col" data-status="todo">
+        <div class="kanban-col-header">
+          <span class="kanban-col-title">üìù ◊ú◊ë◊ô◊¶◊ï◊¢</span>
+          <span class="kanban-col-count" id="kanban-count-todo">0</span>
+        </div>
+        <div class="kanban-cards" id="kanban-todo"></div>
+      </div>
+      <div class="kanban-col" data-status="inprogress">
+        <div class="kanban-col-header">
+          <span class="kanban-col-title">üîÑ ◊ë◊™◊î◊ú◊ô◊ö</span>
+          <span class="kanban-col-count" id="kanban-count-inprogress">0</span>
+        </div>
+        <div class="kanban-cards" id="kanban-inprogress"></div>
+      </div>
+      <div class="kanban-col" data-status="done">
+        <div class="kanban-col-header">
+          <span class="kanban-col-title">‚úÖ ◊ë◊ï◊¶◊¢</span>
+          <span class="kanban-col-count" id="kanban-count-done">0</span>
+        </div>
+        <div class="kanban-cards" id="kanban-done"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== ARCHIVE ===== -->
+  <section id="archive-section" class="collapsed">
+    <div class="archive-toggle" onclick="toggleArchive()">
+      <span id="archive-arrow">‚óÄ</span>
+      <span>üóÑÔ∏è ◊ê◊®◊õ◊ô◊ï◊ü ◊û◊©◊ô◊û◊ï◊™</span>
+      <span class="section-badge" id="archive-count">0</span>
+    </div>
+    <div class="archive-body">
+      <div class="archive-list" id="archive-list"></div>
+    </div>
+  </section>
+</div>
+
+<!-- ===== MOBILE NAV ===== -->
+<nav id="mobile-nav">
+  <button data-section="top" class="active" onclick="mobileNav('top')">üè†<span>◊ë◊ô◊™</span></button>
+  <button data-section="calendar-section" onclick="mobileNav('calendar-section')">üìÖ<span>◊ú◊ï◊ó</span></button>
+  <button data-section="kanban-section" onclick="mobileNav('kanban-section')">üóÇÔ∏è<span>◊ß◊†◊ë◊ü</span></button>
+  <button data-section="summaries-section" onclick="mobileNav('summaries-section')">üìö<span>◊°◊ô◊õ◊ï◊û◊ô◊ù</span></button>
+</nav>
+
+<!-- ===== MODAL: Add Link ===== -->
+<div class="modal-overlay" id="modal-link-add">
   <div class="modal">
-    <h3>הוספת משימה חדשה</h3>
-    <div class="form-group">
-      <label>שם המשימה</label>
-      <input type="text" id="taskTitle" placeholder="לדוגמה: להגיש טיוטת תסריט" />
+    <div class="modal-header">
+      <h3>‚ûï ◊î◊ï◊°◊£ ◊ú◊§◊ô◊†◊ë◊ï◊®◊ì</h3>
+      <button class="modal-close" onclick="closeModal('modal-link-add')">‚úï</button>
     </div>
-    <div class="form-group">
-      <label>קורס</label>
-      <select id="taskCourse"><option value="">-- בחר קורס --</option></select>
-    </div>
-    <div class="form-group">
-      <label>דד-ליין</label>
-      <input type="date" id="taskDeadline" />
-    </div>
-    <div class="form-group">
-      <label>נוסף ע"י</label>
-      <input type="text" id="taskAddedBy" placeholder="שמך" />
-    </div>
-    <div class="modal-actions">
-      <button class="btn-cancel" onclick="closeTaskModal()">ביטול</button>
-      <button class="btn-save" onclick="saveTask()">שמור</button>
+    <div class="modal-body">
+      <div class="form-group">
+        <label>◊°◊ï◊í</label>
+        <select id="link-type" onchange="toggleLinkFields()">
+          <option value="link">üîó ◊ß◊ô◊©◊ï◊®</option>
+          <option value="announcement">üì¢ ◊î◊ï◊ì◊¢◊î</option>
+          <option value="countdown">‚è± ◊°◊§◊ô◊®◊î ◊ú◊ê◊ó◊ï◊®</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label>◊õ◊ï◊™◊®◊™</label>
+        <input type="text" id="link-title" placeholder="◊©◊ù ◊î◊ß◊ô◊©◊ï◊® / ◊î◊ï◊ì◊¢◊î">
+      </div>
+      <div class="form-group" id="link-url-group">
+        <label>◊ß◊ô◊©◊ï◊® (URL)</label>
+        <input type="url" id="link-url" placeholder="https://" dir="ltr">
+      </div>
+      <div class="form-group" id="link-text-group" style="display:none">
+        <label>◊ò◊ß◊°◊ò ◊î◊î◊ï◊ì◊¢◊î</label>
+        <textarea id="link-text" placeholder="◊™◊ï◊õ◊ü ◊î◊î◊ï◊ì◊¢◊î"></textarea>
+      </div>
+      <div class="form-group" id="link-color-group" style="display:none">
+        <label>◊¶◊ë◊¢</label>
+        <select id="link-color">
+          <option value="red">üî¥ ◊ê◊ì◊ï◊ù</option>
+          <option value="yellow">üü° ◊¶◊î◊ï◊ë</option>
+          <option value="green">üü¢ ◊ô◊®◊ï◊ß</option>
+          <option value="blue">üîµ ◊õ◊ó◊ï◊ú</option>
+        </select>
+      </div>
+      <div class="form-group" id="link-due-group" style="display:none">
+        <label>◊™◊ê◊®◊ô◊ö ◊ô◊¢◊ì</label>
+        <input type="date" id="link-due">
+      </div>
+      <div class="form-group">
+        <label>◊©◊ù (◊†◊ï◊°◊£ ◊¢"◊ô)</label>
+        <input type="text" id="link-created-by" placeholder="◊î◊©◊ù ◊©◊ú◊ö">
+      </div>
+      <div class="form-actions">
+        <button class="btn-secondary" onclick="closeModal('modal-link-add')">◊ë◊ô◊ò◊ï◊ú</button>
+        <button class="btn-primary" onclick="saveLink()">◊©◊û◊ï◊®</button>
+      </div>
     </div>
   </div>
 </div>
 
-<footer>
-  🎬 דשבורד סם שפיגל | מתעדכן אוטומטית מ-Yedion | <span id="footerTime"></span>
-</footer>
+<!-- ===== MODAL: Task Wizard ===== -->
+<div class="modal-overlay" id="modal-task-wizard">
+  <div class="modal">
+    <div class="modal-header">
+      <h3>‚úèÔ∏è ◊î◊ï◊°◊§◊™ ◊û◊©◊ô◊û◊î</h3>
+      <button class="modal-close" onclick="closeModal('modal-task-wizard')">‚úï</button>
+    </div>
+    <div class="wizard-steps" id="wizard-steps"></div>
+    <div class="modal-body" id="wizard-body"></div>
+  </div>
+</div>
+
+<!-- ===== MODAL: iCal ===== -->
+<div class="modal-overlay" id="modal-ical">
+  <div class="modal">
+    <div class="modal-header">
+      <h3>üìÖ ◊î◊ï◊°◊£ ◊ú◊ô◊ï◊û◊ü ◊î◊ê◊ô◊©◊ô</h3>
+      <button class="modal-close" onclick="closeModal('modal-ical')">‚úï</button>
+    </div>
+    <div class="modal-body">
+      <p style="font-size:0.85rem;color:var(--text-2);margin-bottom:12px">◊ß◊ô◊©◊ï◊® ICS ◊ê◊ô◊©◊ô ‚Äî ◊û◊™◊¢◊ì◊õ◊ü ◊ê◊ï◊ò◊ï◊û◊ò◊ô◊™ ◊¢◊ù ◊î◊û◊©◊ô◊û◊ï◊™ ◊©◊ú◊ö:</p>
+      <div class="ics-url-box" id="ical-url"></div>
+      <button class="btn-primary" style="margin-top:12px;width:100%" id="btn-copy-ical">üìã ◊î◊¢◊™◊ß ◊ß◊ô◊©◊ï◊®</button>
+      <div class="ics-instructions" style="margin-top:16px">
+        <strong>◊î◊ï◊®◊ê◊ï◊™:</strong>
+        <ol>
+          <li><strong>Google Calendar:</strong> ◊î◊í◊ì◊®◊ï◊™ ‚Üí ◊î◊ï◊°◊£ ◊ô◊ï◊û◊ü ‚Üí ◊û◊õ◊™◊ï◊ë◊™ URL</li>
+          <li><strong>iPhone:</strong> ◊î◊í◊ì◊®◊ï◊™ ‚Üí ◊ô◊ï◊û◊ü ‚Üí ◊ó◊©◊ë◊ï◊†◊ï◊™ ‚Üí ◊î◊ï◊°◊£ ◊ó◊©◊ë◊ï◊ü ‚Üí ◊ê◊ó◊® ‚Üí ◊î◊ï◊°◊£ ◊û◊†◊ï◊ô ◊ú◊ô◊ï◊û◊ü</li>
+          <li>◊î◊ì◊ë◊ß ◊ê◊™ ◊î◊ß◊ô◊©◊ï◊® ◊ú◊û◊¢◊ú◊î</li>
+        </ol>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ===== MODAL: Settings ===== -->
+<div class="modal-overlay" id="modal-settings">
+  <div class="modal">
+    <div class="modal-header">
+      <h3>‚öôÔ∏è ◊î◊í◊ì◊®◊ï◊™</h3>
+      <button class="modal-close" onclick="closeModal('modal-settings')">‚úï</button>
+    </div>
+    <div class="modal-body">
+      <div class="settings-section">
+        <h4>◊©◊ù ◊û◊©◊™◊û◊©</h4>
+        <input type="text" id="setting-name" placeholder="◊î◊©◊ù ◊©◊ú◊ö" onchange="saveSetting('userName', this.value)">
+      </div>
+      <div class="settings-section">
+        <h4>◊ß◊ë◊ï◊¶◊î</h4>
+        <select id="setting-group" onchange="saveSetting('group', this.value); setGroup(this.value);">
+          <option value="all">◊î◊õ◊ú</option>
+          <option value="a">◊ß◊ë◊ï◊¶◊î ◊ê</option>
+          <option value="b">◊ß◊ë◊ï◊¶◊î ◊ë</option>
+        </select>
+      </div>
+      <div class="settings-section">
+        <h4>◊¢◊®◊õ◊™ ◊†◊ï◊©◊ê</h4>
+        <select id="setting-theme" onchange="toggleTheme(this.value)">
+          <option value="dark">üåô ◊õ◊î◊î</option>
+          <option value="light">‚òÄÔ∏è ◊ë◊î◊ô◊®</option>
+        </select>
+      </div>
+      <div class="settings-section">
+        <h4>◊û◊ñ◊î◊î ◊û◊©◊™◊û◊© (◊úICS)</h4>
+        <div class="ics-url-box" id="setting-userid" style="font-size:0.7rem"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ===== MODAL: Add Summary Link ===== -->
+<div class="modal-overlay" id="modal-summary-add">
+  <div class="modal">
+    <div class="modal-header">
+      <h3>üìù ◊î◊ï◊°◊£ ◊°◊ô◊õ◊ï◊ù / ◊ß◊ô◊©◊ï◊® ◊ú◊©◊ô◊¢◊ï◊®</h3>
+      <button class="modal-close" onclick="closeModal('modal-summary-add')">‚úï</button>
+    </div>
+    <div class="modal-body">
+      <div class="form-group">
+        <label>◊õ◊ï◊™◊®◊™</label>
+        <input type="text" id="summary-link-title" placeholder="◊°◊ô◊õ◊ï◊ù ◊í◊ï◊í◊ú ◊ì◊ï◊ß◊°...">
+      </div>
+      <div class="form-group">
+        <label>◊ß◊ô◊©◊ï◊®</label>
+        <input type="url" id="summary-link-url" placeholder="https://docs.google.com/..." dir="ltr">
+      </div>
+      <div class="form-group">
+        <label>◊©◊ù</label>
+        <input type="text" id="summary-link-by" placeholder="◊î◊©◊ù ◊©◊ú◊ö">
+      </div>
+      <div class="form-actions">
+        <button class="btn-secondary" onclick="closeModal('modal-summary-add')">◊ë◊ô◊ò◊ï◊ú</button>
+        <button class="btn-primary" onclick="saveSummaryLink()">◊©◊û◊ï◊®</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ===== MODAL: Lesson Detail ===== -->
+<div class="modal-overlay" id="modal-lesson-detail">
+  <div class="modal" style="max-width:600px">
+    <div class="modal-header">
+      <h3 id="lesson-detail-title"></h3>
+      <button class="modal-close" onclick="closeModal('modal-lesson-detail')">‚úï</button>
+    </div>
+    <div class="modal-body" id="lesson-detail-body"></div>
+  </div>
+</div>
+
+<!-- ===== FIREBASE SDK ===== -->
+<script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-app-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore-compat.js"></script>
 
 <script>
-// ═══════════════════════════════════════════════
-//  CONFIG
-// ═══════════════════════════════════════════════
-const REFRESH_INTERVAL = 30 * 1000; // 30 seconds
+// ===================================================================
+// APP STATE
+// ===================================================================
+let events = [];
+let courses = [];
+let tasksData = [];
+let linksData = [];
+let summariesData = {};
+let kanbanState = {};
+let currentView = 'weekly';
+let currentWeekStart = getWeekStart(new Date());
+let currentMonth = new Date();
+let activeGroup = localStorage.getItem('group') || 'all';
+let activeCourses = new Set();
+let searchQuery = '';
 
-const HE_DAYS = ['ראשון', 'שני', 'שלישי', 'רביעי', 'חמישי', 'שישי', 'שבת'];
-const HE_MONTHS = ['ינואר','פברואר','מרץ','אפריל','מאי','יוני','יולי','אוגוסט','ספטמבר','אוקטובר','נובמבר','דצמבר'];
+// ===================================================================
+// FIREBASE INIT
+// ===================================================================
+firebase.initializeApp({
+  apiKey: "AIzaSyBvlqtn-EkQPtJbgc_Qi_yIu9bjqfqdMyg",
+  authDomain: "sam-spiegel.firebaseapp.com",
+  projectId: "sam-spiegel",
+  storageBucket: "sam-spiegel.firebasestorage.app",
+  messagingSenderId: "816154980804",
+  appId: "1:816154980804:web:34e15e12d4f2078d7cf491"
+});
+const db = firebase.firestore();
 
-// Parallel course swapping rules for group toggle
-// When showing group A, swap these pairs within the same date
-const PARALLEL_SWAPS = [
-  ['location', 'short_story'],
-  ['kids_series', 'scenes'],
-  ['web_series', 'directing'],
-];
+// ===================================================================
+// USER ID
+// ===================================================================
+if (!localStorage.getItem('userId')) {
+  localStorage.setItem('userId', crypto.randomUUID());
+}
+const userId = localStorage.getItem('userId');
 
-// ═══════════════════════════════════════════════
-//  STATE
-// ═══════════════════════════════════════════════
-let allEvents = [];
-let allTasks = [];
-let courses = {};
-let currentView = localStorage.getItem('view') || 'week';
-let currentGroup = localStorage.getItem('group') || 'B';
-
-// ═══════════════════════════════════════════════
-//  INIT
-// ═══════════════════════════════════════════════
-async function init() {
-  await loadCourses();
-  await loadData();
-  setView(currentView, true);
-  setGroup(currentGroup, true);
-  render();
-  setInterval(render, REFRESH_INTERVAL);
-  setInterval(loadData, REFRESH_INTERVAL);
-  document.getElementById('footerTime').textContent = new Date().toLocaleDateString('he-IL');
+// ===================================================================
+// UTILITY FUNCTIONS
+// ===================================================================
+function getWeekStart(d) {
+  const date = new Date(d);
+  const day = date.getDay();
+  const diff = day === 0 ? 0 : day;
+  date.setDate(date.getDate() - diff);
+  date.setHours(0, 0, 0, 0);
+  return date;
 }
 
-async function loadCourses() {
-  try {
-    const r = await fetch('./data/courses.json');
-    const arr = await r.json();
-    arr.forEach(c => { courses[c.key] = c; });
-    buildCourseLegend();
-    buildCourseSelect();
-  } catch(e) {
-    console.error('Could not load courses.json', e);
-  }
+function formatDate(d) {
+  const date = new Date(d);
+  return `${date.getDate()}/${date.getMonth() + 1}`;
 }
 
-async function loadData() {
-  // Events
-  try {
-    const r = await fetch('./data/events.json?t=' + Date.now());
-    const json = await r.json();
-    allEvents = json.events || json;
-    const meta = json.meta;
-    if (meta?.last_updated) {
-      const d = new Date(meta.last_updated);
-      document.getElementById('lastUpdate').textContent =
-        'עדכון: ' + d.toLocaleTimeString('he-IL', {hour:'2-digit', minute:'2-digit'});
-    }
-  } catch(e) {
-    console.warn('Using fallback event data');
-  }
-
-  // Tasks
-  try {
-    const r = await fetch('./data/tasks.json?t=' + Date.now());
-    allTasks = await r.json();
-  } catch(e) { allTasks = []; }
+function formatDateFull(d) {
+  const date = new Date(d);
+  return date.toLocaleDateString('he-IL', { weekday: 'long', day: 'numeric', month: 'long' });
 }
 
-// ═══════════════════════════════════════════════
-//  RENDER
-// ═══════════════════════════════════════════════
-function render() {
-  const events = applyGroupFilter(allEvents);
-  renderTodayBanner(events);
-  renderWeekView(events);
-  renderListView(events);
-  renderCourseView(events);
-  renderTasks();
+function formatTime(d) {
+  const date = new Date(d);
+  return date.toLocaleTimeString('he-IL', { hour: '2-digit', minute: '2-digit', hour12: false });
 }
 
-function applyGroupFilter(events) {
-  if (currentGroup === 'all') return events;
-  // For group A: swap parallel courses times
-  if (currentGroup === 'A') {
-    return events.map(ev => {
-      let e = {...ev};
-      // If this course belongs to a parallel pair and is tagged as group B time,
-      // mark it so we can show the A perspective
-      return e;
-    });
-    // For now, group A = show events tagged group A or both
-  }
-  // Group B or all: show as-is
-  return events;
+function isSameDay(d1, d2) {
+  const a = new Date(d1), b = new Date(d2);
+  return a.getFullYear() === b.getFullYear() && a.getMonth() === b.getMonth() && a.getDate() === b.getDate();
 }
 
-// ── Today Banner ──
-function renderTodayBanner(events) {
+function isToday(d) { return isSameDay(d, new Date()); }
+
+function getEventStatus(ev) {
   const now = new Date();
-  const todayStr = toDateStr(now);
-  const dayName = HE_DAYS[now.getDay()];
-  const dateLabel = `${dayName}, ${now.getDate()} ב${HE_MONTHS[now.getMonth()]}`;
-  document.getElementById('todayLabel').textContent = dateLabel;
+  const start = new Date(ev.start);
+  const end = new Date(ev.end);
+  if (now >= start && now <= end) return 'now';
+  if (isToday(ev.start)) return 'today';
+  if (start > now) return 'future';
+  return 'past';
+}
 
-  const todayEvents = events.filter(e => e.start?.startsWith(todayStr) && !e.is_allday);
-  const nowEv = todayEvents.find(e => isNow(e));
+function getCourseColor(key) {
+  const course = courses.find(c => c.key === key);
+  return course ? course.color : '#7C6FF7';
+}
 
-  const container = document.getElementById('nowContainer');
-  if (nowEv) {
-    const course = courses[nowEv.course_key] || {};
-    container.innerHTML = `
-      <div class="now-card">
-        <div class="now-dot"></div>
-        <div>
-          <strong>${nowEv.title}</strong>
-          <div style="font-size:0.8rem;color:var(--text-muted);margin-top:2px">
-            שיעור ${nowEv.lesson_number || ''} · ${fmtTime(nowEv.start)} – ${fmtTime(nowEv.end)}
-            ${nowEv.location ? '· ' + nowEv.location : ''}
-          </div>
-        </div>
-      </div>`;
-  } else {
-    // Next event today
-    const upcoming = todayEvents.filter(e => new Date(e.start) > now);
-    if (upcoming.length) {
-      const next = upcoming[0];
-      const mins = Math.round((new Date(next.start) - now) / 60000);
-      container.innerHTML = `<div class="today-empty">
-        ⏰ הבא: <strong>${next.title}</strong> — עוד ${mins} דקות (${fmtTime(next.start)})
-      </div>`;
-    } else if (todayEvents.length) {
-      container.innerHTML = `<div class="today-empty">✅ כל שיעורי היום הסתיימו (${todayEvents.length} שיעורים)</div>`;
-    } else {
-      container.innerHTML = `<div class="today-empty">📅 אין שיעורים היום</div>`;
-    }
+function getCourseName(key) {
+  const course = courses.find(c => c.key === key);
+  return course ? course.short : key;
+}
+
+const DAY_NAMES = ['◊®◊ê◊©◊ï◊ü', '◊©◊†◊ô', '◊©◊ú◊ô◊©◊ô', '◊®◊ë◊ô◊¢◊ô', '◊ó◊û◊ô◊©◊ô', '◊©◊ô◊©◊ô', '◊©◊ë◊™'];
+
+function showToast(message, duration = 2500) {
+  const toast = document.createElement('div');
+  toast.className = 'toast';
+  toast.textContent = message;
+  document.body.appendChild(toast);
+  setTimeout(() => toast.classList.add('visible'), 10);
+  setTimeout(() => {
+    toast.classList.remove('visible');
+    setTimeout(() => toast.remove(), 300);
+  }, duration);
+}
+
+function triggerConfetti() {
+  const colors = ['#7C6FF7','#6FF7C4','#F7D06F','#F76F9B','#6FBBF7'];
+  for (let i = 0; i < 30; i++) {
+    const dot = document.createElement('div');
+    dot.className = 'confetti-dot';
+    dot.style.cssText = `left:${Math.random()*100}%;background:${colors[Math.floor(Math.random()*colors.length)]};animation-delay:${Math.random()*0.5}s;`;
+    document.body.appendChild(dot);
+    setTimeout(() => dot.remove(), 2000);
   }
 }
 
-// ── Week View ──
-function renderWeekView(events) {
-  const container = document.getElementById('weekView');
-  const now = new Date();
+// ===================================================================
+// MODAL HELPERS
+// ===================================================================
+function openModal(id) { document.getElementById(id).classList.add('open'); }
+function closeModal(id) { document.getElementById(id).classList.remove('open'); }
+document.querySelectorAll('.modal-overlay').forEach(m => {
+  m.addEventListener('click', e => { if (e.target === m) m.classList.remove('open'); });
+});
 
-  // Get the two upcoming school days (Sunday + Wednesday)
-  const schoolDays = getUpcomingSchoolDays(now, 2);
-  const allDays = new Set(events.map(e => e.start?.split('T')[0]).filter(Boolean));
+// ===================================================================
+// SETTINGS
+// ===================================================================
+function saveSetting(key, value) {
+  localStorage.setItem(key, value);
+  if (key === 'userName') {
+    document.getElementById('link-created-by').value = value;
+    document.getElementById('summary-link-by').value = value;
+  }
+}
 
-  let html = '<div class="section-title">שיעורים השבוע</div><div class="week-grid">';
+function toggleTheme(theme) {
+  localStorage.setItem('theme', theme);
+  document.body.classList.toggle('light', theme === 'light');
+}
 
-  schoolDays.forEach(dateStr => {
-    const dayEvents = events
-      .filter(e => e.start?.startsWith(dateStr))
-      .sort((a,b) => a.start > b.start ? 1 : -1);
+function loadSettings() {
+  const name = localStorage.getItem('userName') || '';
+  const group = localStorage.getItem('group') || 'all';
+  const theme = localStorage.getItem('theme') || 'dark';
+  document.getElementById('setting-name').value = name;
+  document.getElementById('setting-group').value = group;
+  document.getElementById('setting-theme').value = theme;
+  document.getElementById('setting-userid').textContent = userId;
+  document.getElementById('link-created-by').value = name;
+  document.getElementById('summary-link-by').value = name;
+  if (theme === 'light') document.body.classList.add('light');
+  activeGroup = group;
+  updateGroupButtons();
+}
 
-    const date = new Date(dateStr + 'T12:00:00');
-    const isToday = dateStr === toDateStr(now);
-    const dayName = HE_DAYS[date.getDay()];
-    const dateLabel = `${date.getDate()}/${date.getMonth()+1}`;
-
-    const allDay = dayEvents.filter(e => e.is_allday);
-    const regular = dayEvents.filter(e => !e.is_allday);
-
-    html += `<div class="day-column">
-      <div class="day-header">
-        <div class="day-name">${dayName}</div>
-        <div style="display:flex;gap:8px;align-items:center">
-          <span class="day-date">${dateLabel}</span>
-          ${isToday ? '<span class="day-today-badge">היום</span>' : ''}
-        </div>
-      </div>`;
-
-    allDay.forEach(e => {
-      html += `<div class="event-allday">🗓️ ${e.title}</div>`;
-    });
-
-    if (regular.length === 0) {
-      html += `<div class="event-card"><span class="today-empty" style="font-size:0.85rem">אין שיעורים</span></div>`;
-    }
-
-    regular.forEach(ev => {
-      html += renderEventCard(ev, now);
-    });
-
-    html += '</div>';
+function updateGroupButtons() {
+  document.querySelectorAll('#group-filter button').forEach(b => {
+    b.classList.toggle('active', b.dataset.group === activeGroup);
   });
-
-  html += '</div>';
-  container.innerHTML = html;
 }
 
-function renderEventCard(ev, now) {
-  const course = courses[ev.course_key] || {};
-  const color = course.color || '#6366f1';
-  const status = getTimeStatus(ev, now);
-  const cardClass = ['event-card', status.cls, ev.status !== 'confirmed' ? ev.status : ''].filter(Boolean).join(' ');
-
-  return `<div class="${cardClass}">
-    <div class="event-top">
-      <span class="course-dot" style="background:${color}"></span>
-      ${ev.lesson_number ? `<span class="lesson-num">שיעור ${ev.lesson_number}</span>` : ''}
-      <span class="event-title">${ev.title}</span>
-      <span class="status-badge ${status.badgeClass}">${status.label}</span>
-    </div>
-    <div class="event-meta">
-      <span>🕐 ${fmtTime(ev.start)}–${fmtTime(ev.end)}</span>
-      ${ev.location ? `<span>📍 ${ev.location}</span>` : ''}
-      ${course.teacher ? `<span>👤 ${course.teacher}</span>` : ''}
-    </div>
-  </div>`;
-}
-
-// ── List View ──
-function renderListView(events) {
-  const container = document.getElementById('listView');
-  const now = new Date();
-  const sorted = [...events].sort((a,b) => a.start > b.start ? 1 : -1);
-
-  // Group by date
-  const byDate = {};
-  sorted.forEach(ev => {
-    const d = ev.start?.split('T')[0];
-    if (!d) return;
-    if (!byDate[d]) byDate[d] = [];
-    byDate[d].push(ev);
+// ===================================================================
+// PINBOARD
+// ===================================================================
+function setupLinksListener() {
+  db.collection('links').orderBy('order').onSnapshot(snap => {
+    linksData = snap.docs.map(d => ({ id: d.id, ...d.data() }));
+    renderPinboard();
   });
-
-  let html = '<div class="section-title">כל השיעורים</div><div class="list-view">';
-
-  Object.entries(byDate).forEach(([dateStr, evs]) => {
-    const date = new Date(dateStr + 'T12:00:00');
-    const isToday = dateStr === toDateStr(now);
-    const isPast = date < now && !isToday;
-    const dayName = HE_DAYS[date.getDay()];
-    const dateLabel = `${dayName}, ${date.getDate()} ב${HE_MONTHS[date.getMonth()]}`;
-
-    html += `<div class="list-day-header">${dateLabel}${isToday ? ' <span class="day-today-badge">היום</span>' : ''}</div>`;
-
-    evs.forEach(ev => {
-      const course = courses[ev.course_key] || {};
-      const color = course.color || '#6366f1';
-      const status = getTimeStatus(ev, now);
-      const cls = ['list-event', status.cls].join(' ');
-
-      html += `<div class="${cls}">
-        <div class="list-course-bar" style="background:${color}"></div>
-        <div class="list-event-body">
-          <div class="list-event-title">
-            ${ev.lesson_number ? `<span class="lesson-num" style="margin-left:6px">שיעור ${ev.lesson_number}</span>` : ''}
-            ${ev.title}
-          </div>
-          <div class="list-event-meta">
-            <span>🕐 ${fmtTime(ev.start)}–${fmtTime(ev.end)}</span>
-            ${ev.location ? `<span>📍 ${ev.location}</span>` : ''}
-            ${course.teacher ? `<span>👤 ${course.teacher}</span>` : ''}
-          </div>
-        </div>
-        <span class="status-badge ${status.badgeClass}">${status.label}</span>
-      </div>`;
-    });
-  });
-
-  html += '</div>';
-  container.innerHTML = html;
 }
 
-// ── By Course View ──
-function renderCourseView(events) {
-  const container = document.getElementById('courseView');
-  const now = new Date();
+function renderPinboard() {
+  const container = document.getElementById('pinboard');
+  const addBtn = document.getElementById('pinboard-add');
+  container.innerHTML = '';
+  document.getElementById('pin-count').textContent = linksData.length;
 
-  let html = '<div class="section-title">לפי קורס</div><div class="by-course-view">';
+  linksData.forEach(link => {
+    const card = document.createElement('div');
+    card.className = `pin-card pin-${link.type}` +
+      (link.type === 'announcement' ? ` pin-${link.color || 'blue'}` : '');
+    card.dataset.id = link.id;
+    card.draggable = true;
 
-  Object.values(courses).forEach(course => {
-    const courseEvents = events
-      .filter(e => e.course_key === course.key && !e.is_allday)
-      .sort((a,b) => a.start > b.start ? 1 : -1);
-
-    const total = courseEvents.length;
-    const past = courseEvents.filter(e => isPast(e, now)).length;
-
-    html += `<div class="course-section">
-      <div class="course-section-header">
-        <span class="course-dot" style="background:${course.color}"></span>
-        <span class="course-name">${course.name}</span>
-        <span class="course-teacher">👤 ${course.teacher}</span>
-        <span class="course-count">${past}/${total} שיעורים</span>
-      </div>`;
-
-    if (courseEvents.length === 0) {
-      html += `<div class="no-events">אין שיעורים ברשת</div>`;
-    } else {
-      courseEvents.forEach(ev => {
-        html += renderEventCard(ev, now);
-      });
+    let icon = 'üîó', body = '';
+    if (link.type === 'link') {
+      icon = 'üîó';
+      body = `<div class="pin-title">${esc(link.title)}</div>
+              <div class="pin-sub">${link.url ? new URL(link.url).hostname : ''}</div>`;
+      card.onclick = () => { if (link.url) window.open(link.url, '_blank'); };
+    } else if (link.type === 'announcement') {
+      icon = 'üì¢';
+      body = `<div class="pin-title">${esc(link.title)}</div>
+              <div class="pin-sub">${esc(link.text || '')}</div>`;
+    } else if (link.type === 'countdown') {
+      icon = '‚è±';
+      const daysLeft = Math.max(0, Math.ceil((new Date(link.due_date) - new Date()) / 86400000));
+      const total = Math.max(1, Math.ceil((new Date(link.due_date) - (link.created_at?.toDate?.() || new Date())) / 86400000));
+      const pct = Math.max(0, Math.min(100, ((total - daysLeft) / total) * 100));
+      body = `<div class="pin-title">${esc(link.title)}</div>
+              <div class="countdown-days">${daysLeft} ◊ô◊û◊ô◊ù ◊†◊ï◊™◊®◊ï</div>
+              <div class="countdown-bar"><div class="countdown-fill" style="width:${pct}%"></div></div>`;
     }
 
-    html += '</div>';
+    card.innerHTML = `
+      <div class="pin-icon">${icon}</div>
+      <div class="pin-body">${body}</div>
+      <div class="pin-actions">
+        <button class="pin-delete" onclick="event.stopPropagation();deleteLink('${link.id}')">üóë</button>
+      </div>`;
+    container.appendChild(card);
   });
 
-  html += '</div>';
-  container.innerHTML = html;
+  container.appendChild(addBtn);
 }
 
-// ── Tasks ──
-function renderTasks() {
-  const container = document.getElementById('tasksList');
-  const now = new Date();
+function toggleLinkFields() {
+  const type = document.getElementById('link-type').value;
+  document.getElementById('link-url-group').style.display = type === 'link' ? '' : 'none';
+  document.getElementById('link-text-group').style.display = type === 'announcement' ? '' : 'none';
+  document.getElementById('link-color-group').style.display = type === 'announcement' ? '' : 'none';
+  document.getElementById('link-due-group').style.display = type === 'countdown' ? '' : 'none';
+}
 
-  if (!allTasks.length) {
-    container.innerHTML = `<div class="tasks-empty">
-      <div style="font-size:2rem;margin-bottom:8px">📋</div>
-      <div>אין משימות עדיין</div>
-      <div style="font-size:0.8rem;margin-top:4px;color:var(--text-dim)">לחץ על "הוסף משימה" או שלח הודעה לבוט הווצאפ</div>
-    </div>`;
-    return;
+async function saveLink() {
+  const type = document.getElementById('link-type').value;
+  const data = {
+    type,
+    title: document.getElementById('link-title').value,
+    order: linksData.length,
+    created_by: document.getElementById('link-created-by').value || '◊ê◊†◊ï◊†◊ô◊û◊ô',
+    created_at: firebase.firestore.FieldValue.serverTimestamp()
+  };
+  if (type === 'link') data.url = document.getElementById('link-url').value;
+  if (type === 'announcement') {
+    data.text = document.getElementById('link-text').value;
+    data.color = document.getElementById('link-color').value;
   }
+  if (type === 'countdown') data.due_date = document.getElementById('link-due').value;
 
-  const sorted = [...allTasks].sort((a,b) => {
-    if (a.deadline && b.deadline) return a.deadline > b.deadline ? 1 : -1;
-    if (a.deadline) return -1;
-    return 1;
+  await db.collection('links').add(data);
+  closeModal('modal-link-add');
+  showToast('üìå ◊†◊ï◊°◊£ ◊ú◊§◊ô◊†◊ë◊ï◊®◊ì');
+  // Reset
+  document.getElementById('link-title').value = '';
+  document.getElementById('link-url').value = '';
+  document.getElementById('link-text').value = '';
+}
+
+async function deleteLink(id) {
+  if (confirm('◊ú◊û◊ó◊ï◊ß?')) {
+    await db.collection('links').doc(id).delete();
+    showToast('üóë ◊†◊û◊ó◊ß');
+  }
+}
+
+// ===================================================================
+// TASKS
+// ===================================================================
+function setupTasksListener() {
+  db.collection('tasks').orderBy('created_at', 'desc').onSnapshot(snap => {
+    tasksData = snap.docs.map(d => ({ id: d.id, ...d.data() }));
+    renderCalendar();
+    renderKanban();
+    renderArchive();
   });
+}
 
-  container.innerHTML = sorted.map(task => {
-    const course = courses[task.course_key] || {};
-    const color = course.color || '#6366f1';
-    const dlClass = deadlineClass(task.deadline, now);
-    const dlLabel = task.deadline ? formatDeadline(task.deadline, now) : 'ללא תאריך';
-    const statusClass = 'status-' + (task.status || 'open');
-    const statusLabel = {open:'פתוח', submitted:'הוגש', overdue:'עבר תאריך'}[task.status] || 'פתוח';
+// ===================================================================
+// SUMMARIES
+// ===================================================================
+function setupSummariesListener() {
+  db.collection('summaries').onSnapshot(snap => {
+    summariesData = {};
+    snap.docs.forEach(d => {
+      const s = d.data();
+      summariesData[s.event_uid] = { id: d.id, ...s };
+    });
+    renderSummaries();
+    document.getElementById('summaries-count').textContent = Object.keys(summariesData).length;
+  });
+}
 
-    return `<div class="task-card">
-      <span class="task-course-dot" style="background:${color}"></span>
-      <div class="task-body">
-        <div class="task-title">${task.title}</div>
-        <div class="task-meta">
-          ${course.short ? `<span>${course.short}</span>` : ''}
-          <span class="task-deadline ${dlClass}">📅 ${dlLabel}</span>
-          ${task.added_by ? `<span>👤 ${task.added_by}</span>` : ''}
+function renderSummaries() {
+  const grid = document.getElementById('summaries-grid');
+  const pastLessons = events.filter(e => e.type === 'lesson' && new Date(e.end) < new Date())
+    .sort((a, b) => new Date(b.start) - new Date(a.start));
+
+  grid.innerHTML = pastLessons.slice(0, 12).map(ev => {
+    const summary = summariesData[ev.uid];
+    const color = getCourseColor(ev.course_key);
+    const links = summary?.links || [];
+    const ICONS = { gdoc: 'üìÑ', slides: 'üìä', video: 'üé¨', file: 'üìÅ', notion: 'üìù', link: 'üîó' };
+    return `
+      <div class="summary-card" style="--course-color:${color}">
+        <div class="summary-header">
+          <div class="summary-title">${esc(ev.title)}</div>
+          <div class="summary-lesson">◊©◊ô◊¢◊ï◊® ${ev.lesson_number || ''} ¬∑ ${formatDate(ev.start)}</div>
         </div>
-      </div>
-      <span class="task-status ${statusClass}">${statusLabel}</span>
-    </div>`;
+        <div class="summary-links">
+          ${links.map(l => `
+            <a class="summary-link" href="${esc(l.url)}" target="_blank">
+              <span class="summary-link-icon">${ICONS[l.type] || 'üîó'}</span>
+              <div class="summary-link-info">
+                <div class="summary-link-title">${esc(l.title)}</div>
+                <div class="summary-link-by">${esc(l.added_by)}</div>
+              </div>
+            </a>`).join('')}
+        </div>
+        <button class="summary-add" onclick="openSummaryAdd('${ev.uid}','${ev.course_key}',${ev.lesson_number || 0})">
+          + ◊î◊ï◊°◊£ ◊°◊ô◊õ◊ï◊ù / ◊ß◊ô◊©◊ï◊®
+        </button>
+      </div>`;
   }).join('');
 }
 
-// ── Course Legend ──
-function buildCourseLegend() {
-  const container = document.getElementById('courseLegend');
-  container.innerHTML = Object.values(courses).map(c => `
-    <div class="course-pill" style="border-color:${c.color}40">
-      <span class="course-dot" style="background:${c.color}"></span>
+let pendingSummary = {};
+function openSummaryAdd(uid, courseKey, lessonNum) {
+  pendingSummary = { uid, courseKey, lessonNum };
+  document.getElementById('summary-link-title').value = '';
+  document.getElementById('summary-link-url').value = '';
+  openModal('modal-summary-add');
+}
+
+function detectLinkType(url) {
+  if (url.includes('docs.google.com/document')) return 'gdoc';
+  if (url.includes('docs.google.com/presentation') || url.includes('canva.com')) return 'slides';
+  if (url.includes('youtube.com') || url.includes('youtu.be')) return 'video';
+  if (url.includes('drive.google.com')) return 'file';
+  if (url.includes('notion.so')) return 'notion';
+  return 'link';
+}
+
+async function saveSummaryLink() {
+  const url = document.getElementById('summary-link-url').value;
+  const linkData = {
+    title: document.getElementById('summary-link-title').value,
+    url,
+    type: detectLinkType(url),
+    added_by: document.getElementById('summary-link-by').value || '◊ê◊†◊ï◊†◊ô◊û◊ô',
+    added_at: new Date().toISOString()
+  };
+
+  const existing = summariesData[pendingSummary.uid];
+  if (existing) {
+    await db.collection('summaries').doc(existing.id).update({
+      links: firebase.firestore.FieldValue.arrayUnion(linkData),
+      updated_at: firebase.firestore.FieldValue.serverTimestamp()
+    });
+  } else {
+    await db.collection('summaries').add({
+      event_uid: pendingSummary.uid,
+      course_key: pendingSummary.courseKey,
+      lesson_number: pendingSummary.lessonNum,
+      links: [linkData],
+      updated_at: firebase.firestore.FieldValue.serverTimestamp()
+    });
+  }
+  closeModal('modal-summary-add');
+  showToast('üìù ◊°◊ô◊õ◊ï◊ù ◊†◊ï◊°◊£');
+}
+
+// ===================================================================
+// CALENDAR
+// ===================================================================
+function setView(view) {
+  currentView = view;
+  document.querySelectorAll('.view-tabs button').forEach(b => b.classList.toggle('active', b.dataset.view === view));
+  renderCalendar();
+}
+
+function setGroup(g) {
+  activeGroup = g;
+  localStorage.setItem('group', g);
+  updateGroupButtons();
+  document.getElementById('setting-group').value = g;
+  renderCalendar();
+  renderKanban();
+}
+
+function navWeek(dir) {
+  if (currentView === 'monthly') {
+    currentMonth.setMonth(currentMonth.getMonth() + dir);
+  } else {
+    currentWeekStart.setDate(currentWeekStart.getDate() + dir * 7);
+  }
+  renderCalendar();
+}
+
+function goToday() {
+  currentWeekStart = getWeekStart(new Date());
+  currentMonth = new Date();
+  renderCalendar();
+}
+
+function filterEvents(evts) {
+  searchQuery = (document.getElementById('calendar-search')?.value || '').toLowerCase();
+  return evts.filter(e => {
+    if (activeGroup !== 'all' && e.group !== 'all' && e.group !== activeGroup) return false;
+    if (activeCourses.size > 0 && e.course_key && !activeCourses.has(e.course_key)) return false;
+    if (searchQuery && !e.title.toLowerCase().includes(searchQuery)) return false;
+    return true;
+  });
+}
+
+function buildCourseFilters() {
+  const container = document.getElementById('course-filters');
+  container.innerHTML = courses.map(c => `
+    <span class="course-chip ${activeCourses.has(c.key) ? 'active' : ''}"
+          style="border-color:${c.color};color:${c.color};--course-color:${c.color}"
+          onclick="toggleCourseFilter('${c.key}')">
       ${c.short}
+    </span>`).join('');
+}
+
+function toggleCourseFilter(key) {
+  if (activeCourses.has(key)) activeCourses.delete(key);
+  else activeCourses.add(key);
+  buildCourseFilters();
+  renderCalendar();
+}
+
+function getCalItems() {
+  const filteredEvents = filterEvents(events);
+  const activeTasks = tasksData.filter(t => t.status === 'active' && t.due_date);
+  const filteredTasks = activeTasks.filter(t => {
+    if (activeGroup !== 'all' && t.course_key) {
+      const course = courses.find(c => c.key === t.course_key);
+      if (course && course.group !== 'all' && course.group !== activeGroup) return false;
+    }
+    if (activeCourses.size > 0 && t.course_key && !activeCourses.has(t.course_key)) return false;
+    if (searchQuery && !t.title.toLowerCase().includes(searchQuery)) return false;
+    return true;
+  });
+  return { filteredEvents, filteredTasks };
+}
+
+function renderCalendar() {
+  const body = document.getElementById('calendar-body');
+  if (currentView === 'weekly') renderWeekly(body);
+  else if (currentView === 'monthly') renderMonthly(body);
+  else if (currentView === 'list') renderList(body);
+  else if (currentView === 'course') renderCourseView(body);
+  renderWidgets();
+}
+
+function renderWeekly(body) {
+  const { filteredEvents, filteredTasks } = getCalItems();
+  const ws = new Date(currentWeekStart);
+
+  // Update label
+  const we = new Date(ws); we.setDate(we.getDate() + 4);
+  document.getElementById('week-label').textContent = `${formatDate(ws)} ‚Äî ${formatDate(we)}`;
+
+  let html = '<div class="cal-weekly">';
+  for (let i = 0; i < 5; i++) {
+    const day = new Date(ws);
+    day.setDate(day.getDate() + i);
+    const dayStr = day.toISOString().slice(0, 10);
+    const today = isToday(day);
+
+    const dayEvents = filteredEvents.filter(e => e.start.startsWith(dayStr));
+    const dayTasks = filteredTasks.filter(t => t.due_date === dayStr);
+
+    html += `<div class="cal-day-col ${today ? 'today-col show-mobile' : 'show-mobile'}">
+      <div class="cal-day-header ${today ? 'today' : ''}">
+        <div class="day-name">${DAY_NAMES[day.getDay()]}</div>
+        ${formatDate(day)}
+      </div>
+      <div class="cal-day-events">`;
+
+    dayEvents.sort((a, b) => a.start.localeCompare(b.start)).forEach(ev => {
+      html += renderEventCard(ev);
+    });
+
+    dayTasks.forEach(t => {
+      html += renderTaskCard(t);
+    });
+
+    if (!dayEvents.length && !dayTasks.length) {
+      html += '<div class="widget-empty">◊ê◊ô◊ü ◊ê◊ô◊®◊ï◊¢◊ô◊ù</div>';
+    }
+
+    html += '</div></div>';
+  }
+  html += '</div>';
+  body.innerHTML = html;
+  updateLiveProgress();
+}
+
+function renderMonthly(body) {
+  const { filteredEvents, filteredTasks } = getCalItems();
+  const year = currentMonth.getFullYear(), month = currentMonth.getMonth();
+  document.getElementById('week-label').textContent = new Date(year, month).toLocaleDateString('he-IL', { month: 'long', year: 'numeric' });
+
+  const firstDay = new Date(year, month, 1).getDay();
+  const daysInMonth = new Date(year, month + 1, 0).getDate();
+
+  let html = '<div class="cal-monthly">';
+  // Headers
+  for (let d = 0; d < 7; d++) {
+    html += `<div style="text-align:center;font-size:0.72rem;color:var(--text-3);padding:4px">${DAY_NAMES[d]}</div>`;
+  }
+  // Empty cells
+  for (let i = 0; i < firstDay; i++) html += '<div class="cal-month-cell other-month"></div>';
+  // Days
+  for (let d = 1; d <= daysInMonth; d++) {
+    const date = new Date(year, month, d);
+    const dayStr = date.toISOString().slice(0, 10);
+    const today = isToday(date);
+    const dayEvents = filteredEvents.filter(e => e.start.startsWith(dayStr));
+    const dayTasks = filteredTasks.filter(t => t.due_date === dayStr);
+
+    html += `<div class="cal-month-cell ${today ? 'today-cell' : ''}" onclick="currentWeekStart=getWeekStart(new Date('${dayStr}'));setView('weekly')">
+      <div class="month-date">${d}</div>
+      <div class="month-dots">
+        ${dayEvents.map(e => `<div class="month-dot" style="background:${getCourseColor(e.course_key)}"></div>`).join('')}
+        ${dayTasks.map(t => `<div class="month-dot" style="background:var(--priority-${t.priority || 'mid'})"></div>`).join('')}
+      </div>
+    </div>`;
+  }
+  html += '</div>';
+  body.innerHTML = html;
+}
+
+function renderList(body) {
+  const { filteredEvents, filteredTasks } = getCalItems();
+  document.getElementById('week-label').textContent = '◊™◊¶◊ï◊í◊™ ◊®◊©◊ô◊û◊î';
+
+  const allItems = [
+    ...filteredEvents.map(e => ({ ...e, itemType: 'event', sortDate: e.start })),
+    ...filteredTasks.map(t => ({ ...t, itemType: 'task', sortDate: t.due_date }))
+  ].sort((a, b) => a.sortDate.localeCompare(b.sortDate));
+
+  let html = '<div class="cal-list">';
+  let lastDay = '';
+  allItems.forEach(item => {
+    const day = item.sortDate.slice(0, 10);
+    if (day !== lastDay) {
+      lastDay = day;
+      html += `<div class="cal-list-day">${formatDateFull(day)}</div>`;
+    }
+    const color = getCourseColor(item.course_key);
+    if (item.itemType === 'event') {
+      html += `<div class="cal-list-event" onclick="showLessonDetail('${item.uid}')">
+        <div class="cal-list-color" style="background:${color}"></div>
+        <div class="cal-list-info">
+          <div class="cal-list-title">${esc(item.title)}</div>
+          <div class="cal-list-time">${formatTime(item.start)} ‚Äî ${formatTime(item.end)} ¬∑ ${item.location || ''}</div>
+        </div>
+      </div>`;
+    } else {
+      html += `<div class="cal-list-event">
+        <div class="cal-list-color" style="background:var(--priority-${item.priority || 'mid'})"></div>
+        <div class="cal-list-info">
+          <div class="cal-list-title">üìå ${esc(item.title)}</div>
+          <div class="cal-list-time">◊¢◊ì ${formatDate(item.due_date)} ¬∑ ${getCourseName(item.course_key) || '◊õ◊ú◊ú◊ô'}</div>
+        </div>
+      </div>`;
+    }
+  });
+  html += '</div>';
+  body.innerHTML = html;
+}
+
+function renderCourseView(body) {
+  document.getElementById('week-label').textContent = '◊™◊¶◊ï◊í◊î ◊ú◊§◊ô ◊ß◊ï◊®◊°';
+  const { filteredEvents } = getCalItems();
+  const activeCourseKey = document.querySelector('.cal-course-tab.active')?.dataset.course || courses[0]?.key;
+
+  let html = '<div class="cal-course-tabs">';
+  courses.forEach(c => {
+    if (activeGroup !== 'all' && c.group !== 'all' && c.group !== activeGroup) return;
+    html += `<span class="cal-course-tab ${c.key === activeCourseKey ? 'active' : ''}"
+      style="border-color:${c.color};color:${c.color};${c.key === activeCourseKey ? `background:${c.color};color:#fff` : ''}"
+      data-course="${c.key}"
+      onclick="this.parentElement.querySelectorAll('.cal-course-tab').forEach(t=>t.classList.remove('active'));this.classList.add('active');this.style.background=this.style.borderColor;this.style.color='#fff';renderCalendar()">
+      ${c.short}
+    </span>`;
+  });
+  html += '</div><div class="cal-course-content">';
+
+  const courseEvents = filteredEvents
+    .filter(e => e.course_key === activeCourseKey)
+    .sort((a, b) => a.start.localeCompare(b.start));
+
+  courseEvents.forEach(ev => { html += renderEventCard(ev); });
+  if (!courseEvents.length) html += '<div class="widget-empty">◊ê◊ô◊ü ◊©◊ô◊¢◊ï◊®◊ô◊ù</div>';
+  html += '</div>';
+  body.innerHTML = html;
+}
+
+function renderEventCard(ev) {
+  const status = getEventStatus(ev);
+  const color = getCourseColor(ev.course_key);
+  const relatedTasks = tasksData.filter(t => t.linked_event_uid === ev.uid && t.status === 'active');
+  const statusLabels = { now: '◊¢◊õ◊©◊ô◊ï', today: '◊î◊ô◊ï◊ù', future: '◊¢◊™◊ô◊ì◊ô', past: '◊¢◊ë◊®' };
+
+  const progressHTML = status === 'now' ? (() => {
+    const start = new Date(ev.start).getTime(), end = new Date(ev.end).getTime();
+    const pct = Math.min(100, Math.max(0, ((Date.now() - start) / (end - start)) * 100));
+    return `<div class="progress-live"><div class="progress-live-fill" style="width:${pct}%"></div></div>`;
+  })() : '';
+
+  return `
+    <div class="cal-event lesson event-${status}" data-uid="${ev.uid}" data-course="${ev.course_key}"
+         style="--course-color:${color}" onclick="showLessonDetail('${ev.uid}')">
+      <div class="event-badges">
+        ${ev.lesson_number ? `<span class="badge badge-lesson">◊©◊ô◊¢◊ï◊® ${ev.lesson_number}</span>` : ''}
+        <span class="badge badge-${status}">${statusLabels[status]}</span>
+      </div>
+      <div class="event-title">${esc(ev.title)}</div>
+      <div class="event-meta">
+        <span>üïô ${formatTime(ev.start)}‚Äì${formatTime(ev.end)}</span>
+        ${ev.location ? `<span>üìç ${esc(ev.location)}</span>` : ''}
+      </div>
+      ${relatedTasks.length ? `
+        <div class="event-tasks">
+          <span class="tasks-toggle" onclick="event.stopPropagation();this.nextElementSibling.classList.toggle('open')">
+            ‚ñº ${relatedTasks.length} ◊û◊©◊ô◊û◊ï◊™ ◊ß◊©◊ï◊®◊ï◊™
+          </span>
+          <div class="tasks-list">
+            ${relatedTasks.map(t => `<div class="task-chip">üìå ${esc(t.title)}</div>`).join('')}
+          </div>
+        </div>` : ''}
+      ${progressHTML}
+      <div class="event-actions">
+        <button onclick="event.stopPropagation();openTaskWizardForLesson('${ev.uid}','${ev.course_key}')">+ ◊û◊©◊ô◊û◊î</button>
+        <button onclick="event.stopPropagation();openSummaryAdd('${ev.uid}','${ev.course_key}',${ev.lesson_number||0})">üìù ◊°◊ô◊õ◊ï◊ù</button>
+      </div>
+    </div>`;
+}
+
+function renderTaskCard(t) {
+  const color = getCourseColor(t.course_key);
+  const priorityLabels = { high: 'üî¥ ◊í◊ë◊ï◊î◊î', mid: 'üü° ◊ë◊ô◊†◊ï◊†◊ô◊™', low: 'üü¢ ◊†◊û◊ï◊õ◊î' };
+  return `
+    <div class="cal-event task" data-id="${t.id}" data-course="${t.course_key}" style="--course-color:${color}">
+      <div class="event-badges">
+        <span class="badge badge-priority-${t.priority || 'mid'}">${priorityLabels[t.priority || 'mid']}</span>
+      </div>
+      <div class="event-title">${esc(t.title)}</div>
+      <div class="event-meta">
+        ${t.course_key ? `<span>${getCourseName(t.course_key)}</span>` : ''}
+        <span>◊¢◊ì: ${formatDate(t.due_date)}</span>
+      </div>
+      ${t.description ? `<div class="event-desc">${esc(t.description)}</div>` : ''}
+      <div class="event-footer">
+        <span class="added-by">◊†◊ï◊°◊£ ◊¢"◊ô: ${esc(t.created_by || '')}</span>
+        <div class="event-actions">
+          <button onclick="deleteTask('${t.id}')">üóë</button>
+        </div>
+      </div>
+    </div>`;
+}
+
+function showLessonDetail(uid) {
+  const ev = events.find(e => e.uid === uid);
+  if (!ev) return;
+  const color = getCourseColor(ev.course_key);
+  const relatedTasks = tasksData.filter(t => t.linked_event_uid === uid && t.status === 'active');
+  const summary = summariesData[uid];
+
+  document.getElementById('lesson-detail-title').textContent = ev.title;
+  const ICONS = { gdoc: 'üìÑ', slides: 'üìä', video: 'üé¨', file: 'üìÅ', notion: 'üìù', link: 'üîó' };
+
+  document.getElementById('lesson-detail-body').innerHTML = `
+    <div style="display:flex;gap:12px;flex-wrap:wrap;margin-bottom:12px">
+      <span>üïô ${formatTime(ev.start)} ‚Äî ${formatTime(ev.end)}</span>
+      ${ev.location ? `<span>üìç ${esc(ev.location)}</span>` : ''}
+      <span style="color:${color}">‚óè ${getCourseName(ev.course_key)}</span>
+      ${ev.lesson_number ? `<span>◊©◊ô◊¢◊ï◊® ${ev.lesson_number}</span>` : ''}
+    </div>
+    ${relatedTasks.length ? `
+      <h4 style="font-size:0.85rem;margin-bottom:8px">üìå ◊û◊©◊ô◊û◊ï◊™ (${relatedTasks.length})</h4>
+      ${relatedTasks.map(t => `
+        <div style="padding:8px;background:var(--bg-surface2);border-radius:var(--radius-sm);margin-bottom:6px;font-size:0.82rem">
+          ${esc(t.title)} <span style="color:var(--text-3);font-size:0.72rem">${t.priority}</span>
+        </div>`).join('')}` : '<p style="color:var(--text-3);font-size:0.82rem">◊ê◊ô◊ü ◊û◊©◊ô◊û◊ï◊™ ◊ß◊©◊ï◊®◊ï◊™</p>'}
+    ${summary?.links?.length ? `
+      <h4 style="font-size:0.85rem;margin:12px 0 8px">üìö ◊°◊ô◊õ◊ï◊û◊ô◊ù</h4>
+      ${summary.links.map(l => `
+        <a href="${esc(l.url)}" target="_blank" class="summary-link">
+          <span class="summary-link-icon">${ICONS[l.type]||'üîó'}</span>
+          <div class="summary-link-info">
+            <div class="summary-link-title">${esc(l.title)}</div>
+            <div class="summary-link-by">${esc(l.added_by)}</div>
+          </div>
+        </a>`).join('')}` : ''}
+    <div style="display:flex;gap:8px;margin-top:16px">
+      <button class="btn-primary" onclick="closeModal('modal-lesson-detail');openTaskWizardForLesson('${uid}','${ev.course_key}')">+ ◊î◊ï◊°◊£ ◊û◊©◊ô◊û◊î</button>
+      <button class="btn-secondary" onclick="closeModal('modal-lesson-detail');openSummaryAdd('${uid}','${ev.course_key}',${ev.lesson_number||0})">üìù ◊î◊ï◊°◊£ ◊°◊ô◊õ◊ï◊ù</button>
+    </div>`;
+  openModal('modal-lesson-detail');
+}
+
+// ===================================================================
+// WIDGETS
+// ===================================================================
+function renderWidgets() {
+  const now = new Date();
+  const todayStr = now.toISOString().slice(0, 10);
+
+  // Today
+  const todayEvents = events.filter(e => e.start.startsWith(todayStr) && (!activeGroup || activeGroup === 'all' || e.group === 'all' || e.group === activeGroup));
+  const todayTasks = tasksData.filter(t => t.status === 'active' && t.due_date === todayStr);
+  const tc = document.getElementById('today-content');
+
+  if (!todayEvents.length && !todayTasks.length) {
+    tc.innerHTML = '<div class="widget-empty">◊ê◊ô◊ü ◊ê◊ô◊®◊ï◊¢◊ô◊ù ◊î◊ô◊ï◊ù üéâ</div>';
+  } else {
+    const nowEvent = todayEvents.find(e => getEventStatus(e) === 'now');
+    tc.innerHTML = todayEvents.map(ev => {
+      const status = getEventStatus(ev);
+      return `<div class="widget-event ${status === 'now' ? 'widget-now' : ''}">
+        <div class="we-color" style="background:${getCourseColor(ev.course_key)}"></div>
+        <div class="we-info">
+          <div class="we-title">${esc(ev.title)}</div>
+          <div class="we-time">${formatTime(ev.start)} ‚Äî ${formatTime(ev.end)} ${status === 'now' ? 'üü¢ ◊¢◊õ◊©◊ô◊ï' : ''}</div>
+        </div>
+      </div>`;
+    }).join('') + todayTasks.map(t => `
+      <div class="widget-event">
+        <div class="we-color" style="background:var(--priority-${t.priority || 'mid'})"></div>
+        <div class="we-info">
+          <div class="we-title">üìå ${esc(t.title)}</div>
+          <div class="we-time">${getCourseName(t.course_key) || '◊õ◊ú◊ú◊ô'}</div>
+        </div>
+      </div>`).join('');
+  }
+
+  // Upcoming 72h
+  const in72h = new Date(now.getTime() + 72 * 60 * 60 * 1000);
+  const upcoming = events.filter(e => {
+    const s = new Date(e.start);
+    return s > now && s <= in72h && (activeGroup === 'all' || e.group === 'all' || e.group === activeGroup);
+  }).sort((a, b) => a.start.localeCompare(b.start));
+  const upcomingTasks = tasksData.filter(t => {
+    if (t.status !== 'active' || !t.due_date) return false;
+    const d = new Date(t.due_date);
+    return d > now && d <= in72h;
+  });
+
+  const uc = document.getElementById('upcoming-content');
+  if (!upcoming.length && !upcomingTasks.length) {
+    uc.innerHTML = '<div class="widget-empty">◊ê◊ô◊ü ◊ê◊ô◊®◊ï◊¢◊ô◊ù ◊ë-72 ◊©◊¢◊ï◊™ ◊î◊ß◊®◊ï◊ë◊ï◊™</div>';
+  } else {
+    uc.innerHTML = upcoming.slice(0, 5).map(ev => `
+      <div class="widget-event">
+        <div class="we-color" style="background:${getCourseColor(ev.course_key)}"></div>
+        <div class="we-info">
+          <div class="we-title">${esc(ev.title)}</div>
+          <div class="we-time">${formatDateFull(ev.start)} ¬∑ ${formatTime(ev.start)}</div>
+        </div>
+      </div>`).join('') + upcomingTasks.slice(0, 3).map(t => `
+      <div class="widget-event">
+        <div class="we-color" style="background:var(--priority-${t.priority || 'mid'})"></div>
+        <div class="we-info">
+          <div class="we-title">üìå ${esc(t.title)}</div>
+          <div class="we-time">◊¢◊ì ${formatDate(t.due_date)}</div>
+        </div>
+      </div>`).join('');
+  }
+}
+
+function updateLiveProgress() {
+  document.querySelectorAll('.event-now .progress-live-fill').forEach(el => {
+    const card = el.closest('.cal-event');
+    const ev = events.find(e => e.uid === card?.dataset.uid);
+    if (!ev) return;
+    const start = new Date(ev.start).getTime(), end = new Date(ev.end).getTime();
+    const pct = Math.min(100, Math.max(0, ((Date.now() - start) / (end - start)) * 100));
+    el.style.width = pct + '%';
+  });
+}
+setInterval(updateLiveProgress, 30000);
+
+// ===================================================================
+// TASK WIZARD
+// ===================================================================
+let wizardState = { step: 1, isCoursed: null, courseKey: null, linkedEvent: null, dueDate: null, title: '', description: '', priority: 'mid', createdBy: '' };
+
+function openTaskWizard() {
+  wizardState = { step: 1, isCoursed: null, courseKey: null, linkedEvent: null, dueDate: null, title: '', description: '', priority: 'mid', createdBy: localStorage.getItem('userName') || '' };
+  renderWizard();
+  openModal('modal-task-wizard');
+}
+
+function openTaskWizardForLesson(uid, courseKey) {
+  const ev = events.find(e => e.uid === uid);
+  wizardState = {
+    step: 3, isCoursed: true, courseKey,
+    linkedEvent: ev, dueDate: ev ? ev.start.slice(0, 10) : null,
+    title: '', description: '', priority: 'mid',
+    createdBy: localStorage.getItem('userName') || ''
+  };
+  renderWizard();
+  openModal('modal-task-wizard');
+}
+
+function renderWizard() {
+  const stepsEl = document.getElementById('wizard-steps');
+  stepsEl.innerHTML = [1, 2, 3].map(s => `
+    <div class="wizard-step ${s === wizardState.step ? 'active' : ''} ${s < wizardState.step ? 'done' : ''}">${s < wizardState.step ? '‚úì' : s}</div>
+  `).join('');
+
+  const body = document.getElementById('wizard-body');
+  if (wizardState.step === 1) {
+    body.innerHTML = `
+      <p style="color:var(--text-2);font-size:0.85rem;margin-bottom:12px">◊ê◊ô◊ñ◊ï ◊û◊©◊ô◊û◊î?</p>
+      <div class="wizard-choices">
+        <div class="wizard-choice" onclick="wizardState.isCoursed=true;wizardState.step=2;renderWizard()">
+          <span class="choice-icon">üìö</span>◊ú◊ß◊ï◊®◊° ◊û◊°◊ï◊ô◊ù
+        </div>
+        <div class="wizard-choice" onclick="wizardState.isCoursed=false;wizardState.step=3;renderWizard()">
+          <span class="choice-icon">üìù</span>◊û◊©◊ô◊û◊î ◊õ◊ú◊ú◊ô◊™
+        </div>
+      </div>`;
+  } else if (wizardState.step === 2) {
+    if (!wizardState.courseKey) {
+      body.innerHTML = `
+        <p style="color:var(--text-2);font-size:0.85rem;margin-bottom:12px">◊ë◊ó◊® ◊ß◊ï◊®◊°:</p>
+        <div class="wizard-courses">
+          ${courses.filter(c => activeGroup === 'all' || c.group === 'all' || c.group === activeGroup).map(c => `
+            <div class="wizard-course" style="--course-color:${c.color};border-color:${c.color}30;color:${c.color}"
+                 onclick="wizardState.courseKey='${c.key}';renderWizard()">
+              ${c.short}<br><small style="color:var(--text-3)">${c.teacher || ''}</small>
+            </div>`).join('')}
+        </div>
+        <button class="btn-secondary" style="margin-top:12px" onclick="wizardState.step=1;renderWizard()">‚Üê ◊ó◊ñ◊ï◊®</button>`;
+    } else {
+      const futureEvents = events.filter(e =>
+        e.course_key === wizardState.courseKey && new Date(e.start) > new Date() && e.type === 'lesson'
+      ).sort((a, b) => a.start.localeCompare(b.start));
+
+      body.innerHTML = `
+        <p style="color:var(--text-2);font-size:0.85rem;margin-bottom:12px">◊ß◊©◊® ◊ú◊©◊ô◊¢◊ï◊® (◊ê◊ï◊§◊¶◊ô◊ï◊†◊ú◊ô):</p>
+        <div class="wizard-events">
+          ${futureEvents.map(e => `
+            <div class="wizard-event ${wizardState.linkedEvent?.uid === e.uid ? 'selected' : ''}"
+                 onclick="wizardState.linkedEvent=${JSON.stringify(e).replace(/"/g, '&quot;')};wizardState.dueDate='${e.start.slice(0,10)}';renderWizard()">
+              ◊©◊ô◊¢◊ï◊® ${e.lesson_number || ''} ‚Äî ${formatDate(e.start)} (${formatTime(e.start)})
+            </div>`).join('')}
+          <div class="wizard-event ${wizardState.linkedEvent === null && wizardState.dueDate ? 'selected' : ''}">
+            <label style="font-size:0.82rem">◊ê◊ï ◊ë◊ó◊® ◊™◊ê◊®◊ô◊ö:</label>
+            <input type="date" value="${wizardState.dueDate || ''}" style="margin-top:4px"
+                   onchange="wizardState.linkedEvent=null;wizardState.dueDate=this.value">
+          </div>
+        </div>
+        <div style="display:flex;gap:8px;margin-top:12px">
+          <button class="btn-secondary" onclick="wizardState.courseKey=null;renderWizard()">‚Üê ◊ó◊ñ◊ï◊®</button>
+          <button class="btn-primary" onclick="wizardState.step=3;renderWizard()">◊î◊û◊©◊ö ‚Üí</button>
+        </div>`;
+    }
+  } else if (wizardState.step === 3) {
+    body.innerHTML = `
+      <div class="form-group">
+        <label>◊õ◊ï◊™◊®◊™ ◊î◊û◊©◊ô◊û◊î</label>
+        <input type="text" id="wiz-title" value="${esc(wizardState.title)}" placeholder="◊õ◊™◊ô◊ë◊™ ◊ò◊ô◊ï◊ò◊î ◊®◊ê◊©◊ï◊†◊î...">
+      </div>
+      <div class="form-group">
+        <label>◊™◊ô◊ê◊ï◊® (◊ê◊ï◊§◊¶◊ô◊ï◊†◊ú◊ô)</label>
+        <textarea id="wiz-desc" placeholder="◊§◊®◊ò◊ô◊ù ◊†◊ï◊°◊§◊ô◊ù...">${esc(wizardState.description)}</textarea>
+      </div>
+      ${!wizardState.dueDate ? `
+        <div class="form-group">
+          <label>◊™◊ê◊®◊ô◊ö ◊ô◊¢◊ì</label>
+          <input type="date" id="wiz-date" value="">
+        </div>` : ''}
+      <div class="form-group">
+        <label>◊¢◊ì◊ô◊§◊ï◊™</label>
+        <div class="priority-buttons">
+          <button class="priority-btn ${wizardState.priority === 'high' ? 'selected' : ''}" data-p="high" onclick="wizardState.priority='high';document.querySelectorAll('.priority-btn').forEach(b=>b.classList.remove('selected'));this.classList.add('selected')">üî¥ ◊í◊ë◊ï◊î◊î</button>
+          <button class="priority-btn ${wizardState.priority === 'mid' ? 'selected' : ''}" data-p="mid" onclick="wizardState.priority='mid';document.querySelectorAll('.priority-btn').forEach(b=>b.classList.remove('selected'));this.classList.add('selected')">üü° ◊ë◊ô◊†◊ï◊†◊ô◊™</button>
+          <button class="priority-btn ${wizardState.priority === 'low' ? 'selected' : ''}" data-p="low" onclick="wizardState.priority='low';document.querySelectorAll('.priority-btn').forEach(b=>b.classList.remove('selected'));this.classList.add('selected')">üü¢ ◊†◊û◊ï◊õ◊î</button>
+        </div>
+      </div>
+      <div class="form-group">
+        <label>◊©◊ù (◊†◊ï◊°◊£ ◊¢"◊ô)</label>
+        <input type="text" id="wiz-by" value="${esc(wizardState.createdBy)}" placeholder="◊î◊©◊ù ◊©◊ú◊ö">
+      </div>
+      <div style="display:flex;gap:8px;margin-top:8px">
+        ${wizardState.step > 1 ? `<button class="btn-secondary" onclick="wizardState.step=${wizardState.isCoursed ? 2 : 1};renderWizard()">‚Üê ◊ó◊ñ◊ï◊®</button>` : ''}
+        <button class="btn-primary" onclick="saveWizardTask()">◊©◊û◊ï◊® ◊û◊©◊ô◊û◊î</button>
+      </div>`;
+  }
+}
+
+async function saveWizardTask() {
+  const title = document.getElementById('wiz-title')?.value;
+  if (!title) { showToast('◊†◊ê ◊ú◊û◊ú◊ê ◊õ◊ï◊™◊®◊™'); return; }
+  const desc = document.getElementById('wiz-desc')?.value || '';
+  const dateEl = document.getElementById('wiz-date');
+  const dueDate = wizardState.dueDate || dateEl?.value || null;
+  const by = document.getElementById('wiz-by')?.value || '◊ê◊†◊ï◊†◊ô◊û◊ô';
+
+  if (by && by !== '◊ê◊†◊ï◊†◊ô◊û◊ô') { localStorage.setItem('userName', by); }
+
+  await db.collection('tasks').add({
+    title,
+    description: desc,
+    due_date: dueDate,
+    linked_event_uid: wizardState.linkedEvent?.uid || null,
+    course_key: wizardState.courseKey || null,
+    priority: wizardState.priority,
+    status: 'active',
+    completed_globally: false,
+    created_by: by,
+    created_at: firebase.firestore.FieldValue.serverTimestamp()
+  });
+
+  closeModal('modal-task-wizard');
+  showToast('‚úÖ ◊û◊©◊ô◊û◊î ◊†◊ï◊°◊§◊î ‚Äî ◊õ◊ï◊ú◊ù ◊®◊ï◊ê◊ô◊ù ◊¢◊õ◊©◊ô◊ï');
+}
+
+async function deleteTask(id) {
+  if (confirm('◊ú◊û◊ó◊ï◊ß ◊û◊©◊ô◊û◊î?')) {
+    await db.collection('tasks').doc(id).delete();
+    showToast('üóë ◊û◊©◊ô◊û◊î ◊†◊û◊ó◊ß◊î');
+  }
+}
+
+// ===================================================================
+// KANBAN
+// ===================================================================
+function loadPersonalKanban() {
+  kanbanState = JSON.parse(localStorage.getItem('kanban') || '{}');
+  // Also load from Firebase
+  db.collection('personal_status').doc(userId).collection('tasks').get().then(snap => {
+    snap.docs.forEach(d => {
+      kanbanState[d.id] = d.data().status;
+    });
+    localStorage.setItem('kanban', JSON.stringify(kanbanState));
+    renderKanban();
+  });
+}
+
+function renderKanban() {
+  const activeTasks = tasksData.filter(t => t.status === 'active');
+  const cols = { todo: [], inprogress: [], done: [] };
+
+  activeTasks.forEach(t => {
+    const status = kanbanState[t.id] || 'todo';
+    if (cols[status]) cols[status].push(t);
+  });
+
+  ['todo', 'inprogress', 'done'].forEach(status => {
+    const container = document.getElementById(`kanban-${status}`);
+    document.getElementById(`kanban-count-${status}`).textContent = cols[status].length;
+    container.innerHTML = cols[status].map(t => {
+      const color = getCourseColor(t.course_key);
+      const pColor = t.priority === 'high' ? 'var(--priority-high)' : t.priority === 'low' ? 'var(--priority-low)' : 'var(--priority-mid)';
+      return `
+        <div class="kanban-card" draggable="true" data-id="${t.id}" style="--course-color:${color}">
+          <div class="kanban-card-title">
+            <span class="kanban-card-priority" style="background:${pColor}"></span>
+            ${esc(t.title)}
+          </div>
+          <div class="kanban-card-meta">
+            ${t.course_key ? `<span>${getCourseName(t.course_key)}</span>` : ''}
+            ${t.due_date ? `<span>◊¢◊ì ${formatDate(t.due_date)}</span>` : ''}
+          </div>
+        </div>`;
+    }).join('');
+  });
+
+  // Setup drag events
+  document.querySelectorAll('.kanban-card').forEach(card => {
+    card.addEventListener('dragstart', e => {
+      e.dataTransfer.setData('taskId', card.dataset.id);
+      card.classList.add('dragging');
+    });
+    card.addEventListener('dragend', () => card.classList.remove('dragging'));
+  });
+
+  document.querySelectorAll('.kanban-col').forEach(col => {
+    col.addEventListener('dragover', e => { e.preventDefault(); col.classList.add('drag-over'); });
+    col.addEventListener('dragleave', () => col.classList.remove('drag-over'));
+    col.addEventListener('drop', async e => {
+      e.preventDefault();
+      const taskId = e.dataTransfer.getData('taskId');
+      const newStatus = col.dataset.status;
+      col.classList.remove('drag-over');
+
+      kanbanState[taskId] = newStatus;
+      localStorage.setItem('kanban', JSON.stringify(kanbanState));
+
+      await db.collection('personal_status').doc(userId).collection('tasks').doc(taskId).set({
+        status: newStatus,
+        updated_at: firebase.firestore.FieldValue.serverTimestamp()
+      });
+
+      if (newStatus === 'done') triggerConfetti();
+      renderKanban();
+    });
+  });
+}
+
+// ===================================================================
+// ARCHIVE
+// ===================================================================
+function renderArchive() {
+  const cutoff = new Date(Date.now() - 24 * 60 * 60 * 1000);
+  const archived = tasksData.filter(t =>
+    t.status === 'archived' || (t.status === 'active' && t.due_date && new Date(t.due_date) < cutoff)
+  );
+  document.getElementById('archive-count').textContent = archived.length;
+  document.getElementById('archive-list').innerHTML = archived.map(t => `
+    <div class="archive-item">
+      <div class="event-title">${esc(t.title)}</div>
+      <span style="font-size:0.72rem;color:var(--text-3)">${t.due_date ? formatDate(t.due_date) : ''} ¬∑ ${getCourseName(t.course_key) || '◊õ◊ú◊ú◊ô'}</span>
     </div>`).join('');
 }
 
-// ── Course Select for Modal ──
-function buildCourseSelect() {
-  const sel = document.getElementById('taskCourse');
-  Object.values(courses).forEach(c => {
-    const opt = document.createElement('option');
-    opt.value = c.key;
-    opt.textContent = c.name;
-    sel.appendChild(opt);
-  });
+function toggleArchive() {
+  const section = document.getElementById('archive-section');
+  section.classList.toggle('collapsed');
+  document.getElementById('archive-arrow').textContent = section.classList.contains('collapsed') ? '‚óÄ' : '‚ñº';
 }
 
-// ═══════════════════════════════════════════════
-//  VIEW / GROUP SWITCHING
-// ═══════════════════════════════════════════════
-function setView(v, init=false) {
-  currentView = v;
-  localStorage.setItem('view', v);
-  document.querySelectorAll('#viewToggle button').forEach(b => {
-    b.classList.toggle('active', b.dataset.view === v);
-  });
-  document.getElementById('weekView').style.display = v === 'week' ? '' : 'none';
-  document.getElementById('listView').style.display = v === 'list' ? '' : 'none';
-  document.getElementById('courseView').style.display = v === 'course' ? '' : 'none';
-  if (!init) render();
+async function autoArchiveOverdueTasks() {
+  const cutoff = new Date(Date.now() - 48 * 60 * 60 * 1000);
+  const toArchive = tasksData.filter(t =>
+    t.status === 'active' && t.due_date && new Date(t.due_date) < cutoff
+  );
+  for (const task of toArchive) {
+    await db.collection('tasks').doc(task.id).update({ status: 'archived' });
+  }
 }
 
-function setGroup(g, init=false) {
-  currentGroup = g;
-  localStorage.setItem('group', g);
-  document.querySelectorAll('#groupToggle button').forEach(b => {
-    b.classList.toggle('active', b.dataset.group === g);
-  });
-  if (!init) render();
-}
-
-// ═══════════════════════════════════════════════
-//  TASK MODAL
-// ═══════════════════════════════════════════════
-function openTaskModal() {
-  document.getElementById('taskModal').classList.add('open');
-}
-function closeTaskModal() {
-  document.getElementById('taskModal').classList.remove('open');
-  document.getElementById('taskTitle').value = '';
-  document.getElementById('taskDeadline').value = '';
-  document.getElementById('taskAddedBy').value = '';
-}
-function saveTask() {
-  const title = document.getElementById('taskTitle').value.trim();
-  if (!title) { alert('נא להזין שם משימה'); return; }
-
-  const task = {
-    id: 't' + Date.now(),
-    title,
-    course_key: document.getElementById('taskCourse').value,
-    deadline: document.getElementById('taskDeadline').value,
-    added_by: document.getElementById('taskAddedBy').value.trim(),
-    status: 'open',
-    created_at: new Date().toISOString(),
+// ===================================================================
+// ICS MODAL
+// ===================================================================
+function showICalModal() {
+  const workerUrl = `https://samspigel.workers.dev/ics/${userId}`;
+  document.getElementById('ical-url').textContent = workerUrl;
+  document.getElementById('btn-copy-ical').onclick = () => {
+    navigator.clipboard.writeText(workerUrl).then(() => showToast('üìã ◊ß◊ô◊©◊ï◊® ◊î◊ï◊¢◊™◊ß!'));
   };
-
-  allTasks.unshift(task);
-  renderTasks();
-  closeTaskModal();
-
-  // Note: in production this would POST to the backend / GitHub API
-  alert('✅ המשימה נוספה מקומית.\nלשמירה קבועה — שלח לבוט הווצאפ או עדכן את tasks.json');
+  openModal('modal-ical');
 }
 
-// ═══════════════════════════════════════════════
-//  HELPERS
-// ═══════════════════════════════════════════════
-function toDateStr(d) {
-  return d.getFullYear() + '-' +
-    String(d.getMonth()+1).padStart(2,'0') + '-' +
-    String(d.getDate()).padStart(2,'0');
+// ===================================================================
+// MOBILE NAV
+// ===================================================================
+function mobileNav(section) {
+  document.querySelectorAll('#mobile-nav button').forEach(b => b.classList.remove('active'));
+  document.querySelector(`#mobile-nav button[data-section="${section}"]`).classList.add('active');
+  if (section === 'top') window.scrollTo({ top: 0, behavior: 'smooth' });
+  else document.getElementById(section)?.scrollIntoView({ behavior: 'smooth' });
 }
 
-function fmtTime(iso) {
-  if (!iso) return '';
-  const d = new Date(iso);
-  return d.getHours().toString().padStart(2,'0') + ':' + d.getMinutes().toString().padStart(2,'0');
+// ===================================================================
+// GLOBAL SEARCH
+// ===================================================================
+document.getElementById('global-search').addEventListener('input', function() {
+  document.getElementById('calendar-search').value = this.value;
+  renderCalendar();
+});
+
+// ===================================================================
+// HTML ESCAPE
+// ===================================================================
+function esc(s) {
+  if (!s) return '';
+  const d = document.createElement('div');
+  d.textContent = s;
+  return d.innerHTML;
 }
 
-function isNow(ev) {
-  const now = new Date();
-  return new Date(ev.start) <= now && now <= new Date(ev.end);
-}
+// ===================================================================
+// INIT
+// ===================================================================
+async function init() {
+  loadSettings();
 
-function isPast(ev, now) {
-  return new Date(ev.end) < now;
-}
-
-function getTimeStatus(ev, now) {
-  if (ev.status === 'cancelled') return { cls:'cancelled', label:'בוטל', badgeClass:'badge-cancelled' };
-  if (ev.status === 'postponed') return { cls:'postponed', label:'נדחה', badgeClass:'badge-postponed' };
-
-  const start = new Date(ev.start);
-  const end = new Date(ev.end);
-  const todayStr = toDateStr(now);
-  const evDateStr = ev.start?.split('T')[0];
-
-  if (isNow(ev)) return { cls:'now', label:'עכשיו', badgeClass:'badge-now' };
-
-  if (end < now) {
-    if (evDateStr === todayStr) return { cls:'past', label:'הסתיים היום', badgeClass:'badge-past' };
-    return { cls:'past', label:'עבר', badgeClass:'badge-past' };
+  // Load static data
+  try {
+    const [eventsRes, coursesRes] = await Promise.all([
+      fetch('data/events.json').then(r => r.ok ? r.json() : null).catch(() => null),
+      fetch('data/courses.json').then(r => r.ok ? r.json() : null).catch(() => null)
+    ]);
+    if (eventsRes?.events) events = eventsRes.events;
+    if (coursesRes) courses = coursesRes;
+  } catch (e) {
+    console.warn('Could not load static data:', e);
   }
 
-  if (evDateStr === todayStr) {
-    const minsLeft = Math.round((start - now) / 60000);
-    if (minsLeft <= 60) return { cls:'', label:`עוד ${minsLeft} דק'`, badgeClass:'badge-soon' };
-    return { cls:'', label:'היום', badgeClass:'badge-today' };
-  }
+  // Build course filters
+  buildCourseFilters();
 
-  return { cls:'', label:'עתידי', badgeClass:'' };
+  // Firebase listeners
+  setupLinksListener();
+  setupTasksListener();
+  setupSummariesListener();
+
+  // Personal kanban
+  loadPersonalKanban();
+
+  // Render
+  renderCalendar();
+  renderWidgets();
+
+  // Auto-archive
+  setTimeout(() => autoArchiveOverdueTasks(), 3000);
+
+  // Auto-refresh events every 30 min
+  setInterval(async () => {
+    try {
+      const r = await fetch('data/events.json');
+      if (r.ok) {
+        const d = await r.json();
+        if (d.events) { events = d.events; renderCalendar(); }
+      }
+    } catch (e) {}
+  }, 30 * 60 * 1000);
+
+  // Live progress update every 30s
+  setInterval(() => { renderWidgets(); updateLiveProgress(); }, 30000);
 }
 
-function deadlineClass(dl, now) {
-  if (!dl) return '';
-  const d = new Date(dl);
-  const diff = (d - now) / (1000 * 60 * 60 * 24);
-  if (diff < 0) return 'urgent';
-  if (diff <= 3) return 'urgent';
-  if (diff <= 7) return 'soon';
-  return 'ok';
-}
-
-function formatDeadline(dl, now) {
-  const d = new Date(dl + 'T12:00:00');
-  const diff = Math.round((d - now) / (1000 * 60 * 60 * 24));
-  if (diff < 0) return `עבר לפני ${Math.abs(diff)} ימים`;
-  if (diff === 0) return 'היום!';
-  if (diff === 1) return 'מחר';
-  if (diff <= 7) return `עוד ${diff} ימים`;
-  return `${d.getDate()}/${d.getMonth()+1}`;
-}
-
-function getUpcomingSchoolDays(from, count) {
-  // School days = Sunday (0) and Wednesday (3)
-  const result = [];
-  const d = new Date(from);
-  d.setHours(0,0,0,0);
-
-  // Include past 7 days + future 21 days
-  const start = new Date(d);
-  start.setDate(start.getDate() - 7);
-
-  // Also include any dates that have events
-  const eventDates = new Set(allEvents.map(e => e.start?.split('T')[0]).filter(Boolean));
-
-  // Get unique dates, prefer event dates
-  const dates = [...eventDates].sort();
-
-  // Return up to 2 current/upcoming school days
-  const now = new Date();
-  const upcoming = dates.filter(ds => new Date(ds + 'T23:59:00') >= new Date(now.getTime() - 7*24*60*60*1000));
-  return upcoming.slice(0, count * 2); // show more context
-}
-
-// ═══════════════════════════════════════════════
-//  BOOTSTRAP
-// ═══════════════════════════════════════════════
 init();
 </script>
 </body>
