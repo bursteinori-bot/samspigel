@@ -90,6 +90,8 @@ def get_group(course_key, start_iso):
 def fetch_ics(url):
     r = requests.get(url, timeout=15)
     r.raise_for_status()
+    # Force UTF-8 — Yedion sends UTF-8 but without charset in headers
+    r.encoding = 'utf-8'
     return r.text
 
 
