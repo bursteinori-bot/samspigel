@@ -1,0 +1,101 @@
+[
+  {
+    "key": "tachkir",
+    "name": "סדנת תחקיר",
+    "short": "תחקיר",
+    "teacher": "סיגל ראש",
+    "color": "#3B82F6",
+    "day": "sunday",
+    "group": "both"
+  },
+  {
+    "key": "location",
+    "name": "סדנת תסריט לוקיישן",
+    "short": "לוקיישן",
+    "teacher": "מתן יאיר",
+    "color": "#06B6D4",
+    "day": "sunday",
+    "group": "parallel",
+    "parallel_with": "short_story",
+    "group_b_time": "12:45",
+    "group_a_time": "14:30"
+  },
+  {
+    "key": "short_story",
+    "name": "סדנת הסיפור הקצר",
+    "short": "סיפור קצר",
+    "teacher": "אופיר טושה גפלה",
+    "color": "#10B981",
+    "day": "sunday",
+    "group": "parallel",
+    "parallel_with": "location",
+    "group_b_time": "14:30",
+    "group_a_time": "12:45"
+  },
+  {
+    "key": "israeli_cinema",
+    "name": "קולנוע ישראלי",
+    "short": "קולנוע ישראלי",
+    "teacher": "יערה עוזרי",
+    "color": "#8B5CF6",
+    "day": "sunday",
+    "group": "both"
+  },
+  {
+    "key": "film_history",
+    "name": "תולדות הקולנוע",
+    "short": "תולדות",
+    "teacher": "ארז דבורה",
+    "color": "#F59E0B",
+    "day": "wednesday",
+    "group": "both"
+  },
+  {
+    "key": "kids_series",
+    "name": "סדרת ילדים ונוער",
+    "short": "סדרת ילדים",
+    "teacher": "רז יובן",
+    "color": "#EAB308",
+    "day": "wednesday",
+    "group": "parallel",
+    "parallel_with": "scenes",
+    "group_b_time": "13:15",
+    "group_a_time": "15:00"
+  },
+  {
+    "key": "scenes",
+    "name": "עושים סצנות",
+    "short": "סצנות",
+    "teacher": "יעל הדיה",
+    "color": "#EC4899",
+    "day": "wednesday",
+    "group": "parallel",
+    "parallel_with": "kids_series",
+    "group_b_time": "15:00",
+    "group_a_time": "13:15"
+  },
+  {
+    "key": "web_series",
+    "name": "כתיבת סדרות רשת",
+    "short": "סדרות רשת",
+    "teacher": "יאיר אגמון",
+    "color": "#EF4444",
+    "day": "wednesday",
+    "group": "parallel",
+    "parallel_with": "directing",
+    "group_b_time": "17:00",
+    "group_a_time": "18:45"
+  },
+  {
+    "key": "directing",
+    "name": "בימוי לתסריטאים",
+    "short": "בימוי",
+    "teacher": "איתן ענר",
+    "color": "#6366F1",
+    "day": "wednesday",
+    "group": "parallel",
+    "parallel_with": "web_series",
+    "group_b_time": "18:45",
+    "group_a_time": "17:00"
+  }
+]

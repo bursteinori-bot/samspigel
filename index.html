@@ -1,0 +1,1071 @@
+<!DOCTYPE html>
+<html dir="rtl" lang="he">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>סם שפיגל | תסריטאות שנה א׳ סמסטר ב׳</title>
+  <style>
+    /* ── Reset & Base ── */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --bg: #0f1117;
+      --surface: #1a1d27;
+      --surface2: #22263a;
+      --border: #2e3347;
+      --text: #e8eaf0;
+      --text-muted: #7b82a0;
+      --text-dim: #4a5072;
+      --accent: #6366f1;
+      --green: #10b981;
+      --yellow: #f59e0b;
+      --red: #ef4444;
+      --radius: 10px;
+      --shadow: 0 2px 12px rgba(0,0,0,0.4);
+    }
+    html { font-size: 15px; }
+    body {
+      font-family: -apple-system, 'Segoe UI', Arial, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      min-height: 100vh;
+      line-height: 1.5;
+    }
+
+    /* ── Header ── */
+    header {
+      background: var(--surface);
+      border-bottom: 1px solid var(--border);
+      padding: 0 20px;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+    .header-inner {
+      max-width: 1100px;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      padding: 12px 0;
+      flex-wrap: wrap;
+    }
+    .logo {
+      font-size: 1.15rem;
+      font-weight: 700;
+      color: var(--text);
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .logo span { color: var(--accent); }
+    .header-controls {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      flex-wrap: wrap;
+      margin-right: auto;
+    }
+    .btn-group {
+      display: flex;
+      background: var(--surface2);
+      border-radius: 8px;
+      overflow: hidden;
+      border: 1px solid var(--border);
+    }
+    .btn-group button {
+      background: none;
+      border: none;
+      color: var(--text-muted);
+      padding: 6px 14px;
+      cursor: pointer;
+      font-size: 0.85rem;
+      font-family: inherit;
+      transition: all 0.15s;
+    }
+    .btn-group button.active {
+      background: var(--accent);
+      color: #fff;
+    }
+    .btn-group button:hover:not(.active) { background: var(--border); color: var(--text); }
+
+    .last-update {
+      font-size: 0.75rem;
+      color: var(--text-dim);
+    }
+
+    /* ── Main ── */
+    main {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 20px;
+    }
+
+    /* ── Today Banner ── */
+    .today-banner {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 14px 18px;
+      margin-bottom: 20px;
+    }
+    .today-banner h2 {
+      font-size: 1rem;
+      color: var(--text-muted);
+      font-weight: 500;
+      margin-bottom: 10px;
+    }
+    .today-banner h2 strong { color: var(--text); }
+    .now-card {
+      background: linear-gradient(135deg, #10b98122, #06b6d422);
+      border: 1px solid #10b98155;
+      border-radius: 8px;
+      padding: 12px 16px;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+    .now-dot {
+      width: 10px; height: 10px;
+      background: var(--green);
+      border-radius: 50%;
+      animation: pulse 1.5s infinite;
+      flex-shrink: 0;
+    }
+    @keyframes pulse {
+      0%, 100% { opacity: 1; transform: scale(1); }
+      50% { opacity: 0.5; transform: scale(1.3); }
+    }
+    .today-empty { color: var(--text-muted); font-size: 0.9rem; }
+
+    /* ── Section ── */
+    .section-title {
+      font-size: 0.9rem;
+      font-weight: 600;
+      color: var(--text-muted);
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      margin-bottom: 12px;
+    }
+
+    /* ── Week Grid ── */
+    .week-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+      margin-bottom: 24px;
+    }
+    @media (max-width: 640px) { .week-grid { grid-template-columns: 1fr; } }
+    .day-column {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      overflow: hidden;
+    }
+    .day-header {
+      padding: 10px 14px;
+      border-bottom: 1px solid var(--border);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .day-name { font-weight: 600; font-size: 0.95rem; }
+    .day-date { font-size: 0.8rem; color: var(--text-muted); }
+    .day-today-badge {
+      background: var(--accent);
+      color: #fff;
+      font-size: 0.7rem;
+      padding: 2px 8px;
+      border-radius: 20px;
+    }
+
+    /* ── Event Card ── */
+    .event-card {
+      padding: 10px 14px;
+      border-bottom: 1px solid var(--border);
+      position: relative;
+      transition: background 0.15s;
+    }
+    .event-card:last-child { border-bottom: none; }
+    .event-card:hover { background: var(--surface2); }
+    .event-card.past { opacity: 0.5; }
+    .event-card.now {
+      background: #10b98110;
+      border-right: 3px solid var(--green);
+    }
+    .event-card.cancelled {
+      opacity: 0.4;
+      text-decoration: line-through;
+    }
+    .event-card.postponed { border-right: 3px solid var(--yellow); }
+
+    .event-allday {
+      padding: 4px 14px;
+      font-size: 0.78rem;
+      background: #8b5cf620;
+      color: #a78bfa;
+      border-bottom: 1px solid var(--border);
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .course-dot {
+      width: 8px; height: 8px;
+      border-radius: 50%;
+      flex-shrink: 0;
+      display: inline-block;
+    }
+    .event-top {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      margin-bottom: 3px;
+    }
+    .lesson-num {
+      font-size: 0.7rem;
+      color: var(--text-dim);
+      font-weight: 600;
+      background: var(--surface2);
+      padding: 1px 6px;
+      border-radius: 4px;
+      flex-shrink: 0;
+    }
+    .event-title { font-weight: 600; font-size: 0.9rem; flex: 1; }
+    .status-badge {
+      font-size: 0.65rem;
+      padding: 2px 6px;
+      border-radius: 4px;
+      flex-shrink: 0;
+    }
+    .badge-now { background: #10b98130; color: var(--green); }
+    .badge-today { background: #f59e0b30; color: var(--yellow); }
+    .badge-soon { background: #6366f130; color: #a5b4fc; }
+    .badge-past { background: var(--surface2); color: var(--text-dim); }
+    .badge-cancelled { background: #ef444420; color: var(--red); }
+    .badge-postponed { background: #f59e0b20; color: var(--yellow); }
+
+    .event-meta {
+      display: flex;
+      gap: 10px;
+      font-size: 0.78rem;
+      color: var(--text-muted);
+      flex-wrap: wrap;
+    }
+    .event-meta span { display: flex; align-items: center; gap: 3px; }
+
+    /* ── List View ── */
+    .list-view { display: flex; flex-direction: column; gap: 10px; margin-bottom: 24px; }
+    .list-day-header {
+      font-size: 0.85rem;
+      font-weight: 600;
+      color: var(--text-muted);
+      padding: 6px 0;
+      border-bottom: 1px solid var(--border);
+    }
+    .list-event {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 12px 16px;
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      transition: background 0.15s;
+    }
+    .list-event:hover { background: var(--surface2); }
+    .list-event.past { opacity: 0.5; }
+    .list-event.now { border-color: var(--green); background: #10b98108; }
+    .list-course-bar {
+      width: 4px;
+      border-radius: 2px;
+      align-self: stretch;
+      flex-shrink: 0;
+    }
+    .list-event-body { flex: 1; }
+    .list-event-title { font-weight: 600; font-size: 0.95rem; margin-bottom: 4px; }
+    .list-event-meta { font-size: 0.8rem; color: var(--text-muted); display: flex; gap: 12px; flex-wrap: wrap; }
+
+    /* ── Tasks ── */
+    .tasks-section { margin-bottom: 24px; }
+    .tasks-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 12px;
+    }
+    .add-task-btn {
+      background: var(--accent);
+      color: #fff;
+      border: none;
+      padding: 6px 14px;
+      border-radius: 6px;
+      cursor: pointer;
+      font-size: 0.85rem;
+      font-family: inherit;
+    }
+    .add-task-btn:hover { background: #4f52d9; }
+    .task-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 12px 16px;
+      margin-bottom: 8px;
+      display: flex;
+      align-items: center;
+      gap: 14px;
+    }
+    .task-course-dot { width: 10px; height: 10px; border-radius: 50%; flex-shrink: 0; }
+    .task-body { flex: 1; }
+    .task-title { font-weight: 600; font-size: 0.9rem; margin-bottom: 3px; }
+    .task-meta { font-size: 0.78rem; color: var(--text-muted); display: flex; gap: 10px; }
+    .task-deadline { font-size: 0.75rem; }
+    .task-deadline.urgent { color: var(--red); }
+    .task-deadline.soon { color: var(--yellow); }
+    .task-deadline.ok { color: var(--green); }
+    .task-status {
+      font-size: 0.7rem;
+      padding: 2px 8px;
+      border-radius: 4px;
+      flex-shrink: 0;
+    }
+    .status-open { background: #6366f120; color: #a5b4fc; }
+    .status-submitted { background: #10b98120; color: var(--green); }
+    .status-overdue { background: #ef444420; color: var(--red); }
+    .tasks-empty {
+      color: var(--text-muted);
+      font-size: 0.9rem;
+      text-align: center;
+      padding: 30px;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+    }
+
+    /* ── Add Task Modal ── */
+    .modal-overlay {
+      position: fixed; inset: 0;
+      background: rgba(0,0,0,0.7);
+      z-index: 200;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 20px;
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 0.2s;
+    }
+    .modal-overlay.open { opacity: 1; pointer-events: all; }
+    .modal {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      padding: 24px;
+      width: 100%;
+      max-width: 480px;
+      transform: translateY(20px);
+      transition: transform 0.2s;
+    }
+    .modal-overlay.open .modal { transform: translateY(0); }
+    .modal h3 { font-size: 1.1rem; margin-bottom: 18px; }
+    .form-group { margin-bottom: 14px; }
+    .form-group label { display: block; font-size: 0.82rem; color: var(--text-muted); margin-bottom: 5px; }
+    .form-group input,
+    .form-group select,
+    .form-group textarea {
+      width: 100%;
+      background: var(--surface2);
+      border: 1px solid var(--border);
+      border-radius: 7px;
+      padding: 8px 12px;
+      color: var(--text);
+      font-family: inherit;
+      font-size: 0.9rem;
+    }
+    .form-group input:focus,
+    .form-group select:focus { outline: none; border-color: var(--accent); }
+    .modal-actions { display: flex; gap: 10px; justify-content: flex-end; margin-top: 18px; }
+    .btn-cancel {
+      background: var(--surface2);
+      border: 1px solid var(--border);
+      color: var(--text-muted);
+      padding: 8px 16px;
+      border-radius: 7px;
+      cursor: pointer;
+      font-family: inherit;
+    }
+    .btn-save {
+      background: var(--accent);
+      border: none;
+      color: #fff;
+      padding: 8px 18px;
+      border-radius: 7px;
+      cursor: pointer;
+      font-family: inherit;
+      font-weight: 600;
+    }
+    .btn-save:hover { background: #4f52d9; }
+
+    /* ── Course Pills ── */
+    .courses-legend {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-bottom: 20px;
+    }
+    .course-pill {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 20px;
+      padding: 4px 10px;
+      font-size: 0.78rem;
+      cursor: pointer;
+      transition: all 0.15s;
+    }
+    .course-pill.hidden-course { opacity: 0.35; }
+    .course-pill:hover { border-color: var(--text-muted); }
+
+    /* ── Footer ── */
+    footer {
+      text-align: center;
+      padding: 20px;
+      color: var(--text-dim);
+      font-size: 0.75rem;
+      border-top: 1px solid var(--border);
+      margin-top: 10px;
+    }
+
+    /* ── By Course View ── */
+    .by-course-view { display: flex; flex-direction: column; gap: 16px; margin-bottom: 24px; }
+    .course-section {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      overflow: hidden;
+    }
+    .course-section-header {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      padding: 12px 16px;
+      border-bottom: 1px solid var(--border);
+    }
+    .course-section-header .course-name { font-weight: 600; }
+    .course-section-header .course-teacher { font-size: 0.8rem; color: var(--text-muted); margin-right: auto; }
+    .course-count { font-size: 0.75rem; color: var(--text-dim); }
+    .no-events { padding: 14px 16px; color: var(--text-muted); font-size: 0.85rem; }
+  </style>
+</head>
+<body>
+
+<!-- ══ HEADER ══ -->
+<header>
+  <div class="header-inner">
+    <div class="logo">🎬 <span>סם שפיגל</span> | תסריטאות א׳ ב׳</div>
+    <div class="header-controls">
+      <div class="btn-group" id="viewToggle">
+        <button class="active" data-view="week" onclick="setView('week')">📅 שבועי</button>
+        <button data-view="list" onclick="setView('list')">📋 רשימה</button>
+        <button data-view="course" onclick="setView('course')">📚 לפי קורס</button>
+      </div>
+      <div class="btn-group" id="groupToggle">
+        <button data-group="all" onclick="setGroup('all')">הכל</button>
+        <button data-group="A" onclick="setGroup('A')">קבוצה א׳</button>
+        <button class="active" data-group="B" onclick="setGroup('B')">קבוצה ב׳</button>
+      </div>
+      <span class="last-update" id="lastUpdate">טוען...</span>
+    </div>
+  </div>
+</header>
+
+<!-- ══ MAIN ══ -->
+<main>
+
+  <!-- Today Banner -->
+  <div class="today-banner" id="todayBanner">
+    <h2>היום: <strong id="todayLabel">טוען...</strong></h2>
+    <div id="nowContainer"><div class="today-empty">אין שיעורים כרגע</div></div>
+  </div>
+
+  <!-- Course Legend -->
+  <div class="courses-legend" id="courseLegend"></div>
+
+  <!-- Views -->
+  <div id="weekView" class="view-panel"></div>
+  <div id="listView" class="view-panel" style="display:none"></div>
+  <div id="courseView" class="view-panel" style="display:none"></div>
+
+  <!-- Tasks -->
+  <div class="tasks-section">
+    <div class="tasks-header">
+      <div class="section-title">✅ משימות</div>
+      <button class="add-task-btn" onclick="openTaskModal()">+ הוסף משימה</button>
+    </div>
+    <div id="tasksList"></div>
+  </div>
+
+</main>
+
+<!-- ══ ADD TASK MODAL ══ -->
+<div class="modal-overlay" id="taskModal">
+  <div class="modal">
+    <h3>הוספת משימה חדשה</h3>
+    <div class="form-group">
+      <label>שם המשימה</label>
+      <input type="text" id="taskTitle" placeholder="לדוגמה: להגיש טיוטת תסריט" />
+    </div>
+    <div class="form-group">
+      <label>קורס</label>
+      <select id="taskCourse"><option value="">-- בחר קורס --</option></select>
+    </div>
+    <div class="form-group">
+      <label>דד-ליין</label>
+      <input type="date" id="taskDeadline" />
+    </div>
+    <div class="form-group">
+      <label>נוסף ע"י</label>
+      <input type="text" id="taskAddedBy" placeholder="שמך" />
+    </div>
+    <div class="modal-actions">
+      <button class="btn-cancel" onclick="closeTaskModal()">ביטול</button>
+      <button class="btn-save" onclick="saveTask()">שמור</button>
+    </div>
+  </div>
+</div>
+
+<footer>
+  🎬 דשבורד סם שפיגל | מתעדכן אוטומטית מ-Yedion | <span id="footerTime"></span>
+</footer>
+
+<script>
+// ═══════════════════════════════════════════════
+//  CONFIG
+// ═══════════════════════════════════════════════
+const REFRESH_INTERVAL = 30 * 1000; // 30 seconds
+
+const HE_DAYS = ['ראשון', 'שני', 'שלישי', 'רביעי', 'חמישי', 'שישי', 'שבת'];
+const HE_MONTHS = ['ינואר','פברואר','מרץ','אפריל','מאי','יוני','יולי','אוגוסט','ספטמבר','אוקטובר','נובמבר','דצמבר'];
+
+// Parallel course swapping rules for group toggle
+// When showing group A, swap these pairs within the same date
+const PARALLEL_SWAPS = [
+  ['location', 'short_story'],
+  ['kids_series', 'scenes'],
+  ['web_series', 'directing'],
+];
+
+// ═══════════════════════════════════════════════
+//  STATE
+// ═══════════════════════════════════════════════
+let allEvents = [];
+let allTasks = [];
+let courses = {};
+let currentView = localStorage.getItem('view') || 'week';
+let currentGroup = localStorage.getItem('group') || 'B';
+
+// ═══════════════════════════════════════════════
+//  INIT
+// ═══════════════════════════════════════════════
+async function init() {
+  await loadCourses();
+  await loadData();
+  setView(currentView, true);
+  setGroup(currentGroup, true);
+  render();
+  setInterval(render, REFRESH_INTERVAL);
+  setInterval(loadData, REFRESH_INTERVAL);
+  document.getElementById('footerTime').textContent = new Date().toLocaleDateString('he-IL');
+}
+
+async function loadCourses() {
+  try {
+    const r = await fetch('./data/courses.json');
+    const arr = await r.json();
+    arr.forEach(c => { courses[c.key] = c; });
+    buildCourseLegend();
+    buildCourseSelect();
+  } catch(e) {
+    console.error('Could not load courses.json', e);
+  }
+}
+
+async function loadData() {
+  // Events
+  try {
+    const r = await fetch('./data/events.json?t=' + Date.now());
+    const json = await r.json();
+    allEvents = json.events || json;
+    const meta = json.meta;
+    if (meta?.last_updated) {
+      const d = new Date(meta.last_updated);
+      document.getElementById('lastUpdate').textContent =
+        'עדכון: ' + d.toLocaleTimeString('he-IL', {hour:'2-digit', minute:'2-digit'});
+    }
+  } catch(e) {
+    console.warn('Using fallback event data');
+  }
+
+  // Tasks
+  try {
+    const r = await fetch('./data/tasks.json?t=' + Date.now());
+    allTasks = await r.json();
+  } catch(e) { allTasks = []; }
+}
+
+// ═══════════════════════════════════════════════
+//  RENDER
+// ═══════════════════════════════════════════════
+function render() {
+  const events = applyGroupFilter(allEvents);
+  renderTodayBanner(events);
+  renderWeekView(events);
+  renderListView(events);
+  renderCourseView(events);
+  renderTasks();
+}
+
+function applyGroupFilter(events) {
+  if (currentGroup === 'all') return events;
+  // For group A: swap parallel courses times
+  if (currentGroup === 'A') {
+    return events.map(ev => {
+      let e = {...ev};
+      // If this course belongs to a parallel pair and is tagged as group B time,
+      // mark it so we can show the A perspective
+      return e;
+    });
+    // For now, group A = show events tagged group A or both
+  }
+  // Group B or all: show as-is
+  return events;
+}
+
+// ── Today Banner ──
+function renderTodayBanner(events) {
+  const now = new Date();
+  const todayStr = toDateStr(now);
+  const dayName = HE_DAYS[now.getDay()];
+  const dateLabel = `${dayName}, ${now.getDate()} ב${HE_MONTHS[now.getMonth()]}`;
+  document.getElementById('todayLabel').textContent = dateLabel;
+
+  const todayEvents = events.filter(e => e.start?.startsWith(todayStr) && !e.is_allday);
+  const nowEv = todayEvents.find(e => isNow(e));
+
+  const container = document.getElementById('nowContainer');
+  if (nowEv) {
+    const course = courses[nowEv.course_key] || {};
+    container.innerHTML = `
+      <div class="now-card">
+        <div class="now-dot"></div>
+        <div>
+          <strong>${nowEv.title}</strong>
+          <div style="font-size:0.8rem;color:var(--text-muted);margin-top:2px">
+            שיעור ${nowEv.lesson_number || ''} · ${fmtTime(nowEv.start)} – ${fmtTime(nowEv.end)}
+            ${nowEv.location ? '· ' + nowEv.location : ''}
+          </div>
+        </div>
+      </div>`;
+  } else {
+    // Next event today
+    const upcoming = todayEvents.filter(e => new Date(e.start) > now);
+    if (upcoming.length) {
+      const next = upcoming[0];
+      const mins = Math.round((new Date(next.start) - now) / 60000);
+      container.innerHTML = `<div class="today-empty">
+        ⏰ הבא: <strong>${next.title}</strong> — עוד ${mins} דקות (${fmtTime(next.start)})
+      </div>`;
+    } else if (todayEvents.length) {
+      container.innerHTML = `<div class="today-empty">✅ כל שיעורי היום הסתיימו (${todayEvents.length} שיעורים)</div>`;
+    } else {
+      container.innerHTML = `<div class="today-empty">📅 אין שיעורים היום</div>`;
+    }
+  }
+}
+
+// ── Week View ──
+function renderWeekView(events) {
+  const container = document.getElementById('weekView');
+  const now = new Date();
+
+  // Get the two upcoming school days (Sunday + Wednesday)
+  const schoolDays = getUpcomingSchoolDays(now, 2);
+  const allDays = new Set(events.map(e => e.start?.split('T')[0]).filter(Boolean));
+
+  let html = '<div class="section-title">שיעורים השבוע</div><div class="week-grid">';
+
+  schoolDays.forEach(dateStr => {
+    const dayEvents = events
+      .filter(e => e.start?.startsWith(dateStr))
+      .sort((a,b) => a.start > b.start ? 1 : -1);
+
+    const date = new Date(dateStr + 'T12:00:00');
+    const isToday = dateStr === toDateStr(now);
+    const dayName = HE_DAYS[date.getDay()];
+    const dateLabel = `${date.getDate()}/${date.getMonth()+1}`;
+
+    const allDay = dayEvents.filter(e => e.is_allday);
+    const regular = dayEvents.filter(e => !e.is_allday);
+
+    html += `<div class="day-column">
+      <div class="day-header">
+        <div class="day-name">${dayName}</div>
+        <div style="display:flex;gap:8px;align-items:center">
+          <span class="day-date">${dateLabel}</span>
+          ${isToday ? '<span class="day-today-badge">היום</span>' : ''}
+        </div>
+      </div>`;
+
+    allDay.forEach(e => {
+      html += `<div class="event-allday">🗓️ ${e.title}</div>`;
+    });
+
+    if (regular.length === 0) {
+      html += `<div class="event-card"><span class="today-empty" style="font-size:0.85rem">אין שיעורים</span></div>`;
+    }
+
+    regular.forEach(ev => {
+      html += renderEventCard(ev, now);
+    });
+
+    html += '</div>';
+  });
+
+  html += '</div>';
+  container.innerHTML = html;
+}
+
+function renderEventCard(ev, now) {
+  const course = courses[ev.course_key] || {};
+  const color = course.color || '#6366f1';
+  const status = getTimeStatus(ev, now);
+  const cardClass = ['event-card', status.cls, ev.status !== 'confirmed' ? ev.status : ''].filter(Boolean).join(' ');
+
+  return `<div class="${cardClass}">
+    <div class="event-top">
+      <span class="course-dot" style="background:${color}"></span>
+      ${ev.lesson_number ? `<span class="lesson-num">שיעור ${ev.lesson_number}</span>` : ''}
+      <span class="event-title">${ev.title}</span>
+      <span class="status-badge ${status.badgeClass}">${status.label}</span>
+    </div>
+    <div class="event-meta">
+      <span>🕐 ${fmtTime(ev.start)}–${fmtTime(ev.end)}</span>
+      ${ev.location ? `<span>📍 ${ev.location}</span>` : ''}
+      ${course.teacher ? `<span>👤 ${course.teacher}</span>` : ''}
+    </div>
+  </div>`;
+}
+
+// ── List View ──
+function renderListView(events) {
+  const container = document.getElementById('listView');
+  const now = new Date();
+  const sorted = [...events].sort((a,b) => a.start > b.start ? 1 : -1);
+
+  // Group by date
+  const byDate = {};
+  sorted.forEach(ev => {
+    const d = ev.start?.split('T')[0];
+    if (!d) return;
+    if (!byDate[d]) byDate[d] = [];
+    byDate[d].push(ev);
+  });
+
+  let html = '<div class="section-title">כל השיעורים</div><div class="list-view">';
+
+  Object.entries(byDate).forEach(([dateStr, evs]) => {
+    const date = new Date(dateStr + 'T12:00:00');
+    const isToday = dateStr === toDateStr(now);
+    const isPast = date < now && !isToday;
+    const dayName = HE_DAYS[date.getDay()];
+    const dateLabel = `${dayName}, ${date.getDate()} ב${HE_MONTHS[date.getMonth()]}`;
+
+    html += `<div class="list-day-header">${dateLabel}${isToday ? ' <span class="day-today-badge">היום</span>' : ''}</div>`;
+
+    evs.forEach(ev => {
+      const course = courses[ev.course_key] || {};
+      const color = course.color || '#6366f1';
+      const status = getTimeStatus(ev, now);
+      const cls = ['list-event', status.cls].join(' ');
+
+      html += `<div class="${cls}">
+        <div class="list-course-bar" style="background:${color}"></div>
+        <div class="list-event-body">
+          <div class="list-event-title">
+            ${ev.lesson_number ? `<span class="lesson-num" style="margin-left:6px">שיעור ${ev.lesson_number}</span>` : ''}
+            ${ev.title}
+          </div>
+          <div class="list-event-meta">
+            <span>🕐 ${fmtTime(ev.start)}–${fmtTime(ev.end)}</span>
+            ${ev.location ? `<span>📍 ${ev.location}</span>` : ''}
+            ${course.teacher ? `<span>👤 ${course.teacher}</span>` : ''}
+          </div>
+        </div>
+        <span class="status-badge ${status.badgeClass}">${status.label}</span>
+      </div>`;
+    });
+  });
+
+  html += '</div>';
+  container.innerHTML = html;
+}
+
+// ── By Course View ──
+function renderCourseView(events) {
+  const container = document.getElementById('courseView');
+  const now = new Date();
+
+  let html = '<div class="section-title">לפי קורס</div><div class="by-course-view">';
+
+  Object.values(courses).forEach(course => {
+    const courseEvents = events
+      .filter(e => e.course_key === course.key && !e.is_allday)
+      .sort((a,b) => a.start > b.start ? 1 : -1);
+
+    const total = courseEvents.length;
+    const past = courseEvents.filter(e => isPast(e, now)).length;
+
+    html += `<div class="course-section">
+      <div class="course-section-header">
+        <span class="course-dot" style="background:${course.color}"></span>
+        <span class="course-name">${course.name}</span>
+        <span class="course-teacher">👤 ${course.teacher}</span>
+        <span class="course-count">${past}/${total} שיעורים</span>
+      </div>`;
+
+    if (courseEvents.length === 0) {
+      html += `<div class="no-events">אין שיעורים ברשת</div>`;
+    } else {
+      courseEvents.forEach(ev => {
+        html += renderEventCard(ev, now);
+      });
+    }
+
+    html += '</div>';
+  });
+
+  html += '</div>';
+  container.innerHTML = html;
+}
+
+// ── Tasks ──
+function renderTasks() {
+  const container = document.getElementById('tasksList');
+  const now = new Date();
+
+  if (!allTasks.length) {
+    container.innerHTML = `<div class="tasks-empty">
+      <div style="font-size:2rem;margin-bottom:8px">📋</div>
+      <div>אין משימות עדיין</div>
+      <div style="font-size:0.8rem;margin-top:4px;color:var(--text-dim)">לחץ על "הוסף משימה" או שלח הודעה לבוט הווצאפ</div>
+    </div>`;
+    return;
+  }
+
+  const sorted = [...allTasks].sort((a,b) => {
+    if (a.deadline && b.deadline) return a.deadline > b.deadline ? 1 : -1;
+    if (a.deadline) return -1;
+    return 1;
+  });
+
+  container.innerHTML = sorted.map(task => {
+    const course = courses[task.course_key] || {};
+    const color = course.color || '#6366f1';
+    const dlClass = deadlineClass(task.deadline, now);
+    const dlLabel = task.deadline ? formatDeadline(task.deadline, now) : 'ללא תאריך';
+    const statusClass = 'status-' + (task.status || 'open');
+    const statusLabel = {open:'פתוח', submitted:'הוגש', overdue:'עבר תאריך'}[task.status] || 'פתוח';
+
+    return `<div class="task-card">
+      <span class="task-course-dot" style="background:${color}"></span>
+      <div class="task-body">
+        <div class="task-title">${task.title}</div>
+        <div class="task-meta">
+          ${course.short ? `<span>${course.short}</span>` : ''}
+          <span class="task-deadline ${dlClass}">📅 ${dlLabel}</span>
+          ${task.added_by ? `<span>👤 ${task.added_by}</span>` : ''}
+        </div>
+      </div>
+      <span class="task-status ${statusClass}">${statusLabel}</span>
+    </div>`;
+  }).join('');
+}
+
+// ── Course Legend ──
+function buildCourseLegend() {
+  const container = document.getElementById('courseLegend');
+  container.innerHTML = Object.values(courses).map(c => `
+    <div class="course-pill" style="border-color:${c.color}40">
+      <span class="course-dot" style="background:${c.color}"></span>
+      ${c.short}
+    </div>`).join('');
+}
+
+// ── Course Select for Modal ──
+function buildCourseSelect() {
+  const sel = document.getElementById('taskCourse');
+  Object.values(courses).forEach(c => {
+    const opt = document.createElement('option');
+    opt.value = c.key;
+    opt.textContent = c.name;
+    sel.appendChild(opt);
+  });
+}
+
+// ═══════════════════════════════════════════════
+//  VIEW / GROUP SWITCHING
+// ═══════════════════════════════════════════════
+function setView(v, init=false) {
+  currentView = v;
+  localStorage.setItem('view', v);
+  document.querySelectorAll('#viewToggle button').forEach(b => {
+    b.classList.toggle('active', b.dataset.view === v);
+  });
+  document.getElementById('weekView').style.display = v === 'week' ? '' : 'none';
+  document.getElementById('listView').style.display = v === 'list' ? '' : 'none';
+  document.getElementById('courseView').style.display = v === 'course' ? '' : 'none';
+  if (!init) render();
+}
+
+function setGroup(g, init=false) {
+  currentGroup = g;
+  localStorage.setItem('group', g);
+  document.querySelectorAll('#groupToggle button').forEach(b => {
+    b.classList.toggle('active', b.dataset.group === g);
+  });
+  if (!init) render();
+}
+
+// ═══════════════════════════════════════════════
+//  TASK MODAL
+// ═══════════════════════════════════════════════
+function openTaskModal() {
+  document.getElementById('taskModal').classList.add('open');
+}
+function closeTaskModal() {
+  document.getElementById('taskModal').classList.remove('open');
+  document.getElementById('taskTitle').value = '';
+  document.getElementById('taskDeadline').value = '';
+  document.getElementById('taskAddedBy').value = '';
+}
+function saveTask() {
+  const title = document.getElementById('taskTitle').value.trim();
+  if (!title) { alert('נא להזין שם משימה'); return; }
+
+  const task = {
+    id: 't' + Date.now(),
+    title,
+    course_key: document.getElementById('taskCourse').value,
+    deadline: document.getElementById('taskDeadline').value,
+    added_by: document.getElementById('taskAddedBy').value.trim(),
+    status: 'open',
+    created_at: new Date().toISOString(),
+  };
+
+  allTasks.unshift(task);
+  renderTasks();
+  closeTaskModal();
+
+  // Note: in production this would POST to the backend / GitHub API
+  alert('✅ המשימה נוספה מקומית.\nלשמירה קבועה — שלח לבוט הווצאפ או עדכן את tasks.json');
+}
+
+// ═══════════════════════════════════════════════
+//  HELPERS
+// ═══════════════════════════════════════════════
+function toDateStr(d) {
+  return d.getFullYear() + '-' +
+    String(d.getMonth()+1).padStart(2,'0') + '-' +
+    String(d.getDate()).padStart(2,'0');
+}
+
+function fmtTime(iso) {
+  if (!iso) return '';
+  const d = new Date(iso);
+  return d.getHours().toString().padStart(2,'0') + ':' + d.getMinutes().toString().padStart(2,'0');
+}
+
+function isNow(ev) {
+  const now = new Date();
+  return new Date(ev.start) <= now && now <= new Date(ev.end);
+}
+
+function isPast(ev, now) {
+  return new Date(ev.end) < now;
+}
+
+function getTimeStatus(ev, now) {
+  if (ev.status === 'cancelled') return { cls:'cancelled', label:'בוטל', badgeClass:'badge-cancelled' };
+  if (ev.status === 'postponed') return { cls:'postponed', label:'נדחה', badgeClass:'badge-postponed' };
+
+  const start = new Date(ev.start);
+  const end = new Date(ev.end);
+  const todayStr = toDateStr(now);
+  const evDateStr = ev.start?.split('T')[0];
+
+  if (isNow(ev)) return { cls:'now', label:'עכשיו', badgeClass:'badge-now' };
+
+  if (end < now) {
+    if (evDateStr === todayStr) return { cls:'past', label:'הסתיים היום', badgeClass:'badge-past' };
+    return { cls:'past', label:'עבר', badgeClass:'badge-past' };
+  }
+
+  if (evDateStr === todayStr) {
+    const minsLeft = Math.round((start - now) / 60000);
+    if (minsLeft <= 60) return { cls:'', label:`עוד ${minsLeft} דק'`, badgeClass:'badge-soon' };
+    return { cls:'', label:'היום', badgeClass:'badge-today' };
+  }
+
+  return { cls:'', label:'עתידי', badgeClass:'' };
+}
+
+function deadlineClass(dl, now) {
+  if (!dl) return '';
+  const d = new Date(dl);
+  const diff = (d - now) / (1000 * 60 * 60 * 24);
+  if (diff < 0) return 'urgent';
+  if (diff <= 3) return 'urgent';
+  if (diff <= 7) return 'soon';
+  return 'ok';
+}
+
+function formatDeadline(dl, now) {
+  const d = new Date(dl + 'T12:00:00');
+  const diff = Math.round((d - now) / (1000 * 60 * 60 * 24));
+  if (diff < 0) return `עבר לפני ${Math.abs(diff)} ימים`;
+  if (diff === 0) return 'היום!';
+  if (diff === 1) return 'מחר';
+  if (diff <= 7) return `עוד ${diff} ימים`;
+  return `${d.getDate()}/${d.getMonth()+1}`;
+}
+
+function getUpcomingSchoolDays(from, count) {
+  // School days = Sunday (0) and Wednesday (3)
+  const result = [];
+  const d = new Date(from);
+  d.setHours(0,0,0,0);
+
+  // Include past 7 days + future 21 days
+  const start = new Date(d);
+  start.setDate(start.getDate() - 7);
+
+  // Also include any dates that have events
+  const eventDates = new Set(allEvents.map(e => e.start?.split('T')[0]).filter(Boolean));
+
+  // Get unique dates, prefer event dates
+  const dates = [...eventDates].sort();
+
+  // Return up to 2 current/upcoming school days
+  const now = new Date();
+  const upcoming = dates.filter(ds => new Date(ds + 'T23:59:00') >= new Date(now.getTime() - 7*24*60*60*1000));
+  return upcoming.slice(0, count * 2); // show more context
+}
+
+// ═══════════════════════════════════════════════
+//  BOOTSTRAP
+// ═══════════════════════════════════════════════
+init();
+</script>
+</body>
+</html>
