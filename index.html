@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>◊°◊ù ◊©◊§◊ô◊í◊ú ‚Äî ◊ì◊©◊ë◊ï◊®◊ì ◊õ◊ô◊™◊™◊ô</title>
+<title>סם שפיגל — דשבורד כיתתי</title>
 <link href="https://fonts.googleapis.com/css2?family=Heebo:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
 <style>
 /* ===== CSS VARIABLES ===== */
@@ -254,7 +254,7 @@ a { color: var(--accent); text-decoration: none; }
   font-size: 0.78rem; width: 150px;
 }
 
-/* Calendar Body ‚Äî Weekly */
+/* Calendar Body — Weekly */
 .cal-weekly {
   display: grid; grid-template-columns: repeat(5, 1fr); gap: 12px;
 }
@@ -339,7 +339,7 @@ a { color: var(--accent); text-decoration: none; }
 .progress-live-fill { height: 100%; background: var(--status-now); border-radius: 2px; transition: width 1s linear; }
 .event-now .progress-live { display: block; }
 
-/* Calendar ‚Äî Monthly */
+/* Calendar — Monthly */
 .cal-monthly { display: grid; grid-template-columns: repeat(7, 1fr); gap: 4px; }
 .cal-month-cell {
   min-height: 80px; padding: 6px;
@@ -352,7 +352,7 @@ a { color: var(--accent); text-decoration: none; }
 .month-dots { display: flex; gap: 3px; flex-wrap: wrap; }
 .month-dot { width: 8px; height: 8px; border-radius: 50%; }
 
-/* Calendar ‚Äî List */
+/* Calendar — List */
 .cal-list { display: flex; flex-direction: column; gap: 8px; }
 .cal-list-day { font-size: 0.85rem; font-weight: 600; padding: 8px 0; border-bottom: 1px solid var(--border); }
 .cal-list-event {
@@ -367,7 +367,7 @@ a { color: var(--accent); text-decoration: none; }
 .cal-list-title { font-size: 0.82rem; font-weight: 500; }
 .cal-list-time { font-size: 0.72rem; color: var(--text-3); }
 
-/* Calendar ‚Äî Course view */
+/* Calendar — Course view */
 .cal-course-tabs { display: flex; gap: 6px; margin-bottom: 12px; flex-wrap: wrap; }
 .cal-course-tab {
   padding: 6px 14px; border-radius: var(--radius-xl);
@@ -406,6 +406,30 @@ a { color: var(--accent); text-decoration: none; }
   transition: all 0.2s; margin-top: 8px;
 }
 .summary-add:hover { border-color: var(--accent); color: var(--accent); }
+
+/* ===== LESSON DETAIL ENHANCEMENTS ===== */
+.lesson-meta { display:flex; gap:10px; flex-wrap:wrap; margin-bottom:14px; font-size:0.85rem; color:var(--text-2); }
+.lesson-section-title { font-size:0.85rem; font-weight:600; margin:14px 0 8px; color:var(--text-1); }
+.lesson-task-item {
+  padding:8px 10px; background:var(--bg-surface2); border-radius:var(--radius-sm);
+  margin-bottom:6px; font-size:0.82rem; display:flex; justify-content:space-between; align-items:center;
+}
+.priority-tag { font-size:0.68rem; color:var(--text-3); background:var(--bg-glass); padding:2px 7px; border-radius:var(--radius-xl); }
+.lesson-notes-textarea {
+  width:100%; min-height:72px; resize:vertical; font-size:0.82rem; margin-bottom:6px;
+  border-radius:var(--radius-sm);
+}
+.btn-sm { padding:4px 12px !important; font-size:0.78rem !important; }
+.save-notes-indicator { font-size:0.72rem; color:var(--priority-low); opacity:0; transition:opacity 0.3s; }
+.save-notes-indicator.show { opacity:1; }
+.inline-add-summary { margin-top:14px; border:1px solid var(--border); border-radius:var(--radius-sm); overflow:hidden; }
+.inline-add-header {
+  padding:9px 12px; font-size:0.82rem; color:var(--text-2); cursor:pointer;
+  background:var(--bg-glass); transition:all 0.2s; display:flex; align-items:center; gap:6px;
+}
+.inline-add-header:hover { background:var(--bg-surface2); color:var(--accent); }
+.inline-add-body { padding:12px; display:flex; flex-direction:column; gap:10px; }
+.lesson-actions { display:flex; gap:8px; margin-top:16px; padding-top:14px; border-top:1px solid var(--border); }
 
 /* ===== KANBAN ===== */
 #kanban-section { margin-bottom: 24px; }
@@ -641,14 +665,14 @@ body.light {
 
 <!-- ===== TOPBAR ===== -->
 <header id="topbar">
-  <div class="logo">üé¨ ◊°◊ù ◊©◊§◊ô◊í◊ú</div>
+  <div class="logo">🎬 סם שפיגל</div>
   <div class="search-bar">
-    <input type="search" id="global-search" placeholder="◊ó◊ô◊§◊ï◊© ◊©◊ô◊¢◊ï◊®◊ô◊ù, ◊û◊©◊ô◊û◊ï◊™...">
+    <input type="search" id="global-search" placeholder="חיפוש שיעורים, משימות...">
   </div>
   <div class="topbar-actions">
-    <button id="btn-add-ical" onclick="showICalModal()">üìÖ <span>◊î◊ï◊°◊£ ◊ú◊ô◊ï◊û◊ü</span></button>
-    <button id="btn-settings" onclick="openModal('modal-settings')">‚öôÔ∏è <span>◊î◊í◊ì◊®◊ï◊™</span></button>
-    <button id="fab-add" onclick="openTaskWizard()">Ôºã</button>
+    <button id="btn-add-ical" onclick="showICalModal()">📅 <span>הוסף ליומן</span></button>
+    <button id="btn-settings" onclick="openModal('modal-settings')">⚙️ <span>הגדרות</span></button>
+    <button id="fab-add" onclick="openTaskWizard()">＋</button>
   </div>
 </header>
 
@@ -656,21 +680,21 @@ body.light {
 
   <!-- ===== PINBOARD ===== -->
   <div class="section-header">
-    <h2>üìå ◊§◊ô◊†◊ë◊ï◊®◊ì</h2>
+    <h2>📌 פינבורד</h2>
     <span class="section-badge" id="pin-count">0</span>
   </div>
   <section id="pinboard">
-    <button id="pinboard-add" onclick="openModal('modal-link-add')">Ôºã</button>
+    <button id="pinboard-add" onclick="openModal('modal-link-add')">＋</button>
   </section>
 
   <!-- ===== WIDGETS ROW ===== -->
   <div class="widgets-row">
     <div class="widget" id="widget-today">
-      <h3>üìç ◊î◊ô◊ï◊ù</h3>
+      <h3>📍 היום</h3>
       <div id="today-content"></div>
     </div>
     <div class="widget" id="widget-upcoming">
-      <h3>‚è≥ ◊î◊ß◊®◊ï◊ë (72 ◊©◊¢◊ï◊™)</h3>
+      <h3>⏳ הקרוב (72 שעות)</h3>
       <div id="upcoming-content"></div>
     </div>
   </div>
@@ -678,28 +702,28 @@ body.light {
   <!-- ===== CALENDAR ===== -->
   <section id="calendar-section">
     <div class="section-header">
-      <h2>üóìÔ∏è ◊ú◊ï◊ó ◊©◊†◊î</h2>
+      <h2>🗓️ לוח שנה</h2>
     </div>
     <div id="calendar-toolbar">
       <div class="cal-nav">
-        <button id="prev-week" onclick="navWeek(-1)">‚Üí</button>
+        <button id="prev-week" onclick="navWeek(-1)">→</button>
         <span id="week-label"></span>
-        <button id="next-week" onclick="navWeek(1)">‚Üê</button>
-        <button id="today-btn" onclick="goToday()">◊î◊ô◊ï◊ù</button>
+        <button id="next-week" onclick="navWeek(1)">←</button>
+        <button id="today-btn" onclick="goToday()">היום</button>
       </div>
       <div class="view-tabs">
-        <button data-view="weekly" class="active" onclick="setView('weekly')">◊©◊ë◊ï◊¢◊ô</button>
-        <button data-view="monthly" onclick="setView('monthly')">◊ó◊ï◊ì◊©◊ô</button>
-        <button data-view="list" onclick="setView('list')">◊®◊©◊ô◊û◊î</button>
-        <button data-view="course" onclick="setView('course')">◊ú◊§◊ô ◊ß◊ï◊®◊°</button>
+        <button data-view="weekly" class="active" onclick="setView('weekly')">שבועי</button>
+        <button data-view="monthly" onclick="setView('monthly')">חודשי</button>
+        <button data-view="list" onclick="setView('list')">רשימה</button>
+        <button data-view="course" onclick="setView('course')">לפי קורס</button>
       </div>
       <div id="course-filters"></div>
       <div id="group-filter">
-        <button data-group="all" onclick="setGroup('all')">◊î◊õ◊ú</button>
-        <button data-group="a" onclick="setGroup('a')">◊ß◊ë◊ï◊¶◊î ◊ê</button>
-        <button data-group="b" onclick="setGroup('b')">◊ß◊ë◊ï◊¶◊î ◊ë</button>
+        <button data-group="all" onclick="setGroup('all')">הכל</button>
+        <button data-group="a" onclick="setGroup('a')">קבוצה א</button>
+        <button data-group="b" onclick="setGroup('b')">קבוצה ב</button>
       </div>
-      <input type="search" id="calendar-search" placeholder="üîç ◊ó◊ô◊§◊ï◊©..." oninput="renderCalendar()">
+      <input type="search" id="calendar-search" placeholder="🔍 חיפוש..." oninput="renderCalendar()">
     </div>
     <div id="calendar-body"></div>
   </section>
@@ -707,7 +731,7 @@ body.light {
   <!-- ===== SUMMARIES ===== -->
   <section id="summaries-section">
     <div class="section-header">
-      <h2>üìö ◊°◊ô◊õ◊ï◊û◊ô ◊©◊ô◊¢◊ï◊®◊ô◊ù</h2>
+      <h2>📚 סיכומי שיעורים</h2>
       <span class="section-badge" id="summaries-count">0</span>
     </div>
     <div class="summaries-grid" id="summaries-grid"></div>
@@ -716,26 +740,26 @@ body.light {
   <!-- ===== KANBAN ===== -->
   <section id="kanban-section">
     <div class="section-header">
-      <h2>üóÇÔ∏è ◊ß◊†◊ë◊ü ◊ê◊ô◊©◊ô</h2>
+      <h2>🗂️ קנבן אישי</h2>
     </div>
     <div class="kanban-board">
       <div class="kanban-col" data-status="todo">
         <div class="kanban-col-header">
-          <span class="kanban-col-title">üìù ◊ú◊ë◊ô◊¶◊ï◊¢</span>
+          <span class="kanban-col-title">📝 לביצוע</span>
           <span class="kanban-col-count" id="kanban-count-todo">0</span>
         </div>
         <div class="kanban-cards" id="kanban-todo"></div>
       </div>
       <div class="kanban-col" data-status="inprogress">
         <div class="kanban-col-header">
-          <span class="kanban-col-title">üîÑ ◊ë◊™◊î◊ú◊ô◊ö</span>
+          <span class="kanban-col-title">🔄 בתהליך</span>
           <span class="kanban-col-count" id="kanban-count-inprogress">0</span>
         </div>
         <div class="kanban-cards" id="kanban-inprogress"></div>
       </div>
       <div class="kanban-col" data-status="done">
         <div class="kanban-col-header">
-          <span class="kanban-col-title">‚úÖ ◊ë◊ï◊¶◊¢</span>
+          <span class="kanban-col-title">✅ בוצע</span>
           <span class="kanban-col-count" id="kanban-count-done">0</span>
         </div>
         <div class="kanban-cards" id="kanban-done"></div>
@@ -746,8 +770,8 @@ body.light {
   <!-- ===== ARCHIVE ===== -->
   <section id="archive-section" class="collapsed">
     <div class="archive-toggle" onclick="toggleArchive()">
-      <span id="archive-arrow">‚óÄ</span>
-      <span>üóÑÔ∏è ◊ê◊®◊õ◊ô◊ï◊ü ◊û◊©◊ô◊û◊ï◊™</span>
+      <span id="archive-arrow">◀</span>
+      <span>🗄️ ארכיון משימות</span>
       <span class="section-badge" id="archive-count">0</span>
     </div>
     <div class="archive-body">
@@ -758,60 +782,60 @@ body.light {
 
 <!-- ===== MOBILE NAV ===== -->
 <nav id="mobile-nav">
-  <button data-section="top" class="active" onclick="mobileNav('top')">üè†<span>◊ë◊ô◊™</span></button>
-  <button data-section="calendar-section" onclick="mobileNav('calendar-section')">üìÖ<span>◊ú◊ï◊ó</span></button>
-  <button data-section="kanban-section" onclick="mobileNav('kanban-section')">üóÇÔ∏è<span>◊ß◊†◊ë◊ü</span></button>
-  <button data-section="summaries-section" onclick="mobileNav('summaries-section')">üìö<span>◊°◊ô◊õ◊ï◊û◊ô◊ù</span></button>
+  <button data-section="top" class="active" onclick="mobileNav('top')">🏠<span>בית</span></button>
+  <button data-section="calendar-section" onclick="mobileNav('calendar-section')">📅<span>לוח</span></button>
+  <button data-section="kanban-section" onclick="mobileNav('kanban-section')">🗂️<span>קנבן</span></button>
+  <button data-section="summaries-section" onclick="mobileNav('summaries-section')">📚<span>סיכומים</span></button>
 </nav>
 
 <!-- ===== MODAL: Add Link ===== -->
 <div class="modal-overlay" id="modal-link-add">
   <div class="modal">
     <div class="modal-header">
-      <h3>‚ûï ◊î◊ï◊°◊£ ◊ú◊§◊ô◊†◊ë◊ï◊®◊ì</h3>
-      <button class="modal-close" onclick="closeModal('modal-link-add')">‚úï</button>
+      <h3>➕ הוסף לפינבורד</h3>
+      <button class="modal-close" onclick="closeModal('modal-link-add')">✕</button>
     </div>
     <div class="modal-body">
       <div class="form-group">
-        <label>◊°◊ï◊í</label>
+        <label>סוג</label>
         <select id="link-type" onchange="toggleLinkFields()">
-          <option value="link">üîó ◊ß◊ô◊©◊ï◊®</option>
-          <option value="announcement">üì¢ ◊î◊ï◊ì◊¢◊î</option>
-          <option value="countdown">‚è± ◊°◊§◊ô◊®◊î ◊ú◊ê◊ó◊ï◊®</option>
+          <option value="link">🔗 קישור</option>
+          <option value="announcement">📢 הודעה</option>
+          <option value="countdown">⏱ ספירה לאחור</option>
         </select>
       </div>
       <div class="form-group">
-        <label>◊õ◊ï◊™◊®◊™</label>
-        <input type="text" id="link-title" placeholder="◊©◊ù ◊î◊ß◊ô◊©◊ï◊® / ◊î◊ï◊ì◊¢◊î">
+        <label>כותרת</label>
+        <input type="text" id="link-title" placeholder="שם הקישור / הודעה">
       </div>
       <div class="form-group" id="link-url-group">
-        <label>◊ß◊ô◊©◊ï◊® (URL)</label>
+        <label>קישור (URL)</label>
         <input type="url" id="link-url" placeholder="https://" dir="ltr">
       </div>
       <div class="form-group" id="link-text-group" style="display:none">
-        <label>◊ò◊ß◊°◊ò ◊î◊î◊ï◊ì◊¢◊î</label>
-        <textarea id="link-text" placeholder="◊™◊ï◊õ◊ü ◊î◊î◊ï◊ì◊¢◊î"></textarea>
+        <label>טקסט ההודעה</label>
+        <textarea id="link-text" placeholder="תוכן ההודעה"></textarea>
       </div>
       <div class="form-group" id="link-color-group" style="display:none">
-        <label>◊¶◊ë◊¢</label>
+        <label>צבע</label>
         <select id="link-color">
-          <option value="red">üî¥ ◊ê◊ì◊ï◊ù</option>
-          <option value="yellow">üü° ◊¶◊î◊ï◊ë</option>
-          <option value="green">üü¢ ◊ô◊®◊ï◊ß</option>
-          <option value="blue">üîµ ◊õ◊ó◊ï◊ú</option>
+          <option value="red">🔴 אדום</option>
+          <option value="yellow">🟡 צהוב</option>
+          <option value="green">🟢 ירוק</option>
+          <option value="blue">🔵 כחול</option>
         </select>
       </div>
       <div class="form-group" id="link-due-group" style="display:none">
-        <label>◊™◊ê◊®◊ô◊ö ◊ô◊¢◊ì</label>
+        <label>תאריך יעד</label>
         <input type="date" id="link-due">
       </div>
       <div class="form-group">
-        <label>◊©◊ù (◊†◊ï◊°◊£ ◊¢"◊ô)</label>
-        <input type="text" id="link-created-by" placeholder="◊î◊©◊ù ◊©◊ú◊ö">
+        <label>שם (נוסף ע"י)</label>
+        <input type="text" id="link-created-by" placeholder="השם שלך">
       </div>
       <div class="form-actions">
-        <button class="btn-secondary" onclick="closeModal('modal-link-add')">◊ë◊ô◊ò◊ï◊ú</button>
-        <button class="btn-primary" onclick="saveLink()">◊©◊û◊ï◊®</button>
+        <button class="btn-secondary" onclick="closeModal('modal-link-add')">ביטול</button>
+        <button class="btn-primary" onclick="saveLink()">שמור</button>
       </div>
     </div>
   </div>
@@ -821,8 +845,8 @@ body.light {
 <div class="modal-overlay" id="modal-task-wizard">
   <div class="modal">
     <div class="modal-header">
-      <h3>‚úèÔ∏è ◊î◊ï◊°◊§◊™ ◊û◊©◊ô◊û◊î</h3>
-      <button class="modal-close" onclick="closeModal('modal-task-wizard')">‚úï</button>
+      <h3>✏️ הוספת משימה</h3>
+      <button class="modal-close" onclick="closeModal('modal-task-wizard')">✕</button>
     </div>
     <div class="wizard-steps" id="wizard-steps"></div>
     <div class="modal-body" id="wizard-body"></div>
@@ -833,19 +857,27 @@ body.light {
 <div class="modal-overlay" id="modal-ical">
   <div class="modal">
     <div class="modal-header">
-      <h3>üìÖ ◊î◊ï◊°◊£ ◊ú◊ô◊ï◊û◊ü ◊î◊ê◊ô◊©◊ô</h3>
-      <button class="modal-close" onclick="closeModal('modal-ical')">‚úï</button>
+      <h3>📅 הוסף ליומן האישי</h3>
+      <button class="modal-close" onclick="closeModal('modal-ical')">✕</button>
     </div>
     <div class="modal-body">
-      <p style="font-size:0.85rem;color:var(--text-2);margin-bottom:12px">◊ß◊ô◊©◊ï◊® ICS ◊ê◊ô◊©◊ô ‚Äî ◊û◊™◊¢◊ì◊õ◊ü ◊ê◊ï◊ò◊ï◊û◊ò◊ô◊™ ◊¢◊ù ◊î◊û◊©◊ô◊û◊ï◊™ ◊©◊ú◊ö:</p>
+      <p style="font-size:0.85rem;color:var(--text-2);margin-bottom:12px">קישור ICS אישי — מתעדכן אוטומטית עם המשימות שלך:</p>
       <div class="ics-url-box" id="ical-url"></div>
-      <button class="btn-primary" style="margin-top:12px;width:100%" id="btn-copy-ical">üìã ◊î◊¢◊™◊ß ◊ß◊ô◊©◊ï◊®</button>
+      <div style="display:flex;gap:8px;margin-top:12px">
+        <button class="btn-primary" style="flex:1" id="btn-copy-ical">📋 העתק קישור למנוי</button>
+        <button class="btn-secondary" style="flex:1" onclick="downloadICS()">⬇️ הורד ICS עכשיו</button>
+      </div>
       <div class="ics-instructions" style="margin-top:16px">
-        <strong>◊î◊ï◊®◊ê◊ï◊™:</strong>
+        <strong>אפשרות א׳ — מנוי חי (מומלץ):</strong>
         <ol>
-          <li><strong>Google Calendar:</strong> ◊î◊í◊ì◊®◊ï◊™ ‚Üí ◊î◊ï◊°◊£ ◊ô◊ï◊û◊ü ‚Üí ◊û◊õ◊™◊ï◊ë◊™ URL</li>
-          <li><strong>iPhone:</strong> ◊î◊í◊ì◊®◊ï◊™ ‚Üí ◊ô◊ï◊û◊ü ‚Üí ◊ó◊©◊ë◊ï◊†◊ï◊™ ‚Üí ◊î◊ï◊°◊£ ◊ó◊©◊ë◊ï◊ü ‚Üí ◊ê◊ó◊® ‚Üí ◊î◊ï◊°◊£ ◊û◊†◊ï◊ô ◊ú◊ô◊ï◊û◊ü</li>
-          <li>◊î◊ì◊ë◊ß ◊ê◊™ ◊î◊ß◊ô◊©◊ï◊® ◊ú◊û◊¢◊ú◊î</li>
+          <li><strong>Google Calendar:</strong> הגדרות → הוסף יומן → מכתובת URL → הדבק את הקישור</li>
+          <li><strong>iPhone:</strong> הגדרות → יומן → חשבונות → הוסף חשבון → אחר → הוסף מנוי ליומן</li>
+          <li>היומן יתעדכן אוטומטית</li>
+        </ol>
+        <strong style="display:block;margin-top:10px">אפשרות ב׳ — הורדה חד-פעמית:</strong>
+        <ol>
+          <li>לחץ "הורד ICS עכשיו"</li>
+          <li>פתח את הקובץ — ייובא ישירות ליומן שלך</li>
         </ol>
       </div>
     </div>
@@ -856,31 +888,31 @@ body.light {
 <div class="modal-overlay" id="modal-settings">
   <div class="modal">
     <div class="modal-header">
-      <h3>‚öôÔ∏è ◊î◊í◊ì◊®◊ï◊™</h3>
-      <button class="modal-close" onclick="closeModal('modal-settings')">‚úï</button>
+      <h3>⚙️ הגדרות</h3>
+      <button class="modal-close" onclick="closeModal('modal-settings')">✕</button>
     </div>
     <div class="modal-body">
       <div class="settings-section">
-        <h4>◊©◊ù ◊û◊©◊™◊û◊©</h4>
-        <input type="text" id="setting-name" placeholder="◊î◊©◊ù ◊©◊ú◊ö" onchange="saveSetting('userName', this.value)">
+        <h4>שם משתמש</h4>
+        <input type="text" id="setting-name" placeholder="השם שלך" onchange="saveSetting('userName', this.value)">
       </div>
       <div class="settings-section">
-        <h4>◊ß◊ë◊ï◊¶◊î</h4>
+        <h4>קבוצה</h4>
         <select id="setting-group" onchange="saveSetting('group', this.value); setGroup(this.value);">
-          <option value="all">◊î◊õ◊ú</option>
-          <option value="a">◊ß◊ë◊ï◊¶◊î ◊ê</option>
-          <option value="b">◊ß◊ë◊ï◊¶◊î ◊ë</option>
+          <option value="all">הכל</option>
+          <option value="a">קבוצה א</option>
+          <option value="b">קבוצה ב</option>
         </select>
       </div>
       <div class="settings-section">
-        <h4>◊¢◊®◊õ◊™ ◊†◊ï◊©◊ê</h4>
+        <h4>ערכת נושא</h4>
         <select id="setting-theme" onchange="toggleTheme(this.value)">
-          <option value="dark">üåô ◊õ◊î◊î</option>
-          <option value="light">‚òÄÔ∏è ◊ë◊î◊ô◊®</option>
+          <option value="dark">🌙 כהה</option>
+          <option value="light">☀️ בהיר</option>
         </select>
       </div>
       <div class="settings-section">
-        <h4>◊û◊ñ◊î◊î ◊û◊©◊™◊û◊© (◊úICS)</h4>
+        <h4>מזהה משתמש (לICS)</h4>
         <div class="ics-url-box" id="setting-userid" style="font-size:0.7rem"></div>
       </div>
     </div>
@@ -891,25 +923,25 @@ body.light {
 <div class="modal-overlay" id="modal-summary-add">
   <div class="modal">
     <div class="modal-header">
-      <h3>üìù ◊î◊ï◊°◊£ ◊°◊ô◊õ◊ï◊ù / ◊ß◊ô◊©◊ï◊® ◊ú◊©◊ô◊¢◊ï◊®</h3>
-      <button class="modal-close" onclick="closeModal('modal-summary-add')">‚úï</button>
+      <h3>📝 הוסף סיכום / קישור לשיעור</h3>
+      <button class="modal-close" onclick="closeModal('modal-summary-add')">✕</button>
     </div>
     <div class="modal-body">
       <div class="form-group">
-        <label>◊õ◊ï◊™◊®◊™</label>
-        <input type="text" id="summary-link-title" placeholder="◊°◊ô◊õ◊ï◊ù ◊í◊ï◊í◊ú ◊ì◊ï◊ß◊°...">
+        <label>כותרת</label>
+        <input type="text" id="summary-link-title" placeholder="סיכום גוגל דוקס...">
       </div>
       <div class="form-group">
-        <label>◊ß◊ô◊©◊ï◊®</label>
+        <label>קישור</label>
         <input type="url" id="summary-link-url" placeholder="https://docs.google.com/..." dir="ltr">
       </div>
       <div class="form-group">
-        <label>◊©◊ù</label>
-        <input type="text" id="summary-link-by" placeholder="◊î◊©◊ù ◊©◊ú◊ö">
+        <label>שם</label>
+        <input type="text" id="summary-link-by" placeholder="השם שלך">
       </div>
       <div class="form-actions">
-        <button class="btn-secondary" onclick="closeModal('modal-summary-add')">◊ë◊ô◊ò◊ï◊ú</button>
-        <button class="btn-primary" onclick="saveSummaryLink()">◊©◊û◊ï◊®</button>
+        <button class="btn-secondary" onclick="closeModal('modal-summary-add')">ביטול</button>
+        <button class="btn-primary" onclick="saveSummaryLink()">שמור</button>
       </div>
     </div>
   </div>
@@ -920,7 +952,7 @@ body.light {
   <div class="modal" style="max-width:600px">
     <div class="modal-header">
       <h3 id="lesson-detail-title"></h3>
-      <button class="modal-close" onclick="closeModal('modal-lesson-detail')">‚úï</button>
+      <button class="modal-close" onclick="closeModal('modal-lesson-detail')">✕</button>
     </div>
     <div class="modal-body" id="lesson-detail-body"></div>
   </div>
@@ -1022,7 +1054,7 @@ function getCourseName(key) {
   return course ? course.short : key;
 }
 
-const DAY_NAMES = ['◊®◊ê◊©◊ï◊ü', '◊©◊†◊ô', '◊©◊ú◊ô◊©◊ô', '◊®◊ë◊ô◊¢◊ô', '◊ó◊û◊ô◊©◊ô', '◊©◊ô◊©◊ô', '◊©◊ë◊™'];
+const DAY_NAMES = ['ראשון', 'שני', 'שלישי', 'רביעי', 'חמישי', 'שישי', 'שבת'];
 
 function showToast(message, duration = 2500) {
   const toast = document.createElement('div');
@@ -1116,23 +1148,23 @@ function renderPinboard() {
     card.dataset.id = link.id;
     card.draggable = true;
 
-    let icon = 'üîó', body = '';
+    let icon = '🔗', body = '';
     if (link.type === 'link') {
-      icon = 'üîó';
+      icon = '🔗';
       body = `<div class="pin-title">${esc(link.title)}</div>
               <div class="pin-sub">${link.url ? new URL(link.url).hostname : ''}</div>`;
       card.onclick = () => { if (link.url) window.open(link.url, '_blank'); };
     } else if (link.type === 'announcement') {
-      icon = 'üì¢';
+      icon = '📢';
       body = `<div class="pin-title">${esc(link.title)}</div>
               <div class="pin-sub">${esc(link.text || '')}</div>`;
     } else if (link.type === 'countdown') {
-      icon = '‚è±';
+      icon = '⏱';
       const daysLeft = Math.max(0, Math.ceil((new Date(link.due_date) - new Date()) / 86400000));
       const total = Math.max(1, Math.ceil((new Date(link.due_date) - (link.created_at?.toDate?.() || new Date())) / 86400000));
       const pct = Math.max(0, Math.min(100, ((total - daysLeft) / total) * 100));
       body = `<div class="pin-title">${esc(link.title)}</div>
-              <div class="countdown-days">${daysLeft} ◊ô◊û◊ô◊ù ◊†◊ï◊™◊®◊ï</div>
+              <div class="countdown-days">${daysLeft} ימים נותרו</div>
               <div class="countdown-bar"><div class="countdown-fill" style="width:${pct}%"></div></div>`;
     }
 
@@ -1140,7 +1172,7 @@ function renderPinboard() {
       <div class="pin-icon">${icon}</div>
       <div class="pin-body">${body}</div>
       <div class="pin-actions">
-        <button class="pin-delete" onclick="event.stopPropagation();deleteLink('${link.id}')">üóë</button>
+        <button class="pin-delete" onclick="event.stopPropagation();deleteLink('${link.id}')">🗑</button>
       </div>`;
     container.appendChild(card);
   });
@@ -1162,7 +1194,7 @@ async function saveLink() {
     type,
     title: document.getElementById('link-title').value,
     order: linksData.length,
-    created_by: document.getElementById('link-created-by').value || '◊ê◊†◊ï◊†◊ô◊û◊ô',
+    created_by: document.getElementById('link-created-by').value || 'אנונימי',
     created_at: firebase.firestore.FieldValue.serverTimestamp()
   };
   if (type === 'link') data.url = document.getElementById('link-url').value;
@@ -1174,7 +1206,7 @@ async function saveLink() {
 
   await db.collection('links').add(data);
   closeModal('modal-link-add');
-  showToast('üìå ◊†◊ï◊°◊£ ◊ú◊§◊ô◊†◊ë◊ï◊®◊ì');
+  showToast('📌 נוסף לפינבורד');
   // Reset
   document.getElementById('link-title').value = '';
   document.getElementById('link-url').value = '';
@@ -1182,9 +1214,9 @@ async function saveLink() {
 }
 
 async function deleteLink(id) {
-  if (confirm('◊ú◊û◊ó◊ï◊ß?')) {
+  if (confirm('למחוק?')) {
     await db.collection('links').doc(id).delete();
-    showToast('üóë ◊†◊û◊ó◊ß');
+    showToast('🗑 נמחק');
   }
 }
 
@@ -1212,6 +1244,10 @@ function setupSummariesListener() {
     });
     renderSummaries();
     document.getElementById('summaries-count').textContent = Object.keys(summariesData).length;
+    // Refresh lesson detail modal if open
+    if (currentLessonDetailUid && document.getElementById('modal-lesson-detail')?.classList.contains('open')) {
+      renderLessonDetailContent(currentLessonDetailUid);
+    }
   });
 }
 
@@ -1224,17 +1260,17 @@ function renderSummaries() {
     const summary = summariesData[ev.uid];
     const color = getCourseColor(ev.course_key);
     const links = summary?.links || [];
-    const ICONS = { gdoc: 'üìÑ', slides: 'üìä', video: 'üé¨', file: 'üìÅ', notion: 'üìù', link: 'üîó' };
+    const ICONS = { gdoc: '📄', slides: '📊', video: '🎬', file: '📁', notion: '📝', link: '🔗' };
     return `
       <div class="summary-card" style="--course-color:${color}">
         <div class="summary-header">
           <div class="summary-title">${esc(ev.title)}</div>
-          <div class="summary-lesson">◊©◊ô◊¢◊ï◊® ${ev.lesson_number || ''} ¬∑ ${formatDate(ev.start)}</div>
+          <div class="summary-lesson">שיעור ${ev.lesson_number || ''} · ${formatDate(ev.start)}</div>
         </div>
         <div class="summary-links">
           ${links.map(l => `
             <a class="summary-link" href="${esc(l.url)}" target="_blank">
-              <span class="summary-link-icon">${ICONS[l.type] || 'üîó'}</span>
+              <span class="summary-link-icon">${ICONS[l.type] || '🔗'}</span>
               <div class="summary-link-info">
                 <div class="summary-link-title">${esc(l.title)}</div>
                 <div class="summary-link-by">${esc(l.added_by)}</div>
@@ -1242,7 +1278,7 @@ function renderSummaries() {
             </a>`).join('')}
         </div>
         <button class="summary-add" onclick="openSummaryAdd('${ev.uid}','${ev.course_key}',${ev.lesson_number || 0})">
-          + ◊î◊ï◊°◊£ ◊°◊ô◊õ◊ï◊ù / ◊ß◊ô◊©◊ï◊®
+          + הוסף סיכום / קישור
         </button>
       </div>`;
   }).join('');
@@ -1271,7 +1307,7 @@ async function saveSummaryLink() {
     title: document.getElementById('summary-link-title').value,
     url,
     type: detectLinkType(url),
-    added_by: document.getElementById('summary-link-by').value || '◊ê◊†◊ï◊†◊ô◊û◊ô',
+    added_by: document.getElementById('summary-link-by').value || 'אנונימי',
     added_at: new Date().toISOString()
   };
 
@@ -1291,7 +1327,7 @@ async function saveSummaryLink() {
     });
   }
   closeModal('modal-summary-add');
-  showToast('üìù ◊°◊ô◊õ◊ï◊ù ◊†◊ï◊°◊£');
+  showToast('📝 סיכום נוסף');
 }
 
 // ===================================================================
@@ -1384,7 +1420,7 @@ function renderWeekly(body) {
 
   // Update label
   const we = new Date(ws); we.setDate(we.getDate() + 4);
-  document.getElementById('week-label').textContent = `${formatDate(ws)} ‚Äî ${formatDate(we)}`;
+  document.getElementById('week-label').textContent = `${formatDate(ws)} — ${formatDate(we)}`;
 
   let html = '<div class="cal-weekly">';
   for (let i = 0; i < 5; i++) {
@@ -1412,7 +1448,7 @@ function renderWeekly(body) {
     });
 
     if (!dayEvents.length && !dayTasks.length) {
-      html += '<div class="widget-empty">◊ê◊ô◊ü ◊ê◊ô◊®◊ï◊¢◊ô◊ù</div>';
+      html += '<div class="widget-empty">אין אירועים</div>';
     }
 
     html += '</div></div>';
@@ -1459,7 +1495,7 @@ function renderMonthly(body) {
 
 function renderList(body) {
   const { filteredEvents, filteredTasks } = getCalItems();
-  document.getElementById('week-label').textContent = '◊™◊¶◊ï◊í◊™ ◊®◊©◊ô◊û◊î';
+  document.getElementById('week-label').textContent = 'תצוגת רשימה';
 
   const allItems = [
     ...filteredEvents.map(e => ({ ...e, itemType: 'event', sortDate: e.start })),
@@ -1480,15 +1516,15 @@ function renderList(body) {
         <div class="cal-list-color" style="background:${color}"></div>
         <div class="cal-list-info">
           <div class="cal-list-title">${esc(item.title)}</div>
-          <div class="cal-list-time">${formatTime(item.start)} ‚Äî ${formatTime(item.end)} ¬∑ ${item.location || ''}</div>
+          <div class="cal-list-time">${formatTime(item.start)} — ${formatTime(item.end)} · ${item.location || ''}</div>
         </div>
       </div>`;
     } else {
       html += `<div class="cal-list-event">
         <div class="cal-list-color" style="background:var(--priority-${item.priority || 'mid'})"></div>
         <div class="cal-list-info">
-          <div class="cal-list-title">üìå ${esc(item.title)}</div>
-          <div class="cal-list-time">◊¢◊ì ${formatDate(item.due_date)} ¬∑ ${getCourseName(item.course_key) || '◊õ◊ú◊ú◊ô'}</div>
+          <div class="cal-list-title">📌 ${esc(item.title)}</div>
+          <div class="cal-list-time">עד ${formatDate(item.due_date)} · ${getCourseName(item.course_key) || 'כללי'}</div>
         </div>
       </div>`;
     }
@@ -1498,7 +1534,7 @@ function renderList(body) {
 }
 
 function renderCourseView(body) {
-  document.getElementById('week-label').textContent = '◊™◊¶◊ï◊í◊î ◊ú◊§◊ô ◊ß◊ï◊®◊°';
+  document.getElementById('week-label').textContent = 'תצוגה לפי קורס';
   const { filteredEvents } = getCalItems();
   const activeCourseKey = document.querySelector('.cal-course-tab.active')?.dataset.course || courses[0]?.key;
 
@@ -1519,7 +1555,7 @@ function renderCourseView(body) {
     .sort((a, b) => a.start.localeCompare(b.start));
 
   courseEvents.forEach(ev => { html += renderEventCard(ev); });
-  if (!courseEvents.length) html += '<div class="widget-empty">◊ê◊ô◊ü ◊©◊ô◊¢◊ï◊®◊ô◊ù</div>';
+  if (!courseEvents.length) html += '<div class="widget-empty">אין שיעורים</div>';
   html += '</div>';
   body.innerHTML = html;
 }
@@ -1528,7 +1564,7 @@ function renderEventCard(ev) {
   const status = getEventStatus(ev);
   const color = getCourseColor(ev.course_key);
   const relatedTasks = tasksData.filter(t => t.linked_event_uid === ev.uid && t.status === 'active');
-  const statusLabels = { now: '◊¢◊õ◊©◊ô◊ï', today: '◊î◊ô◊ï◊ù', future: '◊¢◊™◊ô◊ì◊ô', past: '◊¢◊ë◊®' };
+  const statusLabels = { now: 'עכשיו', today: 'היום', future: 'עתידי', past: 'עבר' };
 
   const progressHTML = status === 'now' ? (() => {
     const start = new Date(ev.start).getTime(), end = new Date(ev.end).getTime();
@@ -1540,34 +1576,34 @@ function renderEventCard(ev) {
     <div class="cal-event lesson event-${status}" data-uid="${ev.uid}" data-course="${ev.course_key}"
          style="--course-color:${color}" onclick="showLessonDetail('${ev.uid}')">
       <div class="event-badges">
-        ${ev.lesson_number ? `<span class="badge badge-lesson">◊©◊ô◊¢◊ï◊® ${ev.lesson_number}</span>` : ''}
+        ${ev.lesson_number ? `<span class="badge badge-lesson">שיעור ${ev.lesson_number}</span>` : ''}
         <span class="badge badge-${status}">${statusLabels[status]}</span>
       </div>
       <div class="event-title">${esc(ev.title)}</div>
       <div class="event-meta">
-        <span>üïô ${formatTime(ev.start)}‚Äì${formatTime(ev.end)}</span>
-        ${ev.location ? `<span>üìç ${esc(ev.location)}</span>` : ''}
+        <span>🕙 ${formatTime(ev.start)}–${formatTime(ev.end)}</span>
+        ${ev.location ? `<span>📍 ${esc(ev.location)}</span>` : ''}
       </div>
       ${relatedTasks.length ? `
         <div class="event-tasks">
           <span class="tasks-toggle" onclick="event.stopPropagation();this.nextElementSibling.classList.toggle('open')">
-            ‚ñº ${relatedTasks.length} ◊û◊©◊ô◊û◊ï◊™ ◊ß◊©◊ï◊®◊ï◊™
+            ▼ ${relatedTasks.length} משימות קשורות
           </span>
           <div class="tasks-list">
-            ${relatedTasks.map(t => `<div class="task-chip">üìå ${esc(t.title)}</div>`).join('')}
+            ${relatedTasks.map(t => `<div class="task-chip">📌 ${esc(t.title)}</div>`).join('')}
           </div>
         </div>` : ''}
       ${progressHTML}
       <div class="event-actions">
-        <button onclick="event.stopPropagation();openTaskWizardForLesson('${ev.uid}','${ev.course_key}')">+ ◊û◊©◊ô◊û◊î</button>
-        <button onclick="event.stopPropagation();openSummaryAdd('${ev.uid}','${ev.course_key}',${ev.lesson_number||0})">üìù ◊°◊ô◊õ◊ï◊ù</button>
+        <button onclick="event.stopPropagation();openTaskWizardForLesson('${ev.uid}','${ev.course_key}')">+ משימה</button>
+        <button onclick="event.stopPropagation();openSummaryAdd('${ev.uid}','${ev.course_key}',${ev.lesson_number||0})">📝 סיכום</button>
       </div>
     </div>`;
 }
 
 function renderTaskCard(t) {
   const color = getCourseColor(t.course_key);
-  const priorityLabels = { high: 'üî¥ ◊í◊ë◊ï◊î◊î', mid: 'üü° ◊ë◊ô◊†◊ï◊†◊ô◊™', low: 'üü¢ ◊†◊û◊ï◊õ◊î' };
+  const priorityLabels = { high: '🔴 גבוהה', mid: '🟡 בינונית', low: '🟢 נמוכה' };
   return `
     <div class="cal-event task" data-id="${t.id}" data-course="${t.course_key}" style="--course-color:${color}">
       <div class="event-badges">
@@ -1576,56 +1612,178 @@ function renderTaskCard(t) {
       <div class="event-title">${esc(t.title)}</div>
       <div class="event-meta">
         ${t.course_key ? `<span>${getCourseName(t.course_key)}</span>` : ''}
-        <span>◊¢◊ì: ${formatDate(t.due_date)}</span>
+        <span>עד: ${formatDate(t.due_date)}</span>
       </div>
       ${t.description ? `<div class="event-desc">${esc(t.description)}</div>` : ''}
       <div class="event-footer">
-        <span class="added-by">◊†◊ï◊°◊£ ◊¢"◊ô: ${esc(t.created_by || '')}</span>
+        <span class="added-by">נוסף ע"י: ${esc(t.created_by || '')}</span>
         <div class="event-actions">
-          <button onclick="deleteTask('${t.id}')">üóë</button>
+          <button onclick="deleteTask('${t.id}')">🗑</button>
         </div>
       </div>
     </div>`;
 }
 
+let currentLessonDetailUid = null;
+
 function showLessonDetail(uid) {
+  const ev = events.find(e => e.uid === uid);
+  if (!ev) return;
+  currentLessonDetailUid = uid;
+  document.getElementById('lesson-detail-title').textContent = ev.title;
+  renderLessonDetailContent(uid);
+  openModal('modal-lesson-detail');
+}
+
+function renderLessonDetailContent(uid) {
   const ev = events.find(e => e.uid === uid);
   if (!ev) return;
   const color = getCourseColor(ev.course_key);
   const relatedTasks = tasksData.filter(t => t.linked_event_uid === uid && t.status === 'active');
   const summary = summariesData[uid];
-
-  document.getElementById('lesson-detail-title').textContent = ev.title;
-  const ICONS = { gdoc: 'üìÑ', slides: 'üìä', video: 'üé¨', file: 'üìÅ', notion: 'üìù', link: 'üîó' };
+  const ICONS = { gdoc: '📄', slides: '📊', video: '🎬', file: '📁', notion: '📝', link: '🔗' };
 
   document.getElementById('lesson-detail-body').innerHTML = `
-    <div style="display:flex;gap:12px;flex-wrap:wrap;margin-bottom:12px">
-      <span>üïô ${formatTime(ev.start)} ‚Äî ${formatTime(ev.end)}</span>
-      ${ev.location ? `<span>üìç ${esc(ev.location)}</span>` : ''}
-      <span style="color:${color}">‚óè ${getCourseName(ev.course_key)}</span>
-      ${ev.lesson_number ? `<span>◊©◊ô◊¢◊ï◊® ${ev.lesson_number}</span>` : ''}
+    <div class="lesson-meta">
+      <span>🕙 ${formatTime(ev.start)} — ${formatTime(ev.end)}</span>
+      ${ev.location ? `<span>📍 ${esc(ev.location)}</span>` : ''}
+      <span style="color:${color}">● ${getCourseName(ev.course_key)}</span>
+      ${ev.lesson_number ? `<span>שיעור ${ev.lesson_number}</span>` : ''}
     </div>
+
+    <div class="lesson-section-title">📝 הערות אישיות</div>
+    <textarea id="lesson-notes-input" class="lesson-notes-textarea"
+      placeholder="הוסף הערות לשיעור זה — מה היה, מה לזכור, רעיונות...">${esc(summary?.notes || '')}</textarea>
+    <div style="display:flex;align-items:center;gap:8px;margin-bottom:4px">
+      <button class="btn-secondary btn-sm" onclick="saveEventNotes('${uid}','${ev.course_key}',${ev.lesson_number||0})">שמור הערות</button>
+      <span class="save-notes-indicator" id="notes-saved-indicator">✓ נשמר</span>
+    </div>
+
     ${relatedTasks.length ? `
-      <h4 style="font-size:0.85rem;margin-bottom:8px">üìå ◊û◊©◊ô◊û◊ï◊™ (${relatedTasks.length})</h4>
+      <div class="lesson-section-title">📌 משימות (${relatedTasks.length})</div>
       ${relatedTasks.map(t => `
-        <div style="padding:8px;background:var(--bg-surface2);border-radius:var(--radius-sm);margin-bottom:6px;font-size:0.82rem">
-          ${esc(t.title)} <span style="color:var(--text-3);font-size:0.72rem">${t.priority}</span>
-        </div>`).join('')}` : '<p style="color:var(--text-3);font-size:0.82rem">◊ê◊ô◊ü ◊û◊©◊ô◊û◊ï◊™ ◊ß◊©◊ï◊®◊ï◊™</p>'}
-    ${summary?.links?.length ? `
-      <h4 style="font-size:0.85rem;margin:12px 0 8px">üìö ◊°◊ô◊õ◊ï◊û◊ô◊ù</h4>
-      ${summary.links.map(l => `
-        <a href="${esc(l.url)}" target="_blank" class="summary-link">
-          <span class="summary-link-icon">${ICONS[l.type]||'üîó'}</span>
+        <div class="lesson-task-item">
+          <span>${esc(t.title)}</span>
+          <span class="priority-tag">${t.priority}</span>
+        </div>`).join('')}
+    ` : ''}
+
+    <div class="lesson-section-title">📚 סיכומים וקישורים</div>
+    <div id="lesson-summary-links">
+      ${(summary?.links?.length) ? summary.links.map(l => `
+        <a class="summary-link" href="${esc(l.url)}" target="_blank">
+          <span class="summary-link-icon">${ICONS[l.type]||'🔗'}</span>
           <div class="summary-link-info">
             <div class="summary-link-title">${esc(l.title)}</div>
             <div class="summary-link-by">${esc(l.added_by)}</div>
           </div>
-        </a>`).join('')}` : ''}
-    <div style="display:flex;gap:8px;margin-top:16px">
-      <button class="btn-primary" onclick="closeModal('modal-lesson-detail');openTaskWizardForLesson('${uid}','${ev.course_key}')">+ ◊î◊ï◊°◊£ ◊û◊©◊ô◊û◊î</button>
-      <button class="btn-secondary" onclick="closeModal('modal-lesson-detail');openSummaryAdd('${uid}','${ev.course_key}',${ev.lesson_number||0})">üìù ◊î◊ï◊°◊£ ◊°◊ô◊õ◊ï◊ù</button>
-    </div>`;
-  openModal('modal-lesson-detail');
+        </a>`).join('') : '<p style="color:var(--text-3);font-size:0.82rem;padding:4px 0">אין סיכומים עדיין — היה ראשון!</p>'}
+    </div>
+
+    <div class="inline-add-summary">
+      <div class="inline-add-header" onclick="toggleInlineSummaryForm()">
+        <span id="inline-summary-icon">＋</span> הוסף סיכום / קישור לשיעור
+      </div>
+      <div class="inline-add-body" id="inline-summary-body" style="display:none">
+        <div class="form-group">
+          <label>כותרת</label>
+          <input type="text" id="inline-link-title" placeholder="סיכום שיעור, מצגת, וידאו...">
+        </div>
+        <div class="form-group">
+          <label>קישור (URL)</label>
+          <input type="url" id="inline-link-url" placeholder="https://docs.google.com/..." dir="ltr">
+        </div>
+        <div class="form-group">
+          <label>שם</label>
+          <input type="text" id="inline-link-by" value="${esc(localStorage.getItem('userName') || '')}">
+        </div>
+        <div class="form-actions">
+          <button class="btn-primary" onclick="saveInlineSummaryLink('${uid}','${ev.course_key}',${ev.lesson_number||0})">שמור</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="lesson-actions">
+      <button class="btn-primary" onclick="closeModal('modal-lesson-detail');openTaskWizardForLesson('${uid}','${ev.course_key}')">+ הוסף משימה</button>
+    </div>
+  `;
+}
+
+function toggleInlineSummaryForm() {
+  const body = document.getElementById('inline-summary-body');
+  const icon = document.getElementById('inline-summary-icon');
+  if (!body) return;
+  const isOpen = body.style.display !== 'none';
+  body.style.display = isOpen ? 'none' : 'flex';
+  icon.textContent = isOpen ? '＋' : '－';
+}
+
+async function saveEventNotes(uid, courseKey, lessonNum) {
+  const notes = document.getElementById('lesson-notes-input')?.value || '';
+  const existing = summariesData[uid];
+  if (existing) {
+    await db.collection('summaries').doc(existing.id).update({
+      notes,
+      updated_at: firebase.firestore.FieldValue.serverTimestamp()
+    });
+  } else {
+    await db.collection('summaries').add({
+      event_uid: uid, course_key: courseKey, lesson_number: lessonNum,
+      notes, links: [],
+      updated_at: firebase.firestore.FieldValue.serverTimestamp()
+    });
+  }
+  const indicator = document.getElementById('notes-saved-indicator');
+  if (indicator) {
+    indicator.classList.add('show');
+    setTimeout(() => indicator.classList.remove('show'), 2000);
+  }
+}
+
+async function saveInlineSummaryLink(uid, courseKey, lessonNum) {
+  const title = document.getElementById('inline-link-title')?.value?.trim();
+  const url = document.getElementById('inline-link-url')?.value?.trim();
+  if (!title || !url) { showToast('נא למלא כותרת וקישור'); return; }
+  const by = document.getElementById('inline-link-by')?.value?.trim() || 'אנונימי';
+  if (by !== 'אנונימי') localStorage.setItem('userName', by);
+
+  const linkData = { title, url, type: detectLinkType(url), added_by: by, added_at: new Date().toISOString() };
+  const existing = summariesData[uid];
+
+  if (existing) {
+    await db.collection('summaries').doc(existing.id).update({
+      links: firebase.firestore.FieldValue.arrayUnion(linkData),
+      updated_at: firebase.firestore.FieldValue.serverTimestamp()
+    });
+  } else {
+    await db.collection('summaries').add({
+      event_uid: uid, course_key: courseKey, lesson_number: lessonNum,
+      links: [linkData], notes: '',
+      updated_at: firebase.firestore.FieldValue.serverTimestamp()
+    });
+  }
+
+  // Optimistic UI update — refresh links section without closing modal
+  if (!summariesData[uid]) summariesData[uid] = { event_uid: uid, links: [], notes: '' };
+  if (!summariesData[uid].links) summariesData[uid].links = [];
+  summariesData[uid].links.push(linkData);
+
+  const ICONS = { gdoc: '📄', slides: '📊', video: '🎬', file: '📁', notion: '📝', link: '🔗' };
+  const linksContainer = document.getElementById('lesson-summary-links');
+  if (linksContainer) {
+    linksContainer.innerHTML = summariesData[uid].links.map(l => `
+      <a class="summary-link" href="${esc(l.url)}" target="_blank">
+        <span class="summary-link-icon">${ICONS[l.type]||'🔗'}</span>
+        <div class="summary-link-info">
+          <div class="summary-link-title">${esc(l.title)}</div>
+          <div class="summary-link-by">${esc(l.added_by)}</div>
+        </div>
+      </a>`).join('');
+  }
+  document.getElementById('inline-link-title').value = '';
+  document.getElementById('inline-link-url').value = '';
+  toggleInlineSummaryForm();
+  showToast('📎 סיכום נוסף!');
 }
 
 // ===================================================================
@@ -1641,7 +1799,7 @@ function renderWidgets() {
   const tc = document.getElementById('today-content');
 
   if (!todayEvents.length && !todayTasks.length) {
-    tc.innerHTML = '<div class="widget-empty">◊ê◊ô◊ü ◊ê◊ô◊®◊ï◊¢◊ô◊ù ◊î◊ô◊ï◊ù üéâ</div>';
+    tc.innerHTML = '<div class="widget-empty">אין אירועים היום 🎉</div>';
   } else {
     const nowEvent = todayEvents.find(e => getEventStatus(e) === 'now');
     tc.innerHTML = todayEvents.map(ev => {
@@ -1650,15 +1808,15 @@ function renderWidgets() {
         <div class="we-color" style="background:${getCourseColor(ev.course_key)}"></div>
         <div class="we-info">
           <div class="we-title">${esc(ev.title)}</div>
-          <div class="we-time">${formatTime(ev.start)} ‚Äî ${formatTime(ev.end)} ${status === 'now' ? 'üü¢ ◊¢◊õ◊©◊ô◊ï' : ''}</div>
+          <div class="we-time">${formatTime(ev.start)} — ${formatTime(ev.end)} ${status === 'now' ? '🟢 עכשיו' : ''}</div>
         </div>
       </div>`;
     }).join('') + todayTasks.map(t => `
       <div class="widget-event">
         <div class="we-color" style="background:var(--priority-${t.priority || 'mid'})"></div>
         <div class="we-info">
-          <div class="we-title">üìå ${esc(t.title)}</div>
-          <div class="we-time">${getCourseName(t.course_key) || '◊õ◊ú◊ú◊ô'}</div>
+          <div class="we-title">📌 ${esc(t.title)}</div>
+          <div class="we-time">${getCourseName(t.course_key) || 'כללי'}</div>
         </div>
       </div>`).join('');
   }
@@ -1677,21 +1835,21 @@ function renderWidgets() {
 
   const uc = document.getElementById('upcoming-content');
   if (!upcoming.length && !upcomingTasks.length) {
-    uc.innerHTML = '<div class="widget-empty">◊ê◊ô◊ü ◊ê◊ô◊®◊ï◊¢◊ô◊ù ◊ë-72 ◊©◊¢◊ï◊™ ◊î◊ß◊®◊ï◊ë◊ï◊™</div>';
+    uc.innerHTML = '<div class="widget-empty">אין אירועים ב-72 שעות הקרובות</div>';
   } else {
     uc.innerHTML = upcoming.slice(0, 5).map(ev => `
       <div class="widget-event">
         <div class="we-color" style="background:${getCourseColor(ev.course_key)}"></div>
         <div class="we-info">
           <div class="we-title">${esc(ev.title)}</div>
-          <div class="we-time">${formatDateFull(ev.start)} ¬∑ ${formatTime(ev.start)}</div>
+          <div class="we-time">${formatDateFull(ev.start)} · ${formatTime(ev.start)}</div>
         </div>
       </div>`).join('') + upcomingTasks.slice(0, 3).map(t => `
       <div class="widget-event">
         <div class="we-color" style="background:var(--priority-${t.priority || 'mid'})"></div>
         <div class="we-info">
-          <div class="we-title">üìå ${esc(t.title)}</div>
-          <div class="we-time">◊¢◊ì ${formatDate(t.due_date)}</div>
+          <div class="we-title">📌 ${esc(t.title)}</div>
+          <div class="we-time">עד ${formatDate(t.due_date)}</div>
         </div>
       </div>`).join('');
   }
@@ -1735,25 +1893,25 @@ function openTaskWizardForLesson(uid, courseKey) {
 function renderWizard() {
   const stepsEl = document.getElementById('wizard-steps');
   stepsEl.innerHTML = [1, 2, 3].map(s => `
-    <div class="wizard-step ${s === wizardState.step ? 'active' : ''} ${s < wizardState.step ? 'done' : ''}">${s < wizardState.step ? '‚úì' : s}</div>
+    <div class="wizard-step ${s === wizardState.step ? 'active' : ''} ${s < wizardState.step ? 'done' : ''}">${s < wizardState.step ? '✓' : s}</div>
   `).join('');
 
   const body = document.getElementById('wizard-body');
   if (wizardState.step === 1) {
     body.innerHTML = `
-      <p style="color:var(--text-2);font-size:0.85rem;margin-bottom:12px">◊ê◊ô◊ñ◊ï ◊û◊©◊ô◊û◊î?</p>
+      <p style="color:var(--text-2);font-size:0.85rem;margin-bottom:12px">איזו משימה?</p>
       <div class="wizard-choices">
         <div class="wizard-choice" onclick="wizardState.isCoursed=true;wizardState.step=2;renderWizard()">
-          <span class="choice-icon">üìö</span>◊ú◊ß◊ï◊®◊° ◊û◊°◊ï◊ô◊ù
+          <span class="choice-icon">📚</span>לקורס מסוים
         </div>
         <div class="wizard-choice" onclick="wizardState.isCoursed=false;wizardState.step=3;renderWizard()">
-          <span class="choice-icon">üìù</span>◊û◊©◊ô◊û◊î ◊õ◊ú◊ú◊ô◊™
+          <span class="choice-icon">📝</span>משימה כללית
         </div>
       </div>`;
   } else if (wizardState.step === 2) {
     if (!wizardState.courseKey) {
       body.innerHTML = `
-        <p style="color:var(--text-2);font-size:0.85rem;margin-bottom:12px">◊ë◊ó◊® ◊ß◊ï◊®◊°:</p>
+        <p style="color:var(--text-2);font-size:0.85rem;margin-bottom:12px">בחר קורס:</p>
         <div class="wizard-courses">
           ${courses.filter(c => activeGroup === 'all' || c.group === 'all' || c.group === activeGroup).map(c => `
             <div class="wizard-course" style="--course-color:${c.color};border-color:${c.color}30;color:${c.color}"
@@ -1761,74 +1919,74 @@ function renderWizard() {
               ${c.short}<br><small style="color:var(--text-3)">${c.teacher || ''}</small>
             </div>`).join('')}
         </div>
-        <button class="btn-secondary" style="margin-top:12px" onclick="wizardState.step=1;renderWizard()">‚Üê ◊ó◊ñ◊ï◊®</button>`;
+        <button class="btn-secondary" style="margin-top:12px" onclick="wizardState.step=1;renderWizard()">← חזור</button>`;
     } else {
       const futureEvents = events.filter(e =>
         e.course_key === wizardState.courseKey && new Date(e.start) > new Date() && e.type === 'lesson'
       ).sort((a, b) => a.start.localeCompare(b.start));
 
       body.innerHTML = `
-        <p style="color:var(--text-2);font-size:0.85rem;margin-bottom:12px">◊ß◊©◊® ◊ú◊©◊ô◊¢◊ï◊® (◊ê◊ï◊§◊¶◊ô◊ï◊†◊ú◊ô):</p>
+        <p style="color:var(--text-2);font-size:0.85rem;margin-bottom:12px">קשר לשיעור (אופציונלי):</p>
         <div class="wizard-events">
           ${futureEvents.map(e => `
             <div class="wizard-event ${wizardState.linkedEvent?.uid === e.uid ? 'selected' : ''}"
                  onclick="wizardState.linkedEvent=${JSON.stringify(e).replace(/"/g, '&quot;')};wizardState.dueDate='${e.start.slice(0,10)}';renderWizard()">
-              ◊©◊ô◊¢◊ï◊® ${e.lesson_number || ''} ‚Äî ${formatDate(e.start)} (${formatTime(e.start)})
+              שיעור ${e.lesson_number || ''} — ${formatDate(e.start)} (${formatTime(e.start)})
             </div>`).join('')}
           <div class="wizard-event ${wizardState.linkedEvent === null && wizardState.dueDate ? 'selected' : ''}">
-            <label style="font-size:0.82rem">◊ê◊ï ◊ë◊ó◊® ◊™◊ê◊®◊ô◊ö:</label>
+            <label style="font-size:0.82rem">או בחר תאריך:</label>
             <input type="date" value="${wizardState.dueDate || ''}" style="margin-top:4px"
                    onchange="wizardState.linkedEvent=null;wizardState.dueDate=this.value">
           </div>
         </div>
         <div style="display:flex;gap:8px;margin-top:12px">
-          <button class="btn-secondary" onclick="wizardState.courseKey=null;renderWizard()">‚Üê ◊ó◊ñ◊ï◊®</button>
-          <button class="btn-primary" onclick="wizardState.step=3;renderWizard()">◊î◊û◊©◊ö ‚Üí</button>
+          <button class="btn-secondary" onclick="wizardState.courseKey=null;renderWizard()">← חזור</button>
+          <button class="btn-primary" onclick="wizardState.step=3;renderWizard()">המשך →</button>
         </div>`;
     }
   } else if (wizardState.step === 3) {
     body.innerHTML = `
       <div class="form-group">
-        <label>◊õ◊ï◊™◊®◊™ ◊î◊û◊©◊ô◊û◊î</label>
-        <input type="text" id="wiz-title" value="${esc(wizardState.title)}" placeholder="◊õ◊™◊ô◊ë◊™ ◊ò◊ô◊ï◊ò◊î ◊®◊ê◊©◊ï◊†◊î...">
+        <label>כותרת המשימה</label>
+        <input type="text" id="wiz-title" value="${esc(wizardState.title)}" placeholder="כתיבת טיוטה ראשונה...">
       </div>
       <div class="form-group">
-        <label>◊™◊ô◊ê◊ï◊® (◊ê◊ï◊§◊¶◊ô◊ï◊†◊ú◊ô)</label>
-        <textarea id="wiz-desc" placeholder="◊§◊®◊ò◊ô◊ù ◊†◊ï◊°◊§◊ô◊ù...">${esc(wizardState.description)}</textarea>
+        <label>תיאור (אופציונלי)</label>
+        <textarea id="wiz-desc" placeholder="פרטים נוספים...">${esc(wizardState.description)}</textarea>
       </div>
       ${!wizardState.dueDate ? `
         <div class="form-group">
-          <label>◊™◊ê◊®◊ô◊ö ◊ô◊¢◊ì</label>
+          <label>תאריך יעד</label>
           <input type="date" id="wiz-date" value="">
         </div>` : ''}
       <div class="form-group">
-        <label>◊¢◊ì◊ô◊§◊ï◊™</label>
+        <label>עדיפות</label>
         <div class="priority-buttons">
-          <button class="priority-btn ${wizardState.priority === 'high' ? 'selected' : ''}" data-p="high" onclick="wizardState.priority='high';document.querySelectorAll('.priority-btn').forEach(b=>b.classList.remove('selected'));this.classList.add('selected')">üî¥ ◊í◊ë◊ï◊î◊î</button>
-          <button class="priority-btn ${wizardState.priority === 'mid' ? 'selected' : ''}" data-p="mid" onclick="wizardState.priority='mid';document.querySelectorAll('.priority-btn').forEach(b=>b.classList.remove('selected'));this.classList.add('selected')">üü° ◊ë◊ô◊†◊ï◊†◊ô◊™</button>
-          <button class="priority-btn ${wizardState.priority === 'low' ? 'selected' : ''}" data-p="low" onclick="wizardState.priority='low';document.querySelectorAll('.priority-btn').forEach(b=>b.classList.remove('selected'));this.classList.add('selected')">üü¢ ◊†◊û◊ï◊õ◊î</button>
+          <button class="priority-btn ${wizardState.priority === 'high' ? 'selected' : ''}" data-p="high" onclick="wizardState.priority='high';document.querySelectorAll('.priority-btn').forEach(b=>b.classList.remove('selected'));this.classList.add('selected')">🔴 גבוהה</button>
+          <button class="priority-btn ${wizardState.priority === 'mid' ? 'selected' : ''}" data-p="mid" onclick="wizardState.priority='mid';document.querySelectorAll('.priority-btn').forEach(b=>b.classList.remove('selected'));this.classList.add('selected')">🟡 בינונית</button>
+          <button class="priority-btn ${wizardState.priority === 'low' ? 'selected' : ''}" data-p="low" onclick="wizardState.priority='low';document.querySelectorAll('.priority-btn').forEach(b=>b.classList.remove('selected'));this.classList.add('selected')">🟢 נמוכה</button>
         </div>
       </div>
       <div class="form-group">
-        <label>◊©◊ù (◊†◊ï◊°◊£ ◊¢"◊ô)</label>
-        <input type="text" id="wiz-by" value="${esc(wizardState.createdBy)}" placeholder="◊î◊©◊ù ◊©◊ú◊ö">
+        <label>שם (נוסף ע"י)</label>
+        <input type="text" id="wiz-by" value="${esc(wizardState.createdBy)}" placeholder="השם שלך">
       </div>
       <div style="display:flex;gap:8px;margin-top:8px">
-        ${wizardState.step > 1 ? `<button class="btn-secondary" onclick="wizardState.step=${wizardState.isCoursed ? 2 : 1};renderWizard()">‚Üê ◊ó◊ñ◊ï◊®</button>` : ''}
-        <button class="btn-primary" onclick="saveWizardTask()">◊©◊û◊ï◊® ◊û◊©◊ô◊û◊î</button>
+        ${wizardState.step > 1 ? `<button class="btn-secondary" onclick="wizardState.step=${wizardState.isCoursed ? 2 : 1};renderWizard()">← חזור</button>` : ''}
+        <button class="btn-primary" onclick="saveWizardTask()">שמור משימה</button>
       </div>`;
   }
 }
 
 async function saveWizardTask() {
   const title = document.getElementById('wiz-title')?.value;
-  if (!title) { showToast('◊†◊ê ◊ú◊û◊ú◊ê ◊õ◊ï◊™◊®◊™'); return; }
+  if (!title) { showToast('נא למלא כותרת'); return; }
   const desc = document.getElementById('wiz-desc')?.value || '';
   const dateEl = document.getElementById('wiz-date');
   const dueDate = wizardState.dueDate || dateEl?.value || null;
-  const by = document.getElementById('wiz-by')?.value || '◊ê◊†◊ï◊†◊ô◊û◊ô';
+  const by = document.getElementById('wiz-by')?.value || 'אנונימי';
 
-  if (by && by !== '◊ê◊†◊ï◊†◊ô◊û◊ô') { localStorage.setItem('userName', by); }
+  if (by && by !== 'אנונימי') { localStorage.setItem('userName', by); }
 
   await db.collection('tasks').add({
     title,
@@ -1844,13 +2002,13 @@ async function saveWizardTask() {
   });
 
   closeModal('modal-task-wizard');
-  showToast('‚úÖ ◊û◊©◊ô◊û◊î ◊†◊ï◊°◊§◊î ‚Äî ◊õ◊ï◊ú◊ù ◊®◊ï◊ê◊ô◊ù ◊¢◊õ◊©◊ô◊ï');
+  showToast('✅ משימה נוספה — כולם רואים עכשיו');
 }
 
 async function deleteTask(id) {
-  if (confirm('◊ú◊û◊ó◊ï◊ß ◊û◊©◊ô◊û◊î?')) {
+  if (confirm('למחוק משימה?')) {
     await db.collection('tasks').doc(id).delete();
-    showToast('üóë ◊û◊©◊ô◊û◊î ◊†◊û◊ó◊ß◊î');
+    showToast('🗑 משימה נמחקה');
   }
 }
 
@@ -1892,7 +2050,7 @@ function renderKanban() {
           </div>
           <div class="kanban-card-meta">
             ${t.course_key ? `<span>${getCourseName(t.course_key)}</span>` : ''}
-            ${t.due_date ? `<span>◊¢◊ì ${formatDate(t.due_date)}</span>` : ''}
+            ${t.due_date ? `<span>עד ${formatDate(t.due_date)}</span>` : ''}
           </div>
         </div>`;
     }).join('');
@@ -1942,14 +2100,14 @@ function renderArchive() {
   document.getElementById('archive-list').innerHTML = archived.map(t => `
     <div class="archive-item">
       <div class="event-title">${esc(t.title)}</div>
-      <span style="font-size:0.72rem;color:var(--text-3)">${t.due_date ? formatDate(t.due_date) : ''} ¬∑ ${getCourseName(t.course_key) || '◊õ◊ú◊ú◊ô'}</span>
+      <span style="font-size:0.72rem;color:var(--text-3)">${t.due_date ? formatDate(t.due_date) : ''} · ${getCourseName(t.course_key) || 'כללי'}</span>
     </div>`).join('');
 }
 
 function toggleArchive() {
   const section = document.getElementById('archive-section');
   section.classList.toggle('collapsed');
-  document.getElementById('archive-arrow').textContent = section.classList.contains('collapsed') ? '‚óÄ' : '‚ñº';
+  document.getElementById('archive-arrow').textContent = section.classList.contains('collapsed') ? '◀' : '▼';
 }
 
 async function autoArchiveOverdueTasks() {
@@ -1965,11 +2123,64 @@ async function autoArchiveOverdueTasks() {
 // ===================================================================
 // ICS MODAL
 // ===================================================================
+function generateICS() {
+  const filteredEvts = events.filter(e =>
+    activeGroup === 'all' || e.group === 'all' || e.group === activeGroup
+  );
+
+  function toICSDate(isoStr) {
+    // Convert ISO string to ICS format: 20260316T143000Z
+    return isoStr.replace(/[-:]/g, '').replace(/\.\d{3}/, '').replace(/ /, 'T');
+  }
+
+  const lines = [
+    'BEGIN:VCALENDAR',
+    'VERSION:2.0',
+    'PRODID:-//Sam Spiegel//Dashboard//HE',
+    'CALSCALE:GREGORIAN',
+    'METHOD:PUBLISH',
+    'X-WR-CALNAME:סם שפיגל — לוח שנה כיתתי',
+    'X-WR-TIMEZONE:Asia/Jerusalem',
+    'X-WR-CALDESC:לוח שנה אוטומטי לתלמידי תסריטאות'
+  ];
+
+  filteredEvts.forEach(ev => {
+    const teacher = courses.find(c => c.key === ev.course_key)?.teacher || '';
+    const summary = summariesData[ev.uid];
+    const notesPart = summary?.notes ? `\\nהערות: ${summary.notes.replace(/\n/g,'\\n')}` : '';
+
+    lines.push('BEGIN:VEVENT');
+    lines.push(`UID:${ev.uid}@samspiegel`);
+    lines.push(`DTSTART:${toICSDate(ev.start)}`);
+    lines.push(`DTEND:${toICSDate(ev.end)}`);
+    lines.push(`SUMMARY:${ev.title}${ev.lesson_number ? ` — שיעור ${ev.lesson_number}` : ''}`);
+    lines.push(`DESCRIPTION:${getCourseName(ev.course_key)}${teacher ? ' | ' + teacher : ''}${notesPart}`);
+    if (ev.location) lines.push(`LOCATION:${ev.location}`);
+    lines.push(`STATUS:${ev.status === 'cancelled' ? 'CANCELLED' : 'CONFIRMED'}`);
+    lines.push('END:VEVENT');
+  });
+
+  lines.push('END:VCALENDAR');
+  return lines.join('\r\n');
+}
+
+function downloadICS() {
+  const content = generateICS();
+  const blob = new Blob([content], { type: 'text/calendar;charset=utf-8' });
+  const url = URL.createObjectURL(blob);
+  const a = document.createElement('a');
+  a.href = url;
+  a.download = 'sam-spiegel.ics';
+  a.click();
+  URL.revokeObjectURL(url);
+  showToast('📅 קובץ ICS הורד בהצלחה!');
+}
+
 function showICalModal() {
   const workerUrl = `https://samspigel.workers.dev/ics/${userId}`;
   document.getElementById('ical-url').textContent = workerUrl;
   document.getElementById('btn-copy-ical').onclick = () => {
-    navigator.clipboard.writeText(workerUrl).then(() => showToast('üìã ◊ß◊ô◊©◊ï◊® ◊î◊ï◊¢◊™◊ß!'));
+    navigator.clipboard.writeText(workerUrl).then(() => showToast('📋 קישור הועתק!'));
   };
   openModal('modal-ical');
 }
