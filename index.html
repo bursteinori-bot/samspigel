@@ -407,6 +407,84 @@ a { color: var(--accent); text-decoration: none; }
 }
 .summary-add:hover { border-color: var(--accent); color: var(--accent); }
 
+/* ===== STATS BAR ===== */
+#stats-bar {
+  display: grid; grid-template-columns: repeat(4, 1fr); gap: 10px;
+  margin-bottom: 20px;
+}
+.stat-card {
+  padding: 14px 16px; border-radius: var(--radius-md);
+  background: var(--bg-surface); border: 1px solid var(--border);
+  display: flex; flex-direction: column; gap: 2px;
+  transition: border-color 0.2s; cursor: default;
+  position: relative; overflow: hidden;
+}
+.stat-card::before {
+  content: ''; position: absolute; bottom: 0; right: 0; left: 0; height: 2px;
+  background: var(--stat-color, var(--accent));
+}
+.stat-num {
+  font-size: 1.6rem; font-weight: 800; line-height: 1;
+  color: var(--stat-color, var(--text-1));
+}
+.stat-label { font-size: 0.72rem; color: var(--text-3); font-weight: 500; }
+.stat-card.stat-overdue { --stat-color: var(--priority-high); }
+.stat-card.stat-today    { --stat-color: var(--priority-mid); }
+.stat-card.stat-next     { --stat-color: var(--status-now); }
+.stat-card.stat-total    { --stat-color: var(--accent); }
+@media (max-width: 768px) { #stats-bar { grid-template-columns: repeat(2, 1fr); } }
+
+/* ===== QUICK-ADD TASK ===== */
+.quick-add-bar {
+  display: flex; gap: 8px; margin-bottom: 16px;
+  background: var(--bg-surface); border: 1px solid var(--border);
+  border-radius: var(--radius-md); padding: 8px 12px;
+  transition: border-color 0.2s;
+}
+.quick-add-bar:focus-within { border-color: var(--accent); }
+.quick-add-bar input {
+  flex: 1; background: none; border: none; font-size: 0.9rem;
+  color: var(--text-1); outline: none; padding: 4px 0;
+}
+.quick-add-bar input::placeholder { color: var(--text-3); }
+.quick-add-bar select {
+  background: var(--bg-surface2); border: 1px solid var(--border);
+  border-radius: var(--radius-sm); font-size: 0.78rem; padding: 4px 8px;
+  color: var(--text-2); max-width: 120px;
+}
+.quick-add-bar button {
+  padding: 6px 16px; border-radius: var(--radius-sm);
+  background: var(--accent); color: #fff; font-size: 0.82rem; font-weight: 500;
+  transition: background 0.2s;
+}
+.quick-add-bar button:hover { background: #6B5CE6; }
+
+/* ===== KANBAN URGENCY ===== */
+.kanban-card.is-overdue {
+  border-right-color: var(--priority-high) !important;
+  background: color-mix(in srgb, var(--priority-high) 6%, var(--bg-surface2));
+}
+.kanban-card.is-today {
+  border-right-color: var(--priority-mid) !important;
+  background: color-mix(in srgb, var(--priority-mid) 6%, var(--bg-surface2));
+}
+.kanban-card-due {
+  font-size: 0.7rem; font-weight: 600; padding: 1px 7px;
+  border-radius: var(--radius-xl); display: inline-block; margin-top: 4px;
+}
+.due-overdue { background: rgba(247,111,111,0.2); color: var(--priority-high); }
+.due-today   { background: rgba(247,208,111,0.2); color: var(--priority-mid); }
+.due-soon    { background: rgba(111,247,196,0.15); color: var(--priority-low); }
+.kanban-empty {
+  padding: 24px; text-align: center; color: var(--text-3);
+  font-size: 0.82rem; border: 1px dashed var(--border);
+  border-radius: var(--radius-sm); margin: 4px;
+}
+.kanban-empty button {
+  display: block; margin: 8px auto 0;
+  color: var(--accent); font-size: 0.8rem; text-decoration: underline;
+}
+
 /* ===== LESSON DETAIL ENHANCEMENTS ===== */
 .lesson-meta { display:flex; gap:10px; flex-wrap:wrap; margin-bottom:14px; font-size:0.85rem; color:var(--text-2); }
 .lesson-section-title { font-size:0.85rem; font-weight:600; margin:14px 0 8px; color:var(--text-1); }
@@ -656,7 +734,7 @@ body.light {
   --border: rgba(0,0,0,0.08);
   --border-hover: rgba(0,0,0,0.15);
   --text-1: #1A1A2E;
-  --text-2: #6666880;
+  --text-2: #666688;
   --text-3: #9999AA;
 }
 </style>
@@ -670,21 +748,74 @@ body.light {
     <input type="search" id="global-search" placeholder="חיפוש שיעורים, משימות...">
   </div>
   <div class="topbar-actions">
-    <button id="btn-add-ical" onclick="showICalModal()">📅 <span>הוסף ליומן</span></button>
+    <button id="btn-add-ical" onclick="showICalModal()">📅 <span>יומן</span></button>
     <button id="btn-settings" onclick="openModal('modal-settings')">⚙️ <span>הגדרות</span></button>
-    <button id="fab-add" onclick="openTaskWizard()">＋</button>
+    <button id="fab-add" onclick="openTaskWizard()" title="הוסף משימה">＋ <span style="font-size:0.75rem;font-weight:600">משימה</span></button>
   </div>
 </header>
 
 <div class="main-container">
 
-  <!-- ===== PINBOARD ===== -->
-  <div class="section-header">
-    <h2>📌 פינבורד</h2>
-    <span class="section-badge" id="pin-count">0</span>
+  <!-- ===== STATS BAR ===== -->
+  <div id="stats-bar">
+    <div class="stat-card stat-total" onclick="document.getElementById('kanban-section').scrollIntoView({behavior:'smooth'})">
+      <div class="stat-num" id="stat-total-num">0</div>
+      <div class="stat-label">משימות פתוחות</div>
+    </div>
+    <div class="stat-card stat-overdue" onclick="document.getElementById('kanban-section').scrollIntoView({behavior:'smooth'})">
+      <div class="stat-num" id="stat-overdue-num">0</div>
+      <div class="stat-label">פגות תאריך</div>
+    </div>
+    <div class="stat-card stat-today" onclick="document.getElementById('kanban-section').scrollIntoView({behavior:'smooth'})">
+      <div class="stat-num" id="stat-today-num">0</div>
+      <div class="stat-label">להיום</div>
+    </div>
+    <div class="stat-card stat-next">
+      <div class="stat-num" id="stat-next-num">—</div>
+      <div class="stat-label" id="stat-next-label">שיעור הבא</div>
+    </div>
   </div>
-  <section id="pinboard">
-    <button id="pinboard-add" onclick="openModal('modal-link-add')">＋</button>
+
+  <!-- ===== KANBAN (tasks first!) ===== -->
+  <section id="kanban-section">
+    <div class="section-header">
+      <h2>🗂️ משימות</h2>
+      <span class="section-badge" id="kanban-count-badge">0</span>
+    </div>
+
+    <!-- Quick-add task -->
+    <div class="quick-add-bar">
+      <input type="text" id="quick-task-input" placeholder="✏️ הוסף משימה מהירה — הקלד ולחץ Enter..."
+             onkeydown="if(event.key==='Enter') quickAddTask()">
+      <select id="quick-task-course">
+        <option value="">ללא קורס</option>
+      </select>
+      <button onclick="quickAddTask()">הוסף</button>
+    </div>
+
+    <div class="kanban-board">
+      <div class="kanban-col" data-status="todo">
+        <div class="kanban-col-header">
+          <span class="kanban-col-title">📝 לביצוע</span>
+          <span class="kanban-col-count" id="kanban-count-todo">0</span>
+        </div>
+        <div class="kanban-cards" id="kanban-todo"></div>
+      </div>
+      <div class="kanban-col" data-status="inprogress">
+        <div class="kanban-col-header">
+          <span class="kanban-col-title">🔄 בתהליך</span>
+          <span class="kanban-col-count" id="kanban-count-inprogress">0</span>
+        </div>
+        <div class="kanban-cards" id="kanban-inprogress"></div>
+      </div>
+      <div class="kanban-col" data-status="done">
+        <div class="kanban-col-header">
+          <span class="kanban-col-title">✅ בוצע</span>
+          <span class="kanban-col-count" id="kanban-count-done">0</span>
+        </div>
+        <div class="kanban-cards" id="kanban-done"></div>
+      </div>
+    </div>
   </section>
 
   <!-- ===== WIDGETS ROW ===== -->
@@ -728,6 +859,15 @@ body.light {
     <div id="calendar-body"></div>
   </section>
 
+  <!-- ===== PINBOARD ===== -->
+  <div class="section-header">
+    <h2>📌 פינבורד</h2>
+    <span class="section-badge" id="pin-count">0</span>
+  </div>
+  <section id="pinboard">
+    <button id="pinboard-add" onclick="openModal('modal-link-add')">＋</button>
+  </section>
+
   <!-- ===== SUMMARIES ===== -->
   <section id="summaries-section">
     <div class="section-header">
@@ -735,36 +875,6 @@ body.light {
       <span class="section-badge" id="summaries-count">0</span>
     </div>
     <div class="summaries-grid" id="summaries-grid"></div>
-  </section>
-
-  <!-- ===== KANBAN ===== -->
-  <section id="kanban-section">
-    <div class="section-header">
-      <h2>🗂️ קנבן אישי</h2>
-    </div>
-    <div class="kanban-board">
-      <div class="kanban-col" data-status="todo">
-        <div class="kanban-col-header">
-          <span class="kanban-col-title">📝 לביצוע</span>
-          <span class="kanban-col-count" id="kanban-count-todo">0</span>
-        </div>
-        <div class="kanban-cards" id="kanban-todo"></div>
-      </div>
-      <div class="kanban-col" data-status="inprogress">
-        <div class="kanban-col-header">
-          <span class="kanban-col-title">🔄 בתהליך</span>
-          <span class="kanban-col-count" id="kanban-count-inprogress">0</span>
-        </div>
-        <div class="kanban-cards" id="kanban-inprogress"></div>
-      </div>
-      <div class="kanban-col" data-status="done">
-        <div class="kanban-col-header">
-          <span class="kanban-col-title">✅ בוצע</span>
-          <span class="kanban-col-count" id="kanban-count-done">0</span>
-        </div>
-        <div class="kanban-cards" id="kanban-done"></div>
-      </div>
-    </div>
   </section>
 
   <!-- ===== ARCHIVE ===== -->
@@ -782,10 +892,10 @@ body.light {
 
 <!-- ===== MOBILE NAV ===== -->
 <nav id="mobile-nav">
-  <button data-section="top" class="active" onclick="mobileNav('top')">🏠<span>בית</span></button>
-  <button data-section="calendar-section" onclick="mobileNav('calendar-section')">📅<span>לוח</span></button>
-  <button data-section="kanban-section" onclick="mobileNav('kanban-section')">🗂️<span>קנבן</span></button>
+  <button data-section="kanban-section" class="active" onclick="mobileNav('kanban-section')">🗂️<span>משימות</span></button>
+  <button data-section="calendar-section" onclick="mobileNav('calendar-section')">📅<span>לוח שנה</span></button>
   <button data-section="summaries-section" onclick="mobileNav('summaries-section')">📚<span>סיכומים</span></button>
+  <button data-section="top" onclick="mobileNav('top')">📌<span>פינבורד</span></button>
 </nav>
 
 <!-- ===== MODAL: Add Link ===== -->
@@ -1229,6 +1339,7 @@ function setupTasksListener() {
     renderCalendar();
     renderKanban();
     renderArchive();
+    renderStats();
   });
 }
 
@@ -1346,6 +1457,8 @@ function setGroup(g) {
   document.getElementById('setting-group').value = g;
   renderCalendar();
   renderKanban();
+  buildQuickAddCourses();
+  renderStats();
 }
 
 function navWeek(dir) {
@@ -2027,6 +2140,81 @@ function loadPersonalKanban() {
   });
 }
 
+function getTaskUrgency(t) {
+  if (!t.due_date) return 'none';
+  const today = new Date(); today.setHours(0,0,0,0);
+  const due = new Date(t.due_date); due.setHours(0,0,0,0);
+  if (due < today) return 'overdue';
+  if (due.getTime() === today.getTime()) return 'today';
+  const diff = (due - today) / 86400000;
+  if (diff <= 3) return 'soon';
+  return 'none';
+}
+
+function renderStats() {
+  const activeTasks = tasksData.filter(t => t.status === 'active');
+  const open = activeTasks.filter(t => (kanbanState[t.id] || 'todo') !== 'done');
+  const overdue = open.filter(t => getTaskUrgency(t) === 'overdue');
+  const todayTasks = open.filter(t => getTaskUrgency(t) === 'today');
+
+  document.getElementById('stat-total-num').textContent = open.length;
+  document.getElementById('stat-overdue-num').textContent = overdue.length;
+  document.getElementById('stat-today-num').textContent = todayTasks.length;
+
+  // Next class
+  const now = new Date();
+  const next = events
+    .filter(e => new Date(e.start) > now && (activeGroup === 'all' || e.group === 'all' || e.group === activeGroup))
+    .sort((a,b) => a.start.localeCompare(b.start))[0];
+  if (next) {
+    const diff = Math.round((new Date(next.start) - now) / 60000);
+    const h = Math.floor(diff / 60), m = diff % 60;
+    document.getElementById('stat-next-num').textContent = h > 0 ? `${h}ש׳ ${m}ד׳` : `${m}ד׳`;
+    document.getElementById('stat-next-label').textContent = getCourseName(next.course_key) || 'שיעור הבא';
+  } else {
+    document.getElementById('stat-next-num').textContent = '—';
+    document.getElementById('stat-next-label').textContent = 'שיעור הבא';
+  }
+
+  // Badge on kanban header
+  const el = document.getElementById('kanban-count-badge');
+  if (el) el.textContent = open.length;
+}
+
+async function quickAddTask() {
+  const input = document.getElementById('quick-task-input');
+  const courseSelect = document.getElementById('quick-task-course');
+  const title = input?.value?.trim();
+  if (!title) { input?.focus(); return; }
+
+  const courseKey = courseSelect?.value || null;
+  const by = localStorage.getItem('userName') || 'אנונימי';
+
+  await db.collection('tasks').add({
+    title,
+    description: '',
+    due_date: null,
+    linked_event_uid: null,
+    course_key: courseKey,
+    priority: 'mid',
+    status: 'active',
+    completed_globally: false,
+    created_by: by,
+    created_at: firebase.firestore.FieldValue.serverTimestamp()
+  });
+
+  input.value = '';
+  showToast('✅ משימה נוספה!');
+}
+
+function buildQuickAddCourses() {
+  const sel = document.getElementById('quick-task-course');
+  if (!sel) return;
+  const relevant = courses.filter(c => activeGroup === 'all' || c.group === 'all' || c.group === activeGroup);
+  sel.innerHTML = '<option value="">ללא קורס</option>' +
+    relevant.map(c => `<option value="${c.key}">${c.short}</option>`).join('');
+}
+
 function renderKanban() {
   const activeTasks = tasksData.filter(t => t.status === 'active');
   const cols = { todo: [], inprogress: [], done: [] };
@@ -2036,22 +2224,50 @@ function renderKanban() {
     if (cols[status]) cols[status].push(t);
   });
 
+  // Sort: overdue first, then today, then by due date
+  const urgencyOrder = { overdue: 0, today: 1, soon: 2, none: 3 };
+  ['todo', 'inprogress'].forEach(s => {
+    cols[s].sort((a, b) => urgencyOrder[getTaskUrgency(a)] - urgencyOrder[getTaskUrgency(b)]);
+  });
+
   ['todo', 'inprogress', 'done'].forEach(status => {
     const container = document.getElementById(`kanban-${status}`);
     document.getElementById(`kanban-count-${status}`).textContent = cols[status].length;
+
+    if (!cols[status].length) {
+      const emptyMsgs = {
+        todo: ['אין משימות לביצוע 🎉', 'הוסף משימה'],
+        inprogress: ['אין משימות בתהליך', null],
+        done: ['עדיין לא סיימת משימות', null]
+      };
+      const [msg, btn] = emptyMsgs[status];
+      container.innerHTML = `<div class="kanban-empty">${msg}${btn ? `<button onclick="openTaskWizard()">${btn}</button>` : ''}</div>`;
+      return;
+    }
+
     container.innerHTML = cols[status].map(t => {
       const color = getCourseColor(t.course_key);
-      const pColor = t.priority === 'high' ? 'var(--priority-high)' : t.priority === 'low' ? 'var(--priority-low)' : 'var(--priority-mid)';
+      const urgency = getTaskUrgency(t);
+      const pColor = { high: 'var(--priority-high)', mid: 'var(--priority-mid)', low: 'var(--priority-low)' }[t.priority] || 'var(--priority-mid)';
+      const urgencyClass = urgency === 'overdue' ? 'is-overdue' : urgency === 'today' ? 'is-today' : '';
+      const dueLabel = urgency === 'overdue'
+        ? `<span class="kanban-card-due due-overdue">⚠ פגה תאריך</span>`
+        : urgency === 'today'
+        ? `<span class="kanban-card-due due-today">📅 להיום</span>`
+        : urgency === 'soon' && t.due_date
+        ? `<span class="kanban-card-due due-soon">⏳ עד ${formatDate(t.due_date)}</span>`
+        : t.due_date ? `<span style="font-size:0.7rem;color:var(--text-3)">עד ${formatDate(t.due_date)}</span>` : '';
+
       return `
-        <div class="kanban-card" draggable="true" data-id="${t.id}" style="--course-color:${color}">
+        <div class="kanban-card ${urgencyClass}" draggable="true" data-id="${t.id}" style="--course-color:${color}">
           <div class="kanban-card-title">
             <span class="kanban-card-priority" style="background:${pColor}"></span>
             ${esc(t.title)}
           </div>
           <div class="kanban-card-meta">
-            ${t.course_key ? `<span>${getCourseName(t.course_key)}</span>` : ''}
-            ${t.due_date ? `<span>עד ${formatDate(t.due_date)}</span>` : ''}
+            ${t.course_key ? `<span style="color:${color}">${getCourseName(t.course_key)}</span>` : ''}
           </div>
+          ${dueLabel}
         </div>`;
     }).join('');
   });
@@ -2233,6 +2449,8 @@ async function init() {
 
   // Build course filters
   buildCourseFilters();
+  buildQuickAddCourses();
+  renderStats();
 
   // Firebase listeners
   setupLinksListener();
@@ -2261,7 +2479,7 @@ async function init() {
   }, 30 * 60 * 1000);
 
   // Live progress update every 30s
-  setInterval(() => { renderWidgets(); updateLiveProgress(); }, 30000);
+  setInterval(() => { renderWidgets(); updateLiveProgress(); renderStats(); }, 30000);
 }
 
 init();
