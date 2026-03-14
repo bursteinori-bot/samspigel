@@ -1,2269 +1,1164 @@
 <!DOCTYPE html>
-<html lang="he" dir="rtl">
+<html lang="he" dir="rtl" class="dark">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>סם שפיגל — דשבורד כיתתי</title>
-<link href="https://fonts.googleapis.com/css2?family=Heebo:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+<title>סם שפיגל — דשבורד</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Heebo:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 <style>
-/* ===== CSS VARIABLES ===== */
 :root {
-  --bg-base: #0F0F13;
-  --bg-surface: #1A1A24;
-  --bg-surface2: #22223A;
-  --bg-glass: rgba(255,255,255,0.04);
-  --border: rgba(255,255,255,0.08);
-  --border-hover: rgba(255,255,255,0.15);
-  --accent: #7C6FF7;
-  --accent-glow: rgba(124,111,247,0.3);
-  --text-1: #F0F0F8;
-  --text-2: #8888AA;
-  --text-3: #55556A;
-  --status-future: #6FBBF7;
-  --status-today: #F7D06F;
-  --status-now: #6FF7C4;
-  --status-past: #55556A;
-  --priority-high: #F76F6F;
-  --priority-mid: #F7D06F;
-  --priority-low: #6FF7C4;
-  --c-tachkir: #7C6FF7;
-  --c-location: #F7926F;
-  --c-short-story: #6FF7C4;
-  --c-israeli-cinema: #F7D06F;
-  --c-film-history: #F76F9B;
-  --c-kids-series: #6FBBF7;
-  --c-scenes: #A8F76F;
-  --c-web-series: #F76F6F;
-  --c-directing: #C46FF7;
-  --spring: cubic-bezier(0.34, 1.56, 0.64, 1);
-  --ease: cubic-bezier(0.4, 0, 0.2, 1);
-  --radius-sm: 8px;
-  --radius-md: 12px;
-  --radius-lg: 16px;
-  --radius-xl: 24px;
+  --bg:#0a0a12; --bg2:#11111c; --bg3:#1a1a28;
+  --glass:rgba(255,255,255,0.04); --glass2:rgba(255,255,255,0.07);
+  --accent:#5a4fcf; --accent2:#7c6ff7; --accent-glow:rgba(90,79,207,0.35);
+  --text1:#f0f0fa; --text2:#8080a0; --text3:#404060;
+  --border:rgba(255,255,255,0.08); --border2:rgba(255,255,255,0.14);
+  --red:#ff4757; --amber:#ffd166; --green:#00e5cc; --blue:#6fbbf7;
+  --radius:12px; --spring:cubic-bezier(0.34,1.56,0.64,1); --ease:cubic-bezier(0.4,0,0.2,1);
 }
+.light {
+  --bg:#f4f4fd; --bg2:#eaeaf5; --bg3:#ffffff;
+  --glass:rgba(0,0,0,0.04); --glass2:rgba(0,0,0,0.07);
+  --text1:#1a1a2e; --text2:#505070; --text3:#a0a0c0;
+  --border:rgba(0,0,0,0.1); --border2:rgba(0,0,0,0.18);
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+html,body{height:100%;overflow:hidden;font-family:'Heebo',sans-serif;direction:rtl;background:var(--bg);color:var(--text1);font-size:14px;}
+button{font-family:inherit;cursor:pointer;border:none;background:none;color:inherit;}
+input,textarea,select{font-family:inherit;font-size:inherit;background:var(--bg3);color:var(--text1);border:1px solid var(--border);border-radius:8px;padding:7px 11px;outline:none;width:100%;}
+input:focus,textarea:focus,select:focus{border-color:var(--accent);box-shadow:0 0 0 3px var(--accent-glow);}
+::-webkit-scrollbar{width:4px;height:4px;}
+::-webkit-scrollbar-track{background:transparent;}
+::-webkit-scrollbar-thumb{background:var(--border2);border-radius:2px;}
 
-/* ===== RESET & BASE ===== */
-*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-html { scroll-behavior: smooth; }
-body {
-  font-family: 'Heebo', sans-serif;
-  direction: rtl;
-  background: var(--bg-base);
-  color: var(--text-1);
-  min-height: 100vh;
-  overflow-x: hidden;
-  line-height: 1.5;
-}
-button { font-family: inherit; cursor: pointer; border: none; background: none; color: inherit; }
-input, textarea, select { font-family: inherit; color: var(--text-1); background: var(--bg-surface); border: 1px solid var(--border); border-radius: var(--radius-sm); padding: 8px 12px; outline: none; }
-input:focus, textarea:focus, select:focus { border-color: var(--accent); }
-a { color: var(--accent); text-decoration: none; }
-::-webkit-scrollbar { width: 6px; }
-::-webkit-scrollbar-track { background: transparent; }
-::-webkit-scrollbar-thumb { background: var(--border-hover); border-radius: 3px; }
+/* BLOBS */
+.blob{position:fixed;border-radius:50%;filter:blur(80px);pointer-events:none;z-index:0;opacity:0.2;animation:blobMove 12s ease-in-out infinite alternate;}
+.blob1{width:400px;height:400px;background:#5a4fcf;top:-100px;right:-80px;}
+.blob2{width:350px;height:350px;background:#7c6ff7;bottom:-80px;left:-80px;animation-delay:-6s;}
+@keyframes blobMove{0%{transform:translate(0,0) scale(1);}100%{transform:translate(40px,30px) scale(1.1);}}
+@media(prefers-reduced-motion:reduce){.blob{animation:none;}}
 
-/* ===== GLASS CARD ===== */
-.glass-card {
-  background: var(--bg-glass);
-  backdrop-filter: blur(20px);
-  -webkit-backdrop-filter: blur(20px);
-  border: 1px solid var(--border);
-  border-radius: var(--radius-md);
-}
+/* TOPBAR */
+#topbar{position:relative;z-index:100;display:flex;align-items:center;gap:8px;padding:0 16px;height:52px;background:rgba(10,10,18,0.88);backdrop-filter:blur(20px) saturate(150%);border-bottom:1px solid var(--border);flex-shrink:0;}
+.light #topbar{background:rgba(244,244,253,0.88);}
+.logo{font-size:1rem;font-weight:800;white-space:nowrap;}
+.logo span{color:var(--accent2);}
+#search-input{max-width:210px;padding:6px 10px;border-radius:20px;font-size:0.8rem;}
+.spacer{flex:1;}
+.tbtn{padding:5px 11px;border-radius:8px;background:var(--bg2);border:1px solid var(--border);font-size:0.78rem;color:var(--text2);transition:all 0.15s;white-space:nowrap;}
+.tbtn:hover{border-color:var(--border2);color:var(--text1);}
+.tbtn.accent{background:var(--accent);border-color:var(--accent);color:#fff;font-weight:600;}
+.tbtn.accent:hover{background:var(--accent2);}
 
-/* ===== TOPBAR ===== */
-#topbar {
-  position: sticky; top: 0; z-index: 100;
-  display: flex; align-items: center; gap: 12px;
-  padding: 12px 24px;
-  background: rgba(15,15,19,0.85);
-  backdrop-filter: blur(20px);
-  -webkit-backdrop-filter: blur(20px);
-  border-bottom: 1px solid var(--border);
-}
-.logo { font-size: 1.2rem; font-weight: 700; white-space: nowrap; }
-.search-bar {
-  flex: 1; max-width: 400px;
-  position: relative;
-}
-.search-bar input {
-  width: 100%; padding: 8px 36px 8px 12px;
-  border-radius: var(--radius-xl);
-  background: var(--bg-surface);
-  font-size: 0.85rem;
-}
-.search-bar::before {
-  content: ''; position: absolute; right: 12px; top: 50%; transform: translateY(-50%);
-  width: 14px; height: 14px;
-  border: 2px solid var(--text-3); border-radius: 50%;
-  pointer-events: none;
-}
-.topbar-actions { display: flex; gap: 8px; margin-right: auto; align-items: center; }
-.topbar-actions button {
-  padding: 6px 14px; border-radius: var(--radius-sm);
-  background: var(--bg-surface); border: 1px solid var(--border);
-  font-size: 0.82rem; transition: all 0.2s var(--ease);
-  white-space: nowrap;
-}
-.topbar-actions button:hover { border-color: var(--accent); background: var(--bg-surface2); }
-#fab-add {
-  width: 36px; height: 36px; border-radius: 50%;
-  background: var(--accent); color: #fff;
-  font-size: 1.3rem; display: flex; align-items: center; justify-content: center;
-  border: none !important;
-  box-shadow: 0 4px 15px var(--accent-glow);
-  transition: transform 0.2s var(--spring);
-}
-#fab-add:hover { transform: scale(1.1); }
+/* LAYOUT */
+#app{display:flex;height:calc(100vh - 52px);position:relative;z-index:1;overflow:hidden;}
+#right-col{width:360px;min-width:220px;max-width:600px;display:flex;flex-direction:column;border-left:1px solid var(--border);overflow:hidden;}
+#col-resizer{width:5px;cursor:col-resize;background:transparent;flex-shrink:0;transition:background 0.15s;}
+#col-resizer:hover{background:var(--accent);opacity:0.5;}
+#left-col{flex:1;display:flex;flex-direction:column;overflow:hidden;min-width:0;}
+.h-resizer{height:5px;cursor:row-resize;background:transparent;flex-shrink:0;transition:background 0.15s;}
+.h-resizer:hover{background:var(--accent);opacity:0.4;}
 
-/* ===== MAIN CONTAINER ===== */
-.main-container { max-width: 1200px; margin: 0 auto; padding: 20px 24px 100px; }
+/* PANEL */
+.panel{display:flex;flex-direction:column;overflow:hidden;}
+.panel-head{display:flex;align-items:center;gap:8px;padding:8px 14px 6px;flex-shrink:0;border-bottom:1px solid var(--border);}
+.panel-title{font-size:0.72rem;font-weight:700;text-transform:uppercase;letter-spacing:0.8px;color:var(--text3);}
+.panel-head .ml{margin-right:auto;}
+.panel-body{flex:1;overflow-y:auto;}
 
-/* ===== SECTION HEADERS ===== */
-.section-header {
-  display: flex; align-items: center; gap: 10px;
-  margin-bottom: 16px; padding-bottom: 8px;
-  border-bottom: 1px solid var(--border);
-}
-.section-header h2 { font-size: 1.1rem; font-weight: 600; }
-.section-header .section-badge {
-  font-size: 0.75rem; padding: 2px 8px;
-  background: var(--accent); color: #fff;
-  border-radius: var(--radius-xl);
-}
+/* KPI */
+#kpi-panel{flex-shrink:0;}
+.kpi-grid{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:var(--border);}
+.kpi-card{padding:12px 14px;background:var(--bg2);}
+.kpi-val{font-size:1.6rem;font-weight:800;line-height:1;letter-spacing:-1px;}
+.kpi-lbl{font-size:0.68rem;color:var(--text3);margin-top:2px;}
+.kpi-bar{height:3px;border-radius:2px;background:var(--border);margin-top:6px;overflow:hidden;}
+.kpi-bar-fill{height:100%;border-radius:2px;transition:width 0.5s var(--ease);}
 
-/* ===== PINBOARD ===== */
-#pinboard {
-  display: flex; gap: 12px; overflow-x: auto;
-  padding: 16px 0; margin-bottom: 20px;
-  scroll-snap-type: x mandatory;
-}
-#pinboard::-webkit-scrollbar { height: 4px; }
-.pin-card {
-  flex: 0 0 auto; min-width: 200px; max-width: 280px;
-  padding: 12px 16px; border-radius: var(--radius-md);
-  background: var(--bg-surface); border: 1px solid var(--border);
-  display: flex; gap: 10px; align-items: flex-start;
-  scroll-snap-align: start;
-  transition: all 0.2s var(--ease);
-  cursor: pointer;
-  position: relative;
-}
-.pin-card:hover { border-color: var(--border-hover); transform: translateY(-2px); }
-.pin-card.dragging { opacity: 0.5; }
-.pin-icon { font-size: 1.3rem; flex-shrink: 0; }
-.pin-body { flex: 1; min-width: 0; }
-.pin-title { font-size: 0.85rem; font-weight: 500; margin-bottom: 2px; }
-.pin-sub { font-size: 0.72rem; color: var(--text-3); overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
-.pin-actions {
-  display: flex; gap: 4px; opacity: 0;
-  transition: opacity 0.2s;
-  position: absolute; top: 8px; left: 8px;
-}
-.pin-card:hover .pin-actions { opacity: 1; }
-.pin-actions button { font-size: 0.75rem; padding: 2px; }
-.pin-announcement { border-right: 3px solid; }
-.pin-red { border-color: var(--priority-high); }
-.pin-yellow { border-color: var(--priority-mid); }
-.pin-green { border-color: var(--priority-low); }
-.pin-blue { border-color: var(--status-future); }
-.countdown-days { font-size: 0.8rem; font-weight: 600; color: var(--accent); margin: 4px 0; }
-.countdown-bar { height: 4px; background: var(--bg-base); border-radius: 2px; overflow: hidden; }
-.countdown-fill { height: 100%; background: var(--accent); border-radius: 2px; transition: width 0.5s; }
-#pinboard-add {
-  flex: 0 0 auto; min-width: 60px;
-  display: flex; align-items: center; justify-content: center;
-  border: 1px dashed var(--border); border-radius: var(--radius-md);
-  color: var(--text-3); font-size: 1.5rem;
-  transition: all 0.2s;
-}
-#pinboard-add:hover { border-color: var(--accent); color: var(--accent); }
+/* KANBAN */
+#kanban-panel{flex:1;overflow:hidden;}
+#kanban-body{display:flex;gap:0;overflow-x:auto;overflow-y:hidden;height:100%;padding:8px;}
+.k-col{flex:1;min-width:130px;display:flex;flex-direction:column;background:rgba(255,255,255,0.02);border:1px solid var(--border);border-radius:var(--radius);margin:0 3px;overflow:hidden;}
+.k-col.drag-over{border-color:var(--accent);background:rgba(90,79,207,0.06);}
+.k-col-head{padding:7px 10px;font-size:0.7rem;font-weight:700;border-bottom:1px solid var(--border);flex-shrink:0;display:flex;align-items:center;justify-content:space-between;}
+.k-col-body{flex:1;overflow-y:auto;padding:6px;display:flex;flex-direction:column;gap:5px;}
+.k-card{padding:8px 10px;border-radius:8px;background:var(--bg2);border:1px solid var(--border);border-top:3px solid var(--task-color,var(--text3));cursor:grab;transition:all 0.15s;font-size:0.75rem;}
+.k-card:hover{border-color:var(--border2);background:var(--bg3);}
+.k-card.dragging{opacity:0.4;}
+.k-card-title{font-weight:600;line-height:1.3;margin-bottom:5px;}
+.k-card-meta{display:flex;flex-wrap:wrap;gap:3px;align-items:center;}
+.k-tag{font-size:0.6rem;padding:1px 6px;border-radius:10px;font-weight:600;background:rgba(255,255,255,0.08);color:var(--text2);}
+.k-urg{font-size:0.62rem;font-weight:700;}
 
-/* ===== WIDGETS ROW ===== */
-.widgets-row {
-  display: grid; grid-template-columns: 1fr 1fr; gap: 16px;
-  margin-bottom: 24px;
-}
-.widget {
-  padding: 16px 20px; border-radius: var(--radius-lg);
-  background: var(--bg-surface); border: 1px solid var(--border);
-}
-.widget h3 { font-size: 0.9rem; font-weight: 600; margin-bottom: 12px; color: var(--text-2); }
-.widget-event {
-  display: flex; align-items: center; gap: 10px;
-  padding: 8px 0;
-  border-bottom: 1px solid var(--border);
-}
-.widget-event:last-child { border-bottom: none; }
-.widget-event .we-color { width: 4px; height: 32px; border-radius: 2px; flex-shrink: 0; }
-.widget-event .we-info { flex: 1; }
-.widget-event .we-title { font-size: 0.82rem; font-weight: 500; }
-.widget-event .we-time { font-size: 0.72rem; color: var(--text-3); }
-.widget-now { position: relative; overflow: hidden; }
-.widget-now::before {
-  content: ''; position: absolute; top: 0; right: 0; bottom: 0; width: 3px;
-  background: var(--status-now);
-  box-shadow: 0 0 12px var(--status-now);
-}
-.widget-empty { color: var(--text-3); font-size: 0.82rem; padding: 12px 0; text-align: center; }
+/* MOVIES */
+#movies-panel{flex-shrink:0;}
+#movies-list{padding:6px 10px;display:flex;flex-wrap:wrap;gap:5px;min-height:40px;}
+.movie-pill{display:flex;align-items:center;gap:5px;padding:3px 9px;border-radius:20px;font-size:0.72rem;background:var(--bg3);border:1px solid var(--border);cursor:pointer;transition:all 0.15s;max-width:160px;}
+.movie-pill.watched{background:rgba(0,229,204,0.1);border-color:rgba(0,229,204,0.3);color:var(--green);text-decoration:line-through;}
+.movie-pill-del{opacity:0;font-size:0.6rem;color:var(--red);flex-shrink:0;}
+.movie-pill:hover .movie-pill-del{opacity:1;}
 
-/* ===== CALENDAR ===== */
-#calendar-section { margin-bottom: 24px; }
-#calendar-toolbar {
-  display: flex; flex-wrap: wrap; gap: 10px; align-items: center;
-  margin-bottom: 16px; padding: 12px 16px;
-  background: var(--bg-surface); border-radius: var(--radius-md);
-  border: 1px solid var(--border);
-}
-.cal-nav { display: flex; align-items: center; gap: 8px; }
-.cal-nav button {
-  width: 32px; height: 32px; border-radius: var(--radius-sm);
-  background: var(--bg-surface2); display: flex; align-items: center; justify-content: center;
-  font-size: 0.9rem; transition: background 0.2s;
-}
-.cal-nav button:hover { background: var(--accent); }
-#week-label { font-size: 0.85rem; font-weight: 600; min-width: 120px; text-align: center; }
-#today-btn {
-  padding: 4px 12px; border-radius: var(--radius-sm);
-  background: var(--accent); color: #fff; font-size: 0.75rem; font-weight: 500;
-}
-.view-tabs { display: flex; gap: 4px; }
-.view-tabs button {
-  padding: 4px 12px; border-radius: var(--radius-sm);
-  font-size: 0.78rem; background: var(--bg-surface2);
-  transition: all 0.2s;
-}
-.view-tabs button.active { background: var(--accent); color: #fff; }
-#course-filters { display: flex; gap: 6px; flex-wrap: wrap; }
-.course-chip {
-  padding: 3px 10px; border-radius: var(--radius-xl);
-  font-size: 0.72rem; border: 1px solid; cursor: pointer;
-  transition: all 0.2s; opacity: 0.5;
-}
-.course-chip.active { opacity: 1; }
-#group-filter { display: flex; gap: 4px; }
-#group-filter button {
-  padding: 3px 10px; border-radius: var(--radius-xl);
-  font-size: 0.72rem; background: var(--bg-surface2);
-  transition: all 0.2s;
-}
-#group-filter button.active { background: var(--accent); color: #fff; }
-#calendar-search {
-  padding: 6px 12px; border-radius: var(--radius-xl);
-  font-size: 0.78rem; width: 150px;
-}
+/* FEED */
+#feed-panel{flex-shrink:0;height:105px;}
+#feed-strip{display:flex;gap:8px;overflow-x:auto;overflow-y:hidden;padding:6px 10px;height:100%;align-items:center;}
+.feed-card{flex-shrink:0;width:160px;height:78px;padding:8px 10px;border-radius:10px;background:var(--bg2);border:1px solid var(--border);cursor:pointer;transition:all 0.15s;display:flex;flex-direction:column;justify-content:space-between;}
+.feed-card:hover{border-color:var(--border2);transform:translateY(-2px);}
+.feed-card.type-announcement{border-top:3px solid #ff6b35;}
+.feed-card.type-countdown{border-top:3px solid var(--accent2);}
+.feed-card-title{font-size:0.72rem;font-weight:600;line-height:1.2;}
+.feed-card-sub{font-size:0.62rem;color:var(--text2);}
+.feed-cbar{height:3px;background:var(--border);border-radius:2px;margin-top:4px;overflow:hidden;}
+.feed-cbar-fill{height:100%;border-radius:2px;background:var(--accent2);}
+.feed-add{width:50px;flex-shrink:0;height:78px;display:flex;align-items:center;justify-content:center;border-radius:10px;background:var(--bg2);border:1px dashed var(--border);cursor:pointer;color:var(--text3);font-size:1.2rem;transition:all 0.15s;}
+.feed-add:hover{border-color:var(--accent);color:var(--accent);}
 
-/* Calendar Body — Weekly */
-.cal-weekly {
-  display: grid; grid-template-columns: repeat(5, 1fr); gap: 12px;
-}
-.cal-day-col {
-  background: var(--bg-surface); border-radius: var(--radius-md);
-  border: 1px solid var(--border); overflow: hidden;
-}
-.cal-day-header {
-  padding: 10px 12px; text-align: center;
-  border-bottom: 1px solid var(--border);
-  font-size: 0.82rem; font-weight: 600;
-}
-.cal-day-header.today { background: var(--accent); color: #fff; }
-.cal-day-header .day-name { font-size: 0.72rem; color: var(--text-3); font-weight: 400; }
-.cal-day-header.today .day-name { color: rgba(255,255,255,0.7); }
-.cal-day-events { padding: 8px; display: flex; flex-direction: column; gap: 8px; min-height: 100px; }
+/* CALENDAR */
+#calendar-panel{flex:1;overflow:hidden;}
+#cal-grid{overflow:auto;display:grid;gap:1px;background:var(--border);}
+.cal-day{background:var(--bg);min-height:80px;padding:4px;font-size:0.7rem;display:flex;flex-direction:column;gap:2px;position:relative;}
+.cal-day.today{background:rgba(90,79,207,0.08);}
+.cal-day-num{font-size:0.72rem;font-weight:700;color:var(--text2);display:flex;align-items:center;justify-content:space-between;margin-bottom:2px;}
+.cal-day.today .cal-day-num{color:var(--accent2);}
+.cal-add-btn{opacity:0;font-size:0.6rem;color:var(--accent2);cursor:pointer;padding:1px 4px;background:rgba(90,79,207,0.15);border-radius:4px;border:none;}
+.cal-day:hover .cal-add-btn{opacity:1;}
+.cal-chip{font-size:0.62rem;padding:1px 5px;border-radius:4px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;cursor:pointer;font-weight:500;line-height:1.4;}
+.cal-chip:hover{filter:brightness(1.2);}
 
-/* Calendar Event Card */
-.cal-event {
-  padding: 10px 12px; border-radius: var(--radius-sm);
-  background: var(--bg-surface2); border: 1px solid var(--border);
-  border-right: 3px solid var(--course-color, var(--accent));
-  transition: all 0.2s var(--ease);
-  cursor: pointer;
-  font-size: 0.78rem;
-}
-.cal-event:hover { transform: translateY(-1px); border-color: var(--border-hover); }
-.cal-event.event-now {
-  border-right: 3px solid var(--course-color, var(--accent));
-  background: linear-gradient(90deg, color-mix(in srgb, var(--course-color, var(--accent)) 15%, transparent) 0%, transparent 100%);
-  animation: glowPulse 2s ease-in-out infinite;
-}
-@keyframes glowPulse {
-  0%, 100% { box-shadow: 0 0 8px color-mix(in srgb, var(--course-color, var(--accent)) 40%, transparent); }
-  50% { box-shadow: 0 0 20px color-mix(in srgb, var(--course-color, var(--accent)) 60%, transparent); }
-}
-.event-badges { display: flex; gap: 4px; margin-bottom: 6px; flex-wrap: wrap; }
-.badge {
-  padding: 1px 7px; border-radius: var(--radius-xl);
-  font-size: 0.65rem; font-weight: 500;
-}
-.badge-lesson { background: rgba(124,111,247,0.2); color: var(--accent); }
-.badge-future { background: rgba(111,187,247,0.15); color: var(--status-future); }
-.badge-today { background: rgba(247,208,111,0.15); color: var(--status-today); }
-.badge-now { background: rgba(111,247,196,0.15); color: var(--status-now); }
-.badge-past { background: rgba(85,85,106,0.2); color: var(--status-past); }
-.badge-task { background: rgba(247,111,107,0.15); color: var(--priority-high); }
-.badge-custom { background: rgba(124,111,247,0.15); color: var(--accent); }
-.badge-priority-high { background: rgba(247,111,111,0.2); color: var(--priority-high); }
-.badge-priority-mid { background: rgba(247,208,111,0.2); color: var(--priority-mid); }
-.badge-priority-low { background: rgba(111,247,196,0.2); color: var(--priority-low); }
-.event-title { font-weight: 500; margin-bottom: 4px; line-height: 1.3; }
-.event-meta { display: flex; gap: 8px; color: var(--text-3); font-size: 0.72rem; flex-wrap: wrap; }
-.event-desc { color: var(--text-2); font-size: 0.72rem; margin-top: 4px; }
-.event-tasks { margin-top: 6px; }
-.tasks-toggle {
-  font-size: 0.72rem; color: var(--text-2);
-  display: flex; align-items: center; gap: 4px;
-}
-.tasks-list { margin-top: 4px; display: none; flex-direction: column; gap: 4px; }
-.tasks-list.open { display: flex; }
-.task-chip {
-  padding: 3px 8px; border-radius: var(--radius-sm);
-  background: var(--bg-glass); font-size: 0.7rem;
-  display: flex; align-items: center; gap: 4px;
-}
-.event-actions { display: flex; gap: 6px; margin-top: 8px; }
-.event-actions button {
-  padding: 3px 8px; border-radius: var(--radius-sm);
-  background: var(--bg-glass); font-size: 0.7rem;
-  transition: background 0.2s;
-}
-.event-actions button:hover { background: var(--accent); color: #fff; }
-.event-footer {
-  display: flex; justify-content: space-between; align-items: center; margin-top: 6px;
-}
-.added-by { font-size: 0.68rem; color: var(--text-3); }
-.progress-live {
-  display: none; height: 3px; background: var(--bg-base);
-  border-radius: 2px; margin-top: 6px; overflow: hidden;
-}
-.progress-live-fill { height: 100%; background: var(--status-now); border-radius: 2px; transition: width 1s linear; }
-.event-now .progress-live { display: block; }
+/* MODALS */
+.modal-overlay{display:none;position:fixed;inset:0;background:rgba(0,0,0,0.6);backdrop-filter:blur(4px);z-index:500;align-items:center;justify-content:center;}
+.modal-overlay.open{display:flex;}
+.modal{background:var(--bg2);border:1px solid var(--border);border-radius:18px;padding:24px;width:min(520px,95vw);max-height:90vh;overflow-y:auto;animation:modalIn 0.2s var(--spring);}
+@keyframes modalIn{from{transform:scale(0.95) translateY(10px);opacity:0;}to{transform:none;opacity:1;}}
+.modal-head{display:flex;align-items:center;justify-content:space-between;margin-bottom:18px;}
+.modal-title{font-size:1.05rem;font-weight:700;}
+.modal-close{width:28px;height:28px;border-radius:8px;background:var(--bg3);border:1px solid var(--border);font-size:0.9rem;color:var(--text2);}
+.modal-close:hover{color:var(--text1);}
+.form-group{margin-bottom:14px;}
+.form-label{font-size:0.75rem;font-weight:600;color:var(--text2);margin-bottom:5px;display:block;}
+.course-pills{display:flex;flex-wrap:wrap;gap:6px;}
+.cpill{padding:4px 12px;border-radius:20px;font-size:0.72rem;font-weight:600;border:2px solid transparent;cursor:pointer;transition:all 0.15s;background:rgba(255,255,255,0.06);color:var(--text2);}
+.cpill.sel{color:#fff;}
+.status-btns{display:flex;gap:6px;flex-wrap:wrap;}
+.status-btn{flex:1;padding:7px 6px;border-radius:8px;font-size:0.73rem;font-weight:600;border:1.5px solid var(--border);background:var(--bg3);cursor:pointer;transition:all 0.15s;text-align:center;white-space:nowrap;}
+.status-btn.active{border-color:var(--accent2);background:rgba(90,79,207,0.12);color:var(--accent2);}
+.date-wrap{position:relative;}
+.date-wrap input{cursor:pointer;}
+.date-icon{position:absolute;left:10px;top:50%;transform:translateY(-50%);color:var(--text3);font-size:0.8rem;pointer-events:none;}
+.lesson-badge{display:inline-flex;align-items:center;gap:5px;font-size:0.68rem;padding:3px 8px;border-radius:8px;background:rgba(90,79,207,0.12);color:var(--accent2);margin-top:5px;}
+.modal-actions{display:flex;gap:8px;margin-top:20px;}
+.btn-primary{flex:1;padding:10px;border-radius:10px;background:var(--accent);color:#fff;font-weight:700;font-size:0.85rem;border:none;cursor:pointer;transition:all 0.15s;}
+.btn-primary:hover{background:var(--accent2);}
+.btn-secondary{padding:10px 16px;border-radius:10px;background:var(--bg3);border:1px solid var(--border);color:var(--text2);font-size:0.85rem;cursor:pointer;transition:all 0.15s;}
+.btn-secondary:hover{border-color:var(--border2);color:var(--text1);}
+.btn-danger{padding:10px 14px;border-radius:10px;background:rgba(255,71,87,0.1);border:1px solid rgba(255,71,87,0.3);color:var(--red);font-size:0.85rem;cursor:pointer;transition:all 0.15s;}
+.btn-danger:hover{background:rgba(255,71,87,0.2);}
 
-/* Calendar — Monthly */
-.cal-monthly { display: grid; grid-template-columns: repeat(7, 1fr); gap: 4px; }
-.cal-month-cell {
-  min-height: 80px; padding: 6px;
-  background: var(--bg-surface); border-radius: var(--radius-sm);
-  border: 1px solid var(--border);
-}
-.cal-month-cell.other-month { opacity: 0.3; }
-.cal-month-cell.today-cell { border-color: var(--accent); }
-.month-date { font-size: 0.75rem; font-weight: 600; margin-bottom: 4px; }
-.month-dots { display: flex; gap: 3px; flex-wrap: wrap; }
-.month-dot { width: 8px; height: 8px; border-radius: 50%; }
+/* DATE PICKER */
+#dp-overlay{display:none;position:fixed;z-index:800;background:var(--bg2);border:1px solid var(--border2);border-radius:14px;padding:14px;box-shadow:0 8px 40px rgba(0,0,0,0.5);width:280px;animation:modalIn 0.15s var(--spring);}
+#dp-overlay.open{display:block;}
+.dp-nav{display:flex;align-items:center;justify-content:space-between;margin-bottom:10px;}
+.dp-navbtn{padding:4px 10px;border-radius:6px;background:var(--bg3);border:1px solid var(--border);font-size:0.8rem;cursor:pointer;}
+.dp-title{font-weight:700;font-size:0.85rem;}
+.dp-grid{display:grid;grid-template-columns:repeat(7,1fr);gap:2px;}
+.dp-dh{text-align:center;font-size:0.6rem;color:var(--text3);font-weight:700;padding:4px 0;}
+.dp-day{text-align:center;padding:5px 2px;border-radius:6px;font-size:0.72rem;cursor:pointer;transition:all 0.1s;}
+.dp-day:hover{background:var(--bg3);}
+.dp-day.dp-today{font-weight:800;color:var(--accent2);}
+.dp-day.dp-sel{background:var(--accent);color:#fff;}
+.dp-day.dp-l1{background:rgba(111,187,247,0.18);}
+.dp-day.dp-l2{background:rgba(255,209,102,0.22);}
+.dp-day.dp-l3{background:rgba(255,71,87,0.22);}
+.dp-day.dp-other{opacity:0.3;}
+.dp-preview{margin-top:10px;font-size:0.7rem;color:var(--text2);min-height:36px;line-height:1.5;}
+.dp-actions{display:flex;gap:6px;margin-top:10px;justify-content:space-between;}
+.dp-btn{padding:5px 10px;border-radius:6px;background:var(--bg3);border:1px solid var(--border);font-size:0.72rem;cursor:pointer;color:var(--text2);}
 
-/* Calendar — List */
-.cal-list { display: flex; flex-direction: column; gap: 8px; }
-.cal-list-day { font-size: 0.85rem; font-weight: 600; padding: 8px 0; border-bottom: 1px solid var(--border); }
-.cal-list-event {
-  display: flex; gap: 12px; align-items: center;
-  padding: 10px 14px; border-radius: var(--radius-sm);
-  background: var(--bg-surface); border: 1px solid var(--border);
-  cursor: pointer; transition: all 0.2s;
-}
-.cal-list-event:hover { border-color: var(--border-hover); }
-.cal-list-color { width: 4px; height: 36px; border-radius: 2px; flex-shrink: 0; }
-.cal-list-info { flex: 1; }
-.cal-list-title { font-size: 0.82rem; font-weight: 500; }
-.cal-list-time { font-size: 0.72rem; color: var(--text-3); }
+/* TOAST */
+#toast{position:fixed;bottom:24px;left:50%;transform:translateX(-50%) translateY(20px);background:var(--bg3);border:1px solid var(--border2);padding:10px 20px;border-radius:20px;font-size:0.82rem;z-index:1000;opacity:0;transition:all 0.3s var(--spring);pointer-events:none;}
+#toast.show{opacity:1;transform:translateX(-50%) translateY(0);}
 
-/* Calendar — Course view */
-.cal-course-tabs { display: flex; gap: 6px; margin-bottom: 12px; flex-wrap: wrap; }
-.cal-course-tab {
-  padding: 6px 14px; border-radius: var(--radius-xl);
-  font-size: 0.78rem; border: 1px solid; cursor: pointer;
-  transition: all 0.2s;
-}
-.cal-course-tab.active { color: #fff; }
-.cal-course-content { display: flex; flex-direction: column; gap: 8px; }
+/* SETTINGS */
+.setting-row{display:flex;align-items:center;justify-content:space-between;padding:10px 0;border-bottom:1px solid var(--border);}
+.setting-row:last-child{border-bottom:none;}
+.s-label{font-size:0.8rem;font-weight:500;}
+.s-sub{font-size:0.67rem;color:var(--text3);margin-top:2px;}
 
-/* ===== SUMMARIES ===== */
-#summaries-section { margin-bottom: 24px; }
-.summaries-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 12px; }
-.summary-card {
-  padding: 14px 16px; border-radius: var(--radius-md);
-  background: var(--bg-surface); border: 1px solid var(--border);
-  border-right: 3px solid var(--course-color, var(--accent));
-}
-.summary-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 10px; }
-.summary-title { font-size: 0.85rem; font-weight: 500; }
-.summary-lesson { font-size: 0.72rem; color: var(--text-3); }
-.summary-links { display: flex; flex-direction: column; gap: 6px; }
-.summary-link {
-  display: flex; align-items: center; gap: 8px;
-  padding: 6px 10px; border-radius: var(--radius-sm);
-  background: var(--bg-glass); font-size: 0.78rem;
-  transition: background 0.2s;
-}
-.summary-link:hover { background: var(--bg-surface2); }
-.summary-link-icon { font-size: 1rem; }
-.summary-link-info { flex: 1; }
-.summary-link-title { font-weight: 500; }
-.summary-link-by { font-size: 0.68rem; color: var(--text-3); }
-.summary-add {
-  padding: 6px; text-align: center; border: 1px dashed var(--border);
-  border-radius: var(--radius-sm); font-size: 0.75rem; color: var(--text-3);
-  transition: all 0.2s; margin-top: 8px;
-}
-.summary-add:hover { border-color: var(--accent); color: var(--accent); }
+/* TOGGLE */
+.tgl{position:relative;width:38px;height:21px;display:inline-block;}
+.tgl input{opacity:0;width:0;height:0;}
+.tgl-track{position:absolute;inset:0;background:var(--border2);border-radius:20px;cursor:pointer;transition:0.2s;}
+.tgl-track::after{content:'';position:absolute;width:15px;height:15px;border-radius:50%;background:white;top:3px;right:3px;transition:0.2s;}
+input:checked + .tgl-track{background:var(--accent);}
+input:checked + .tgl-track::after{right:calc(100% - 18px);}
 
-/* ===== LESSON DETAIL ENHANCEMENTS ===== */
-.lesson-meta { display:flex; gap:10px; flex-wrap:wrap; margin-bottom:14px; font-size:0.85rem; color:var(--text-2); }
-.lesson-section-title { font-size:0.85rem; font-weight:600; margin:14px 0 8px; color:var(--text-1); }
-.lesson-task-item {
-  padding:8px 10px; background:var(--bg-surface2); border-radius:var(--radius-sm);
-  margin-bottom:6px; font-size:0.82rem; display:flex; justify-content:space-between; align-items:center;
-}
-.priority-tag { font-size:0.68rem; color:var(--text-3); background:var(--bg-glass); padding:2px 7px; border-radius:var(--radius-xl); }
-.lesson-notes-textarea {
-  width:100%; min-height:72px; resize:vertical; font-size:0.82rem; margin-bottom:6px;
-  border-radius:var(--radius-sm);
-}
-.btn-sm { padding:4px 12px !important; font-size:0.78rem !important; }
-.save-notes-indicator { font-size:0.72rem; color:var(--priority-low); opacity:0; transition:opacity 0.3s; }
-.save-notes-indicator.show { opacity:1; }
-.inline-add-summary { margin-top:14px; border:1px solid var(--border); border-radius:var(--radius-sm); overflow:hidden; }
-.inline-add-header {
-  padding:9px 12px; font-size:0.82rem; color:var(--text-2); cursor:pointer;
-  background:var(--bg-glass); transition:all 0.2s; display:flex; align-items:center; gap:6px;
-}
-.inline-add-header:hover { background:var(--bg-surface2); color:var(--accent); }
-.inline-add-body { padding:12px; display:flex; flex-direction:column; gap:10px; }
-.lesson-actions { display:flex; gap:8px; margin-top:16px; padding-top:14px; border-top:1px solid var(--border); }
+/* MISC */
+.empty{text-align:center;color:var(--text3);font-size:0.78rem;padding:20px;}
+.no-sb{scrollbar-width:none;}
+.no-sb::-webkit-scrollbar{display:none;}
+.two-col{display:grid;grid-template-columns:1fr 1fr;gap:12px;}
 
-/* ===== KANBAN ===== */
-#kanban-section { margin-bottom: 24px; }
-.kanban-board { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
-.kanban-col {
-  background: var(--bg-surface); border-radius: var(--radius-md);
-  border: 1px solid var(--border); padding: 12px; min-height: 200px;
-}
-.kanban-col.drag-over { border-color: var(--accent); background: rgba(124,111,247,0.05); }
-.kanban-col-header {
-  display: flex; align-items: center; gap: 8px;
-  padding-bottom: 10px; margin-bottom: 10px;
-  border-bottom: 1px solid var(--border);
-}
-.kanban-col-title { font-size: 0.85rem; font-weight: 600; }
-.kanban-col-count {
-  font-size: 0.7rem; padding: 1px 7px;
-  background: var(--bg-surface2); border-radius: var(--radius-xl);
-  color: var(--text-2);
-}
-.kanban-cards { display: flex; flex-direction: column; gap: 8px; }
-.kanban-card {
-  padding: 10px 12px; border-radius: var(--radius-sm);
-  background: var(--bg-surface2); border: 1px solid var(--border);
-  cursor: grab; transition: all 0.2s var(--ease);
-  border-right: 3px solid var(--course-color, var(--text-3));
-}
-.kanban-card:hover { border-color: var(--border-hover); }
-.kanban-card.dragging { opacity: 0.5; transform: scale(1.03); cursor: grabbing; }
-.kanban-card-title { font-size: 0.82rem; font-weight: 500; margin-bottom: 4px; }
-.kanban-card-meta { font-size: 0.7rem; color: var(--text-3); display: flex; gap: 8px; }
-.kanban-card-priority {
-  display: inline-block; width: 8px; height: 8px; border-radius: 50%; margin-left: 4px;
-}
-
-/* ===== ARCHIVE ===== */
-#archive-section { margin-bottom: 24px; }
-#archive-section.collapsed .archive-body { display: none; }
-.archive-toggle {
-  display: flex; align-items: center; gap: 8px;
-  font-size: 0.85rem; font-weight: 500; color: var(--text-2);
-  cursor: pointer; padding: 8px 0;
-}
-.archive-body { margin-top: 12px; }
-.archive-list { display: flex; flex-direction: column; gap: 6px; }
-.archive-item {
-  display: flex; align-items: center; gap: 10px;
-  padding: 8px 12px; border-radius: var(--radius-sm);
-  background: var(--bg-surface); border: 1px solid var(--border);
-  opacity: 0.6; font-size: 0.8rem;
-}
-.archive-item .event-title { text-decoration: line-through; }
-
-/* ===== MODALS ===== */
-.modal-overlay {
-  position: fixed; inset: 0; z-index: 1000;
-  background: rgba(0,0,0,0.7); backdrop-filter: blur(8px);
-  display: none; align-items: center; justify-content: center;
-  padding: 20px;
-}
-.modal-overlay.open { display: flex; }
-.modal {
-  background: var(--bg-surface); border: 1px solid var(--border);
-  border-radius: var(--radius-lg); padding: 24px;
-  max-width: 500px; width: 100%; max-height: 80vh; overflow-y: auto;
-  animation: modalIn 0.3s var(--spring);
-}
-@keyframes modalIn { from { opacity: 0; transform: scale(0.95) translateY(10px); } }
-.modal-header {
-  display: flex; justify-content: space-between; align-items: center;
-  margin-bottom: 20px;
-}
-.modal-header h3 { font-size: 1.05rem; font-weight: 600; }
-.modal-close { font-size: 1.2rem; opacity: 0.5; transition: opacity 0.2s; }
-.modal-close:hover { opacity: 1; }
-.modal-body { display: flex; flex-direction: column; gap: 14px; }
-.form-group { display: flex; flex-direction: column; gap: 4px; }
-.form-group label { font-size: 0.78rem; color: var(--text-2); font-weight: 500; }
-.form-group input, .form-group textarea, .form-group select { width: 100%; }
-.form-group textarea { min-height: 80px; resize: vertical; }
-.form-actions { display: flex; gap: 8px; justify-content: flex-end; margin-top: 8px; }
-.btn-primary {
-  padding: 8px 20px; border-radius: var(--radius-sm);
-  background: var(--accent); color: #fff; font-weight: 500;
-  transition: all 0.2s;
-}
-.btn-primary:hover { background: #6B5CE6; }
-.btn-secondary {
-  padding: 8px 20px; border-radius: var(--radius-sm);
-  background: var(--bg-surface2); border: 1px solid var(--border);
-  transition: all 0.2s;
-}
-.btn-secondary:hover { border-color: var(--border-hover); }
-
-/* Wizard */
-.wizard-choices { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
-.wizard-choice {
-  padding: 20px; border-radius: var(--radius-md);
-  background: var(--bg-surface2); border: 2px solid var(--border);
-  text-align: center; font-size: 0.9rem; font-weight: 500;
-  transition: all 0.2s var(--spring); cursor: pointer;
-}
-.wizard-choice:hover { border-color: var(--accent); transform: translateY(-2px); }
-.wizard-choice .choice-icon { font-size: 2rem; margin-bottom: 8px; display: block; }
-.wizard-courses { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; }
-.wizard-course {
-  padding: 12px; border-radius: var(--radius-md);
-  border: 2px solid var(--border); text-align: center;
-  font-size: 0.8rem; font-weight: 500; cursor: pointer;
-  transition: all 0.2s var(--spring);
-}
-.wizard-course:hover { border-color: var(--course-color); transform: scale(1.03); }
-.wizard-course.selected { border-color: var(--course-color); background: color-mix(in srgb, var(--course-color) 15%, transparent); }
-.wizard-events { display: flex; flex-direction: column; gap: 8px; }
-.wizard-event {
-  padding: 10px 14px; border-radius: var(--radius-sm);
-  background: var(--bg-surface2); border: 1px solid var(--border);
-  cursor: pointer; transition: all 0.2s;
-}
-.wizard-event:hover { border-color: var(--accent); }
-.wizard-event.selected { border-color: var(--accent); background: rgba(124,111,247,0.1); }
-.wizard-steps { display: flex; gap: 8px; margin-bottom: 16px; }
-.wizard-step {
-  width: 32px; height: 32px; border-radius: 50%;
-  display: flex; align-items: center; justify-content: center;
-  font-size: 0.8rem; font-weight: 600;
-  background: var(--bg-surface2); border: 2px solid var(--border);
-}
-.wizard-step.active { border-color: var(--accent); color: var(--accent); }
-.wizard-step.done { border-color: var(--status-now); color: var(--status-now); background: rgba(111,247,196,0.1); }
-.priority-buttons { display: flex; gap: 8px; }
-.priority-btn {
-  flex: 1; padding: 8px; border-radius: var(--radius-sm);
-  text-align: center; font-size: 0.8rem; font-weight: 500;
-  border: 2px solid var(--border); transition: all 0.2s;
-}
-.priority-btn.selected { border-width: 2px; }
-.priority-btn[data-p="high"].selected { border-color: var(--priority-high); color: var(--priority-high); background: rgba(247,111,111,0.1); }
-.priority-btn[data-p="mid"].selected { border-color: var(--priority-mid); color: var(--priority-mid); background: rgba(247,208,111,0.1); }
-.priority-btn[data-p="low"].selected { border-color: var(--priority-low); color: var(--priority-low); background: rgba(111,247,196,0.1); }
-
-/* ===== ICS MODAL ===== */
-.ics-url-box {
-  padding: 12px; border-radius: var(--radius-sm);
-  background: var(--bg-base); border: 1px solid var(--border);
-  font-size: 0.75rem; word-break: break-all;
-  direction: ltr; text-align: left;
-  user-select: all; color: var(--text-2);
-}
-.ics-instructions { font-size: 0.8rem; color: var(--text-2); line-height: 1.6; }
-.ics-instructions ol { padding-right: 20px; }
-
-/* ===== SETTINGS MODAL ===== */
-.settings-section { margin-bottom: 16px; }
-.settings-section h4 { font-size: 0.85rem; margin-bottom: 8px; color: var(--text-2); }
-
-/* ===== TOAST ===== */
-.toast {
-  position: fixed; bottom: 24px; left: 50%; z-index: 9999;
-  transform: translateX(-50%) translateY(20px);
-  background: var(--bg-surface2); border: 1px solid var(--border);
-  border-radius: var(--radius-md); padding: 10px 20px;
-  color: var(--text-1); font-size: 0.85rem;
-  opacity: 0; transition: all 0.3s var(--spring);
-  pointer-events: none;
-}
-.toast.visible { opacity: 1; transform: translateX(-50%) translateY(0); }
-
-/* ===== CONFETTI ===== */
-.confetti-dot {
-  position: fixed; top: -10px; width: 8px; height: 8px;
-  border-radius: 50%; z-index: 9999;
-  animation: confettiFall 2s ease-in forwards;
-}
-@keyframes confettiFall {
-  0% { transform: translateY(0) rotate(0deg); opacity: 1; }
-  100% { transform: translateY(100vh) rotate(720deg); opacity: 0; }
-}
-
-/* ===== MOBILE NAV ===== */
-#mobile-nav {
-  display: none; position: fixed; bottom: 0; left: 0; right: 0;
-  z-index: 100; background: rgba(15,15,19,0.95);
-  backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px);
-  border-top: 1px solid var(--border);
-  padding: 8px 0 calc(8px + env(safe-area-inset-bottom));
-  justify-content: space-around;
-}
-#mobile-nav button {
-  display: flex; flex-direction: column; align-items: center; gap: 2px;
-  font-size: 1.2rem; padding: 6px 12px; border-radius: var(--radius-sm);
-  transition: all 0.2s;
-}
-#mobile-nav button.active { color: var(--accent); }
-#mobile-nav button span { font-size: 0.6rem; color: var(--text-3); }
-
-/* ===== RESPONSIVE ===== */
-@media (max-width: 768px) {
-  #topbar { padding: 10px 14px; gap: 8px; }
-  .search-bar { max-width: 180px; }
-  .topbar-actions { gap: 4px; }
-  #btn-add-ical span, #btn-settings span { display: none; }
-  .main-container { padding: 14px 14px 120px; }
-  .widgets-row { grid-template-columns: 1fr; }
-  .cal-weekly { grid-template-columns: 1fr; }
-  .cal-day-col { display: none; }
-  .cal-day-col.today-col, .cal-day-col.show-mobile { display: block; }
-  .kanban-board { grid-template-columns: 1fr; }
-  .summaries-grid { grid-template-columns: 1fr; }
-  #mobile-nav { display: flex; }
-  .wizard-courses { grid-template-columns: repeat(2, 1fr); }
-  #calendar-toolbar { flex-direction: column; align-items: stretch; }
-  .view-tabs { justify-content: center; }
-  #course-filters { justify-content: center; }
-  #group-filter { justify-content: center; }
-}
-
-/* ===== LIGHT THEME ===== */
-body.light {
-  --bg-base: #F5F5FA;
-  --bg-surface: #FFFFFF;
-  --bg-surface2: #EDEDF5;
-  --bg-glass: rgba(0,0,0,0.03);
-  --border: rgba(0,0,0,0.08);
-  --border-hover: rgba(0,0,0,0.15);
-  --text-1: #1A1A2E;
-  --text-2: #6666880;
-  --text-3: #9999AA;
+@media(max-width:768px){
+  #app{flex-direction:column;}
+  #right-col{width:100%;border-left:none;max-width:none;flex-shrink:0;}
+  #col-resizer{display:none;}
+  .blob{display:none;}
 }
 </style>
 </head>
 <body>
+<div class="blob blob1"></div>
+<div class="blob blob2"></div>
 
-<!-- ===== TOPBAR ===== -->
 <header id="topbar">
-  <div class="logo">🎬 סם שפיגל</div>
-  <div class="search-bar">
-    <input type="search" id="global-search" placeholder="חיפוש שיעורים, משימות...">
-  </div>
-  <div class="topbar-actions">
-    <button id="btn-add-ical" onclick="showICalModal()">📅 <span>הוסף ליומן</span></button>
-    <button id="btn-settings" onclick="openModal('modal-settings')">⚙️ <span>הגדרות</span></button>
-    <button id="fab-add" onclick="openTaskWizard()">＋</button>
-  </div>
+  <div class="logo">סם <span>שפיגל</span></div>
+  <input id="search-input" type="text" placeholder="🔍 חיפוש...">
+  <div class="spacer"></div>
+  <button class="tbtn" id="btn-cal-range" onclick="cycleCalRange()">14 ימים</button>
+  <button class="tbtn" id="btn-dark" onclick="toggleDark()" title="מצב תצוגה">☀️</button>
+  <button class="tbtn" onclick="openSettings()">⚙️</button>
+  <button class="tbtn accent" onclick="openTaskModal(null)">+ משימה</button>
 </header>
 
-<div class="main-container">
-
-  <!-- ===== PINBOARD ===== -->
-  <div class="section-header">
-    <h2>📌 פינבורד</h2>
-    <span class="section-badge" id="pin-count">0</span>
+<div id="app">
+  <div id="right-col">
+    <div id="kpi-panel" class="panel">
+      <div id="kpi-grid" class="kpi-grid"></div>
+    </div>
+    <div class="h-resizer" id="r1"></div>
+    <div id="kanban-panel" class="panel" style="flex:1;min-height:0;">
+      <div class="panel-head">
+        <span class="panel-title">📋 משימות</span>
+        <button class="tbtn ml" id="btn-kview" onclick="toggleKView()" style="font-size:0.68rem;padding:3px 8px;">קנבן</button>
+      </div>
+      <div id="kanban-body" class="no-sb" style="flex:1;overflow:hidden;"></div>
+    </div>
+    <div class="h-resizer" id="r2"></div>
+    <div id="movies-panel" class="panel" style="flex-shrink:0;height:130px;">
+      <div class="panel-head">
+        <span class="panel-title">🎬 צפיות</span>
+        <button class="tbtn ml" onclick="addMoviePrompt()" style="font-size:0.68rem;padding:3px 8px;">+ הוסף</button>
+      </div>
+      <div id="movies-list" class="panel-body no-sb"></div>
+    </div>
   </div>
-  <section id="pinboard">
-    <button id="pinboard-add" onclick="openModal('modal-link-add')">＋</button>
-  </section>
 
-  <!-- ===== WIDGETS ROW ===== -->
-  <div class="widgets-row">
-    <div class="widget" id="widget-today">
-      <h3>📍 היום</h3>
-      <div id="today-content"></div>
-    </div>
-    <div class="widget" id="widget-upcoming">
-      <h3>⏳ הקרוב (72 שעות)</h3>
-      <div id="upcoming-content"></div>
-    </div>
-  </div>
+  <div id="col-resizer"></div>
 
-  <!-- ===== CALENDAR ===== -->
-  <section id="calendar-section">
-    <div class="section-header">
-      <h2>🗓️ לוח שנה</h2>
+  <div id="left-col">
+    <div id="feed-panel" class="panel" style="flex-shrink:0;height:105px;">
+      <div id="feed-strip" class="no-sb"></div>
     </div>
-    <div id="calendar-toolbar">
-      <div class="cal-nav">
-        <button id="prev-week" onclick="navWeek(-1)">→</button>
-        <span id="week-label"></span>
-        <button id="next-week" onclick="navWeek(1)">←</button>
-        <button id="today-btn" onclick="goToday()">היום</button>
-      </div>
-      <div class="view-tabs">
-        <button data-view="weekly" class="active" onclick="setView('weekly')">שבועי</button>
-        <button data-view="monthly" onclick="setView('monthly')">חודשי</button>
-        <button data-view="list" onclick="setView('list')">רשימה</button>
-        <button data-view="course" onclick="setView('course')">לפי קורס</button>
-      </div>
-      <div id="course-filters"></div>
-      <div id="group-filter">
-        <button data-group="all" onclick="setGroup('all')">הכל</button>
-        <button data-group="a" onclick="setGroup('a')">קבוצה א</button>
-        <button data-group="b" onclick="setGroup('b')">קבוצה ב</button>
-      </div>
-      <input type="search" id="calendar-search" placeholder="🔍 חיפוש..." oninput="renderCalendar()">
-    </div>
-    <div id="calendar-body"></div>
-  </section>
-
-  <!-- ===== SUMMARIES ===== -->
-  <section id="summaries-section">
-    <div class="section-header">
-      <h2>📚 סיכומי שיעורים</h2>
-      <span class="section-badge" id="summaries-count">0</span>
-    </div>
-    <div class="summaries-grid" id="summaries-grid"></div>
-  </section>
-
-  <!-- ===== KANBAN ===== -->
-  <section id="kanban-section">
-    <div class="section-header">
-      <h2>🗂️ קנבן אישי</h2>
-    </div>
-    <div class="kanban-board">
-      <div class="kanban-col" data-status="todo">
-        <div class="kanban-col-header">
-          <span class="kanban-col-title">📝 לביצוע</span>
-          <span class="kanban-col-count" id="kanban-count-todo">0</span>
+    <div class="h-resizer" id="r3"></div>
+    <div id="calendar-panel" class="panel" style="flex:1;min-height:0;">
+      <div class="panel-head">
+        <span class="panel-title">📅 יומן</span>
+        <div class="ml" style="display:flex;gap:5px;align-items:center;">
+          <button class="tbtn" onclick="shiftCal(-1)" style="font-size:0.75rem;padding:3px 8px;">‹</button>
+          <span id="cal-label" style="font-size:0.72rem;color:var(--text2);white-space:nowrap;"></span>
+          <button class="tbtn" onclick="shiftCal(1)" style="font-size:0.75rem;padding:3px 8px;">›</button>
+          <button class="tbtn" onclick="openEventModal(null)" style="font-size:0.68rem;padding:3px 8px;">+ אירוע</button>
         </div>
-        <div class="kanban-cards" id="kanban-todo"></div>
       </div>
-      <div class="kanban-col" data-status="inprogress">
-        <div class="kanban-col-header">
-          <span class="kanban-col-title">🔄 בתהליך</span>
-          <span class="kanban-col-count" id="kanban-count-inprogress">0</span>
+      <div id="cal-grid" class="panel-body"></div>
+    </div>
+  </div>
+</div>
+
+<!-- TASK MODAL -->
+<div class="modal-overlay" id="task-ol">
+  <div class="modal">
+    <div class="modal-head">
+      <span class="modal-title" id="task-modal-title">משימה חדשה</span>
+      <button class="modal-close" onclick="closeModal('task-ol')">✕</button>
+    </div>
+    <div class="form-group">
+      <label class="form-label">שם המשימה *</label>
+      <input type="text" id="t-name" placeholder="כותרת...">
+    </div>
+    <div class="form-group">
+      <label class="form-label">קורס</label>
+      <div id="t-courses" class="course-pills"></div>
+    </div>
+    <div class="two-col">
+      <div class="form-group">
+        <label class="form-label">📂 תאריך פתיחה</label>
+        <div class="date-wrap">
+          <input type="text" id="t-opening" placeholder="DD/MM/YYYY" readonly onclick="openDP('t-opening',this)">
+          <span class="date-icon">📂</span>
         </div>
-        <div class="kanban-cards" id="kanban-inprogress"></div>
+        <div id="t-opening-badge" class="lesson-badge" style="display:none;"></div>
       </div>
-      <div class="kanban-col" data-status="done">
-        <div class="kanban-col-header">
-          <span class="kanban-col-title">✅ בוצע</span>
-          <span class="kanban-col-count" id="kanban-count-done">0</span>
+      <div class="form-group">
+        <label class="form-label">📅 תאריך יעד</label>
+        <div class="date-wrap">
+          <input type="text" id="t-due" placeholder="DD/MM/YYYY" readonly onclick="openDP('t-due',this)">
+          <span class="date-icon">📅</span>
         </div>
-        <div class="kanban-cards" id="kanban-done"></div>
+        <div id="t-due-badge" class="lesson-badge" style="display:none;"></div>
       </div>
     </div>
-  </section>
-
-  <!-- ===== ARCHIVE ===== -->
-  <section id="archive-section" class="collapsed">
-    <div class="archive-toggle" onclick="toggleArchive()">
-      <span id="archive-arrow">◀</span>
-      <span>🗄️ ארכיון משימות</span>
-      <span class="section-badge" id="archive-count">0</span>
+    <div class="form-group">
+      <label class="form-label">תיאור</label>
+      <textarea id="t-desc" rows="2" placeholder="הערות..."></textarea>
     </div>
-    <div class="archive-body">
-      <div class="archive-list" id="archive-list"></div>
+    <div class="form-group">
+      <label class="form-label">הסטטוס שלי</label>
+      <div class="status-btns" id="t-status-btns">
+        <button class="status-btn" data-v="none" onclick="selStatus('none')">📋 פתוח</button>
+        <button class="status-btn" data-v="todo" onclick="selStatus('todo')">🔴 לא התחלתי</button>
+        <button class="status-btn" data-v="inprogress" onclick="selStatus('inprogress')">🟡 בתהליך</button>
+        <button class="status-btn" data-v="submitted" onclick="selStatus('submitted')">✅ הוגש</button>
+      </div>
     </div>
-  </section>
+    <div class="form-group">
+      <label class="form-label">נוסף ע"י</label>
+      <input type="text" id="t-by">
+    </div>
+    <div class="modal-actions">
+      <button class="btn-primary" onclick="saveTask()">שמור</button>
+      <button class="btn-danger" id="t-del" onclick="deleteTask()" style="display:none;">מחק</button>
+      <button class="btn-secondary" onclick="closeModal('task-ol')">ביטול</button>
+    </div>
+  </div>
 </div>
 
-<!-- ===== MOBILE NAV ===== -->
-<nav id="mobile-nav">
-  <button data-section="top" class="active" onclick="mobileNav('top')">🏠<span>בית</span></button>
-  <button data-section="calendar-section" onclick="mobileNav('calendar-section')">📅<span>לוח</span></button>
-  <button data-section="kanban-section" onclick="mobileNav('kanban-section')">🗂️<span>קנבן</span></button>
-  <button data-section="summaries-section" onclick="mobileNav('summaries-section')">📚<span>סיכומים</span></button>
-</nav>
-
-<!-- ===== MODAL: Add Link ===== -->
-<div class="modal-overlay" id="modal-link-add">
+<!-- EVENT MODAL -->
+<div class="modal-overlay" id="event-ol">
   <div class="modal">
-    <div class="modal-header">
-      <h3>➕ הוסף לפינבורד</h3>
-      <button class="modal-close" onclick="closeModal('modal-link-add')">✕</button>
+    <div class="modal-head">
+      <span class="modal-title" id="event-modal-title">אירוע חדש</span>
+      <button class="modal-close" onclick="closeModal('event-ol')">✕</button>
     </div>
-    <div class="modal-body">
+    <div class="form-group">
+      <label class="form-label">כותרת *</label>
+      <input type="text" id="ev-title" placeholder="שם האירוע...">
+    </div>
+    <div class="two-col">
       <div class="form-group">
-        <label>סוג</label>
-        <select id="link-type" onchange="toggleLinkFields()">
-          <option value="link">🔗 קישור</option>
-          <option value="announcement">📢 הודעה</option>
-          <option value="countdown">⏱ ספירה לאחור</option>
-        </select>
-      </div>
-      <div class="form-group">
-        <label>כותרת</label>
-        <input type="text" id="link-title" placeholder="שם הקישור / הודעה">
-      </div>
-      <div class="form-group" id="link-url-group">
-        <label>קישור (URL)</label>
-        <input type="url" id="link-url" placeholder="https://" dir="ltr">
-      </div>
-      <div class="form-group" id="link-text-group" style="display:none">
-        <label>טקסט ההודעה</label>
-        <textarea id="link-text" placeholder="תוכן ההודעה"></textarea>
-      </div>
-      <div class="form-group" id="link-color-group" style="display:none">
-        <label>צבע</label>
-        <select id="link-color">
-          <option value="red">🔴 אדום</option>
-          <option value="yellow">🟡 צהוב</option>
-          <option value="green">🟢 ירוק</option>
-          <option value="blue">🔵 כחול</option>
-        </select>
-      </div>
-      <div class="form-group" id="link-due-group" style="display:none">
-        <label>תאריך יעד</label>
-        <input type="date" id="link-due">
+        <label class="form-label">תאריך התחלה</label>
+        <div class="date-wrap">
+          <input type="text" id="ev-sdate" placeholder="DD/MM/YYYY" readonly onclick="openDP('ev-sdate',this)">
+        </div>
       </div>
       <div class="form-group">
-        <label>שם (נוסף ע"י)</label>
-        <input type="text" id="link-created-by" placeholder="השם שלך">
+        <label class="form-label">שעת התחלה</label>
+        <input type="time" id="ev-stime">
       </div>
-      <div class="form-actions">
-        <button class="btn-secondary" onclick="closeModal('modal-link-add')">ביטול</button>
-        <button class="btn-primary" onclick="saveLink()">שמור</button>
+    </div>
+    <div class="two-col">
+      <div class="form-group">
+        <label class="form-label">תאריך סיום</label>
+        <div class="date-wrap">
+          <input type="text" id="ev-edate" placeholder="DD/MM/YYYY" readonly onclick="openDP('ev-edate',this)">
+        </div>
       </div>
+      <div class="form-group">
+        <label class="form-label">שעת סיום</label>
+        <input type="time" id="ev-etime">
+      </div>
+    </div>
+    <div class="two-col">
+      <div class="form-group">
+        <label class="form-label">צבע</label>
+        <input type="color" id="ev-color" value="#7c6ff7" style="height:36px;cursor:pointer;">
+      </div>
+      <div class="form-group">
+        <label class="form-label">קורס קשור</label>
+        <select id="ev-course"><option value="">— ללא —</option></select>
+      </div>
+    </div>
+    <div class="modal-actions">
+      <button class="btn-primary" onclick="saveEvent()">שמור</button>
+      <button class="btn-danger" id="ev-del" onclick="deleteEvent()" style="display:none;">מחק</button>
+      <button class="btn-secondary" onclick="closeModal('event-ol')">ביטול</button>
     </div>
   </div>
 </div>
 
-<!-- ===== MODAL: Task Wizard ===== -->
-<div class="modal-overlay" id="modal-task-wizard">
-  <div class="modal">
-    <div class="modal-header">
-      <h3>✏️ הוספת משימה</h3>
-      <button class="modal-close" onclick="closeModal('modal-task-wizard')">✕</button>
+<!-- FEED MODAL -->
+<div class="modal-overlay" id="feed-ol">
+  <div class="modal" style="max-width:400px;">
+    <div class="modal-head">
+      <span class="modal-title" id="feed-modal-title">הוסף לפיד</span>
+      <button class="modal-close" onclick="closeModal('feed-ol')">✕</button>
     </div>
-    <div class="wizard-steps" id="wizard-steps"></div>
-    <div class="modal-body" id="wizard-body"></div>
-  </div>
-</div>
-
-<!-- ===== MODAL: iCal ===== -->
-<div class="modal-overlay" id="modal-ical">
-  <div class="modal">
-    <div class="modal-header">
-      <h3>📅 הוסף ליומן האישי</h3>
-      <button class="modal-close" onclick="closeModal('modal-ical')">✕</button>
+    <div class="form-group">
+      <label class="form-label">סוג</label>
+      <select id="fd-type" onchange="feedTypeChange()">
+        <option value="link">קישור</option>
+        <option value="announcement">הודעה</option>
+        <option value="countdown">ספירה לאחור</option>
+      </select>
     </div>
-    <div class="modal-body">
-      <p style="font-size:0.85rem;color:var(--text-2);margin-bottom:12px">קישור ICS אישי — מתעדכן אוטומטית עם המשימות שלך:</p>
-      <div class="ics-url-box" id="ical-url"></div>
-      <div style="display:flex;gap:8px;margin-top:12px">
-        <button class="btn-primary" style="flex:1" id="btn-copy-ical">📋 העתק קישור למנוי</button>
-        <button class="btn-secondary" style="flex:1" onclick="downloadICS()">⬇️ הורד ICS עכשיו</button>
+    <div class="form-group">
+      <label class="form-label">כותרת *</label>
+      <input type="text" id="fd-title" placeholder="כותרת...">
+    </div>
+    <div class="form-group" id="fd-url-grp">
+      <label class="form-label">קישור URL</label>
+      <input type="url" id="fd-url" placeholder="https://...">
+    </div>
+    <div class="form-group" id="fd-date-grp" style="display:none;">
+      <label class="form-label">תאריך יעד</label>
+      <div class="date-wrap">
+        <input type="text" id="fd-date" placeholder="DD/MM/YYYY" readonly onclick="openDP('fd-date',this)">
       </div>
-      <div class="ics-instructions" style="margin-top:16px">
-        <strong>אפשרות א׳ — מנוי חי (מומלץ):</strong>
-        <ol>
-          <li><strong>Google Calendar:</strong> הגדרות → הוסף יומן → מכתובת URL → הדבק את הקישור</li>
-          <li><strong>iPhone:</strong> הגדרות → יומן → חשבונות → הוסף חשבון → אחר → הוסף מנוי ליומן</li>
-          <li>היומן יתעדכן אוטומטית</li>
-        </ol>
-        <strong style="display:block;margin-top:10px">אפשרות ב׳ — הורדה חד-פעמית:</strong>
-        <ol>
-          <li>לחץ "הורד ICS עכשיו"</li>
-          <li>פתח את הקובץ — ייובא ישירות ליומן שלך</li>
-        </ol>
-      </div>
+    </div>
+    <div class="form-group">
+      <label class="form-label">תיאור</label>
+      <input type="text" id="fd-desc" placeholder="תיאור קצר...">
+    </div>
+    <div class="modal-actions">
+      <button class="btn-primary" onclick="saveFeed()">שמור</button>
+      <button class="btn-danger" id="fd-del" onclick="deleteFeed()" style="display:none;">מחק</button>
+      <button class="btn-secondary" onclick="closeModal('feed-ol')">ביטול</button>
     </div>
   </div>
 </div>
 
-<!-- ===== MODAL: Settings ===== -->
-<div class="modal-overlay" id="modal-settings">
-  <div class="modal">
-    <div class="modal-header">
-      <h3>⚙️ הגדרות</h3>
-      <button class="modal-close" onclick="closeModal('modal-settings')">✕</button>
+<!-- SETTINGS MODAL -->
+<div class="modal-overlay" id="settings-ol">
+  <div class="modal" style="max-width:420px;">
+    <div class="modal-head">
+      <span class="modal-title">⚙️ הגדרות</span>
+      <button class="modal-close" onclick="closeModal('settings-ol')">✕</button>
     </div>
-    <div class="modal-body">
-      <div class="settings-section">
-        <h4>שם משתמש</h4>
-        <input type="text" id="setting-name" placeholder="השם שלך" onchange="saveSetting('userName', this.value)">
-      </div>
-      <div class="settings-section">
-        <h4>קבוצה</h4>
-        <select id="setting-group" onchange="saveSetting('group', this.value); setGroup(this.value);">
-          <option value="all">הכל</option>
-          <option value="a">קבוצה א</option>
-          <option value="b">קבוצה ב</option>
-        </select>
-      </div>
-      <div class="settings-section">
-        <h4>ערכת נושא</h4>
-        <select id="setting-theme" onchange="toggleTheme(this.value)">
-          <option value="dark">🌙 כהה</option>
-          <option value="light">☀️ בהיר</option>
-        </select>
-      </div>
-      <div class="settings-section">
-        <h4>מזהה משתמש (לICS)</h4>
-        <div class="ics-url-box" id="setting-userid" style="font-size:0.7rem"></div>
-      </div>
+    <div class="setting-row">
+      <div><div class="s-label">שם משתמש</div></div>
+      <input type="text" id="s-name" style="width:140px;" placeholder="השם שלך">
+    </div>
+    <div class="setting-row">
+      <div><div class="s-label">מזהה משתמש</div><div class="s-sub" id="s-uid"></div></div>
+    </div>
+    <div class="setting-row">
+      <div><div class="s-label">תאריך סיום סמסטר ב׳</div></div>
+      <input type="date" id="s-semend" style="width:150px;">
+    </div>
+    <div class="setting-row">
+      <div><div class="s-label">מצב כהה</div></div>
+      <label class="tgl"><input type="checkbox" id="s-dark" onchange="toggleDark()"><span class="tgl-track"></span></label>
+    </div>
+    <div style="margin-top:16px;">
+      <button class="btn-primary" onclick="saveSettings()">שמור הגדרות</button>
     </div>
   </div>
 </div>
 
-<!-- ===== MODAL: Add Summary Link ===== -->
-<div class="modal-overlay" id="modal-summary-add">
-  <div class="modal">
-    <div class="modal-header">
-      <h3>📝 הוסף סיכום / קישור לשיעור</h3>
-      <button class="modal-close" onclick="closeModal('modal-summary-add')">✕</button>
-    </div>
-    <div class="modal-body">
-      <div class="form-group">
-        <label>כותרת</label>
-        <input type="text" id="summary-link-title" placeholder="סיכום גוגל דוקס...">
-      </div>
-      <div class="form-group">
-        <label>קישור</label>
-        <input type="url" id="summary-link-url" placeholder="https://docs.google.com/..." dir="ltr">
-      </div>
-      <div class="form-group">
-        <label>שם</label>
-        <input type="text" id="summary-link-by" placeholder="השם שלך">
-      </div>
-      <div class="form-actions">
-        <button class="btn-secondary" onclick="closeModal('modal-summary-add')">ביטול</button>
-        <button class="btn-primary" onclick="saveSummaryLink()">שמור</button>
-      </div>
-    </div>
+<!-- DATE PICKER -->
+<div id="dp-overlay">
+  <div class="dp-nav">
+    <button class="dp-navbtn" onclick="dpNav(-1)">‹</button>
+    <span class="dp-title" id="dp-title"></span>
+    <button class="dp-navbtn" onclick="dpNav(1)">›</button>
+  </div>
+  <div class="dp-grid" id="dp-grid"></div>
+  <div class="dp-preview" id="dp-preview"></div>
+  <div class="dp-actions">
+    <button class="dp-btn" onclick="dpClear()">נקה תאריך</button>
+    <button class="dp-btn" onclick="closeDP()">סגור</button>
   </div>
 </div>
 
-<!-- ===== MODAL: Lesson Detail ===== -->
-<div class="modal-overlay" id="modal-lesson-detail">
-  <div class="modal" style="max-width:600px">
-    <div class="modal-header">
-      <h3 id="lesson-detail-title"></h3>
-      <button class="modal-close" onclick="closeModal('modal-lesson-detail')">✕</button>
-    </div>
-    <div class="modal-body" id="lesson-detail-body"></div>
-  </div>
-</div>
+<div id="toast"></div>
 
-<!-- ===== FIREBASE SDK ===== -->
 <script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-app-compat.js"></script>
 <script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore-compat.js"></script>
-
 <script>
-// ===================================================================
-// APP STATE
-// ===================================================================
-let events = [];
-let courses = [];
-let tasksData = [];
-let linksData = [];
-let summariesData = {};
-let kanbanState = {};
-let currentView = 'weekly';
-let currentWeekStart = getWeekStart(new Date());
-let currentMonth = new Date();
-let activeGroup = localStorage.getItem('group') || 'all';
-let activeCourses = new Set();
-let searchQuery = '';
+'use strict';
 
-// ===================================================================
-// FIREBASE INIT
-// ===================================================================
-firebase.initializeApp({
-  apiKey: "AIzaSyBvlqtn-EkQPtJbgc_Qi_yIu9bjqfqdMyg",
-  authDomain: "sam-spiegel.firebaseapp.com",
-  projectId: "sam-spiegel",
-  storageBucket: "sam-spiegel.firebasestorage.app",
-  messagingSenderId: "816154980804",
-  appId: "1:816154980804:web:34e15e12d4f2078d7cf491"
-});
+// ── CONFIG ──────────────────────────────────────────────────
+const FB_CFG = {
+  apiKey:"AIzaSyBvlqtn-EkQPtJbgc_Qi_yIu9bjqfqdMyg",
+  authDomain:"sam-spiegel.firebaseapp.com",
+  projectId:"sam-spiegel",
+  storageBucket:"sam-spiegel.firebasestorage.app",
+  messagingSenderId:"816154980804",
+  appId:"1:816154980804:web:34e15e12d4f2078d7cf491"
+};
+firebase.initializeApp(FB_CFG);
 const db = firebase.firestore();
 
-// ===================================================================
-// USER ID
-// ===================================================================
-if (!localStorage.getItem('userId')) {
-  localStorage.setItem('userId', crypto.randomUUID());
+const SEM_B_START='2026-02-01';
+let USER_ID = localStorage.getItem('userId');
+if(!USER_ID){USER_ID=crypto.randomUUID();localStorage.setItem('userId',USER_ID);}
+let USER_NAME = localStorage.getItem('userName')||'אנונימי';
+let SEM_B_END = localStorage.getItem('semBEnd')||'2026-07-01';
+let isDark = true;
+
+// ── STATE ────────────────────────────────────────────────────
+let tasks=[], personalSt={}, links=[], customEvs=[], icsEvs=[], courses=[], movies=[];
+let calDays=14, calOffset=0, kView='kanban';
+let editTask=null, editEvent=null, editFeed=null;
+let dpField=null, dpYear=new Date().getFullYear(), dpMonth=new Date().getMonth(), dpSel=null;
+let dragId=null;
+
+// ── COURSE ALIASES ───────────────────────────────────────────
+const ALIASES = {
+  'תחקיר':'tachkir','סדנת תחקיר':'tachkir',
+  'לוקיישן':'location','תסריט לוקיישן':'location','סדנת תסריט לוקיישן':'location',
+  'סיפור קצר':'short_story','הסיפור הקצר':'short_story','סדנת הסיפור הקצר':'short_story',
+  'קולנוע ישראלי':'israeli_cinema',
+  'תולדות':'film_history','תולדות הקולנוע':'film_history',
+  'סדרת ילדים':'kids_series','סדרת ילדים ונוער':'kids_series',
+  'סצנות':'scenes','עושים סצנות':'scenes',
+  'סדרות רשת':'web_series','כתיבת סדרות רשת':'web_series',
+  'בימוי':'directing','בימוי לתסריטאים':'directing',
+};
+
+// ── UTILS ────────────────────────────────────────────────────
+const esc = s => String(s||'').replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');
+const toYMD = d => { const dt=typeof d==='string'?new Date(d):d; return `${dt.getFullYear()}-${String(dt.getMonth()+1).padStart(2,'0')}-${String(dt.getDate()).padStart(2,'0')}`; };
+const fmtD = d => { if(!d)return''; const dt=new Date(typeof d==='string'&&!d.includes('T')?d+'T00:00:00':d); return `${String(dt.getDate()).padStart(2,'0')}/${String(dt.getMonth()+1).padStart(2,'0')}/${dt.getFullYear()}`; };
+const fmtDS = d => { if(!d)return''; const dt=new Date(typeof d==='string'&&!d.includes('T')?d+'T00:00:00':d); return `${String(dt.getDate()).padStart(2,'0')}/${String(dt.getMonth()+1).padStart(2,'0')}`; };
+const parseDD = str => { if(!str)return null; const p=str.split('/'); if(p.length!==3)return null; return new Date(+p[2],+p[1]-1,+p[0]); };
+const isSame = (a,b) => toYMD(new Date(typeof a==='string'&&!a.includes('T')?a+'T00:00:00':a))===toYMD(new Date(typeof b==='string'&&!b.includes('T')?b+'T00:00:00':b));
+const isToday = d => isSame(d, new Date());
+const daysBetween = (a,b) => Math.round((new Date(b)-new Date(a))/86400000);
+const getCourse = k => courses.find(c=>c.key===k)||null;
+const getCColor = k => { const c=getCourse(k); return c?c.color:'#8080a0'; };
+
+function showToast(msg,dur=2500){
+  const t=document.getElementById('toast');
+  t.textContent=msg; t.classList.add('show');
+  setTimeout(()=>t.classList.remove('show'),dur);
 }
-const userId = localStorage.getItem('userId');
+function openModal(id){document.getElementById(id).classList.add('open');}
+function closeModal(id){document.getElementById(id).classList.remove('open');}
 
-// ===================================================================
-// UTILITY FUNCTIONS
-// ===================================================================
-function getWeekStart(d) {
-  const date = new Date(d);
-  const day = date.getDay();
-  const diff = day === 0 ? 0 : day;
-  date.setDate(date.getDate() - diff);
-  date.setHours(0, 0, 0, 0);
-  return date;
-}
-
-function formatDate(d) {
-  const date = new Date(d);
-  return `${date.getDate()}/${date.getMonth() + 1}`;
-}
-
-function formatDateFull(d) {
-  const date = new Date(d);
-  return date.toLocaleDateString('he-IL', { weekday: 'long', day: 'numeric', month: 'long' });
-}
-
-function formatTime(d) {
-  const date = new Date(d);
-  return date.toLocaleTimeString('he-IL', { hour: '2-digit', minute: '2-digit', hour12: false });
-}
-
-function isSameDay(d1, d2) {
-  const a = new Date(d1), b = new Date(d2);
-  return a.getFullYear() === b.getFullYear() && a.getMonth() === b.getMonth() && a.getDate() === b.getDate();
-}
-
-function isToday(d) { return isSameDay(d, new Date()); }
-
-function getEventStatus(ev) {
-  const now = new Date();
-  const start = new Date(ev.start);
-  const end = new Date(ev.end);
-  if (now >= start && now <= end) return 'now';
-  if (isToday(ev.start)) return 'today';
-  if (start > now) return 'future';
-  return 'past';
-}
-
-function getCourseColor(key) {
-  const course = courses.find(c => c.key === key);
-  return course ? course.color : '#7C6FF7';
-}
-
-function getCourseName(key) {
-  const course = courses.find(c => c.key === key);
-  return course ? course.short : key;
-}
-
-const DAY_NAMES = ['ראשון', 'שני', 'שלישי', 'רביעי', 'חמישי', 'שישי', 'שבת'];
-
-function showToast(message, duration = 2500) {
-  const toast = document.createElement('div');
-  toast.className = 'toast';
-  toast.textContent = message;
-  document.body.appendChild(toast);
-  setTimeout(() => toast.classList.add('visible'), 10);
-  setTimeout(() => {
-    toast.classList.remove('visible');
-    setTimeout(() => toast.remove(), 300);
-  }, duration);
-}
-
-function triggerConfetti() {
-  const colors = ['#7C6FF7','#6FF7C4','#F7D06F','#F76F9B','#6FBBF7'];
-  for (let i = 0; i < 30; i++) {
-    const dot = document.createElement('div');
-    dot.className = 'confetti-dot';
-    dot.style.cssText = `left:${Math.random()*100}%;background:${colors[Math.floor(Math.random()*colors.length)]};animation-delay:${Math.random()*0.5}s;`;
-    document.body.appendChild(dot);
-    setTimeout(() => dot.remove(), 2000);
-  }
-}
-
-// ===================================================================
-// MODAL HELPERS
-// ===================================================================
-function openModal(id) { document.getElementById(id).classList.add('open'); }
-function closeModal(id) { document.getElementById(id).classList.remove('open'); }
-document.querySelectorAll('.modal-overlay').forEach(m => {
-  m.addEventListener('click', e => { if (e.target === m) m.classList.remove('open'); });
-});
-
-// ===================================================================
-// SETTINGS
-// ===================================================================
-function saveSetting(key, value) {
-  localStorage.setItem(key, value);
-  if (key === 'userName') {
-    document.getElementById('link-created-by').value = value;
-    document.getElementById('summary-link-by').value = value;
-  }
-}
-
-function toggleTheme(theme) {
-  localStorage.setItem('theme', theme);
-  document.body.classList.toggle('light', theme === 'light');
-}
-
-function loadSettings() {
-  const name = localStorage.getItem('userName') || '';
-  const group = localStorage.getItem('group') || 'all';
-  const theme = localStorage.getItem('theme') || 'dark';
-  document.getElementById('setting-name').value = name;
-  document.getElementById('setting-group').value = group;
-  document.getElementById('setting-theme').value = theme;
-  document.getElementById('setting-userid').textContent = userId;
-  document.getElementById('link-created-by').value = name;
-  document.getElementById('summary-link-by').value = name;
-  if (theme === 'light') document.body.classList.add('light');
-  activeGroup = group;
-  updateGroupButtons();
-}
-
-function updateGroupButtons() {
-  document.querySelectorAll('#group-filter button').forEach(b => {
-    b.classList.toggle('active', b.dataset.group === activeGroup);
+// ── LESSON MATCH ─────────────────────────────────────────────
+function lessonsOnDay(ymd, courseKey){
+  if(!ymd||!courseKey)return[];
+  return icsEvs.filter(ev=>{
+    const matched=ev.course_key===courseKey||
+      Object.entries(ALIASES).some(([a,k])=>k===courseKey&&(ev.title||'').includes(a));
+    return matched && isSame(ev.start, ymd+'T00:00:00');
   });
 }
-
-// ===================================================================
-// PINBOARD
-// ===================================================================
-function setupLinksListener() {
-  db.collection('links').orderBy('order').onSnapshot(snap => {
-    linksData = snap.docs.map(d => ({ id: d.id, ...d.data() }));
-    renderPinboard();
-  });
-}
-
-function renderPinboard() {
-  const container = document.getElementById('pinboard');
-  const addBtn = document.getElementById('pinboard-add');
-  container.innerHTML = '';
-  document.getElementById('pin-count').textContent = linksData.length;
-
-  linksData.forEach(link => {
-    const card = document.createElement('div');
-    card.className = `pin-card pin-${link.type}` +
-      (link.type === 'announcement' ? ` pin-${link.color || 'blue'}` : '');
-    card.dataset.id = link.id;
-    card.draggable = true;
-
-    let icon = '🔗', body = '';
-    if (link.type === 'link') {
-      icon = '🔗';
-      body = `<div class="pin-title">${esc(link.title)}</div>
-              <div class="pin-sub">${link.url ? new URL(link.url).hostname : ''}</div>`;
-      card.onclick = () => { if (link.url) window.open(link.url, '_blank'); };
-    } else if (link.type === 'announcement') {
-      icon = '📢';
-      body = `<div class="pin-title">${esc(link.title)}</div>
-              <div class="pin-sub">${esc(link.text || '')}</div>`;
-    } else if (link.type === 'countdown') {
-      icon = '⏱';
-      const daysLeft = Math.max(0, Math.ceil((new Date(link.due_date) - new Date()) / 86400000));
-      const total = Math.max(1, Math.ceil((new Date(link.due_date) - (link.created_at?.toDate?.() || new Date())) / 86400000));
-      const pct = Math.max(0, Math.min(100, ((total - daysLeft) / total) * 100));
-      body = `<div class="pin-title">${esc(link.title)}</div>
-              <div class="countdown-days">${daysLeft} ימים נותרו</div>
-              <div class="countdown-bar"><div class="countdown-fill" style="width:${pct}%"></div></div>`;
-    }
-
-    card.innerHTML = `
-      <div class="pin-icon">${icon}</div>
-      <div class="pin-body">${body}</div>
-      <div class="pin-actions">
-        <button class="pin-delete" onclick="event.stopPropagation();deleteLink('${link.id}')">🗑</button>
-      </div>`;
-    container.appendChild(card);
-  });
-
-  container.appendChild(addBtn);
-}
-
-function toggleLinkFields() {
-  const type = document.getElementById('link-type').value;
-  document.getElementById('link-url-group').style.display = type === 'link' ? '' : 'none';
-  document.getElementById('link-text-group').style.display = type === 'announcement' ? '' : 'none';
-  document.getElementById('link-color-group').style.display = type === 'announcement' ? '' : 'none';
-  document.getElementById('link-due-group').style.display = type === 'countdown' ? '' : 'none';
-}
-
-async function saveLink() {
-  const type = document.getElementById('link-type').value;
-  const data = {
-    type,
-    title: document.getElementById('link-title').value,
-    order: linksData.length,
-    created_by: document.getElementById('link-created-by').value || 'אנונימי',
-    created_at: firebase.firestore.FieldValue.serverTimestamp()
-  };
-  if (type === 'link') data.url = document.getElementById('link-url').value;
-  if (type === 'announcement') {
-    data.text = document.getElementById('link-text').value;
-    data.color = document.getElementById('link-color').value;
+function findDueMatch(dueYMD, courseKey){
+  if(!dueYMD||!courseKey)return null;
+  for(let i=0;i<=6;i++){
+    const d=new Date(dueYMD); d.setDate(d.getDate()-i);
+    const ls=lessonsOnDay(toYMD(d),courseKey);
+    if(ls.length>0)return ls[0];
   }
-  if (type === 'countdown') data.due_date = document.getElementById('link-due').value;
-
-  await db.collection('links').add(data);
-  closeModal('modal-link-add');
-  showToast('📌 נוסף לפינבורד');
-  // Reset
-  document.getElementById('link-title').value = '';
-  document.getElementById('link-url').value = '';
-  document.getElementById('link-text').value = '';
+  return null;
+}
+function findOpenMatch(openYMD, courseKey){
+  return lessonsOnDay(openYMD,courseKey)[0]||null;
+}
+function lessonLbl(l){
+  if(!l)return'';
+  const n=l.lesson_number?`שיעור ${l.lesson_number}`:'';
+  return `${n} (${fmtDS(l.start)})`.trim();
 }
 
-async function deleteLink(id) {
-  if (confirm('למחוק?')) {
-    await db.collection('links').doc(id).delete();
-    showToast('🗑 נמחק');
-  }
-}
+// ── DATA LOADING ─────────────────────────────────────────────
+async function loadData(){
+  try{
+    const [er,cr]=await Promise.all([fetch('data/events.json'),fetch('data/courses.json')]);
+    icsEvs=await er.json();
+    courses=await cr.json();
+    movies=JSON.parse(localStorage.getItem('moviesData')||'[]');
+    populateEvCourse();
+  }catch(e){console.error('Load error:',e);}
 
-// ===================================================================
-// TASKS
-// ===================================================================
-function setupTasksListener() {
-  db.collection('tasks').orderBy('created_at', 'desc').onSnapshot(snap => {
-    tasksData = snap.docs.map(d => ({ id: d.id, ...d.data() }));
+  db.collection('tasks').where('status','==','active').onSnapshot(snap=>{
+    tasks=snap.docs.map(d=>({id:d.id,...d.data()}));
+    renderKanban(); renderCalendar(); renderKPIs();
+  });
+  db.collection('personal_status').doc(USER_ID).collection('tasks').onSnapshot(snap=>{
+    personalSt={};
+    snap.docs.forEach(d=>{personalSt[d.id]=d.data().status||'none';});
+    renderKanban(); renderKPIs();
+  });
+  db.collection('links').orderBy('created_at','desc').onSnapshot(snap=>{
+    links=snap.docs.map(d=>({id:d.id,...d.data()}));
+    renderFeed();
+  });
+  db.collection('custom_events').onSnapshot(snap=>{
+    customEvs=snap.docs.map(d=>({id:d.id,...d.data()}));
     renderCalendar();
-    renderKanban();
-    renderArchive();
   });
 }
 
-// ===================================================================
-// SUMMARIES
-// ===================================================================
-function setupSummariesListener() {
-  db.collection('summaries').onSnapshot(snap => {
-    summariesData = {};
-    snap.docs.forEach(d => {
-      const s = d.data();
-      summariesData[s.event_uid] = { id: d.id, ...s };
+function populateEvCourse(){
+  const sel=document.getElementById('ev-course');
+  if(!sel)return;
+  courses.forEach(c=>{
+    const o=document.createElement('option');
+    o.value=c.key; o.textContent=c.short||c.name||c.key;
+    sel.appendChild(o);
+  });
+}
+
+// ── KPIs ─────────────────────────────────────────────────────
+function renderKPIs(){
+  const g=document.getElementById('kpi-grid');
+  if(!g)return;
+  const total=tasks.length;
+  const submitted=tasks.filter(t=>(personalSt[t.id]||'none')==='submitted').length;
+  const pct=total?Math.round(submitted/total*100):0;
+  const now=new Date();
+  const start=new Date(SEM_B_START), end=new Date(SEM_B_END);
+  const semPct=Math.max(0,Math.min(100,Math.round((now-start)/(end-start)*100)));
+  const ldone=icsEvs.filter(ev=>ev.type!=='special'&&new Date(ev.end)<now).length;
+  const ltotal=icsEvs.filter(ev=>ev.type!=='special').length;
+  g.innerHTML=`
+    <div class="kpi-card">
+      <div class="kpi-val" style="color:var(--accent2)">${pct}%</div>
+      <div class="kpi-lbl">הושלמו (${submitted}/${total})</div>
+      <div class="kpi-bar"><div class="kpi-bar-fill" style="width:${pct}%;background:var(--accent2)"></div></div>
+    </div>
+    <div class="kpi-card">
+      <div class="kpi-val" style="color:var(--amber)">${semPct}%</div>
+      <div class="kpi-lbl">סמסטר ב׳ · ${ldone}/${ltotal} שיעורים</div>
+      <div class="kpi-bar"><div class="kpi-bar-fill" style="width:${semPct}%;background:var(--amber)"></div></div>
+    </div>`;
+}
+
+// ── KANBAN ───────────────────────────────────────────────────
+const KCOLS=[
+  {key:'none',  lbl:'📋 פתוח',      col:'var(--text3)'},
+  {key:'todo',  lbl:'🔴 לא התחלתי', col:'var(--red)'},
+  {key:'inprogress',lbl:'🟡 בתהליך', col:'var(--amber)'},
+  {key:'submitted',lbl:'✅ הוגש',    col:'var(--green)'},
+];
+
+function renderKanban(){
+  const body=document.getElementById('kanban-body');
+  if(!body)return;
+  const q=(document.getElementById('search-input').value||'').toLowerCase();
+  if(kView==='list'){renderKList(body,q);return;}
+
+  body.style.cssText='display:flex;gap:0;overflow-x:auto;overflow-y:hidden;height:100%;padding:8px;';
+  body.innerHTML='';
+  KCOLS.forEach(col=>{
+    const colTasks=tasks.filter(t=>{
+      if((personalSt[t.id]||'none')!==col.key)return false;
+      if(q&&!(t.name||'').toLowerCase().includes(q))return false;
+      return true;
     });
-    renderSummaries();
-    document.getElementById('summaries-count').textContent = Object.keys(summariesData).length;
-    // Refresh lesson detail modal if open
-    if (currentLessonDetailUid && document.getElementById('modal-lesson-detail')?.classList.contains('open')) {
-      renderLessonDetailContent(currentLessonDetailUid);
-    }
+    const el=document.createElement('div');
+    el.className='k-col'; el.dataset.status=col.key;
+    el.addEventListener('dragover',e=>{e.preventDefault();el.classList.add('drag-over');});
+    el.addEventListener('dragleave',()=>el.classList.remove('drag-over'));
+    el.addEventListener('drop',e=>{e.preventDefault();el.classList.remove('drag-over');if(dragId)setPS(dragId,col.key);dragId=null;});
+    el.innerHTML=`<div class="k-col-head"><span>${col.lbl}</span><span style="background:var(--bg);padding:1px 6px;border-radius:8px;font-size:0.62rem;">${colTasks.length}</span></div><div class="k-col-body" id="kcb-${col.key}"></div>`;
+    body.appendChild(el);
+    const cb=el.querySelector('.k-col-body');
+    if(!colTasks.length){cb.innerHTML=`<div class="empty" style="padding:8px;font-size:0.7rem;">ריק</div>`;}
+    else colTasks.forEach(t=>cb.appendChild(mkCard(t)));
   });
 }
 
-function renderSummaries() {
-  const grid = document.getElementById('summaries-grid');
-  const pastLessons = events.filter(e => e.type === 'lesson' && new Date(e.end) < new Date())
-    .sort((a, b) => new Date(b.start) - new Date(a.start));
-
-  grid.innerHTML = pastLessons.slice(0, 12).map(ev => {
-    const summary = summariesData[ev.uid];
-    const color = getCourseColor(ev.course_key);
-    const links = summary?.links || [];
-    const ICONS = { gdoc: '📄', slides: '📊', video: '🎬', file: '📁', notion: '📝', link: '🔗' };
-    return `
-      <div class="summary-card" style="--course-color:${color}">
-        <div class="summary-header">
-          <div class="summary-title">${esc(ev.title)}</div>
-          <div class="summary-lesson">שיעור ${ev.lesson_number || ''} · ${formatDate(ev.start)}</div>
-        </div>
-        <div class="summary-links">
-          ${links.map(l => `
-            <a class="summary-link" href="${esc(l.url)}" target="_blank">
-              <span class="summary-link-icon">${ICONS[l.type] || '🔗'}</span>
-              <div class="summary-link-info">
-                <div class="summary-link-title">${esc(l.title)}</div>
-                <div class="summary-link-by">${esc(l.added_by)}</div>
-              </div>
-            </a>`).join('')}
-        </div>
-        <button class="summary-add" onclick="openSummaryAdd('${ev.uid}','${ev.course_key}',${ev.lesson_number || 0})">
-          + הוסף סיכום / קישור
-        </button>
-      </div>`;
+function renderKList(body,q){
+  body.style.cssText='flex:1;overflow-y:auto;padding:8px;display:flex;flex-direction:column;gap:5px;';
+  const sorted=[...tasks].filter(t=>!q||(t.name||'').toLowerCase().includes(q))
+    .sort((a,b)=>{if(!a.due_date&&!b.due_date)return 0;if(!a.due_date)return 1;if(!b.due_date)return-1;return new Date(a.due_date)-new Date(b.due_date);});
+  if(!sorted.length){body.innerHTML=`<div class="empty">אין משימות</div>`;return;}
+  body.innerHTML=sorted.map(t=>{
+    const color=getCColor(t.course_key);
+    const c=getCourse(t.course_key);
+    const stLbl=KCOLS.find(k=>k.key===(personalSt[t.id]||'none'))?.lbl||'';
+    return `<div class="k-card" style="--task-color:${color};cursor:pointer;" onclick='openTaskModal(${JSON.stringify({id:t.id,...t})})'>
+      <div class="k-card-title">${esc(t.name)}</div>
+      <div class="k-card-meta">
+        ${c?`<span class="k-tag" style="background:color-mix(in srgb,${color} 15%,transparent);color:${color}">${esc(c.short||c.name)}</span>`:''}
+        ${t.due_date?`<span class="k-tag">📅 ${fmtDS(t.due_date)}</span>`:''}
+        <span class="k-tag">${stLbl}</span>
+      </div>
+    </div>`;
   }).join('');
 }
 
-let pendingSummary = {};
-function openSummaryAdd(uid, courseKey, lessonNum) {
-  pendingSummary = { uid, courseKey, lessonNum };
-  document.getElementById('summary-link-title').value = '';
-  document.getElementById('summary-link-url').value = '';
-  openModal('modal-summary-add');
+function mkCard(t){
+  const color=getCColor(t.course_key);
+  const c=getCourse(t.course_key);
+  const due=t.due_date?new Date(t.due_date+'T00:00:00'):null;
+  const now=new Date();
+  const over=due&&due<now;
+  const soon=due&&!over&&daysBetween(now,due)<=7;
+  const el=document.createElement('div');
+  el.className='k-card';
+  el.style.setProperty('--task-color',color);
+  el.draggable=true;
+  el.dataset.tid=t.id;
+  el.addEventListener('dragstart',()=>{dragId=t.id;el.classList.add('dragging');});
+  el.addEventListener('dragend',()=>el.classList.remove('dragging'));
+  el.addEventListener('click',()=>openTaskModal(t));
+  el.innerHTML=`
+    <div class="k-card-title">${esc(t.name)}</div>
+    <div class="k-card-meta">
+      ${c?`<span class="k-tag" style="background:color-mix(in srgb,${color} 15%,transparent);color:${color}">${esc(c.short||c.name)}</span>`:''}
+      ${t.opening_date?`<span class="k-tag">📂 ${fmtDS(t.opening_date)}</span>`:''}
+      ${due?`<span class="k-tag" style="${over?'color:var(--red)':soon?'color:var(--blue)':''}">${over?'⚠':'📅'} ${fmtDS(due)}</span>`:''}
+    </div>
+    ${t.due_lesson_match?`<div style="font-size:0.6rem;color:var(--accent2);margin-top:4px;">🎓 ${esc(t.due_lesson_match)}</div>`:''}`;
+  return el;
 }
 
-function detectLinkType(url) {
-  if (url.includes('docs.google.com/document')) return 'gdoc';
-  if (url.includes('docs.google.com/presentation') || url.includes('canva.com')) return 'slides';
-  if (url.includes('youtube.com') || url.includes('youtu.be')) return 'video';
-  if (url.includes('drive.google.com')) return 'file';
-  if (url.includes('notion.so')) return 'notion';
-  return 'link';
+async function setPS(taskId,status){
+  try{
+    await db.collection('personal_status').doc(USER_ID).collection('tasks').doc(taskId).set(
+      {status,updated_at:firebase.firestore.FieldValue.serverTimestamp()},{merge:true}
+    );
+  }catch(e){showToast('שגיאה בעדכון');}
 }
 
-async function saveSummaryLink() {
-  const url = document.getElementById('summary-link-url').value;
-  const linkData = {
-    title: document.getElementById('summary-link-title').value,
-    url,
-    type: detectLinkType(url),
-    added_by: document.getElementById('summary-link-by').value || 'אנונימי',
-    added_at: new Date().toISOString()
-  };
-
-  const existing = summariesData[pendingSummary.uid];
-  if (existing) {
-    await db.collection('summaries').doc(existing.id).update({
-      links: firebase.firestore.FieldValue.arrayUnion(linkData),
-      updated_at: firebase.firestore.FieldValue.serverTimestamp()
-    });
-  } else {
-    await db.collection('summaries').add({
-      event_uid: pendingSummary.uid,
-      course_key: pendingSummary.courseKey,
-      lesson_number: pendingSummary.lessonNum,
-      links: [linkData],
-      updated_at: firebase.firestore.FieldValue.serverTimestamp()
-    });
-  }
-  closeModal('modal-summary-add');
-  showToast('📝 סיכום נוסף');
-}
-
-// ===================================================================
-// CALENDAR
-// ===================================================================
-function setView(view) {
-  currentView = view;
-  document.querySelectorAll('.view-tabs button').forEach(b => b.classList.toggle('active', b.dataset.view === view));
-  renderCalendar();
-}
-
-function setGroup(g) {
-  activeGroup = g;
-  localStorage.setItem('group', g);
-  updateGroupButtons();
-  document.getElementById('setting-group').value = g;
-  renderCalendar();
+function toggleKView(){
+  kView=kView==='kanban'?'list':'kanban';
+  document.getElementById('btn-kview').textContent=kView==='kanban'?'קנבן':'רשימה';
   renderKanban();
 }
 
-function navWeek(dir) {
-  if (currentView === 'monthly') {
-    currentMonth.setMonth(currentMonth.getMonth() + dir);
-  } else {
-    currentWeekStart.setDate(currentWeekStart.getDate() + dir * 7);
-  }
+// ── CALENDAR ─────────────────────────────────────────────────
+const HEB_DAYS=['א׳','ב׳','ג׳','ד׳','ה׳','ו׳','ש׳'];
+const HEB_MONTHS=['ינואר','פברואר','מרץ','אפריל','מאי','יוני','יולי','אוגוסט','ספטמבר','אוקטובר','נובמבר','דצמבר'];
+
+function renderCalendar(){
+  const grid=document.getElementById('cal-grid');
+  if(!grid)return;
+  const today=new Date();
+  const start=new Date(today);
+  start.setDate(start.getDate()+calOffset);
+  const days=[];
+  for(let i=0;i<calDays;i++){const d=new Date(start);d.setDate(d.getDate()+i);days.push(d);}
+  const lbl=document.getElementById('cal-label');
+  if(lbl)lbl.textContent=`${fmtDS(days[0])} – ${fmtDS(days[days.length-1])}`;
+  const cols=Math.min(calDays,7);
+  grid.style.gridTemplateColumns=`repeat(${cols},minmax(0,1fr))`;
+  grid.innerHTML='';
+  days.forEach(day=>{
+    const ymd=toYMD(day);
+    const dayICS=icsEvs.filter(ev=>isSame(ev.start,day));
+    const dayCustom=customEvs.filter(ev=>ev.start_date===ymd||isSame(ev.start_date+'T00:00:00',day));
+    const dayTasks=tasks.filter(t=>t.due_date&&isSame(t.due_date+'T00:00:00',day));
+    const cell=document.createElement('div');
+    cell.className='cal-day'+(isToday(day)?' today':'');
+    cell.dataset.date=ymd;
+    const dayLabel=`${HEB_DAYS[day.getDay()]} ${day.getDate()}`;
+    let html=`<div class="cal-day-num"><span>${dayLabel}</span><button class="cal-add-btn" onclick="openEventModal(null,'${ymd}')">+</button></div>`;
+    dayICS.forEach(ev=>{
+      const color=getCColor(ev.course_key)||'#8080a0';
+      const title=ev.short||ev.title||'';
+      html+=`<div class="cal-chip" style="background:${color}22;color:${color};" title="${esc(ev.title)}">${esc(title)}</div>`;
+    });
+    dayCustom.forEach(ev=>{
+      const color=ev.color||'#7c6ff7';
+      const evJ=JSON.stringify({id:ev.id,title:ev.title,start_date:ev.start_date,end_date:ev.end_date,start_time:ev.start_time,end_time:ev.end_time,color:ev.color,linked_course_key:ev.linked_course_key}).replace(/"/g,'&quot;');
+      html+=`<div class="cal-chip" style="background:${color}22;color:${color};border:1px solid ${color}44;" onclick='openEventModal(JSON.parse(decodeURIComponent("${encodeURIComponent(JSON.stringify({id:ev.id,title:ev.title,start_date:ev.start_date,end_date:ev.end_date,start_time:ev.start_time,end_time:ev.end_time,color:ev.color,linked_course_key:ev.linked_course_key}))}"))' title="${esc(ev.title)}">✏ ${esc(ev.title)}</div>`;
+    });
+    dayTasks.forEach(t=>{
+      const color=getCColor(t.course_key);
+      const tJ=encodeURIComponent(JSON.stringify({id:t.id,name:t.name,course_key:t.course_key,opening_date:t.opening_date,due_date:t.due_date,description:t.description,added_by:t.added_by}));
+      html+=`<div class="cal-chip" style="background:${color}18;color:${color};" onclick='openTaskModal(JSON.parse(decodeURIComponent("${tJ}")))'>📋 ${esc(t.name)}</div>`;
+    });
+    cell.innerHTML=html;
+    grid.appendChild(cell);
+  });
+}
+
+function cycleCalRange(){
+  const r=[7,14,30];
+  calDays=r[(r.indexOf(calDays)+1)%r.length];
+  document.getElementById('btn-cal-range').textContent=`${calDays} ימים`;
   renderCalendar();
 }
+function shiftCal(dir){calOffset+=calDays*dir;renderCalendar();}
 
-function goToday() {
-  currentWeekStart = getWeekStart(new Date());
-  currentMonth = new Date();
-  renderCalendar();
-}
-
-function filterEvents(evts) {
-  searchQuery = (document.getElementById('calendar-search')?.value || '').toLowerCase();
-  return evts.filter(e => {
-    if (activeGroup !== 'all' && e.group !== 'all' && e.group !== activeGroup) return false;
-    if (activeCourses.size > 0 && e.course_key && !activeCourses.has(e.course_key)) return false;
-    if (searchQuery && !e.title.toLowerCase().includes(searchQuery)) return false;
-    return true;
-  });
-}
-
-function buildCourseFilters() {
-  const container = document.getElementById('course-filters');
-  container.innerHTML = courses.map(c => `
-    <span class="course-chip ${activeCourses.has(c.key) ? 'active' : ''}"
-          style="border-color:${c.color};color:${c.color};--course-color:${c.color}"
-          onclick="toggleCourseFilter('${c.key}')">
-      ${c.short}
-    </span>`).join('');
-}
-
-function toggleCourseFilter(key) {
-  if (activeCourses.has(key)) activeCourses.delete(key);
-  else activeCourses.add(key);
-  buildCourseFilters();
-  renderCalendar();
-}
-
-function getCalItems() {
-  const filteredEvents = filterEvents(events);
-  const activeTasks = tasksData.filter(t => t.status === 'active' && t.due_date);
-  const filteredTasks = activeTasks.filter(t => {
-    if (activeGroup !== 'all' && t.course_key) {
-      const course = courses.find(c => c.key === t.course_key);
-      if (course && course.group !== 'all' && course.group !== activeGroup) return false;
+// ── FEED ──────────────────────────────────────────────────────
+function renderFeed(){
+  const strip=document.getElementById('feed-strip');
+  if(!strip)return;
+  strip.innerHTML='';
+  // Semester countdown
+  const now=new Date();
+  const semEnd=new Date(SEM_B_END+'T00:00:00');
+  const semStart=new Date(SEM_B_START+'T00:00:00');
+  const dLeft=Math.max(0,Math.ceil((semEnd-now)/86400000));
+  const pct=Math.max(0,Math.min(100,Math.round((now-semStart)/(semEnd-semStart)*100)));
+  strip.insertAdjacentHTML('beforeend',`
+    <div class="feed-card type-countdown">
+      <div class="feed-card-title">סוף סמסטר ב׳</div>
+      <div class="feed-card-sub">${dLeft} ימים נותרו</div>
+      <div class="feed-cbar"><div class="feed-cbar-fill" style="width:${pct}%"></div></div>
+    </div>`);
+  // Add button
+  strip.insertAdjacentHTML('beforeend',`<div class="feed-add" onclick="openFeedModal(null)">+</div>`);
+  // Firebase items
+  links.forEach(item=>{
+    const tc=item.type==='announcement'?'type-announcement':item.type==='countdown'?'type-countdown':'';
+    let extra='';
+    if(item.type==='countdown'&&item.target_date){
+      const d=new Date(item.target_date+'T00:00:00');
+      const dl=Math.max(0,Math.ceil((d-now)/86400000));
+      const p=Math.max(0,Math.min(100,Math.round((now-semStart)/(d-semStart)*100)));
+      extra=`<div class="feed-card-sub">${dl} ימים</div><div class="feed-cbar"><div class="feed-cbar-fill" style="width:${p}%"></div></div>`;
     }
-    if (activeCourses.size > 0 && t.course_key && !activeCourses.has(t.course_key)) return false;
-    if (searchQuery && !t.title.toLowerCase().includes(searchQuery)) return false;
-    return true;
-  });
-  return { filteredEvents, filteredTasks };
-}
-
-function renderCalendar() {
-  const body = document.getElementById('calendar-body');
-  if (currentView === 'weekly') renderWeekly(body);
-  else if (currentView === 'monthly') renderMonthly(body);
-  else if (currentView === 'list') renderList(body);
-  else if (currentView === 'course') renderCourseView(body);
-  renderWidgets();
-}
-
-function renderWeekly(body) {
-  const { filteredEvents, filteredTasks } = getCalItems();
-  const ws = new Date(currentWeekStart);
-
-  // Update label
-  const we = new Date(ws); we.setDate(we.getDate() + 4);
-  document.getElementById('week-label').textContent = `${formatDate(ws)} — ${formatDate(we)}`;
-
-  let html = '<div class="cal-weekly">';
-  for (let i = 0; i < 5; i++) {
-    const day = new Date(ws);
-    day.setDate(day.getDate() + i);
-    const dayStr = day.toISOString().slice(0, 10);
-    const today = isToday(day);
-
-    const dayEvents = filteredEvents.filter(e => e.start.startsWith(dayStr));
-    const dayTasks = filteredTasks.filter(t => t.due_date === dayStr);
-
-    html += `<div class="cal-day-col ${today ? 'today-col show-mobile' : 'show-mobile'}">
-      <div class="cal-day-header ${today ? 'today' : ''}">
-        <div class="day-name">${DAY_NAMES[day.getDay()]}</div>
-        ${formatDate(day)}
-      </div>
-      <div class="cal-day-events">`;
-
-    dayEvents.sort((a, b) => a.start.localeCompare(b.start)).forEach(ev => {
-      html += renderEventCard(ev);
-    });
-
-    dayTasks.forEach(t => {
-      html += renderTaskCard(t);
-    });
-
-    if (!dayEvents.length && !dayTasks.length) {
-      html += '<div class="widget-empty">אין אירועים</div>';
-    }
-
-    html += '</div></div>';
-  }
-  html += '</div>';
-  body.innerHTML = html;
-  updateLiveProgress();
-}
-
-function renderMonthly(body) {
-  const { filteredEvents, filteredTasks } = getCalItems();
-  const year = currentMonth.getFullYear(), month = currentMonth.getMonth();
-  document.getElementById('week-label').textContent = new Date(year, month).toLocaleDateString('he-IL', { month: 'long', year: 'numeric' });
-
-  const firstDay = new Date(year, month, 1).getDay();
-  const daysInMonth = new Date(year, month + 1, 0).getDate();
-
-  let html = '<div class="cal-monthly">';
-  // Headers
-  for (let d = 0; d < 7; d++) {
-    html += `<div style="text-align:center;font-size:0.72rem;color:var(--text-3);padding:4px">${DAY_NAMES[d]}</div>`;
-  }
-  // Empty cells
-  for (let i = 0; i < firstDay; i++) html += '<div class="cal-month-cell other-month"></div>';
-  // Days
-  for (let d = 1; d <= daysInMonth; d++) {
-    const date = new Date(year, month, d);
-    const dayStr = date.toISOString().slice(0, 10);
-    const today = isToday(date);
-    const dayEvents = filteredEvents.filter(e => e.start.startsWith(dayStr));
-    const dayTasks = filteredTasks.filter(t => t.due_date === dayStr);
-
-    html += `<div class="cal-month-cell ${today ? 'today-cell' : ''}" onclick="currentWeekStart=getWeekStart(new Date('${dayStr}'));setView('weekly')">
-      <div class="month-date">${d}</div>
-      <div class="month-dots">
-        ${dayEvents.map(e => `<div class="month-dot" style="background:${getCourseColor(e.course_key)}"></div>`).join('')}
-        ${dayTasks.map(t => `<div class="month-dot" style="background:var(--priority-${t.priority || 'mid'})"></div>`).join('')}
-      </div>
-    </div>`;
-  }
-  html += '</div>';
-  body.innerHTML = html;
-}
-
-function renderList(body) {
-  const { filteredEvents, filteredTasks } = getCalItems();
-  document.getElementById('week-label').textContent = 'תצוגת רשימה';
-
-  const allItems = [
-    ...filteredEvents.map(e => ({ ...e, itemType: 'event', sortDate: e.start })),
-    ...filteredTasks.map(t => ({ ...t, itemType: 'task', sortDate: t.due_date }))
-  ].sort((a, b) => a.sortDate.localeCompare(b.sortDate));
-
-  let html = '<div class="cal-list">';
-  let lastDay = '';
-  allItems.forEach(item => {
-    const day = item.sortDate.slice(0, 10);
-    if (day !== lastDay) {
-      lastDay = day;
-      html += `<div class="cal-list-day">${formatDateFull(day)}</div>`;
-    }
-    const color = getCourseColor(item.course_key);
-    if (item.itemType === 'event') {
-      html += `<div class="cal-list-event" onclick="showLessonDetail('${item.uid}')">
-        <div class="cal-list-color" style="background:${color}"></div>
-        <div class="cal-list-info">
-          <div class="cal-list-title">${esc(item.title)}</div>
-          <div class="cal-list-time">${formatTime(item.start)} — ${formatTime(item.end)} · ${item.location || ''}</div>
-        </div>
-      </div>`;
-    } else {
-      html += `<div class="cal-list-event">
-        <div class="cal-list-color" style="background:var(--priority-${item.priority || 'mid'})"></div>
-        <div class="cal-list-info">
-          <div class="cal-list-title">📌 ${esc(item.title)}</div>
-          <div class="cal-list-time">עד ${formatDate(item.due_date)} · ${getCourseName(item.course_key) || 'כללי'}</div>
-        </div>
-      </div>`;
-    }
-  });
-  html += '</div>';
-  body.innerHTML = html;
-}
-
-function renderCourseView(body) {
-  document.getElementById('week-label').textContent = 'תצוגה לפי קורס';
-  const { filteredEvents } = getCalItems();
-  const activeCourseKey = document.querySelector('.cal-course-tab.active')?.dataset.course || courses[0]?.key;
-
-  let html = '<div class="cal-course-tabs">';
-  courses.forEach(c => {
-    if (activeGroup !== 'all' && c.group !== 'all' && c.group !== activeGroup) return;
-    html += `<span class="cal-course-tab ${c.key === activeCourseKey ? 'active' : ''}"
-      style="border-color:${c.color};color:${c.color};${c.key === activeCourseKey ? `background:${c.color};color:#fff` : ''}"
-      data-course="${c.key}"
-      onclick="this.parentElement.querySelectorAll('.cal-course-tab').forEach(t=>t.classList.remove('active'));this.classList.add('active');this.style.background=this.style.borderColor;this.style.color='#fff';renderCalendar()">
-      ${c.short}
-    </span>`;
-  });
-  html += '</div><div class="cal-course-content">';
-
-  const courseEvents = filteredEvents
-    .filter(e => e.course_key === activeCourseKey)
-    .sort((a, b) => a.start.localeCompare(b.start));
-
-  courseEvents.forEach(ev => { html += renderEventCard(ev); });
-  if (!courseEvents.length) html += '<div class="widget-empty">אין שיעורים</div>';
-  html += '</div>';
-  body.innerHTML = html;
-}
-
-function renderEventCard(ev) {
-  const status = getEventStatus(ev);
-  const color = getCourseColor(ev.course_key);
-  const relatedTasks = tasksData.filter(t => t.linked_event_uid === ev.uid && t.status === 'active');
-  const statusLabels = { now: 'עכשיו', today: 'היום', future: 'עתידי', past: 'עבר' };
-
-  const progressHTML = status === 'now' ? (() => {
-    const start = new Date(ev.start).getTime(), end = new Date(ev.end).getTime();
-    const pct = Math.min(100, Math.max(0, ((Date.now() - start) / (end - start)) * 100));
-    return `<div class="progress-live"><div class="progress-live-fill" style="width:${pct}%"></div></div>`;
-  })() : '';
-
-  return `
-    <div class="cal-event lesson event-${status}" data-uid="${ev.uid}" data-course="${ev.course_key}"
-         style="--course-color:${color}" onclick="showLessonDetail('${ev.uid}')">
-      <div class="event-badges">
-        ${ev.lesson_number ? `<span class="badge badge-lesson">שיעור ${ev.lesson_number}</span>` : ''}
-        <span class="badge badge-${status}">${statusLabels[status]}</span>
-      </div>
-      <div class="event-title">${esc(ev.title)}</div>
-      <div class="event-meta">
-        <span>🕙 ${formatTime(ev.start)}–${formatTime(ev.end)}</span>
-        ${ev.location ? `<span>📍 ${esc(ev.location)}</span>` : ''}
-      </div>
-      ${relatedTasks.length ? `
-        <div class="event-tasks">
-          <span class="tasks-toggle" onclick="event.stopPropagation();this.nextElementSibling.classList.toggle('open')">
-            ▼ ${relatedTasks.length} משימות קשורות
-          </span>
-          <div class="tasks-list">
-            ${relatedTasks.map(t => `<div class="task-chip">📌 ${esc(t.title)}</div>`).join('')}
-          </div>
-        </div>` : ''}
-      ${progressHTML}
-      <div class="event-actions">
-        <button onclick="event.stopPropagation();openTaskWizardForLesson('${ev.uid}','${ev.course_key}')">+ משימה</button>
-        <button onclick="event.stopPropagation();openSummaryAdd('${ev.uid}','${ev.course_key}',${ev.lesson_number||0})">📝 סיכום</button>
-      </div>
-    </div>`;
-}
-
-function renderTaskCard(t) {
-  const color = getCourseColor(t.course_key);
-  const priorityLabels = { high: '🔴 גבוהה', mid: '🟡 בינונית', low: '🟢 נמוכה' };
-  return `
-    <div class="cal-event task" data-id="${t.id}" data-course="${t.course_key}" style="--course-color:${color}">
-      <div class="event-badges">
-        <span class="badge badge-priority-${t.priority || 'mid'}">${priorityLabels[t.priority || 'mid']}</span>
-      </div>
-      <div class="event-title">${esc(t.title)}</div>
-      <div class="event-meta">
-        ${t.course_key ? `<span>${getCourseName(t.course_key)}</span>` : ''}
-        <span>עד: ${formatDate(t.due_date)}</span>
-      </div>
-      ${t.description ? `<div class="event-desc">${esc(t.description)}</div>` : ''}
-      <div class="event-footer">
-        <span class="added-by">נוסף ע"י: ${esc(t.created_by || '')}</span>
-        <div class="event-actions">
-          <button onclick="deleteTask('${t.id}')">🗑</button>
-        </div>
-      </div>
-    </div>`;
-}
-
-let currentLessonDetailUid = null;
-
-function showLessonDetail(uid) {
-  const ev = events.find(e => e.uid === uid);
-  if (!ev) return;
-  currentLessonDetailUid = uid;
-  document.getElementById('lesson-detail-title').textContent = ev.title;
-  renderLessonDetailContent(uid);
-  openModal('modal-lesson-detail');
-}
-
-function renderLessonDetailContent(uid) {
-  const ev = events.find(e => e.uid === uid);
-  if (!ev) return;
-  const color = getCourseColor(ev.course_key);
-  const relatedTasks = tasksData.filter(t => t.linked_event_uid === uid && t.status === 'active');
-  const summary = summariesData[uid];
-  const ICONS = { gdoc: '📄', slides: '📊', video: '🎬', file: '📁', notion: '📝', link: '🔗' };
-
-  document.getElementById('lesson-detail-body').innerHTML = `
-    <div class="lesson-meta">
-      <span>🕙 ${formatTime(ev.start)} — ${formatTime(ev.end)}</span>
-      ${ev.location ? `<span>📍 ${esc(ev.location)}</span>` : ''}
-      <span style="color:${color}">● ${getCourseName(ev.course_key)}</span>
-      ${ev.lesson_number ? `<span>שיעור ${ev.lesson_number}</span>` : ''}
-    </div>
-
-    <div class="lesson-section-title">📝 הערות אישיות</div>
-    <textarea id="lesson-notes-input" class="lesson-notes-textarea"
-      placeholder="הוסף הערות לשיעור זה — מה היה, מה לזכור, רעיונות...">${esc(summary?.notes || '')}</textarea>
-    <div style="display:flex;align-items:center;gap:8px;margin-bottom:4px">
-      <button class="btn-secondary btn-sm" onclick="saveEventNotes('${uid}','${ev.course_key}',${ev.lesson_number||0})">שמור הערות</button>
-      <span class="save-notes-indicator" id="notes-saved-indicator">✓ נשמר</span>
-    </div>
-
-    ${relatedTasks.length ? `
-      <div class="lesson-section-title">📌 משימות (${relatedTasks.length})</div>
-      ${relatedTasks.map(t => `
-        <div class="lesson-task-item">
-          <span>${esc(t.title)}</span>
-          <span class="priority-tag">${t.priority}</span>
-        </div>`).join('')}
-    ` : ''}
-
-    <div class="lesson-section-title">📚 סיכומים וקישורים</div>
-    <div id="lesson-summary-links">
-      ${(summary?.links?.length) ? summary.links.map(l => `
-        <a class="summary-link" href="${esc(l.url)}" target="_blank">
-          <span class="summary-link-icon">${ICONS[l.type]||'🔗'}</span>
-          <div class="summary-link-info">
-            <div class="summary-link-title">${esc(l.title)}</div>
-            <div class="summary-link-by">${esc(l.added_by)}</div>
-          </div>
-        </a>`).join('') : '<p style="color:var(--text-3);font-size:0.82rem;padding:4px 0">אין סיכומים עדיין — היה ראשון!</p>'}
-    </div>
-
-    <div class="inline-add-summary">
-      <div class="inline-add-header" onclick="toggleInlineSummaryForm()">
-        <span id="inline-summary-icon">＋</span> הוסף סיכום / קישור לשיעור
-      </div>
-      <div class="inline-add-body" id="inline-summary-body" style="display:none">
-        <div class="form-group">
-          <label>כותרת</label>
-          <input type="text" id="inline-link-title" placeholder="סיכום שיעור, מצגת, וידאו...">
-        </div>
-        <div class="form-group">
-          <label>קישור (URL)</label>
-          <input type="url" id="inline-link-url" placeholder="https://docs.google.com/..." dir="ltr">
-        </div>
-        <div class="form-group">
-          <label>שם</label>
-          <input type="text" id="inline-link-by" value="${esc(localStorage.getItem('userName') || '')}">
-        </div>
-        <div class="form-actions">
-          <button class="btn-primary" onclick="saveInlineSummaryLink('${uid}','${ev.course_key}',${ev.lesson_number||0})">שמור</button>
-        </div>
-      </div>
-    </div>
-
-    <div class="lesson-actions">
-      <button class="btn-primary" onclick="closeModal('modal-lesson-detail');openTaskWizardForLesson('${uid}','${ev.course_key}')">+ הוסף משימה</button>
-    </div>
-  `;
-}
-
-function toggleInlineSummaryForm() {
-  const body = document.getElementById('inline-summary-body');
-  const icon = document.getElementById('inline-summary-icon');
-  if (!body) return;
-  const isOpen = body.style.display !== 'none';
-  body.style.display = isOpen ? 'none' : 'flex';
-  icon.textContent = isOpen ? '＋' : '－';
-}
-
-async function saveEventNotes(uid, courseKey, lessonNum) {
-  const notes = document.getElementById('lesson-notes-input')?.value || '';
-  const existing = summariesData[uid];
-  if (existing) {
-    await db.collection('summaries').doc(existing.id).update({
-      notes,
-      updated_at: firebase.firestore.FieldValue.serverTimestamp()
-    });
-  } else {
-    await db.collection('summaries').add({
-      event_uid: uid, course_key: courseKey, lesson_number: lessonNum,
-      notes, links: [],
-      updated_at: firebase.firestore.FieldValue.serverTimestamp()
-    });
-  }
-  const indicator = document.getElementById('notes-saved-indicator');
-  if (indicator) {
-    indicator.classList.add('show');
-    setTimeout(() => indicator.classList.remove('show'), 2000);
-  }
-}
-
-async function saveInlineSummaryLink(uid, courseKey, lessonNum) {
-  const title = document.getElementById('inline-link-title')?.value?.trim();
-  const url = document.getElementById('inline-link-url')?.value?.trim();
-  if (!title || !url) { showToast('נא למלא כותרת וקישור'); return; }
-  const by = document.getElementById('inline-link-by')?.value?.trim() || 'אנונימי';
-  if (by !== 'אנונימי') localStorage.setItem('userName', by);
-
-  const linkData = { title, url, type: detectLinkType(url), added_by: by, added_at: new Date().toISOString() };
-  const existing = summariesData[uid];
-
-  if (existing) {
-    await db.collection('summaries').doc(existing.id).update({
-      links: firebase.firestore.FieldValue.arrayUnion(linkData),
-      updated_at: firebase.firestore.FieldValue.serverTimestamp()
-    });
-  } else {
-    await db.collection('summaries').add({
-      event_uid: uid, course_key: courseKey, lesson_number: lessonNum,
-      links: [linkData], notes: '',
-      updated_at: firebase.firestore.FieldValue.serverTimestamp()
-    });
-  }
-
-  // Optimistic UI update — refresh links section without closing modal
-  if (!summariesData[uid]) summariesData[uid] = { event_uid: uid, links: [], notes: '' };
-  if (!summariesData[uid].links) summariesData[uid].links = [];
-  summariesData[uid].links.push(linkData);
-
-  const ICONS = { gdoc: '📄', slides: '📊', video: '🎬', file: '📁', notion: '📝', link: '🔗' };
-  const linksContainer = document.getElementById('lesson-summary-links');
-  if (linksContainer) {
-    linksContainer.innerHTML = summariesData[uid].links.map(l => `
-      <a class="summary-link" href="${esc(l.url)}" target="_blank">
-        <span class="summary-link-icon">${ICONS[l.type]||'🔗'}</span>
-        <div class="summary-link-info">
-          <div class="summary-link-title">${esc(l.title)}</div>
-          <div class="summary-link-by">${esc(l.added_by)}</div>
-        </div>
-      </a>`).join('');
-  }
-  document.getElementById('inline-link-title').value = '';
-  document.getElementById('inline-link-url').value = '';
-  toggleInlineSummaryForm();
-  showToast('📎 סיכום נוסף!');
-}
-
-// ===================================================================
-// WIDGETS
-// ===================================================================
-function renderWidgets() {
-  const now = new Date();
-  const todayStr = now.toISOString().slice(0, 10);
-
-  // Today
-  const todayEvents = events.filter(e => e.start.startsWith(todayStr) && (!activeGroup || activeGroup === 'all' || e.group === 'all' || e.group === activeGroup));
-  const todayTasks = tasksData.filter(t => t.status === 'active' && t.due_date === todayStr);
-  const tc = document.getElementById('today-content');
-
-  if (!todayEvents.length && !todayTasks.length) {
-    tc.innerHTML = '<div class="widget-empty">אין אירועים היום 🎉</div>';
-  } else {
-    const nowEvent = todayEvents.find(e => getEventStatus(e) === 'now');
-    tc.innerHTML = todayEvents.map(ev => {
-      const status = getEventStatus(ev);
-      return `<div class="widget-event ${status === 'now' ? 'widget-now' : ''}">
-        <div class="we-color" style="background:${getCourseColor(ev.course_key)}"></div>
-        <div class="we-info">
-          <div class="we-title">${esc(ev.title)}</div>
-          <div class="we-time">${formatTime(ev.start)} — ${formatTime(ev.end)} ${status === 'now' ? '🟢 עכשיו' : ''}</div>
-        </div>
-      </div>`;
-    }).join('') + todayTasks.map(t => `
-      <div class="widget-event">
-        <div class="we-color" style="background:var(--priority-${t.priority || 'mid'})"></div>
-        <div class="we-info">
-          <div class="we-title">📌 ${esc(t.title)}</div>
-          <div class="we-time">${getCourseName(t.course_key) || 'כללי'}</div>
-        </div>
-      </div>`).join('');
-  }
-
-  // Upcoming 72h
-  const in72h = new Date(now.getTime() + 72 * 60 * 60 * 1000);
-  const upcoming = events.filter(e => {
-    const s = new Date(e.start);
-    return s > now && s <= in72h && (activeGroup === 'all' || e.group === 'all' || e.group === activeGroup);
-  }).sort((a, b) => a.start.localeCompare(b.start));
-  const upcomingTasks = tasksData.filter(t => {
-    if (t.status !== 'active' || !t.due_date) return false;
-    const d = new Date(t.due_date);
-    return d > now && d <= in72h;
-  });
-
-  const uc = document.getElementById('upcoming-content');
-  if (!upcoming.length && !upcomingTasks.length) {
-    uc.innerHTML = '<div class="widget-empty">אין אירועים ב-72 שעות הקרובות</div>';
-  } else {
-    uc.innerHTML = upcoming.slice(0, 5).map(ev => `
-      <div class="widget-event">
-        <div class="we-color" style="background:${getCourseColor(ev.course_key)}"></div>
-        <div class="we-info">
-          <div class="we-title">${esc(ev.title)}</div>
-          <div class="we-time">${formatDateFull(ev.start)} · ${formatTime(ev.start)}</div>
-        </div>
-      </div>`).join('') + upcomingTasks.slice(0, 3).map(t => `
-      <div class="widget-event">
-        <div class="we-color" style="background:var(--priority-${t.priority || 'mid'})"></div>
-        <div class="we-info">
-          <div class="we-title">📌 ${esc(t.title)}</div>
-          <div class="we-time">עד ${formatDate(t.due_date)}</div>
-        </div>
-      </div>`).join('');
-  }
-}
-
-function updateLiveProgress() {
-  document.querySelectorAll('.event-now .progress-live-fill').forEach(el => {
-    const card = el.closest('.cal-event');
-    const ev = events.find(e => e.uid === card?.dataset.uid);
-    if (!ev) return;
-    const start = new Date(ev.start).getTime(), end = new Date(ev.end).getTime();
-    const pct = Math.min(100, Math.max(0, ((Date.now() - start) / (end - start)) * 100));
-    el.style.width = pct + '%';
-  });
-}
-setInterval(updateLiveProgress, 30000);
-
-// ===================================================================
-// TASK WIZARD
-// ===================================================================
-let wizardState = { step: 1, isCoursed: null, courseKey: null, linkedEvent: null, dueDate: null, title: '', description: '', priority: 'mid', createdBy: '' };
-
-function openTaskWizard() {
-  wizardState = { step: 1, isCoursed: null, courseKey: null, linkedEvent: null, dueDate: null, title: '', description: '', priority: 'mid', createdBy: localStorage.getItem('userName') || '' };
-  renderWizard();
-  openModal('modal-task-wizard');
-}
-
-function openTaskWizardForLesson(uid, courseKey) {
-  const ev = events.find(e => e.uid === uid);
-  wizardState = {
-    step: 3, isCoursed: true, courseKey,
-    linkedEvent: ev, dueDate: ev ? ev.start.slice(0, 10) : null,
-    title: '', description: '', priority: 'mid',
-    createdBy: localStorage.getItem('userName') || ''
-  };
-  renderWizard();
-  openModal('modal-task-wizard');
-}
-
-function renderWizard() {
-  const stepsEl = document.getElementById('wizard-steps');
-  stepsEl.innerHTML = [1, 2, 3].map(s => `
-    <div class="wizard-step ${s === wizardState.step ? 'active' : ''} ${s < wizardState.step ? 'done' : ''}">${s < wizardState.step ? '✓' : s}</div>
-  `).join('');
-
-  const body = document.getElementById('wizard-body');
-  if (wizardState.step === 1) {
-    body.innerHTML = `
-      <p style="color:var(--text-2);font-size:0.85rem;margin-bottom:12px">איזו משימה?</p>
-      <div class="wizard-choices">
-        <div class="wizard-choice" onclick="wizardState.isCoursed=true;wizardState.step=2;renderWizard()">
-          <span class="choice-icon">📚</span>לקורס מסוים
-        </div>
-        <div class="wizard-choice" onclick="wizardState.isCoursed=false;wizardState.step=3;renderWizard()">
-          <span class="choice-icon">📝</span>משימה כללית
-        </div>
-      </div>`;
-  } else if (wizardState.step === 2) {
-    if (!wizardState.courseKey) {
-      body.innerHTML = `
-        <p style="color:var(--text-2);font-size:0.85rem;margin-bottom:12px">בחר קורס:</p>
-        <div class="wizard-courses">
-          ${courses.filter(c => activeGroup === 'all' || c.group === 'all' || c.group === activeGroup).map(c => `
-            <div class="wizard-course" style="--course-color:${c.color};border-color:${c.color}30;color:${c.color}"
-                 onclick="wizardState.courseKey='${c.key}';renderWizard()">
-              ${c.short}<br><small style="color:var(--text-3)">${c.teacher || ''}</small>
-            </div>`).join('')}
-        </div>
-        <button class="btn-secondary" style="margin-top:12px" onclick="wizardState.step=1;renderWizard()">← חזור</button>`;
-    } else {
-      const futureEvents = events.filter(e =>
-        e.course_key === wizardState.courseKey && new Date(e.start) > new Date() && e.type === 'lesson'
-      ).sort((a, b) => a.start.localeCompare(b.start));
-
-      body.innerHTML = `
-        <p style="color:var(--text-2);font-size:0.85rem;margin-bottom:12px">קשר לשיעור (אופציונלי):</p>
-        <div class="wizard-events">
-          ${futureEvents.map(e => `
-            <div class="wizard-event ${wizardState.linkedEvent?.uid === e.uid ? 'selected' : ''}"
-                 onclick="wizardState.linkedEvent=${JSON.stringify(e).replace(/"/g, '&quot;')};wizardState.dueDate='${e.start.slice(0,10)}';renderWizard()">
-              שיעור ${e.lesson_number || ''} — ${formatDate(e.start)} (${formatTime(e.start)})
-            </div>`).join('')}
-          <div class="wizard-event ${wizardState.linkedEvent === null && wizardState.dueDate ? 'selected' : ''}">
-            <label style="font-size:0.82rem">או בחר תאריך:</label>
-            <input type="date" value="${wizardState.dueDate || ''}" style="margin-top:4px"
-                   onchange="wizardState.linkedEvent=null;wizardState.dueDate=this.value">
-          </div>
-        </div>
-        <div style="display:flex;gap:8px;margin-top:12px">
-          <button class="btn-secondary" onclick="wizardState.courseKey=null;renderWizard()">← חזור</button>
-          <button class="btn-primary" onclick="wizardState.step=3;renderWizard()">המשך →</button>
-        </div>`;
-    }
-  } else if (wizardState.step === 3) {
-    body.innerHTML = `
-      <div class="form-group">
-        <label>כותרת המשימה</label>
-        <input type="text" id="wiz-title" value="${esc(wizardState.title)}" placeholder="כתיבת טיוטה ראשונה...">
-      </div>
-      <div class="form-group">
-        <label>תיאור (אופציונלי)</label>
-        <textarea id="wiz-desc" placeholder="פרטים נוספים...">${esc(wizardState.description)}</textarea>
-      </div>
-      ${!wizardState.dueDate ? `
-        <div class="form-group">
-          <label>תאריך יעד</label>
-          <input type="date" id="wiz-date" value="">
-        </div>` : ''}
-      <div class="form-group">
-        <label>עדיפות</label>
-        <div class="priority-buttons">
-          <button class="priority-btn ${wizardState.priority === 'high' ? 'selected' : ''}" data-p="high" onclick="wizardState.priority='high';document.querySelectorAll('.priority-btn').forEach(b=>b.classList.remove('selected'));this.classList.add('selected')">🔴 גבוהה</button>
-          <button class="priority-btn ${wizardState.priority === 'mid' ? 'selected' : ''}" data-p="mid" onclick="wizardState.priority='mid';document.querySelectorAll('.priority-btn').forEach(b=>b.classList.remove('selected'));this.classList.add('selected')">🟡 בינונית</button>
-          <button class="priority-btn ${wizardState.priority === 'low' ? 'selected' : ''}" data-p="low" onclick="wizardState.priority='low';document.querySelectorAll('.priority-btn').forEach(b=>b.classList.remove('selected'));this.classList.add('selected')">🟢 נמוכה</button>
-        </div>
-      </div>
-      <div class="form-group">
-        <label>שם (נוסף ע"י)</label>
-        <input type="text" id="wiz-by" value="${esc(wizardState.createdBy)}" placeholder="השם שלך">
-      </div>
-      <div style="display:flex;gap:8px;margin-top:8px">
-        ${wizardState.step > 1 ? `<button class="btn-secondary" onclick="wizardState.step=${wizardState.isCoursed ? 2 : 1};renderWizard()">← חזור</button>` : ''}
-        <button class="btn-primary" onclick="saveWizardTask()">שמור משימה</button>
-      </div>`;
-  }
-}
-
-async function saveWizardTask() {
-  const title = document.getElementById('wiz-title')?.value;
-  if (!title) { showToast('נא למלא כותרת'); return; }
-  const desc = document.getElementById('wiz-desc')?.value || '';
-  const dateEl = document.getElementById('wiz-date');
-  const dueDate = wizardState.dueDate || dateEl?.value || null;
-  const by = document.getElementById('wiz-by')?.value || 'אנונימי';
-
-  if (by && by !== 'אנונימי') { localStorage.setItem('userName', by); }
-
-  await db.collection('tasks').add({
-    title,
-    description: desc,
-    due_date: dueDate,
-    linked_event_uid: wizardState.linkedEvent?.uid || null,
-    course_key: wizardState.courseKey || null,
-    priority: wizardState.priority,
-    status: 'active',
-    completed_globally: false,
-    created_by: by,
-    created_at: firebase.firestore.FieldValue.serverTimestamp()
-  });
-
-  closeModal('modal-task-wizard');
-  showToast('✅ משימה נוספה — כולם רואים עכשיו');
-}
-
-async function deleteTask(id) {
-  if (confirm('למחוק משימה?')) {
-    await db.collection('tasks').doc(id).delete();
-    showToast('🗑 משימה נמחקה');
-  }
-}
-
-// ===================================================================
-// KANBAN
-// ===================================================================
-function loadPersonalKanban() {
-  kanbanState = JSON.parse(localStorage.getItem('kanban') || '{}');
-  // Also load from Firebase
-  db.collection('personal_status').doc(userId).collection('tasks').get().then(snap => {
-    snap.docs.forEach(d => {
-      kanbanState[d.id] = d.data().status;
-    });
-    localStorage.setItem('kanban', JSON.stringify(kanbanState));
-    renderKanban();
+    const iJ=encodeURIComponent(JSON.stringify({id:item.id,type:item.type,title:item.title,url:item.url,description:item.description,target_date:item.target_date}));
+    const link=item.url?`href="${esc(item.url)}" target="_blank"`:'';
+    strip.insertAdjacentHTML('beforeend',`
+      <div class="feed-card ${tc}" onclick='openFeedModal(JSON.parse(decodeURIComponent("${iJ}")))'>
+        <div class="feed-card-title">${esc(item.title)}</div>
+        <div class="feed-card-sub">${esc(item.description||'')}</div>
+        ${extra}
+      </div>`);
   });
 }
 
-function renderKanban() {
-  const activeTasks = tasksData.filter(t => t.status === 'active');
-  const cols = { todo: [], inprogress: [], done: [] };
-
-  activeTasks.forEach(t => {
-    const status = kanbanState[t.id] || 'todo';
-    if (cols[status]) cols[status].push(t);
-  });
-
-  ['todo', 'inprogress', 'done'].forEach(status => {
-    const container = document.getElementById(`kanban-${status}`);
-    document.getElementById(`kanban-count-${status}`).textContent = cols[status].length;
-    container.innerHTML = cols[status].map(t => {
-      const color = getCourseColor(t.course_key);
-      const pColor = t.priority === 'high' ? 'var(--priority-high)' : t.priority === 'low' ? 'var(--priority-low)' : 'var(--priority-mid)';
-      return `
-        <div class="kanban-card" draggable="true" data-id="${t.id}" style="--course-color:${color}">
-          <div class="kanban-card-title">
-            <span class="kanban-card-priority" style="background:${pColor}"></span>
-            ${esc(t.title)}
-          </div>
-          <div class="kanban-card-meta">
-            ${t.course_key ? `<span>${getCourseName(t.course_key)}</span>` : ''}
-            ${t.due_date ? `<span>עד ${formatDate(t.due_date)}</span>` : ''}
-          </div>
-        </div>`;
-    }).join('');
-  });
-
-  // Setup drag events
-  document.querySelectorAll('.kanban-card').forEach(card => {
-    card.addEventListener('dragstart', e => {
-      e.dataTransfer.setData('taskId', card.dataset.id);
-      card.classList.add('dragging');
-    });
-    card.addEventListener('dragend', () => card.classList.remove('dragging'));
-  });
-
-  document.querySelectorAll('.kanban-col').forEach(col => {
-    col.addEventListener('dragover', e => { e.preventDefault(); col.classList.add('drag-over'); });
-    col.addEventListener('dragleave', () => col.classList.remove('drag-over'));
-    col.addEventListener('drop', async e => {
-      e.preventDefault();
-      const taskId = e.dataTransfer.getData('taskId');
-      const newStatus = col.dataset.status;
-      col.classList.remove('drag-over');
-
-      kanbanState[taskId] = newStatus;
-      localStorage.setItem('kanban', JSON.stringify(kanbanState));
-
-      await db.collection('personal_status').doc(userId).collection('tasks').doc(taskId).set({
-        status: newStatus,
-        updated_at: firebase.firestore.FieldValue.serverTimestamp()
-      });
-
-      if (newStatus === 'done') triggerConfetti();
-      renderKanban();
-    });
-  });
-}
-
-// ===================================================================
-// ARCHIVE
-// ===================================================================
-function renderArchive() {
-  const cutoff = new Date(Date.now() - 24 * 60 * 60 * 1000);
-  const archived = tasksData.filter(t =>
-    t.status === 'archived' || (t.status === 'active' && t.due_date && new Date(t.due_date) < cutoff)
-  );
-  document.getElementById('archive-count').textContent = archived.length;
-  document.getElementById('archive-list').innerHTML = archived.map(t => `
-    <div class="archive-item">
-      <div class="event-title">${esc(t.title)}</div>
-      <span style="font-size:0.72rem;color:var(--text-3)">${t.due_date ? formatDate(t.due_date) : ''} · ${getCourseName(t.course_key) || 'כללי'}</span>
+// ── MOVIES ────────────────────────────────────────────────────
+function renderMovies(){
+  const list=document.getElementById('movies-list');
+  if(!list)return;
+  if(!movies.length){list.innerHTML=`<div class="empty" style="font-size:0.72rem;">אין צפיות</div>`;return;}
+  list.innerHTML=movies.map((m,i)=>`
+    <div class="movie-pill ${m.watched?'watched':''}" onclick="toggleMovie(${i})">
+      <span style="overflow:hidden;text-overflow:ellipsis;white-space:nowrap;">${esc(m.title)}</span>
+      <span class="movie-pill-del" onclick="event.stopPropagation();delMovie(${i})">✕</span>
     </div>`).join('');
 }
-
-function toggleArchive() {
-  const section = document.getElementById('archive-section');
-  section.classList.toggle('collapsed');
-  document.getElementById('archive-arrow').textContent = section.classList.contains('collapsed') ? '◀' : '▼';
+function toggleMovie(i){movies[i].watched=!movies[i].watched;localStorage.setItem('moviesData',JSON.stringify(movies));renderMovies();}
+function delMovie(i){movies.splice(i,1);localStorage.setItem('moviesData',JSON.stringify(movies));renderMovies();}
+function addMoviePrompt(){
+  const t=prompt('שם הסרט / הסדרה:');
+  if(!t?.trim())return;
+  movies.push({title:t.trim(),watched:false});
+  localStorage.setItem('moviesData',JSON.stringify(movies));
+  renderMovies(); showToast('נוסף: '+t.trim());
 }
 
-async function autoArchiveOverdueTasks() {
-  const cutoff = new Date(Date.now() - 48 * 60 * 60 * 1000);
-  const toArchive = tasksData.filter(t =>
-    t.status === 'active' && t.due_date && new Date(t.due_date) < cutoff
-  );
-  for (const task of toArchive) {
-    await db.collection('tasks').doc(task.id).update({ status: 'archived' });
-  }
+// ── TASK MODAL ────────────────────────────────────────────────
+function openTaskModal(task){
+  editTask=task||null;
+  document.getElementById('task-modal-title').textContent=task?'עריכת משימה':'משימה חדשה';
+  document.getElementById('t-name').value=task?.name||'';
+  document.getElementById('t-desc').value=task?.description||'';
+  document.getElementById('t-by').value=task?.added_by||USER_NAME;
+  document.getElementById('t-opening').value=task?.opening_date?fmtD(task.opening_date):'';
+  document.getElementById('t-due').value=task?.due_date?fmtD(task.due_date):'';
+  document.getElementById('t-del').style.display=task?'':'none';
+  renderCPills('t-courses',task?.course_key||null);
+  selStatus((task&&(personalSt[task.id]||'none'))||'none');
+  updBadges();
+  openModal('task-ol');
+  setTimeout(()=>document.getElementById('t-name').focus(),50);
 }
 
-// ===================================================================
-// ICS MODAL
-// ===================================================================
-function generateICS() {
-  const filteredEvts = events.filter(e =>
-    activeGroup === 'all' || e.group === 'all' || e.group === activeGroup
-  );
+function renderCPills(containerId, selKey){
+  const g=document.getElementById(containerId);
+  if(!g)return;
+  g.innerHTML=courses.map(c=>`
+    <button class="cpill ${selKey===c.key?'sel':''}" data-ck="${c.key}"
+      style="${selKey===c.key?`background:${c.color};border-color:${c.color};color:#fff;`:`border-color:${c.color}44;`}"
+      onclick="selCPill('${containerId}','${c.key}','${c.color}')">${esc(c.short||c.name)}</button>`).join('');
+}
 
-  function toICSDate(isoStr) {
-    // Convert ISO string to ICS format: 20260316T143000Z
-    return isoStr.replace(/[-:]/g, '').replace(/\.\d{3}/, '').replace(/ /, 'T');
-  }
-
-  const lines = [
-    'BEGIN:VCALENDAR',
-    'VERSION:2.0',
-    'PRODID:-//Sam Spiegel//Dashboard//HE',
-    'CALSCALE:GREGORIAN',
-    'METHOD:PUBLISH',
-    'X-WR-CALNAME:סם שפיגל — לוח שנה כיתתי',
-    'X-WR-TIMEZONE:Asia/Jerusalem',
-    'X-WR-CALDESC:לוח שנה אוטומטי לתלמידי תסריטאות'
-  ];
-
-  filteredEvts.forEach(ev => {
-    const teacher = courses.find(c => c.key === ev.course_key)?.teacher || '';
-    const summary = summariesData[ev.uid];
-    const notesPart = summary?.notes ? `\\nהערות: ${summary.notes.replace(/\n/g,'\\n')}` : '';
-
-    lines.push('BEGIN:VEVENT');
-    lines.push(`UID:${ev.uid}@samspiegel`);
-    lines.push(`DTSTART:${toICSDate(ev.start)}`);
-    lines.push(`DTEND:${toICSDate(ev.end)}`);
-    lines.push(`SUMMARY:${ev.title}${ev.lesson_number ? ` — שיעור ${ev.lesson_number}` : ''}`);
-    lines.push(`DESCRIPTION:${getCourseName(ev.course_key)}${teacher ? ' | ' + teacher : ''}${notesPart}`);
-    if (ev.location) lines.push(`LOCATION:${ev.location}`);
-    lines.push(`STATUS:${ev.status === 'cancelled' ? 'CANCELLED' : 'CONFIRMED'}`);
-    lines.push('END:VEVENT');
+function selCPill(cid,key,color){
+  const g=document.getElementById(cid);
+  if(!g)return;
+  g.querySelectorAll('.cpill').forEach(b=>{
+    const bc=courses.find(c=>c.key===b.dataset.ck);
+    if(b.dataset.ck===key){b.classList.add('sel');b.style.background=color;b.style.borderColor=color;b.style.color='#fff';}
+    else{b.classList.remove('sel');b.style.background='';b.style.borderColor=`${bc?.color||'#888'}44`;b.style.color='';}
   });
-
-  lines.push('END:VCALENDAR');
-  return lines.join('\r\n');
+  updBadges();
 }
 
-function downloadICS() {
-  const content = generateICS();
-  const blob = new Blob([content], { type: 'text/calendar;charset=utf-8' });
-  const url = URL.createObjectURL(blob);
-  const a = document.createElement('a');
-  a.href = url;
-  a.download = 'sam-spiegel.ics';
-  a.click();
-  URL.revokeObjectURL(url);
-  showToast('📅 קובץ ICS הורד בהצלחה!');
+function getSelCourse(cid){
+  const g=document.getElementById(cid);
+  return g?.querySelector('.cpill.sel')?.dataset.ck||null;
 }
 
-function showICalModal() {
-  const workerUrl = `https://samspigel.workers.dev/ics/${userId}`;
-  document.getElementById('ical-url').textContent = workerUrl;
-  document.getElementById('btn-copy-ical').onclick = () => {
-    navigator.clipboard.writeText(workerUrl).then(() => showToast('📋 קישור הועתק!'));
+function selStatus(val){
+  document.querySelectorAll('#t-status-btns .status-btn').forEach(b=>b.classList.toggle('active',b.dataset.v===val));
+}
+function getSelSt(){return document.querySelector('#t-status-btns .status-btn.active')?.dataset.v||'none';}
+
+function updBadges(){
+  const ck=getSelCourse('t-courses');
+  const obadge=document.getElementById('t-opening-badge');
+  const dbadge=document.getElementById('t-due-badge');
+  const oStr=document.getElementById('t-opening').value;
+  const dStr=document.getElementById('t-due').value;
+  if(oStr&&ck){const d=parseDD(oStr);if(d){const l=findOpenMatch(toYMD(d),ck);if(l){obadge.style.display='inline-flex';obadge.innerHTML=`🎓 ${esc(lessonLbl(l))}`;} else obadge.style.display='none';}}else obadge.style.display='none';
+  if(dStr&&ck){const d=parseDD(dStr);if(d){const l=findDueMatch(toYMD(d),ck);if(l){dbadge.style.display='inline-flex';dbadge.innerHTML=`🎓 ${esc(lessonLbl(l))}`;} else dbadge.style.display='none';}}else dbadge.style.display='none';
+}
+
+async function saveTask(){
+  const name=document.getElementById('t-name').value.trim();
+  if(!name){showToast('נא למלא שם משימה');return;}
+  const ck=getSelCourse('t-courses');
+  const oStr=document.getElementById('t-opening').value;
+  const dStr=document.getElementById('t-due').value;
+  const openingDate=oStr?toYMD(parseDD(oStr)):null;
+  const dueDate=dStr?toYMD(parseDD(dStr)):null;
+  let olm=null,dlm=null;
+  if(ck){
+    if(openingDate){const l=findOpenMatch(openingDate,ck);if(l)olm=lessonLbl(l);}
+    if(dueDate){const l=findDueMatch(dueDate,ck);if(l)dlm=lessonLbl(l);}
+  }
+  const data={
+    name,course_key:ck||null,opening_date:openingDate,due_date:dueDate,
+    description:document.getElementById('t-desc').value.trim()||null,
+    added_by:document.getElementById('t-by').value.trim()||USER_NAME,
+    status:'active',opening_lesson_match:olm,due_lesson_match:dlm,
+    updated_at:firebase.firestore.FieldValue.serverTimestamp()
   };
-  openModal('modal-ical');
+  try{
+    let tid;
+    if(editTask?.id){await db.collection('tasks').doc(editTask.id).update(data);tid=editTask.id;showToast('משימה עודכנה ✓');}
+    else{data.created_at=firebase.firestore.FieldValue.serverTimestamp();const r=await db.collection('tasks').add(data);tid=r.id;showToast('משימה נוספה ✓');}
+    await setPS(tid,getSelSt());
+    closeModal('task-ol');
+  }catch(e){showToast('שגיאה בשמירה');console.error(e);}
 }
 
-// ===================================================================
-// MOBILE NAV
-// ===================================================================
-function mobileNav(section) {
-  document.querySelectorAll('#mobile-nav button').forEach(b => b.classList.remove('active'));
-  document.querySelector(`#mobile-nav button[data-section="${section}"]`).classList.add('active');
-  if (section === 'top') window.scrollTo({ top: 0, behavior: 'smooth' });
-  else document.getElementById(section)?.scrollIntoView({ behavior: 'smooth' });
+async function deleteTask(){
+  if(!editTask?.id)return;
+  if(!confirm('למחוק את המשימה?'))return;
+  try{await db.collection('tasks').doc(editTask.id).update({status:'archived'});showToast('משימה הועברה לארכיון');closeModal('task-ol');}
+  catch(e){showToast('שגיאה במחיקה');}
 }
 
-// ===================================================================
-// GLOBAL SEARCH
-// ===================================================================
-document.getElementById('global-search').addEventListener('input', function() {
-  document.getElementById('calendar-search').value = this.value;
-  renderCalendar();
+// ── EVENT MODAL ───────────────────────────────────────────────
+function openEventModal(ev, defaultDate){
+  editEvent=ev||null;
+  document.getElementById('event-modal-title').textContent=ev?'עריכת אירוע':'אירוע חדש';
+  document.getElementById('ev-title').value=ev?.title||'';
+  document.getElementById('ev-sdate').value=ev?.start_date?fmtD(ev.start_date):(defaultDate?fmtD(defaultDate):'');
+  document.getElementById('ev-stime').value=ev?.start_time||'';
+  document.getElementById('ev-edate').value=ev?.end_date?fmtD(ev.end_date):(defaultDate?fmtD(defaultDate):'');
+  document.getElementById('ev-etime').value=ev?.end_time||'';
+  document.getElementById('ev-color').value=ev?.color||'#7c6ff7';
+  document.getElementById('ev-course').value=ev?.linked_course_key||'';
+  document.getElementById('ev-del').style.display=ev?'':'none';
+  openModal('event-ol');
+}
+
+async function saveEvent(){
+  const title=document.getElementById('ev-title').value.trim();
+  if(!title){showToast('נא למלא כותרת');return;}
+  const sdStr=document.getElementById('ev-sdate').value;
+  const edStr=document.getElementById('ev-edate').value;
+  const sd=sdStr?toYMD(parseDD(sdStr)):null;
+  const ed=edStr?toYMD(parseDD(edStr)):sd;
+  const data={
+    title,start_date:sd,start_time:document.getElementById('ev-stime').value||null,
+    end_date:ed,end_time:document.getElementById('ev-etime').value||null,
+    color:document.getElementById('ev-color').value,
+    linked_course_key:document.getElementById('ev-course').value||null,
+    created_by:USER_NAME,updated_at:firebase.firestore.FieldValue.serverTimestamp()
+  };
+  try{
+    if(editEvent?.id){await db.collection('custom_events').doc(editEvent.id).update(data);showToast('אירוע עודכן ✓');}
+    else{data.created_at=firebase.firestore.FieldValue.serverTimestamp();await db.collection('custom_events').add(data);showToast('אירוע נוסף ✓');}
+    closeModal('event-ol');
+  }catch(e){showToast('שגיאה בשמירה');console.error(e);}
+}
+
+async function deleteEvent(){
+  if(!editEvent?.id)return;
+  if(!confirm('למחוק את האירוע?'))return;
+  try{await db.collection('custom_events').doc(editEvent.id).delete();showToast('אירוע נמחק');closeModal('event-ol');}
+  catch(e){showToast('שגיאה במחיקה');}
+}
+
+// ── FEED MODAL ────────────────────────────────────────────────
+function openFeedModal(item){
+  editFeed=item||null;
+  document.getElementById('feed-modal-title').textContent=item?'עריכת פריט':'הוסף לפיד';
+  document.getElementById('fd-type').value=item?.type||'link';
+  document.getElementById('fd-title').value=item?.title||'';
+  document.getElementById('fd-url').value=item?.url||'';
+  document.getElementById('fd-desc').value=item?.description||'';
+  document.getElementById('fd-date').value=item?.target_date?fmtD(item.target_date):'';
+  document.getElementById('fd-del').style.display=item?'':'none';
+  feedTypeChange();
+  openModal('feed-ol');
+}
+
+function feedTypeChange(){
+  const t=document.getElementById('fd-type').value;
+  document.getElementById('fd-url-grp').style.display=t==='link'?'':'none';
+  document.getElementById('fd-date-grp').style.display=t==='countdown'?'':'none';
+}
+
+async function saveFeed(){
+  const title=document.getElementById('fd-title').value.trim();
+  if(!title){showToast('נא למלא כותרת');return;}
+  const dStr=document.getElementById('fd-date').value;
+  const data={
+    type:document.getElementById('fd-type').value,title,
+    url:document.getElementById('fd-url').value.trim()||null,
+    description:document.getElementById('fd-desc').value.trim()||null,
+    target_date:dStr?toYMD(parseDD(dStr)):null,
+    updated_at:firebase.firestore.FieldValue.serverTimestamp()
+  };
+  try{
+    if(editFeed?.id){await db.collection('links').doc(editFeed.id).update(data);showToast('עודכן ✓');}
+    else{data.created_at=firebase.firestore.FieldValue.serverTimestamp();await db.collection('links').add(data);showToast('נוסף ✓');}
+    closeModal('feed-ol');
+  }catch(e){showToast('שגיאה בשמירה');console.error(e);}
+}
+
+async function deleteFeed(){
+  if(!editFeed?.id)return;
+  if(!confirm('למחוק?'))return;
+  try{await db.collection('links').doc(editFeed.id).delete();showToast('נמחק');closeModal('feed-ol');}
+  catch(e){showToast('שגיאה');}
+}
+
+// ── SETTINGS ─────────────────────────────────────────────────
+function openSettings(){
+  document.getElementById('s-name').value=USER_NAME;
+  document.getElementById('s-uid').textContent=USER_ID;
+  document.getElementById('s-semend').value=SEM_B_END;
+  document.getElementById('s-dark').checked=isDark;
+  openModal('settings-ol');
+}
+
+function saveSettings(){
+  const n=document.getElementById('s-name').value.trim();
+  if(n){USER_NAME=n;localStorage.setItem('userName',USER_NAME);}
+  const se=document.getElementById('s-semend').value;
+  if(se){SEM_B_END=se;localStorage.setItem('semBEnd',SEM_B_END);}
+  showToast('הגדרות נשמרו ✓');
+  closeModal('settings-ol');
+  renderKPIs(); renderFeed();
+}
+
+function toggleDark(){
+  isDark=!isDark;
+  document.documentElement.classList.toggle('dark',isDark);
+  document.documentElement.classList.toggle('light',!isDark);
+  document.getElementById('btn-dark').textContent=isDark?'☀️':'🌙';
+  const t=document.getElementById('s-dark');
+  if(t)t.checked=isDark;
+}
+
+// ── DATE PICKER ───────────────────────────────────────────────
+function openDP(fieldId, anchor){
+  dpField=fieldId;
+  const v=document.getElementById(fieldId).value;
+  if(v){const d=parseDD(v);if(d){dpYear=d.getFullYear();dpMonth=d.getMonth();dpSel=toYMD(d);}}
+  else{const n=new Date();dpYear=n.getFullYear();dpMonth=n.getMonth();dpSel=null;}
+  const ov=document.getElementById('dp-overlay');
+  const rect=anchor.getBoundingClientRect();
+  const top=rect.bottom+4;
+  const right=Math.max(8,window.innerWidth-rect.right);
+  ov.style.top=top+'px';
+  ov.style.right=right+'px';
+  ov.style.left='auto';
+  ov.classList.add('open');
+  renderDP();
+}
+
+function closeDP(){document.getElementById('dp-overlay').classList.remove('open');dpField=null;}
+function dpClear(){if(dpField)document.getElementById(dpField).value='';updBadges();closeDP();}
+function dpNav(d){dpMonth+=d;if(dpMonth>11){dpMonth=0;dpYear++;}if(dpMonth<0){dpMonth=11;dpYear--;}renderDP();}
+
+function renderDP(){
+  document.getElementById('dp-title').textContent=`${HEB_MONTHS[dpMonth]} ${dpYear}`;
+  const grid=document.getElementById('dp-grid');
+  const HDS=['א','ב','ג','ד','ה','ו','ש'];
+  grid.innerHTML=HDS.map(h=>`<div class="dp-dh">${h}</div>`).join('');
+  const first=new Date(dpYear,dpMonth,1);
+  const last=new Date(dpYear,dpMonth+1,0);
+  for(let i=0;i<first.getDay();i++)grid.insertAdjacentHTML('beforeend','<div class="dp-day dp-other"></div>');
+  for(let day=1;day<=last.getDate();day++){
+    const ymd=`${dpYear}-${String(dpMonth+1).padStart(2,'0')}-${String(day).padStart(2,'0')}`;
+    const tc=isToday(new Date(ymd))?' dp-today':'';
+    const sc=dpSel===ymd?' dp-sel':'';
+    const lc=icsEvs.filter(ev=>isSame(ev.start,ymd+'T00:00:00')&&ev.type!=='special').length;
+    const lclass=lc>=3?' dp-l3':lc===2?' dp-l2':lc===1?' dp-l1':'';
+    grid.insertAdjacentHTML('beforeend',`<div class="dp-day${tc}${sc}${lclass}" onclick="dpSel2('${ymd}')">${day}</div>`);
+  }
+}
+
+function dpSel2(ymd){
+  dpSel=ymd;
+  if(dpField){document.getElementById(dpField).value=fmtD(new Date(ymd+'T00:00:00'));updBadges();}
+  const lessons=icsEvs.filter(ev=>isSame(ev.start,ymd+'T00:00:00'));
+  const prev=document.getElementById('dp-preview');
+  if(lessons.length>0){
+    prev.innerHTML=lessons.slice(0,3).map(l=>{
+      const c=getCColor(l.course_key);
+      return `<div style="color:${c}">🎓 ${esc(l.title)}</div>`;
+    }).join('');
+  }else prev.innerHTML='<span style="color:var(--text3)">אין שיעורים</span>';
+  renderDP();
+}
+
+// ── RESIZERS ─────────────────────────────────────────────────
+function initResizers(){
+  // Column
+  const cr=document.getElementById('col-resizer');
+  const rc=document.getElementById('right-col');
+  let cres=false,csx,csw;
+  cr.addEventListener('mousedown',e=>{cres=true;csx=e.clientX;csw=rc.offsetWidth;document.body.style.cssText='cursor:col-resize;user-select:none;';});
+  document.addEventListener('mousemove',e=>{
+    if(!cres)return;
+    const dx=csx-e.clientX;
+    rc.style.width=Math.max(220,Math.min(600,csw+dx))+'px';
+  });
+  document.addEventListener('mouseup',()=>{if(cres){cres=false;document.body.style.cssText='';}});
+
+  // Horizontal: r1 = kpi-panel height
+  setupHR('r1','kpi-panel',80,200,'height');
+  // r2 = movies-panel height
+  setupHR('r2','movies-panel',80,220,'height');
+  // r3 = feed-panel height
+  setupHR('r3','feed-panel',70,200,'height');
+}
+
+function setupHR(rid,tid,mn,mx,prop){
+  const r=document.getElementById(rid);
+  const t=document.getElementById(tid);
+  if(!r||!t)return;
+  let res=false,sy,sh;
+  r.addEventListener('mousedown',e=>{res=true;sy=e.clientY;sh=t.offsetHeight;document.body.style.cssText='cursor:row-resize;user-select:none;';});
+  document.addEventListener('mousemove',e=>{
+    if(!res)return;
+    const h=Math.max(mn,Math.min(mx,sh+(e.clientY-sy)));
+    t.style[prop]=h+'px';
+  });
+  document.addEventListener('mouseup',()=>{if(res){res=false;document.body.style.cssText='';}});
+}
+
+// ── SEARCH ───────────────────────────────────────────────────
+document.getElementById('search-input').addEventListener('input',renderKanban);
+
+// ── KEYBOARD ─────────────────────────────────────────────────
+document.addEventListener('keydown',e=>{
+  if(e.key==='Escape'){
+    document.querySelectorAll('.modal-overlay.open').forEach(m=>m.classList.remove('open'));
+    closeDP();
+  }
+  if(e.ctrlKey&&e.key==='k'){e.preventDefault();document.getElementById('search-input').focus();}
 });
 
-// ===================================================================
-// HTML ESCAPE
-// ===================================================================
-function esc(s) {
-  if (!s) return '';
-  const d = document.createElement('div');
-  d.textContent = s;
-  return d.innerHTML;
-}
+// Close modal on overlay click
+document.querySelectorAll('.modal-overlay').forEach(ov=>{
+  ov.addEventListener('click',e=>{if(e.target===ov)ov.classList.remove('open');});
+});
 
-// ===================================================================
-// INIT
-// ===================================================================
-async function init() {
-  loadSettings();
-
-  // Load static data
-  try {
-    const [eventsRes, coursesRes] = await Promise.all([
-      fetch('data/events.json').then(r => r.ok ? r.json() : null).catch(() => null),
-      fetch('data/courses.json').then(r => r.ok ? r.json() : null).catch(() => null)
-    ]);
-    if (eventsRes?.events) events = eventsRes.events;
-    if (coursesRes) courses = coursesRes;
-  } catch (e) {
-    console.warn('Could not load static data:', e);
+// Close date picker on outside click
+document.addEventListener('click',e=>{
+  const dp=document.getElementById('dp-overlay');
+  if(dp.classList.contains('open')&&!dp.contains(e.target)){
+    const inputs=['t-opening','t-due','ev-sdate','ev-edate','fd-date'];
+    if(!inputs.some(id=>document.getElementById(id)===e.target))closeDP();
   }
+},true);
 
-  // Build course filters
-  buildCourseFilters();
-
-  // Firebase listeners
-  setupLinksListener();
-  setupTasksListener();
-  setupSummariesListener();
-
-  // Personal kanban
-  loadPersonalKanban();
-
-  // Render
-  renderCalendar();
-  renderWidgets();
-
-  // Auto-archive
-  setTimeout(() => autoArchiveOverdueTasks(), 3000);
-
-  // Auto-refresh events every 30 min
-  setInterval(async () => {
-    try {
-      const r = await fetch('data/events.json');
-      if (r.ok) {
-        const d = await r.json();
-        if (d.events) { events = d.events; renderCalendar(); }
-      }
-    } catch (e) {}
-  }, 30 * 60 * 1000);
-
-  // Live progress update every 30s
-  setInterval(() => { renderWidgets(); updateLiveProgress(); }, 30000);
+// ── INIT ─────────────────────────────────────────────────────
+document.documentElement.classList.add('dark');
+async function init(){
+  await loadData();
+  renderMovies();
+  initResizers();
 }
-
 init();
 </script>
 </body>
