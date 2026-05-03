@@ -1,12 +1,12 @@
 {
   "meta": {
-    "last_updated": "2026-05-03T17:38:44.366497+00:00",
+    "last_updated": "2026-05-03T18:43:15.818633+00:00",
     "total_events": 101,
     "source": "Yedion ICS"
   },
   "events": [
     {
-      "uid": "741e445f-7e51-4d78-bbb7-eee0dd29bd4a",
+      "uid": "acf8b43d-d8f8-4b91-8036-c9f6c0c3f734",
       "title": "סדנת תסריט לוקיישן יאיר מתן",
       "course_key": "location",
       "type": "special",
@@ -20,7 +20,7 @@
       "lesson_number": null
     },
     {
-      "uid": "99e8c85a-e1cf-46b5-8246-b26c2740da74",
+      "uid": "4f12557d-c581-4837-bfbf-c076540af397",
       "title": "סדרת ילדים ונוער: מסינופסיס לטריטמנט יובן רז",
       "course_key": "kids_series",
       "type": "special",
@@ -34,7 +34,7 @@
       "lesson_number": null
     },
     {
-      "uid": "2bb265b5-56e1-4205-91f0-4dd0cf907497",
+      "uid": "b07b7662-cdff-4305-928c-d3317875ab1e",
       "title": "חופשת פסח - אין לימודים",
       "course_key": null,
       "type": "special",
@@ -48,7 +48,7 @@
       "lesson_number": null
     },
     {
-      "uid": "b2188f3e-0f16-459f-863f-24908dd6d8c7",
+      "uid": "c1b1eea2-ebe7-4f44-bd4d-351d37746613",
       "title": "חופשת פסח - אין לימודים",
       "course_key": null,
       "type": "special",
@@ -62,7 +62,7 @@
       "lesson_number": null
     },
     {
-      "uid": "a750e9b1-b806-45ee-a7f0-9583c355df6b",
+      "uid": "579a1f7d-04e4-4f10-b8c9-04999be4d485",
       "title": "חופשת פסח - אין לימודים",
       "course_key": null,
       "type": "special",
@@ -76,7 +76,7 @@
       "lesson_number": null
     },
     {
-      "uid": "2ecb1dab-58f8-4c27-be92-78b8001a4b5f",
+      "uid": "da031e58-b0b3-4c93-a7d8-774806ebc65c",
       "title": "פסח, יום ב' - אין לימודים",
       "course_key": null,
       "type": "special",
@@ -90,7 +90,7 @@
       "lesson_number": null
     },
     {
-      "uid": "37b02500-a221-4da1-b9ea-afc69f2f0c9e",
+      "uid": "edbb4b7b-e5a5-4689-80f6-c415320a6497",
       "title": "סדנת תחקיר ראש סיגל",
       "course_key": "tachkir",
       "type": "special",
@@ -104,7 +104,7 @@
       "lesson_number": null
     },
     {
-      "uid": "f75204fa-ce98-4be8-b4af-6a1662b87f5d",
+      "uid": "0d28a23c-183f-44d7-b2c8-3b18253a3129",
       "title": "סדנת תחקיר ראש סיגל",
       "course_key": "tachkir",
       "type": "special",
@@ -118,7 +118,7 @@
       "lesson_number": null
     },
     {
-      "uid": "d06a5655-2bfb-4389-bd90-366646639bdf",
+      "uid": "9d79c1ab-cbc5-4068-9ff3-b14c3a241bf9",
       "title": "סדנת תחקיר ראש סיגל",
       "course_key": "tachkir",
       "type": "workshop",
@@ -132,7 +132,7 @@
       "lesson_number": 1
     },
     {
-      "uid": "ccd64b52-86d7-46d5-9e71-79186b139af4",
+      "uid": "ab76c50c-46dd-40d3-a7f8-c2422ff6924e",
       "title": "סדנת תסריט לוקיישן יאיר מתן",
       "course_key": "location",
       "type": "workshop",
@@ -146,7 +146,7 @@
       "lesson_number": 1
     },
     {
-      "uid": "2c87741a-7e0c-4e52-8eeb-8266c0af8fc2",
+      "uid": "a1faddb2-5bba-49ea-a04f-6c2702383ce7",
       "title": "הסיפור הקצר טושה גפלה אופיר",
       "course_key": "short_story",
       "type": "workshop",
@@ -160,7 +160,7 @@
       "lesson_number": 1
     },
     {
-      "uid": "05b2575c-52d6-4975-a6c2-230e248ccea8",
+      "uid": "3b7357fd-4aa9-498a-b77a-e8295830baa8",
       "title": "מבוא לקולנוע ישראלי - חלק א עוזרי יערה",
       "course_key": "israeli_cinema",
       "type": "lecture",
@@ -174,7 +174,7 @@
       "lesson_number": 1
     },
     {
-      "uid": "22456561-1ce5-4293-83db-032dcdc59172",
+      "uid": "5de4482e-b364-4ef3-9076-d222825cd247",
       "title": "בימוי לתסריטאים ענר איתן",
       "course_key": "directing",
       "type": "special",
@@ -188,7 +188,7 @@
       "lesson_number": null
     },
     {
-      "uid": "6169ea9f-6127-4fdf-9b9c-17142aa28c98",
+      "uid": "9586bb67-9c37-4caf-86e5-2a705b45ef5a",
       "title": "תולדות הקולנוע 4 דבורה ארז",
       "course_key": "film_history",
       "type": "lecture",
@@ -202,7 +202,7 @@
       "lesson_number": 1
     },
     {
-      "uid": "7a7ea7fa-7d36-42f1-a73f-3e65e98531b3",
+      "uid": "2dd30d79-3c98-40e3-bd1f-23fb96dbd79d",
       "title": "סדרת ילדים ונוער: מסינופסיס לטריטמנט יובן רז",
       "course_key": "kids_series",
       "type": "workshop",
@@ -216,7 +216,7 @@
       "lesson_number": 1
     },
     {
-      "uid": "157e5387-fdda-4bae-bbde-3786de3f5242",
+      "uid": "bb0cc1fa-3d2c-4f1b-9ef7-f56638890ab1",
       "title": "עושים סצינות הדיה יעל",
       "course_key": "scenes",
       "type": "workshop",
@@ -230,7 +230,7 @@
       "lesson_number": 1
     },
     {
-      "uid": "94b52a98-d3e9-40d5-88cb-769baaacd062",
+      "uid": "ccbbe885-3fba-4bc5-814a-45b682ff692d",
       "title": "כתיבת סדרות רשת אגמון יאיר ** השיעור מבוטל **",
       "course_key": "web_series",
       "type": "workshop",
@@ -244,7 +244,7 @@
       "lesson_number": 1
     },
     {
-      "uid": "03e25c5b-7766-42d8-810d-71d88ec61432",
+      "uid": "d7d965a4-75a0-48e7-b749-6cbc90965962",
       "title": "בימוי לתסריטאים ענר איתן",
       "course_key": "directing",
       "type": "workshop",
@@ -258,7 +258,7 @@
       "lesson_number": 1
     },
     {
-      "uid": "3f59d235-ff10-4b22-afdc-e67a011ccb05",
+      "uid": "ad0c1ad1-19c1-4faf-aa60-a5744e3d7c70",
       "title": "סדנת תחקיר בלחסן אייל,ראש סיגל",
       "course_key": "tachkir",
       "type": "workshop",
@@ -272,7 +272,7 @@
       "lesson_number": 2
     },
     {
-      "uid": "e75a537e-ef11-4593-8654-5bacb5230820",
+      "uid": "d5bd78c0-f82f-4936-9f0b-8e58eec911c9",
       "title": "סדנת תסריט לוקיישן",
       "course_key": "location",
       "type": "workshop",
@@ -286,7 +286,7 @@
       "lesson_number": 2
     },
     {
-      "uid": "336bc056-7ac9-4f94-a513-b76df914d63e",
+      "uid": "b1a8cff7-2c53-4399-b6f1-fad20239df4f",
       "title": "הסיפור הקצר",
       "course_key": "short_story",
       "type": "workshop",
@@ -300,7 +300,7 @@
       "lesson_number": 2
     },
     {
-      "uid": "d5b759f5-75c9-4823-afe5-eddcc26615a9",
+      "uid": "9cce84c2-6ce7-420e-9f15-19bc3f603984",
       "title": "מבוא לקולנוע ישראלי - חלק א",
       "course_key": "israeli_cinema",
       "type": "lecture",
@@ -314,7 +314,7 @@
       "lesson_number": 2
     },
     {
-      "uid": "27066702-a7e3-4749-bbc8-9a7060a41cf6",
+      "uid": "7df83835-e85d-464b-a120-5cd70c857ef5",
       "title": "יום הזיכרון - אין לימודים",
       "course_key": null,
       "type": "special",
@@ -328,7 +328,7 @@
       "lesson_number": null
     },
     {
-      "uid": "ddd15bff-d795-4f03-8dd9-029ea6f700d7",
+      "uid": "8a18cc06-ac87-4155-b4d6-119690075de7",
       "title": "יום העצמאות - אין לימודים",
       "course_key": null,
       "type": "special",
@@ -342,7 +342,7 @@
       "lesson_number": null
     },
     {
-      "uid": "0a8d489e-e8e3-4be6-bf21-e41dd9f9a8a1",
+      "uid": "3167c0ba-867c-42c9-87d3-4df03496a77a",
       "title": "סדנת תחקיר",
       "course_key": "tachkir",
       "type": "workshop",
@@ -356,7 +356,7 @@
       "lesson_number": 3
     },
     {
-      "uid": "35e30c08-155f-41d1-bd57-39be617e0a4a",
+      "uid": "7efcad19-f9e5-462b-bbba-553244b6610e",
       "title": "סדנת תסריט לוקיישן",
       "course_key": "location",
       "type": "workshop",
@@ -370,7 +370,7 @@
       "lesson_number": 3
     },
     {
-      "uid": "fa3a7b5f-2a33-4e42-bdf7-b679420dc720",
+      "uid": "d9b82e32-1ff0-4c0a-8d6c-de314166e5ed",
       "title": "הסיפור הקצר",
       "course_key": "short_story",
       "type": "workshop",
@@ -384,7 +384,7 @@
       "lesson_number": 3
     },
     {
-      "uid": "95d8ebd9-1893-490e-8890-4c17761c849d",
+      "uid": "a75b8e88-3233-4910-8e08-4deccbf9abb4",
       "title": "מבוא לקולנוע ישראלי - חלק א",
       "course_key": "israeli_cinema",
       "type": "lecture",
@@ -398,7 +398,7 @@
       "lesson_number": 3
     },
     {
-      "uid": "32827332-0c93-484e-8b29-e40b645000ed",
+      "uid": "f1e7a386-95a8-4e7b-a80d-5a613e9e4802",
       "title": "בימוי לתסריטאים ענר איתן",
       "course_key": "directing",
       "type": "special",
@@ -412,7 +412,7 @@
       "lesson_number": null
     },
     {
-      "uid": "e09a514a-8c27-41f1-9909-7f4b19fed90d",
+      "uid": "97400187-069a-4720-bba6-821522970574",
       "title": "תולדות הקולנוע 4",
       "course_key": "film_history",
       "type": "lecture",
@@ -426,7 +426,7 @@
       "lesson_number": 2
     },
     {
-      "uid": "95ff63ae-a552-4f20-869d-e207d508bbef",
+      "uid": "c341eebf-6657-4df3-a80a-5dd7565f6acf",
       "title": "סדרת ילדים ונוער: מסינופסיס לטריטמנט",
       "course_key": "kids_series",
       "type": "workshop",
@@ -440,7 +440,7 @@
       "lesson_number": 2
     },
     {
-      "uid": "444a658c-bee3-44a8-a4c0-5677d278f147",
+      "uid": "b00ddec4-e93e-49cb-9d65-33304d8761b9",
       "title": "עושים סצינות",
       "course_key": "scenes",
       "type": "workshop",
@@ -454,7 +454,7 @@
       "lesson_number": 2
     },
     {
-      "uid": "6f800698-a6f7-4349-a8e9-0d2fd784efe4",
+      "uid": "ebc84287-c852-4815-b059-4b1dc8c5e8cb",
       "title": "כתיבת סדרות רשת",
       "course_key": "web_series",
       "type": "workshop",
@@ -468,7 +468,7 @@
       "lesson_number": 2
     },
     {
-      "uid": "09110750-2ee4-4cfc-8549-8613401d9de1",
+      "uid": "cb9c0efe-b556-4a0b-9c9a-5f32fa8d9d8d",
       "title": "בימוי לתסריטאים",
       "course_key": "directing",
       "type": "workshop",
@@ -482,7 +482,7 @@
       "lesson_number": 2
     },
     {
-      "uid": "58ba2703-6e7e-4677-b414-9bc646161d27",
+      "uid": "c1a07281-5748-4cef-960b-efdafca3e052",
       "title": "סדנת תסריט לוקיישן יאיר מתן",
       "course_key": "location",
       "type": "special",
@@ -496,7 +496,7 @@
       "lesson_number": null
     },
     {
-      "uid": "d768528e-c6c1-4013-aeb3-80e220b49e54",
+      "uid": "a7590c9b-28be-4af1-a38f-18fc1da67858",
       "title": "שיעור מקוון עם מרצה :סדנת תחקיר סדנא",
       "course_key": "tachkir",
       "type": "special",
@@ -510,7 +510,7 @@
       "lesson_number": null
     },
     {
-      "uid": "c1fe9f86-5ff3-4131-b0af-dae9b90e68f0",
+      "uid": "a89786bc-0cc6-445e-95e0-368e72d4ad1f",
       "title": "שיעור מקוון עם מרצה :סדנת תסריט לוקיישן סדנא",
       "course_key": "location",
       "type": "special",
@@ -524,7 +524,7 @@
       "lesson_number": null
     },
     {
-      "uid": "133b8fdc-1c4a-4e80-b5ae-3cc420fa7bc7",
+      "uid": "05c9d08f-fa23-46a8-82ca-fd09a8e23c6f",
       "title": "שיעור מקוון עם מרצה :הסיפור הקצר סדנא",
       "course_key": "short_story",
       "type": "special",
@@ -538,7 +538,7 @@
       "lesson_number": null
     },
     {
-      "uid": "35ec160a-8ef3-496d-90c1-bf7a796b7cc0",
+      "uid": "93ce6648-4ecd-409a-8baf-576e8c8ee43b",
       "title": "שיעור מקוון עם מרצה :מבוא לקולנוע ישראלי - חלק א שיעו",
       "course_key": "israeli_cinema",
       "type": "special",
@@ -552,7 +552,7 @@
       "lesson_number": null
     },
     {
-      "uid": "b0e6616d-0f4f-4c86-be46-1146294521fb",
+      "uid": "50c395b0-f878-42af-8108-de5999e3e5fe",
       "title": "שיעור מקוון עם מרצה :תולדות הקולנוע 4 שיעור פרונטלי",
       "course_key": "film_history",
       "type": "special",
@@ -566,7 +566,7 @@
       "lesson_number": null
     },
     {
-      "uid": "d636bc53-529b-4102-a375-2393c64e17e6",
+      "uid": "386f3766-4220-457b-893b-c9bae0f53672",
       "title": "שיעור מקוון עם מרצה :סדרת ילדים ונוער: מסינופסיס לטרי",
       "course_key": "kids_series",
       "type": "special",
@@ -580,7 +580,7 @@
       "lesson_number": null
     },
     {
-      "uid": "105ce29e-50e5-4e56-a072-f342d0f386d4",
+      "uid": "c09c1d74-7835-41e5-9a5c-12062cc2cd51",
       "title": "שיעור מקוון עם מרצה :עושים סצינות סדנא",
       "course_key": "scenes",
       "type": "special",
@@ -594,7 +594,7 @@
       "lesson_number": null
     },
     {
-      "uid": "072c79df-c573-4032-a288-5e935e5ddc49",
+      "uid": "c3387548-524a-411f-8981-3e525ed65241",
       "title": "שיעור מקוון עם מרצה :כתיבת סדרות רשת סדנא",
       "course_key": "web_series",
       "type": "special",
@@ -608,7 +608,7 @@
       "lesson_number": null
     },
     {
-      "uid": "8b3e20f9-5f8d-4307-88d6-e7b5fba528b3",
+      "uid": "320c1f5a-2b63-4378-a5f6-d3b604ca7c4d",
       "title": "שיעור מקוון עם מרצה :בימוי לתסריטאים סדנא",
       "course_key": "directing",
       "type": "special",
@@ -622,7 +622,7 @@
       "lesson_number": null
     },
     {
-      "uid": "001cc094-1e6d-4c6a-a4ec-87858caf2315",
+      "uid": "91ff1aab-5680-4cfc-93cd-073ed09f0050",
       "title": "סדנת תחקיר",
       "course_key": "tachkir",
       "type": "workshop",
@@ -636,7 +636,7 @@
       "lesson_number": 4
     },
     {
-      "uid": "5becee5c-1317-45e4-b49c-1d57828029da",
+      "uid": "e27d1039-ddf3-4d2d-ace4-a7f655aa43dc",
       "title": "סדנת תסריט לוקיישן",
       "course_key": "location",
       "type": "workshop",
@@ -650,7 +650,7 @@
       "lesson_number": 4
     },
     {
-      "uid": "e97d236d-be5a-4186-b569-db5b06b084b4",
+      "uid": "e85d697d-d6f0-406c-b05e-04db5d07780a",
       "title": "הסיפור הקצר",
       "course_key": "short_story",
       "type": "workshop",
@@ -664,7 +664,7 @@
       "lesson_number": 4
     },
     {
-      "uid": "af8a491f-fcfa-4c7d-9928-b9a4016538e9",
+      "uid": "0e8aaa89-12c3-4d8f-a56c-dfdd12357353",
       "title": "מבוא לקולנוע ישראלי - חלק א",
       "course_key": "israeli_cinema",
       "type": "lecture",
@@ -678,7 +678,7 @@
       "lesson_number": 4
     },
     {
-      "uid": "0a3973b2-c2eb-4abf-9112-ede7e4818e3b",
+      "uid": "7b7d6dc9-1817-4c61-bce6-22a8f0f09a27",
       "title": "תולדות הקולנוע 4",
       "course_key": "film_history",
       "type": "lecture",
@@ -692,7 +692,7 @@
       "lesson_number": 3
     },
     {
-      "uid": "46b1d2eb-d828-4824-b8d3-43855c872652",
+      "uid": "24c07515-45e7-4347-b225-b7328f565804",
       "title": "סדרת ילדים ונוער: מסינופסיס לטריטמנט",
       "course_key": "kids_series",
       "type": "workshop",
@@ -706,7 +706,7 @@
       "lesson_number": 3
     },
     {
-      "uid": "c7831fd0-0ce0-4e9b-8697-9eeb1fde6dbf",
+      "uid": "1da099a3-c509-4407-b92a-8efb7bc81625",
       "title": "עושים סצינות",
       "course_key": "scenes",
       "type": "workshop",
@@ -720,7 +720,7 @@
       "lesson_number": 3
     },
     {
-      "uid": "d0819f8a-8ad1-42e7-a1ba-105c4f11185e",
+      "uid": "0867f3b6-ed72-46e8-9bfa-8a52b0e873d9",
       "title": "כתיבת סדרות רשת",
       "course_key": "web_series",
       "type": "workshop",
@@ -734,7 +734,7 @@
       "lesson_number": 3
     },
     {
-      "uid": "25d27378-166d-432b-87df-34c2634ab8fc",
+      "uid": "b198395e-c03f-4a15-b63f-ba8fe36f0449",
       "title": "בימוי לתסריטאים",
       "course_key": "directing",
       "type": "workshop",
@@ -748,7 +748,7 @@
       "lesson_number": 3
     },
     {
-      "uid": "aae04cc4-727d-4092-84df-9975e7f62165",
+      "uid": "5c30e248-797e-4524-8d04-49c3c6400634",
       "title": "סדנת תחקיר",
       "course_key": "tachkir",
       "type": "workshop",
@@ -762,7 +762,7 @@
       "lesson_number": 5
     },
     {
-      "uid": "bcb1f3e8-7703-4492-8d6d-8cadc4c4f833",
+      "uid": "cc33a0d5-4c9e-4bf0-a824-b48d850980bc",
       "title": "סדנת תסריט לוקיישן",
       "course_key": "location",
       "type": "workshop",
@@ -776,7 +776,7 @@
       "lesson_number": 5
     },
     {
-      "uid": "9ced0396-8b5d-4245-9006-2fcf4b454a70",
+      "uid": "f9630b85-d4db-463f-a52e-0315b9a9b802",
       "title": "הסיפור הקצר",
       "course_key": "short_story",
       "type": "workshop",
@@ -790,7 +790,7 @@
       "lesson_number": 5
     },
     {
-      "uid": "5e5e1f99-3f33-494b-aa1a-65ae4c3231ab",
+      "uid": "aab196a5-5916-4fa5-bfa6-f0a16f0283ef",
       "title": "מבוא לקולנוע ישראלי - חלק א",
       "course_key": "israeli_cinema",
       "type": "lecture",
@@ -804,7 +804,7 @@
       "lesson_number": 5
     },
     {
-      "uid": "9752da4c-ae50-4e2c-83b3-7f10f945990e",
+      "uid": "fb1008bc-3593-4ef4-8999-2557d5579ce1",
       "title": "תולדות הקולנוע 4",
       "course_key": "film_history",
       "type": "lecture",
@@ -818,7 +818,7 @@
       "lesson_number": 4
     },
     {
-      "uid": "0d0a2560-23ce-4db8-af11-1abc90369532",
+      "uid": "43f7802f-4f62-4e97-bc4c-fbadfbb1f09e",
       "title": "סדרת ילדים ונוער: מסינופסיס לטריטמנט",
       "course_key": "kids_series",
       "type": "workshop",
@@ -832,7 +832,7 @@
       "lesson_number": 4
     },
     {
-      "uid": "3c9af7bc-5c34-4f2e-b975-c2f2f81c12ec",
+      "uid": "c7ac6e93-348c-4ef2-aa8c-2c22ab21e3f9",
       "title": "עושים סצינות",
       "course_key": "scenes",
       "type": "workshop",
@@ -846,7 +846,7 @@
       "lesson_number": 4
     },
     {
-      "uid": "22c1d502-108f-41b7-9223-b8436d0f3f66",
+      "uid": "6b5c26e4-2246-4da9-b4a2-67496f534ff3",
       "title": "כתיבת סדרות רשת",
       "course_key": "web_series",
       "type": "workshop",
@@ -860,7 +860,7 @@
       "lesson_number": 4
     },
     {
-      "uid": "87fbc72f-580d-49fe-90fa-b95ef729cbf0",
+      "uid": "e2536881-58cf-4725-80aa-7f4bb7b61113",
       "title": "בימוי לתסריטאים",
       "course_key": "directing",
       "type": "workshop",
@@ -874,7 +874,7 @@
       "lesson_number": 4
     },
     {
-      "uid": "a998897b-a2c9-40f4-91d6-60a0ba9d9e27",
+      "uid": "ff5c51a6-2e35-45d0-9c4d-d02a9581a89d",
       "title": "ערב חג שבועות - אין לימודים",
       "course_key": null,
       "type": "special",
@@ -888,7 +888,7 @@
       "lesson_number": null
     },
     {
-      "uid": "3c7d6ea3-1227-4747-8893-95871ad97c29",
+      "uid": "7e80b962-9235-42b5-9542-4ba2de33b666",
       "title": "שבועות - אין לימודים",
       "course_key": null,
       "type": "special",
@@ -902,7 +902,7 @@
       "lesson_number": null
     },
     {
-      "uid": "68985493-8029-4189-9df7-bbe65cf683d4",
+      "uid": "accc4172-6c73-4f36-b936-b6be7bb66d41",
       "title": "סדנת תחקיר",
       "course_key": "tachkir",
       "type": "workshop",
@@ -916,7 +916,7 @@
       "lesson_number": 6
     },
     {
-      "uid": "15906bae-3f2b-4214-bc98-6dce6cee5460",
+      "uid": "9c3745bb-8146-463c-8772-e28609a75d30",
       "title": "סדנת תסריט לוקיישן",
       "course_key": "location",
       "type": "workshop",
@@ -930,7 +930,7 @@
       "lesson_number": 6
     },
     {
-      "uid": "5069871d-056e-4c6c-9b9e-2d7337e1b640",
+      "uid": "23764340-80e6-45c0-84a7-710dac783571",
       "title": "הסיפור הקצר",
       "course_key": "short_story",
       "type": "workshop",
@@ -944,7 +944,7 @@
       "lesson_number": 6
     },
     {
-      "uid": "9c6bb203-e5a0-4e33-a98d-080241408bc5",
+      "uid": "f54104c5-c89b-468b-a16f-5b229c94ed61",
       "title": "מבוא לקולנוע ישראלי - חלק א",
       "course_key": "israeli_cinema",
       "type": "lecture",
@@ -958,7 +958,7 @@
       "lesson_number": 6
     },
     {
-      "uid": "3d766b12-edad-433f-8237-6e5c40643daa",
+      "uid": "2f34d917-d52d-4c12-9090-2506c7d986d2",
       "title": "תולדות הקולנוע 4",
       "course_key": "film_history",
       "type": "lecture",
@@ -972,7 +972,7 @@
       "lesson_number": 5
     },
     {
-      "uid": "b35cf8f9-4b32-448f-9a13-398b1cec9552",
+      "uid": "7113813e-eea8-42a0-8974-866a12d53edc",
       "title": "סדרת ילדים ונוער: מסינופסיס לטריטמנט",
       "course_key": "kids_series",
       "type": "workshop",
@@ -986,7 +986,7 @@
       "lesson_number": 5
     },
     {
-      "uid": "0955ce36-723e-4cf3-ada1-9e39b26fd1f4",
+      "uid": "4364204f-ff86-4bbc-b48c-4c0140b529c8",
       "title": "עושים סצינות",
       "course_key": "scenes",
       "type": "workshop",
@@ -1000,7 +1000,7 @@
       "lesson_number": 5
     },
     {
-      "uid": "2d4c6c69-f2ae-4e39-9213-62e57cccc20b",
+      "uid": "beb573f0-5af2-402d-b50e-847ca20b153a",
       "title": "כתיבת סדרות רשת",
       "course_key": "web_series",
       "type": "workshop",
@@ -1014,7 +1014,7 @@
       "lesson_number": 5
     },
     {
-      "uid": "9956c270-863d-4220-b6d6-a7483925d4c2",
+      "uid": "2b2fb7d0-09b7-4e3b-8703-5f09da8f673a",
       "title": "בימוי לתסריטאים",
       "course_key": "directing",
       "type": "workshop",
@@ -1028,7 +1028,7 @@
       "lesson_number": 5
     },
     {
-      "uid": "fcfead35-34c5-4523-847a-86bf1953a91e",
+      "uid": "1f926b1d-d7d4-419f-a03d-0df8a677b005",
       "title": "סדנת תחקיר",
       "course_key": "tachkir",
       "type": "workshop",
@@ -1042,7 +1042,7 @@
       "lesson_number": 7
     },
     {
-      "uid": "ec047cfa-5585-4114-8e2d-7996c863c890",
+      "uid": "82e836de-f6e9-4de5-bc6a-e7c2a460674e",
       "title": "סדנת תסריט לוקיישן",
       "course_key": "location",
       "type": "workshop",
@@ -1056,7 +1056,7 @@
       "lesson_number": 7
     },
     {
-      "uid": "88af0342-ad28-4fb4-9df2-07eac4db29b1",
+      "uid": "846eeb57-8d93-4b4c-b198-d6f9e482dcc1",
       "title": "הסיפור הקצר",
       "course_key": "short_story",
       "type": "workshop",
@@ -1070,7 +1070,7 @@
       "lesson_number": 7
     },
     {
-      "uid": "9144d3af-2329-4034-9b26-f210385c59ac",
+      "uid": "551573a0-d0b4-4950-94fa-3791aa636541",
       "title": "מבוא לקולנוע ישראלי - חלק א",
       "course_key": "israeli_cinema",
       "type": "lecture",
@@ -1084,7 +1084,7 @@
       "lesson_number": 7
     },
     {
-      "uid": "460af435-243e-4621-bf0d-9c5f56c9ad2c",
+      "uid": "ddf57017-8328-41b9-8a0d-b6f777e8e1c0",
       "title": "תולדות הקולנוע 4",
       "course_key": "film_history",
       "type": "lecture",
@@ -1098,7 +1098,7 @@
       "lesson_number": 6
     },
     {
-      "uid": "ba1ca127-6873-4e8d-9445-0a6444411058",
+      "uid": "651eefa9-4871-4a66-8a86-4f756e8cea42",
       "title": "סדרת ילדים ונוער: מסינופסיס לטריטמנט",
       "course_key": "kids_series",
       "type": "workshop",
@@ -1112,7 +1112,7 @@
       "lesson_number": 6
     },
     {
-      "uid": "bbf36dbf-9650-482f-8fb5-2275b9ac2cf6",
+      "uid": "23e442b3-f81f-4683-9c4e-53c8fc6447d3",
       "title": "עושים סצינות",
       "course_key": "scenes",
       "type": "workshop",
@@ -1126,7 +1126,7 @@
       "lesson_number": 6
     },
     {
-      "uid": "03b85f2b-849c-48ad-bd71-8440d50fec9b",
+      "uid": "bd6dec08-96b8-41b4-87a8-34e62801fbeb",
       "title": "כתיבת סדרות רשת",
       "course_key": "web_series",
       "type": "workshop",
@@ -1140,7 +1140,7 @@
       "lesson_number": 6
     },
     {
-      "uid": "63a1b0e3-9309-4121-8daa-2c5dbaa47db5",
+      "uid": "279a0feb-4c41-49ea-85f8-19364acd441a",
       "title": "בימוי לתסריטאים",
       "course_key": "directing",
       "type": "workshop",
@@ -1154,7 +1154,7 @@
       "lesson_number": 6
     },
     {
-      "uid": "c0469bff-7cd5-427a-8da3-9a7b99e785b5",
+      "uid": "6ae76e59-c8e7-4e1d-87f8-3100c9d923c5",
       "title": "סדנת תחקיר",
       "course_key": "tachkir",
       "type": "workshop",
@@ -1168,7 +1168,7 @@
       "lesson_number": 8
     },
     {
-      "uid": "6a67ca5e-4f23-4881-8c62-320739e9a865",
+      "uid": "b79708b7-03f5-4674-bd0d-2d5f4516be05",
       "title": "סדנת תסריט לוקיישן",
       "course_key": "location",
       "type": "workshop",
@@ -1182,7 +1182,7 @@
       "lesson_number": 8
     },
     {
-      "uid": "8518cceb-8036-4ff4-a711-3a9343d72b5d",
+      "uid": "cdf1654d-263f-4e9c-8dc0-92124f4a1e8e",
       "title": "הסיפור הקצר",
       "course_key": "short_story",
       "type": "workshop",
@@ -1196,7 +1196,7 @@
       "lesson_number": 8
     },
     {
-      "uid": "5173a07d-6c2c-49ef-97da-4f9305d4f23e",
+      "uid": "2a67c08e-5ebd-43a7-9f70-02acb797ed02",
       "title": "מבוא לקולנוע ישראלי - חלק א",
       "course_key": "israeli_cinema",
       "type": "lecture",
@@ -1210,7 +1210,7 @@
       "lesson_number": 8
     },
     {
-      "uid": "19c81b25-95da-47eb-b999-c48434dee74d",
+      "uid": "f8a6b505-f9e8-44de-9163-19d202ad9219",
       "title": "תולדות הקולנוע 4",
       "course_key": "film_history",
       "type": "lecture",
@@ -1224,7 +1224,7 @@
       "lesson_number": 7
     },
     {
-      "uid": "e25ec932-a989-4275-a6b8-a536c0766271",
+      "uid": "22b2f95b-1d40-4a56-bc4d-3fc15438f8c6",
       "title": "סדרת ילדים ונוער: מסינופסיס לטריטמנט",
       "course_key": "kids_series",
       "type": "workshop",
@@ -1238,7 +1238,7 @@
       "lesson_number": 7
     },
     {
-      "uid": "24ba276a-8eee-4e33-a4cc-2ca8ce232617",
+      "uid": "f030782d-73bb-45a4-b535-d273ad82fd48",
       "title": "עושים סצינות",
       "course_key": "scenes",
       "type": "workshop",
@@ -1252,7 +1252,7 @@
       "lesson_number": 7
     },
     {
-      "uid": "90140767-ecc2-49d4-b57c-d66763ce9a42",
+      "uid": "4aa683cd-bbde-4c4d-acbf-f95d331d18d9",
       "title": "כתיבת סדרות רשת",
       "course_key": "web_series",
       "type": "workshop",
@@ -1266,7 +1266,7 @@
       "lesson_number": 7
     },
     {
-      "uid": "920e9c63-836d-4556-905e-4fd8a1a554b1",
+      "uid": "95246041-f1dc-4b2a-978b-f0b10906799d",
       "title": "בימוי לתסריטאים",
       "course_key": "directing",
       "type": "workshop",
@@ -1280,7 +1280,7 @@
       "lesson_number": 7
     },
     {
-      "uid": "15325289-a43c-4c46-838e-8bb08f39c001",
+      "uid": "2b5e6c1c-0981-4216-a865-ff137af1b01c",
       "title": "תולדות הקולנוע 4",
       "course_key": "film_history",
       "type": "lecture",
@@ -1294,7 +1294,7 @@
       "lesson_number": 8
     },
     {
-      "uid": "b7d4f4be-b922-41bb-b59a-5f7b4d2df5a9",
+      "uid": "103d80cc-62b8-4f89-81c5-e437858178ef",
       "title": "סדרת ילדים ונוער: מסינופסיס לטריטמנט",
       "course_key": "kids_series",
       "type": "workshop",
@@ -1308,7 +1308,7 @@
       "lesson_number": 8
     },
     {
-      "uid": "8f06b5e9-2280-47e4-a555-1c5b0c113b09",
+      "uid": "ddb12281-d0a0-4edb-ab3a-fac6635f42a3",
       "title": "עושים סצינות",
       "course_key": "scenes",
       "type": "workshop",
@@ -1322,7 +1322,7 @@
       "lesson_number": 8
     },
     {
-      "uid": "591e0d07-6378-4ec3-bd0d-95fb51313ad3",
+      "uid": "a24de47f-73f6-4b2e-8ac0-17576f6216e9",
       "title": "כתיבת סדרות רשת",
       "course_key": "web_series",
       "type": "workshop",
@@ -1336,7 +1336,7 @@
       "lesson_number": 8
     },
     {
-      "uid": "0fb8b415-04e1-4508-b2c3-cd11d94c796d",
+      "uid": "fb323449-fb9f-4550-a41f-b2731467c630",
       "title": "בימוי לתסריטאים",
       "course_key": "directing",
       "type": "workshop",
@@ -1350,7 +1350,7 @@
       "lesson_number": 8
     },
     {
-      "uid": "28eeaa2c-5ba0-4050-b9da-d8fe7fdbe653",
+      "uid": "2fc525b7-8d3d-46e0-b725-01eff5688b43",
       "title": "סדרת ילדים ונוער: מסינופסיס לטריטמנט",
       "course_key": "kids_series",
       "type": "workshop",
@@ -1364,7 +1364,7 @@
       "lesson_number": 9
     },
     {
-      "uid": "78ede2b5-7f53-416e-b411-1b4ee36f64fc",
+      "uid": "5d87a846-cf23-4b8b-8040-e85b08c20ab5",
       "title": "עושים סצינות",
       "course_key": "scenes",
       "type": "workshop",
@@ -1378,7 +1378,7 @@
       "lesson_number": 9
     },
     {
-      "uid": "efe9b21c-9375-4ff5-8ccb-57fd57bb7637",
+      "uid": "dbdff86d-511c-4488-a579-5a9865d90e4a",
       "title": "כתיבת סדרות רשת",
       "course_key": "web_series",
       "type": "workshop",
@@ -1392,7 +1392,7 @@
       "lesson_number": 9
     },
     {
-      "uid": "f61bdfa8-fbe9-42a4-920f-8a9aa36ad40c",
+      "uid": "f55b260d-9d33-42b1-bd43-76fe855539bf",
       "title": "בימוי לתסריטאים",
       "course_key": "directing",
       "type": "workshop",
@@ -1406,7 +1406,7 @@
       "lesson_number": 9
     },
     {
-      "uid": "ffe54c72-eefe-4090-ba65-b66859a0fe30",
+      "uid": "6d98a8da-618c-4bf4-85e0-bafbbeb39710",
       "title": "סיום סמסטר ב",
       "course_key": null,
       "type": "special",
