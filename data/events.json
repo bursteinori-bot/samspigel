@@ -1,12 +1,12 @@
 {
   "meta": {
-    "last_updated": "2026-07-01T08:02:33.416476+00:00",
-    "total_events": 31,
+    "last_updated": "2026-07-01T11:50:44.351820+00:00",
+    "total_events": 48,
     "source": "Yedion ICS"
   },
   "events": [
     {
-      "uid": "28c8dad1-0883-431f-93f1-c9b4f3eb58fd",
+      "uid": "f3b7fa0d-e9f7-44bc-898e-fb20c0654b91",
       "title": "תולדות הקולנוע 4 דבורה ארז",
       "course_key": "film_history",
       "type": "lecture",
@@ -20,7 +20,7 @@
       "lesson_number": 1
     },
     {
-      "uid": "42c11034-bc92-4ae5-8881-7640d74e2e42",
+      "uid": "53dcd17f-3c82-4594-ba4b-f5fd35c8bc6e",
       "title": "סדרת ילדים ונוער: מסינופסיס לטריטמנט יובן רז",
       "course_key": "kids_series",
       "type": "workshop",
@@ -34,7 +34,7 @@
       "lesson_number": 1
     },
     {
-      "uid": "a5d2a6b7-1e8f-4955-aaee-393c5714d50c",
+      "uid": "f59afc24-bd04-4db9-9157-ae0600f297e6",
       "title": "עושים סצינות הדיה יעל",
       "course_key": "scenes",
       "type": "workshop",
@@ -48,7 +48,7 @@
       "lesson_number": 1
     },
     {
-      "uid": "fd1f7a12-7b6f-4aa7-a348-48fbf485a8c7",
+      "uid": "28f41d20-d30e-477e-a074-19308bdbb8c6",
       "title": "כתיבת סדרות רשת אגמון יאיר",
       "course_key": "web_series",
       "type": "workshop",
@@ -62,7 +62,7 @@
       "lesson_number": 1
     },
     {
-      "uid": "95af063b-9d08-4a91-9013-c26524faa0f7",
+      "uid": "67e9ff3a-532d-4027-9160-0ddab695749d",
       "title": "בימוי לתסריטאים ענר איתן",
       "course_key": "directing",
       "type": "workshop",
@@ -76,7 +76,7 @@
       "lesson_number": 1
     },
     {
-      "uid": "2e996ed9-47f8-45f8-b949-00eac4499bd7",
+      "uid": "cb32238c-7237-42d0-b3ae-48bcdaf1024f",
       "title": "סדנת תחקיר ראש סיגל",
       "course_key": "tachkir",
       "type": "workshop",
@@ -90,7 +90,7 @@
       "lesson_number": 1
     },
     {
-      "uid": "68daf139-4a06-4274-9d31-64525347db10",
+      "uid": "f35b5258-54de-4092-af6e-c490f801838b",
       "title": "סדנת תסריט לוקיישן יאיר מתן",
       "course_key": "location",
       "type": "workshop",
@@ -104,7 +104,7 @@
       "lesson_number": 1
     },
     {
-      "uid": "fbea5b48-f9ac-4499-a222-d728076baf27",
+      "uid": "af60ff26-9a90-4bb5-a107-65eebd72d417",
       "title": "הסיפור הקצר טושה גפלה אופיר",
       "course_key": "short_story",
       "type": "workshop",
@@ -118,7 +118,7 @@
       "lesson_number": 1
     },
     {
-      "uid": "f921251d-a920-4889-a160-d7c2b118d6d2",
+      "uid": "fa032765-4cb8-401f-9fa0-ed8974d0f230",
       "title": "מבוא לקולנוע ישראלי - חלק א עוזרי יערה",
       "course_key": "israeli_cinema",
       "type": "lecture",
@@ -132,7 +132,21 @@
       "lesson_number": 1
     },
     {
-      "uid": "ce4cef42-4cba-4aed-9f91-76ca7ab0bbc1",
+      "uid": "c83128d8-3117-4a09-98b3-a813bdfcac59",
+      "title": "חונכות תסריט לוקיישן - תסריטאות",
+      "course_key": "location",
+      "type": "special",
+      "start": "2026-06-09T11:30:00",
+      "end": "2026-06-09T11:50:00",
+      "duration_min": 20,
+      "location": "",
+      "status": "confirmed",
+      "is_allday": true,
+      "group": "both",
+      "lesson_number": null
+    },
+    {
+      "uid": "6d4e0b50-2fa8-4c6e-bd34-e616c4620bdb",
       "title": "תולדות הקולנוע 4 דבורה ארז",
       "course_key": "film_history",
       "type": "lecture",
@@ -146,7 +160,7 @@
       "lesson_number": 2
     },
     {
-      "uid": "bc78e329-a59c-4b82-aa7f-363ecb8312e5",
+      "uid": "8faabc79-7cce-4d0e-aba8-acedfe1b0157",
       "title": "סדרת ילדים ונוער: מסינופסיס לטריטמנט יובן רז",
       "course_key": "kids_series",
       "type": "workshop",
@@ -160,7 +174,7 @@
       "lesson_number": 2
     },
     {
-      "uid": "0275988b-7221-49f2-b695-de4a06f605d7",
+      "uid": "6daf5d15-2131-458a-a723-07d94a872b8f",
       "title": "עושים סצינות הדיה יעל",
       "course_key": "scenes",
       "type": "workshop",
@@ -174,7 +188,7 @@
       "lesson_number": 2
     },
     {
-      "uid": "1063c66c-cee5-4a2e-aeb2-175177b77570",
+      "uid": "e44a51f9-48b2-4b70-acaf-86a424b7152c",
       "title": "כתיבת סדרות רשת אגמון יאיר",
       "course_key": "web_series",
       "type": "workshop",
@@ -188,7 +202,7 @@
       "lesson_number": 2
     },
     {
-      "uid": "0d26a725-c142-4520-b63e-8c376ae44aea",
+      "uid": "bb8632b9-b7c2-48dc-81e7-995c5e0a2b08",
       "title": "בימוי לתסריטאים ענר איתן",
       "course_key": "directing",
       "type": "workshop",
@@ -202,7 +216,49 @@
       "lesson_number": 2
     },
     {
-      "uid": "13e5c8b9-9b89-44fc-aa16-46d29c45ce82",
+      "uid": "1c327110-67be-4b07-a410-2f6f4d773457",
+      "title": "חונכות תסריט לוקיישן - תסריטאות",
+      "course_key": "location",
+      "type": "special",
+      "start": "2026-06-11T14:00:00",
+      "end": "2026-06-11T14:20:00",
+      "duration_min": 20,
+      "location": "",
+      "status": "confirmed",
+      "is_allday": true,
+      "group": "A",
+      "lesson_number": null
+    },
+    {
+      "uid": "87da37d9-10d6-461a-b66d-e577aaac6627",
+      "title": "חונכות תסריט לוקיישן - תסריטאות",
+      "course_key": "location",
+      "type": "special",
+      "start": "2026-06-11T15:30:00",
+      "end": "2026-06-11T15:50:00",
+      "duration_min": 20,
+      "location": "",
+      "status": "confirmed",
+      "is_allday": true,
+      "group": "both",
+      "lesson_number": null
+    },
+    {
+      "uid": "6f2939a1-96f4-47d8-8886-9a8b6ca5d34a",
+      "title": "חונכות תסריט לוקיישן - תסריטאות",
+      "course_key": "location",
+      "type": "special",
+      "start": "2026-06-11T16:00:00",
+      "end": "2026-06-11T16:20:00",
+      "duration_min": 20,
+      "location": "",
+      "status": "confirmed",
+      "is_allday": true,
+      "group": "both",
+      "lesson_number": null
+    },
+    {
+      "uid": "e40ef41c-bb59-4110-a2d8-5e2ad14e0210",
       "title": "סדרת ילדים ונוער: מסינופסיס לטריטמנט יובן רז",
       "course_key": "kids_series",
       "type": "workshop",
@@ -216,7 +272,7 @@
       "lesson_number": 3
     },
     {
-      "uid": "5cc1e667-ad53-4303-9f44-da702ea0f04d",
+      "uid": "de7996dc-176c-46c3-8ef3-d80b2c440b4b",
       "title": "סדנת תסריט לוקיישן יאיר מתן",
       "course_key": "location",
       "type": "workshop",
@@ -230,7 +286,49 @@
       "lesson_number": 2
     },
     {
-      "uid": "6edb41f2-767c-4918-8590-7bb3810ab3dc",
+      "uid": "20f9cbaa-d25c-4521-b1ae-dd228f53fa3e",
+      "title": "חונכות תסריט לוקיישן - תסריטאות",
+      "course_key": "location",
+      "type": "special",
+      "start": "2026-06-16T14:00:00",
+      "end": "2026-06-16T14:20:00",
+      "duration_min": 20,
+      "location": "",
+      "status": "confirmed",
+      "is_allday": true,
+      "group": "A",
+      "lesson_number": null
+    },
+    {
+      "uid": "94715d2f-c72f-4ac7-9932-636788588f47",
+      "title": "חונכות תסריט לוקיישן - תסריטאות",
+      "course_key": "location",
+      "type": "special",
+      "start": "2026-06-16T16:00:00",
+      "end": "2026-06-16T16:20:00",
+      "duration_min": 20,
+      "location": "",
+      "status": "confirmed",
+      "is_allday": true,
+      "group": "both",
+      "lesson_number": null
+    },
+    {
+      "uid": "d26fa94a-fd79-4cf2-8a78-a8bdc8f01fdc",
+      "title": "חונכות תסריט לוקיישן - תסריטאות",
+      "course_key": "location",
+      "type": "special",
+      "start": "2026-06-16T16:30:00",
+      "end": "2026-06-16T16:50:00",
+      "duration_min": 20,
+      "location": "",
+      "status": "confirmed",
+      "is_allday": true,
+      "group": "both",
+      "lesson_number": null
+    },
+    {
+      "uid": "4fb00d90-39df-4a60-88a9-42327fa40f20",
       "title": "תולדות הקולנוע 4 דבורה ארז",
       "course_key": "film_history",
       "type": "lecture",
@@ -244,7 +342,7 @@
       "lesson_number": 3
     },
     {
-      "uid": "39a1313e-639c-4fe4-8ecf-9ab0cd516979",
+      "uid": "b73b12ea-856b-4ef1-8ac4-4366187a9d77",
       "title": "סדרת ילדים ונוער: מסינופסיס לטריטמנט יובן רז",
       "course_key": "kids_series",
       "type": "workshop",
@@ -258,7 +356,7 @@
       "lesson_number": 4
     },
     {
-      "uid": "1c365261-bdc9-4de3-818f-94c7d4a26ba0",
+      "uid": "6ef66c54-0c95-4ed2-9593-9fe3ac505789",
       "title": "כתיבת סדרות רשת אגמון יאיר",
       "course_key": "web_series",
       "type": "workshop",
@@ -272,7 +370,7 @@
       "lesson_number": 3
     },
     {
-      "uid": "95e340ed-1be6-4c8d-a4a3-6e997407a86a",
+      "uid": "a1540bf7-e03d-4261-8d57-b0bd9c391d46",
       "title": "בימוי לתסריטאים ענר איתן",
       "course_key": "directing",
       "type": "workshop",
@@ -286,7 +384,77 @@
       "lesson_number": 3
     },
     {
-      "uid": "5b300f2a-5736-451e-8d47-0bb92d7eccf3",
+      "uid": "320d0320-5625-4842-b988-d11b93e747c9",
+      "title": "חונכות תסריט לוקיישן - תסריטאות",
+      "course_key": "location",
+      "type": "special",
+      "start": "2026-06-18T16:00:00",
+      "end": "2026-06-18T16:20:00",
+      "duration_min": 20,
+      "location": "",
+      "status": "confirmed",
+      "is_allday": true,
+      "group": "both",
+      "lesson_number": null
+    },
+    {
+      "uid": "1001f82a-1383-4b8b-a7d1-51c851038ec1",
+      "title": "חונכות תסריט לוקיישן - תסריטאות",
+      "course_key": "location",
+      "type": "special",
+      "start": "2026-06-21T17:30:00",
+      "end": "2026-06-21T17:50:00",
+      "duration_min": 20,
+      "location": "",
+      "status": "confirmed",
+      "is_allday": true,
+      "group": "both",
+      "lesson_number": null
+    },
+    {
+      "uid": "9f16eb09-c2f9-48ff-a064-b9e71624a96c",
+      "title": "חונכות תסריט לוקיישן - תסריטאות",
+      "course_key": "location",
+      "type": "special",
+      "start": "2026-06-22T14:00:00",
+      "end": "2026-06-22T14:20:00",
+      "duration_min": 20,
+      "location": "",
+      "status": "confirmed",
+      "is_allday": true,
+      "group": "A",
+      "lesson_number": null
+    },
+    {
+      "uid": "a4d22802-f2e9-437d-8138-7127b4cdf111",
+      "title": "חונכות תסריט לוקיישן - תסריטאות",
+      "course_key": "location",
+      "type": "special",
+      "start": "2026-06-22T15:30:00",
+      "end": "2026-06-22T15:50:00",
+      "duration_min": 20,
+      "location": "",
+      "status": "confirmed",
+      "is_allday": true,
+      "group": "both",
+      "lesson_number": null
+    },
+    {
+      "uid": "702adb7f-c58f-4efb-b689-769592aee4da",
+      "title": "חונכות תסריט לוקיישן - תסריטאות",
+      "course_key": "location",
+      "type": "special",
+      "start": "2026-06-23T20:30:00",
+      "end": "2026-06-23T20:50:00",
+      "duration_min": 20,
+      "location": "",
+      "status": "confirmed",
+      "is_allday": true,
+      "group": "both",
+      "lesson_number": null
+    },
+    {
+      "uid": "25c298e9-9c83-48ae-8a99-b9fc0e549b95",
       "title": "עושים סצינות הדיה יעל",
       "course_key": "scenes",
       "type": "workshop",
@@ -300,7 +468,7 @@
       "lesson_number": 3
     },
     {
-      "uid": "936a0b8f-27bc-457d-863f-418f227e987a",
+      "uid": "c71811e4-d3c1-49d0-9fab-7f11cc16d6d4",
       "title": "סדרת ילדים ונוער: מסינופסיס לטריטמנט יובן רז",
       "course_key": "kids_series",
       "type": "workshop",
@@ -314,7 +482,7 @@
       "lesson_number": 5
     },
     {
-      "uid": "56446298-a60f-4541-99e8-8ea44081af0f",
+      "uid": "9e5b4d41-5551-4d7c-9c1b-ef0340fd97c6",
       "title": "כתיבת סדרות רשת אגמון יאיר",
       "course_key": "web_series",
       "type": "workshop",
@@ -328,7 +496,7 @@
       "lesson_number": 4
     },
     {
-      "uid": "d74b139e-cd4c-4bbb-b375-38bde6f61982",
+      "uid": "f9e847f4-0a02-492f-81b4-2874dcdf060f",
       "title": "בימוי לתסריטאים ענר איתן",
       "course_key": "directing",
       "type": "workshop",
@@ -342,7 +510,63 @@
       "lesson_number": 4
     },
     {
-      "uid": "a4330945-fe80-425d-b792-f49bc6ddecb6",
+      "uid": "a09f415c-525f-4e4a-adcf-620cd650d042",
+      "title": "חונכות תסריט לוקיישן - תסריטאות",
+      "course_key": "location",
+      "type": "special",
+      "start": "2026-06-25T15:00:00",
+      "end": "2026-06-25T15:20:00",
+      "duration_min": 20,
+      "location": "",
+      "status": "confirmed",
+      "is_allday": true,
+      "group": "both",
+      "lesson_number": null
+    },
+    {
+      "uid": "7d65c1fc-b3a9-4289-91ce-9e73aa668f34",
+      "title": "חונכות תסריט לוקיישן - תסריטאות",
+      "course_key": "location",
+      "type": "special",
+      "start": "2026-06-25T16:00:00",
+      "end": "2026-06-25T16:20:00",
+      "duration_min": 20,
+      "location": "",
+      "status": "confirmed",
+      "is_allday": true,
+      "group": "both",
+      "lesson_number": null
+    },
+    {
+      "uid": "ad5e0b88-76f7-4e8f-b8f3-fbc5ccddc1ac",
+      "title": "חונכות תסריט לוקיישן - תסריטאות",
+      "course_key": "location",
+      "type": "special",
+      "start": "2026-06-25T16:30:00",
+      "end": "2026-06-25T16:50:00",
+      "duration_min": 20,
+      "location": "",
+      "status": "confirmed",
+      "is_allday": true,
+      "group": "both",
+      "lesson_number": null
+    },
+    {
+      "uid": "f1bc8599-bbea-4346-a990-8587fea78eb1",
+      "title": "חונכות תסריט לוקיישן - תסריטאות",
+      "course_key": "location",
+      "type": "special",
+      "start": "2026-06-26T10:30:00",
+      "end": "2026-06-26T10:50:00",
+      "duration_min": 20,
+      "location": "",
+      "status": "confirmed",
+      "is_allday": true,
+      "group": "both",
+      "lesson_number": null
+    },
+    {
+      "uid": "0f73caf5-f188-4043-bdd0-a4702f6f83a8",
       "title": "סדנת תסריט לוקיישן יאיר מתן",
       "course_key": "location",
       "type": "special",
@@ -356,7 +580,21 @@
       "lesson_number": null
     },
     {
-      "uid": "ec0b1093-fe35-45b3-9725-b4a8a3f38a63",
+      "uid": "43e63d7c-d13e-4750-b47c-2594e4d5ee7a",
+      "title": "חונכות תסריט לוקיישן - תסריטאות",
+      "course_key": "location",
+      "type": "special",
+      "start": "2026-06-28T14:00:00",
+      "end": "2026-06-28T14:20:00",
+      "duration_min": 20,
+      "location": "",
+      "status": "confirmed",
+      "is_allday": true,
+      "group": "A",
+      "lesson_number": null
+    },
+    {
+      "uid": "a32c0248-562f-4822-b340-296901cb9ac6",
       "title": "בימוי לתסריטאים ענר איתן",
       "course_key": "directing",
       "type": "special",
@@ -370,7 +608,7 @@
       "lesson_number": null
     },
     {
-      "uid": "ef91d2eb-05b5-4d3a-9fa1-8bc98f7e0f47",
+      "uid": "8988b1fa-1a4d-4359-a40f-b5cf069e84ac",
       "title": "סדנת תחקיר ראש סיגל",
       "course_key": "tachkir",
       "type": "special",
@@ -384,7 +622,7 @@
       "lesson_number": null
     },
     {
-      "uid": "eeb26872-bc92-47ed-9d47-30dfc1233d80",
+      "uid": "317b9097-473e-4875-8df7-31433abe038f",
       "title": "ראש השנה, יום א' - אין לימודים",
       "course_key": null,
       "type": "special",
@@ -398,7 +636,7 @@
       "lesson_number": null
     },
     {
-      "uid": "cc807b78-c661-4a2d-8aac-650f35037816",
+      "uid": "99b5dd1a-8785-4030-b7d6-bf8f01d9d45c",
       "title": "ראש השנה, יום ב' - אין לימודים",
       "course_key": null,
       "type": "special",
@@ -412,7 +650,7 @@
       "lesson_number": null
     },
     {
-      "uid": "0cbb61cd-19cb-4932-b690-d6f44c1c606a",
+      "uid": "af1fcb8c-10ce-4ff5-86fe-675bd57eada2",
       "title": "יום כיפור - אין לימודים",
       "course_key": null,
       "type": "special",
@@ -426,7 +664,7 @@
       "lesson_number": null
     },
     {
-      "uid": "059feada-f907-4345-9bda-fb09e14b93f3",
+      "uid": "56e6dfaa-3c3a-4d30-b5cc-75ac9b201890",
       "title": "סוכות - אין לימודים",
       "course_key": null,
       "type": "special",
