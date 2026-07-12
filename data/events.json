@@ -1,54 +1,12 @@
 {
   "meta": {
-    "last_updated": "2026-07-12T20:02:06.400109+00:00",
-    "total_events": 64,
+    "last_updated": "2026-07-12T21:38:56.444657+00:00",
+    "total_events": 61,
     "source": "Yedion ICS"
   },
   "events": [
     {
-      "uid": "fb376092-a21b-46f2-bf76-b91e681c5f1c",
-      "title": "חונכות תסריט לוקיישן - תסריטאות",
-      "course_key": "location",
-      "type": "special",
-      "start": "2026-06-12T09:30:00",
-      "end": "2026-06-12T09:50:00",
-      "duration_min": 20,
-      "location": "",
-      "status": "confirmed",
-      "is_allday": true,
-      "group": "both",
-      "lesson_number": null
-    },
-    {
-      "uid": "e8872e9f-5eb3-451b-87e7-323b1ab3c37d",
-      "title": "חונכות תסריט לוקיישן - תסריטאות",
-      "course_key": "location",
-      "type": "special",
-      "start": "2026-06-12T10:00:00",
-      "end": "2026-06-12T10:20:00",
-      "duration_min": 20,
-      "location": "",
-      "status": "confirmed",
-      "is_allday": true,
-      "group": "both",
-      "lesson_number": null
-    },
-    {
-      "uid": "3ec1495d-51aa-41dc-a692-2611195f50d3",
-      "title": "חונכות תסריט לוקיישן - תסריטאות",
-      "course_key": "location",
-      "type": "special",
-      "start": "2026-06-12T10:30:00",
-      "end": "2026-06-12T10:50:00",
-      "duration_min": 20,
-      "location": "",
-      "status": "confirmed",
-      "is_allday": true,
-      "group": "both",
-      "lesson_number": null
-    },
-    {
-      "uid": "fee5a00f-e9ac-40d2-b381-a496d42a85aa",
+      "uid": "d51a6ddc-c6d7-4295-b3f1-a9d3c4bc7b24",
       "title": "סדרת ילדים ונוער: מסינופסיס לטריטמנט יובן רז",
       "course_key": "kids_series",
       "type": "workshop",
@@ -62,7 +20,7 @@
       "lesson_number": 1
     },
     {
-      "uid": "588bd572-6e54-4b6f-856e-bb53633aa168",
+      "uid": "d59a29ee-e858-4d1d-9b72-f497bb2ab5ad",
       "title": "סדנת תסריט לוקיישן יאיר מתן",
       "course_key": "location",
       "type": "workshop",
@@ -76,7 +34,7 @@
       "lesson_number": 1
     },
     {
-      "uid": "b4018d17-a8c5-427f-bd34-0b008c07318a",
+      "uid": "29b4b89b-25e2-4847-b129-188e94b012a9",
       "title": "חונכות תסריט לוקיישן - תסריטאות",
       "course_key": "location",
       "type": "special",
@@ -90,7 +48,7 @@
       "lesson_number": null
     },
     {
-      "uid": "1cd1828e-f7bb-4e07-b3f8-75ca9929a722",
+      "uid": "f1340130-0498-4509-abcc-f6a679232e86",
       "title": "חונכות תסריט לוקיישן - תסריטאות",
       "course_key": "location",
       "type": "special",
@@ -104,7 +62,7 @@
       "lesson_number": null
     },
     {
-      "uid": "0651b165-7b26-43b3-a564-c6fffdfad3e6",
+      "uid": "adb44a20-a279-41a1-8116-4df5a108b9b6",
       "title": "חונכות תסריט לוקיישן - תסריטאות",
       "course_key": "location",
       "type": "special",
@@ -118,7 +76,7 @@
       "lesson_number": null
     },
     {
-      "uid": "9c31edb3-5ae0-4f48-9b4b-8e00004ff997",
+      "uid": "08053f31-2cc0-484e-aa78-08d6df6ce477",
       "title": "חונכות תסריט לוקיישן - תסריטאות",
       "course_key": "location",
       "type": "special",
@@ -132,7 +90,7 @@
       "lesson_number": null
     },
     {
-      "uid": "a85dda2a-6011-4951-a15b-bc54e172fb9f",
+      "uid": "0b51eb45-313b-47bb-91f6-68f295234a59",
       "title": "חונכות תסריט לוקיישן - תסריטאות",
       "course_key": "location",
       "type": "special",
@@ -146,7 +104,7 @@
       "lesson_number": null
     },
     {
-      "uid": "7d04f81c-fbf4-4cde-ac3f-57b0271f1ffb",
+      "uid": "d287c5d0-3a99-41df-81e0-a3e3cf6b4f2d",
       "title": "חונכות תסריט לוקיישן - תסריטאות",
       "course_key": "location",
       "type": "special",
@@ -160,7 +118,7 @@
       "lesson_number": null
     },
     {
-      "uid": "b7f23bc3-7710-4e14-91e8-f6157d6ffba2",
+      "uid": "bbd34eac-cf84-4ce8-918b-8ca66f7e15e0",
       "title": "חונכות תסריט לוקיישן - תסריטאות",
       "course_key": "location",
       "type": "special",
@@ -174,7 +132,7 @@
       "lesson_number": null
     },
     {
-      "uid": "7a130cea-ff25-492c-8811-4a65c3969cd8",
+      "uid": "c7ddbcc7-9107-4586-bd27-1d8f2b34eb93",
       "title": "תולדות הקולנוע 4 דבורה ארז",
       "course_key": "film_history",
       "type": "lecture",
@@ -188,7 +146,7 @@
       "lesson_number": 1
     },
     {
-      "uid": "cff00f54-ed5b-4b3e-908a-fc33d745c6db",
+      "uid": "c449ebb6-e356-4e9a-b18c-35e8fc49add4",
       "title": "סדרת ילדים ונוער: מסינופסיס לטריטמנט יובן רז",
       "course_key": "kids_series",
       "type": "workshop",
@@ -202,7 +160,7 @@
       "lesson_number": 2
     },
     {
-      "uid": "ac257556-fde4-4ca9-afac-8d0cb1aaaa6f",
+      "uid": "9cea69d5-be76-4772-9a47-494f546af376",
       "title": "כתיבת סדרות רשת אגמון יאיר",
       "course_key": "web_series",
       "type": "workshop",
@@ -216,7 +174,7 @@
       "lesson_number": 1
     },
     {
-      "uid": "69f5972e-9c8c-4f66-b7f3-29011f8aae52",
+      "uid": "096eb4e3-ab4c-4f63-8815-fdfc18bc4730",
       "title": "בימוי לתסריטאים ענר איתן",
       "course_key": "directing",
       "type": "workshop",
@@ -230,7 +188,7 @@
       "lesson_number": 1
     },
     {
-      "uid": "f9548019-e60d-4d20-b9ec-8e4753cfcb69",
+      "uid": "f821bab8-cb74-4bd1-b767-2db560290a30",
       "title": "חונכות תסריט לוקיישן - תסריטאות",
       "course_key": "location",
       "type": "special",
@@ -244,7 +202,7 @@
       "lesson_number": null
     },
     {
-      "uid": "539003f9-df20-4cb9-895e-168dc1474c84",
+      "uid": "6a381c72-dddc-46ad-8246-00b8607c9096",
       "title": "חונכות תסריט לוקיישן - תסריטאות",
       "course_key": "location",
       "type": "special",
@@ -258,7 +216,7 @@
       "lesson_number": null
     },
     {
-      "uid": "ee991851-6ec4-4acf-ad04-274db5588081",
+      "uid": "5745d877-7037-41ff-b040-c664c361b9d8",
       "title": "חונכות תסריט לוקיישן - תסריטאות",
       "course_key": "location",
       "type": "special",
@@ -272,7 +230,7 @@
       "lesson_number": null
     },
     {
-      "uid": "a669a867-5f15-4ee9-b137-32a7cf753687",
+      "uid": "b7b6a190-8113-4c44-b4cd-d47c44ad8c7a",
       "title": "חונכות תסריט לוקיישן - תסריטאות",
       "course_key": "location",
       "type": "special",
@@ -286,7 +244,7 @@
       "lesson_number": null
     },
     {
-      "uid": "4c9567b6-66b6-41df-95aa-8338b01eea41",
+      "uid": "b338cb0f-bacf-4d48-848e-465b4fb54bfc",
       "title": "חונכות תסריט לוקיישן - תסריטאות",
       "course_key": "location",
       "type": "special",
@@ -300,7 +258,7 @@
       "lesson_number": null
     },
     {
-      "uid": "63da99fd-ffef-43c2-bd4a-690ef943c0ab",
+      "uid": "20d8fd65-5c43-455d-99d2-fc712c8e8dae",
       "title": "חונכות תסריט לוקיישן - תסריטאות",
       "course_key": "location",
       "type": "special",
@@ -314,7 +272,7 @@
       "lesson_number": null
     },
     {
-      "uid": "dbde300f-787e-4c2d-a649-7184345f261e",
+      "uid": "2fada32f-c1a2-4c66-8dd2-f269dbad38bd",
       "title": "חונכות תסריט לוקיישן - תסריטאות",
       "course_key": "location",
       "type": "special",
@@ -328,7 +286,7 @@
       "lesson_number": null
     },
     {
-      "uid": "89f59684-2172-45b7-9cf3-6d55dbacbe51",
+      "uid": "f1e22ba9-833f-4205-a8c4-c758bcc8ba71",
       "title": "חונכות תסריט לוקיישן - תסריטאות",
       "course_key": "location",
       "type": "special",
@@ -342,7 +300,7 @@
       "lesson_number": null
     },
     {
-      "uid": "07a0a074-df37-4c2f-bf06-a54959a93f54",
+      "uid": "64541f9a-43d3-47a3-8599-610f49ad65cb",
       "title": "חונכות תסריט לוקיישן - תסריטאות",
       "course_key": "location",
       "type": "special",
@@ -356,7 +314,7 @@
       "lesson_number": null
     },
     {
-      "uid": "3a569e78-dfa1-45c1-b80e-b7cc8cb9aca0",
+      "uid": "d0718cde-bdcf-470c-a22f-b89658a08c25",
       "title": "חונכות תסריט לוקיישן - תסריטאות",
       "course_key": "location",
       "type": "special",
@@ -370,7 +328,7 @@
       "lesson_number": null
     },
     {
-      "uid": "e56fb171-433b-4796-a243-8e163ae9ec55",
+      "uid": "6ed6aafb-9792-4e38-84bc-b4da61e7ec43",
       "title": "חונכות תסריט לוקיישן - תסריטאות",
       "course_key": "location",
       "type": "special",
@@ -384,7 +342,7 @@
       "lesson_number": null
     },
     {
-      "uid": "946c4838-e2ad-48bb-90db-69d71015930c",
+      "uid": "e99c8d41-8077-4b8f-be26-6eb80b9dffb0",
       "title": "חונכות תסריט לוקיישן - תסריטאות",
       "course_key": "location",
       "type": "special",
@@ -398,7 +356,7 @@
       "lesson_number": null
     },
     {
-      "uid": "25289f1f-a8da-4857-b9af-c6b9f846a969",
+      "uid": "2a9fc557-e69f-462f-a305-34812ab291a8",
       "title": "חונכות תסריט לוקיישן - תסריטאות",
       "course_key": "location",
       "type": "special",
@@ -412,7 +370,7 @@
       "lesson_number": null
     },
     {
-      "uid": "8d847022-d0d0-4e05-b0cb-e397a087c5f4",
+      "uid": "29f3e574-0cee-4509-9945-7b1e9a823b7b",
       "title": "חונכות תסריט לוקיישן - תסריטאות",
       "course_key": "location",
       "type": "special",
@@ -426,7 +384,7 @@
       "lesson_number": null
     },
     {
-      "uid": "fc0239e9-eb69-4fa0-8d1a-59c302a4a5ca",
+      "uid": "cbc9edae-5104-46f0-b5d4-a4fc4bb5894b",
       "title": "חונכות תסריט לוקיישן - תסריטאות",
       "course_key": "location",
       "type": "special",
@@ -440,7 +398,7 @@
       "lesson_number": null
     },
     {
-      "uid": "d5865123-0a99-4650-926e-cbffac8eda48",
+      "uid": "0a4c47cd-abe5-401e-8f52-b5937ed129af",
       "title": "חונכות תסריט לוקיישן - תסריטאות",
       "course_key": "location",
       "type": "special",
@@ -454,7 +412,7 @@
       "lesson_number": null
     },
     {
-      "uid": "84c7f95e-e0d6-40ff-aa1f-c47b150fed61",
+      "uid": "f1517e0d-90c8-4a72-aee5-d98a84e35ac3",
       "title": "חונכות תסריט לוקיישן - תסריטאות",
       "course_key": "location",
       "type": "special",
@@ -468,7 +426,7 @@
       "lesson_number": null
     },
     {
-      "uid": "13d10ab7-124a-4d1c-a843-aec80da29c71",
+      "uid": "d8b49ac6-6144-462f-881f-856db351d05b",
       "title": "חונכות תסריט לוקיישן - תסריטאות",
       "course_key": "location",
       "type": "special",
@@ -482,7 +440,7 @@
       "lesson_number": null
     },
     {
-      "uid": "7d85e6f5-0df3-489f-acfa-df095296452d",
+      "uid": "4c2ec793-b35b-4347-806c-f9cc667eb228",
       "title": "חונכות תסריט לוקיישן - תסריטאות",
       "course_key": "location",
       "type": "special",
@@ -496,7 +454,7 @@
       "lesson_number": null
     },
     {
-      "uid": "1af6c364-b1d2-4a9c-a754-cb3eb169fe91",
+      "uid": "f519d69a-a691-4c6a-a17b-4cca0f37dde7",
       "title": "חונכות תסריט לוקיישן - תסריטאות",
       "course_key": "location",
       "type": "special",
@@ -510,7 +468,7 @@
       "lesson_number": null
     },
     {
-      "uid": "a0e317fc-d545-4d2b-bed3-5ddf13155d6e",
+      "uid": "f171e5e8-a107-4ee1-80d0-a1f091a0d98a",
       "title": "חונכות תסריט לוקיישן - תסריטאות",
       "course_key": "location",
       "type": "special",
@@ -524,7 +482,7 @@
       "lesson_number": null
     },
     {
-      "uid": "b2cc30f9-47fb-407d-92c7-835c6c7d88c1",
+      "uid": "6f3002c7-9873-43b0-a90a-b51f4b4a5bfe",
       "title": "חונכות תסריט לוקיישן - תסריטאות",
       "course_key": "location",
       "type": "special",
@@ -538,7 +496,7 @@
       "lesson_number": null
     },
     {
-      "uid": "9da4fea9-9bb2-478d-ac2a-771c4405ba89",
+      "uid": "e2d63f6e-772a-471b-bea3-2d6e70fde1d0",
       "title": "חונכות תסריט לוקיישן - תסריטאות",
       "course_key": "location",
       "type": "special",
@@ -552,7 +510,7 @@
       "lesson_number": null
     },
     {
-      "uid": "c7eb669a-0dbd-4ac6-8ff3-70ab248f86fa",
+      "uid": "12a4ea8d-6b0f-4f76-a300-1f90f8ce3c6e",
       "title": "חונכות תסריט לוקיישן - תסריטאות",
       "course_key": "location",
       "type": "special",
@@ -566,7 +524,7 @@
       "lesson_number": null
     },
     {
-      "uid": "d4406d18-84f8-4e8e-a24d-dad38377bb1f",
+      "uid": "19979c1c-391b-4d09-9c47-570c21c2063b",
       "title": "חונכות תסריט לוקיישן - תסריטאות",
       "course_key": "location",
       "type": "special",
@@ -580,7 +538,7 @@
       "lesson_number": null
     },
     {
-      "uid": "d10b27e6-94ba-4935-ba72-c595b3593c58",
+      "uid": "45bf8922-762c-41ff-a8e5-6886dcba3c5b",
       "title": "עושים סצינות הדיה יעל",
       "course_key": "scenes",
       "type": "workshop",
@@ -594,7 +552,7 @@
       "lesson_number": 1
     },
     {
-      "uid": "db6a7e7c-4246-4889-891a-38ce660994c0",
+      "uid": "abe426e0-ff51-44e4-85a5-ecbaf63b7c2a",
       "title": "סדרת ילדים ונוער: מסינופסיס לטריטמנט יובן רז",
       "course_key": "kids_series",
       "type": "workshop",
@@ -608,7 +566,7 @@
       "lesson_number": 3
     },
     {
-      "uid": "5e9030d5-5c31-4a6f-bff2-9af064f451df",
+      "uid": "a7548f8a-2e7a-4c80-a97b-690c17b8c93e",
       "title": "כתיבת סדרות רשת אגמון יאיר",
       "course_key": "web_series",
       "type": "workshop",
@@ -622,7 +580,7 @@
       "lesson_number": 2
     },
     {
-      "uid": "a60ba78e-54ff-47d1-9b4c-4d7199c2c909",
+      "uid": "ebd32de9-a114-451f-8afc-ac345134b507",
       "title": "בימוי לתסריטאים ענר איתן",
       "course_key": "directing",
       "type": "workshop",
@@ -636,7 +594,7 @@
       "lesson_number": 2
     },
     {
-      "uid": "ec20b9c3-fcb1-479f-b4dd-b2fc087ee9b0",
+      "uid": "6ac8d366-65bb-4346-bbec-ffd463ec05dc",
       "title": "חונכות תסריט לוקיישן - תסריטאות",
       "course_key": "location",
       "type": "special",
@@ -650,7 +608,7 @@
       "lesson_number": null
     },
     {
-      "uid": "2b5e8f95-d7d5-4e74-ba2c-dcc39e72b4bd",
+      "uid": "dd962021-c00b-4201-940a-58a37e6bb58d",
       "title": "חונכות תסריט לוקיישן - תסריטאות",
       "course_key": "location",
       "type": "special",
@@ -664,7 +622,7 @@
       "lesson_number": null
     },
     {
-      "uid": "e633b15c-1412-4f08-b727-010a931e9822",
+      "uid": "d430d8ce-548d-4b5b-a392-91f8286e3d02",
       "title": "חונכות תסריט לוקיישן - תסריטאות",
       "course_key": "location",
       "type": "special",
@@ -678,7 +636,7 @@
       "lesson_number": null
     },
     {
-      "uid": "6f54d348-a312-4bc5-bd2b-a5dfe98e5f70",
+      "uid": "5e124181-d4f5-490a-bc2b-503b3cc5e0fd",
       "title": "חונכות תסריט לוקיישן - תסריטאות",
       "course_key": "location",
       "type": "special",
@@ -692,7 +650,7 @@
       "lesson_number": null
     },
     {
-      "uid": "fcaa8a7e-c9f0-4c55-94e0-ce5681ef45fc",
+      "uid": "b432b257-c126-4e62-a1b5-a996ed625aec",
       "title": "חונכות תסריט לוקיישן - תסריטאות",
       "course_key": "location",
       "type": "special",
@@ -706,7 +664,7 @@
       "lesson_number": null
     },
     {
-      "uid": "9962881c-ecc2-45e5-810d-72779a5e04b9",
+      "uid": "6d63d28b-4964-4c7b-ae63-d9c55d87392a",
       "title": "חונכות תסריט לוקיישן - תסריטאות",
       "course_key": "location",
       "type": "special",
@@ -720,7 +678,7 @@
       "lesson_number": null
     },
     {
-      "uid": "4d8ee713-040c-4048-877c-1264abab9522",
+      "uid": "e0590562-46e4-4424-b339-90bac4336429",
       "title": "חונכות תסריט לוקיישן - תסריטאות",
       "course_key": "location",
       "type": "special",
@@ -734,7 +692,7 @@
       "lesson_number": null
     },
     {
-      "uid": "c73af323-b140-433c-a6d4-543c47a70352",
+      "uid": "cf07df10-e460-4643-85f7-3c7193a36300",
       "title": "חונכות תסריט לוקיישן - תסריטאות",
       "course_key": "location",
       "type": "special",
@@ -748,7 +706,7 @@
       "lesson_number": null
     },
     {
-      "uid": "39056c87-cd5a-41bc-989a-6f8d13c3f16d",
+      "uid": "ed5cfb9e-c215-466e-903a-a2f09bffa2db",
       "title": "חונכות תסריט לוקיישן - תסריטאות",
       "course_key": "location",
       "type": "special",
@@ -762,7 +720,7 @@
       "lesson_number": null
     },
     {
-      "uid": "05fa2045-aa5a-478c-8335-848bc298216c",
+      "uid": "72c8e55c-eb7f-4301-915d-0e28e37e385f",
       "title": "חונכות תסריט לוקיישן - תסריטאות",
       "course_key": "location",
       "type": "special",
@@ -776,7 +734,7 @@
       "lesson_number": null
     },
     {
-      "uid": "09e90919-381e-45e5-a352-c40873d7dfbc",
+      "uid": "dc5b7ff9-d8d5-46b6-a2d1-e8df34905b0f",
       "title": "סדנת תסריט לוקיישן יאיר מתן",
       "course_key": "location",
       "type": "special",
@@ -790,7 +748,7 @@
       "lesson_number": null
     },
     {
-      "uid": "56678cb0-38db-471c-b599-9b2446d086a5",
+      "uid": "1cba9290-34d5-46de-b167-2dfb66232dad",
       "title": "חונכות תסריט לוקיישן - תסריטאות",
       "course_key": "location",
       "type": "special",
@@ -804,7 +762,7 @@
       "lesson_number": null
     },
     {
-      "uid": "d4638272-7932-4bdc-ba52-03f415addfe4",
+      "uid": "5cbc8b05-c469-4ef5-a513-ca4c2de91b16",
       "title": "בימוי לתסריטאים ענר איתן",
       "course_key": "directing",
       "type": "special",
@@ -818,7 +776,7 @@
       "lesson_number": null
     },
     {
-      "uid": "fbe5020e-1f6b-4f41-9a09-4200ea5845e2",
+      "uid": "9dbc4f19-40ab-4f9f-a403-1c08eef792c5",
       "title": "סדנת תחקיר ראש סיגל",
       "course_key": "tachkir",
       "type": "special",
@@ -832,7 +790,7 @@
       "lesson_number": null
     },
     {
-      "uid": "1598bfa2-2fd4-4ccb-9d63-9cf5a467d145",
+      "uid": "d2ded2c3-9476-41f6-8a7a-2a6e2c20e7eb",
       "title": "ראש השנה, יום א' - אין לימודים",
       "course_key": null,
       "type": "special",
@@ -846,7 +804,7 @@
       "lesson_number": null
     },
     {
-      "uid": "cf835de4-f643-402d-bb04-bbdf13e14b6e",
+      "uid": "c10f090b-4b41-4e8b-89e6-bf2f22d5b829",
       "title": "ראש השנה, יום ב' - אין לימודים",
       "course_key": null,
       "type": "special",
@@ -860,7 +818,7 @@
       "lesson_number": null
     },
     {
-      "uid": "b31df192-66a7-4681-8097-80a9dcf87e5b",
+      "uid": "5b5faa93-4b8f-4b91-8cc7-e028da2badcb",
       "title": "יום כיפור - אין לימודים",
       "course_key": null,
       "type": "special",
@@ -874,7 +832,7 @@
       "lesson_number": null
     },
     {
-      "uid": "d57ae917-0063-48bc-a9b8-22f3428d6fe6",
+      "uid": "c69cb777-c28a-4a71-8895-f6c5f12bd173",
       "title": "סוכות - אין לימודים",
       "course_key": null,
       "type": "special",
@@ -888,7 +846,7 @@
       "lesson_number": null
     },
     {
-      "uid": "86670fff-7674-4136-b936-5d84afd12087",
+      "uid": "45df93be-1e2b-4d4b-92b3-9809969ccc1d",
       "title": "שמחת תורה - אין לימודים",
       "course_key": null,
       "type": "special",
