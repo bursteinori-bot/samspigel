@@ -1,40 +1,12 @@
 {
   "meta": {
-    "last_updated": "2026-07-28T20:58:24.959887+00:00",
-    "total_events": 9,
+    "last_updated": "2026-07-28T22:02:53.444879+00:00",
+    "total_events": 7,
     "source": "Yedion ICS"
   },
   "events": [
     {
-      "uid": "25c5cc6d-6d84-499a-bfef-2e1ead86363d",
-      "title": "סדנת תסריט לוקיישן יאיר מתן",
-      "course_key": "location",
-      "type": "special",
-      "start": "2026-06-28T12:00:00",
-      "end": "2026-06-28T14:00:00",
-      "duration_min": 120,
-      "location": "",
-      "status": "confirmed",
-      "is_allday": true,
-      "group": "B",
-      "lesson_number": null
-    },
-    {
-      "uid": "285822ab-c791-419a-acdb-8364f0fc1800",
-      "title": "חונכות תסריט לוקיישן - תסריטאות",
-      "course_key": "location",
-      "type": "special",
-      "start": "2026-06-28T14:00:00",
-      "end": "2026-06-28T14:20:00",
-      "duration_min": 20,
-      "location": "",
-      "status": "confirmed",
-      "is_allday": true,
-      "group": "A",
-      "lesson_number": null
-    },
-    {
-      "uid": "1588d395-613d-4286-9810-8c060e8cc205",
+      "uid": "fb1ef2bd-96d3-4c2c-a6fb-79e4898dd5dd",
       "title": "בימוי לתסריטאים ענר איתן",
       "course_key": "directing",
       "type": "special",
@@ -48,7 +20,7 @@
       "lesson_number": null
     },
     {
-      "uid": "966291b2-886f-4183-96a7-952ed5112b87",
+      "uid": "c23bed90-f81e-4ef4-8b8f-496c9b8a7fd5",
       "title": "סדנת תחקיר ראש סיגל",
       "course_key": "tachkir",
       "type": "special",
@@ -62,7 +34,7 @@
       "lesson_number": null
     },
     {
-      "uid": "634b0a30-c2a4-41b6-972b-465e204d7ad8",
+      "uid": "0f0c14f3-8604-42c9-b730-67e5f94c5043",
       "title": "ראש השנה, יום א' - אין לימודים",
       "course_key": null,
       "type": "special",
@@ -76,7 +48,7 @@
       "lesson_number": null
     },
     {
-      "uid": "f4632006-41cb-4d9f-9e1b-835153cc4f34",
+      "uid": "a4dbcd79-8a82-4051-a7b1-4fd10dcb9840",
       "title": "ראש השנה, יום ב' - אין לימודים",
       "course_key": null,
       "type": "special",
@@ -90,7 +62,7 @@
       "lesson_number": null
     },
     {
-      "uid": "218cc70e-4717-47ff-8f8a-c1be8ec769e4",
+      "uid": "7210b484-4348-4413-af73-afc3df5dfec4",
       "title": "יום כיפור - אין לימודים",
       "course_key": null,
       "type": "special",
@@ -104,7 +76,7 @@
       "lesson_number": null
     },
     {
-      "uid": "b8dc74a8-ba71-4167-8ee0-ca693e8a580b",
+      "uid": "f5def0ce-6600-42f8-b3ae-8135e1b30346",
       "title": "סוכות - אין לימודים",
       "course_key": null,
       "type": "special",
@@ -118,7 +90,7 @@
       "lesson_number": null
     },
     {
-      "uid": "28029e19-0afd-45a9-92ef-8dbb61239af0",
+      "uid": "9ff75fa3-1430-4ff7-9846-708c45d6bcce",
       "title": "שמחת תורה - אין לימודים",
       "course_key": null,
       "type": "special",
