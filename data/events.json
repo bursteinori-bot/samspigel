@@ -1,26 +1,12 @@
 {
   "meta": {
-    "last_updated": "2026-08-18T20:11:48.613816+00:00",
-    "total_events": 7,
+    "last_updated": "2026-08-18T21:13:22.121238+00:00",
+    "total_events": 6,
     "source": "Yedion ICS"
   },
   "events": [
     {
-      "uid": "4bf480a8-d276-4fba-b228-12b25bd9bc4e",
-      "title": "סדנת תחקיר ראש סיגל",
-      "course_key": "tachkir",
-      "type": "special",
-      "start": "2026-07-19T21:00:00",
-      "end": "2026-07-19T23:00:00",
-      "duration_min": 120,
-      "location": "",
-      "status": "confirmed",
-      "is_allday": true,
-      "group": "both",
-      "lesson_number": null
-    },
-    {
-      "uid": "426d4db7-34fe-4e1c-b74b-115b585d9f9e",
+      "uid": "960df270-7ba6-4a7d-adb8-32058f380c15",
       "title": "סיום סמסטר ב",
       "course_key": null,
       "type": "special",
@@ -34,7 +20,7 @@
       "lesson_number": null
     },
     {
-      "uid": "6e5509c0-0e10-469d-8017-b86f28ba97ba",
+      "uid": "03e30728-d414-4574-8eaf-8df04f20f80e",
       "title": "ראש השנה, יום א' - אין לימודים",
       "course_key": null,
       "type": "special",
@@ -48,7 +34,7 @@
       "lesson_number": null
     },
     {
-      "uid": "cbee7d54-ae27-4ade-9630-def7e9846e66",
+      "uid": "a65a644b-4dbe-4885-be50-d1a21938015f",
       "title": "ראש השנה, יום ב' - אין לימודים",
       "course_key": null,
       "type": "special",
@@ -62,7 +48,7 @@
       "lesson_number": null
     },
     {
-      "uid": "34d7bbe6-0220-4d11-aa3c-5038634d2a5c",
+      "uid": "e4b7d2a1-f705-4dfb-a301-5397018b4f28",
       "title": "יום כיפור - אין לימודים",
       "course_key": null,
       "type": "special",
@@ -76,7 +62,7 @@
       "lesson_number": null
     },
     {
-      "uid": "6c772274-2cdb-4417-99fb-cf823c7bf345",
+      "uid": "0edf4da2-50e2-479d-a038-8c5f1d1c5030",
       "title": "סוכות - אין לימודים",
       "course_key": null,
       "type": "special",
@@ -90,7 +76,7 @@
       "lesson_number": null
     },
     {
-      "uid": "10ccca6a-9245-4fcd-b1eb-8c52b9fd3727",
+      "uid": "ec3f02fc-c727-4bcf-b569-595b3d847d14",
       "title": "שמחת תורה - אין לימודים",
       "course_key": null,
       "type": "special",
