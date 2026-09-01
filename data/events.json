@@ -1,26 +1,12 @@
 {
   "meta": {
-    "last_updated": "2026-08-31T20:28:22.025439+00:00",
-    "total_events": 6,
+    "last_updated": "2026-09-01T00:11:32.373807+00:00",
+    "total_events": 5,
     "source": "Yedion ICS"
   },
   "events": [
     {
-      "uid": "7f47e9b2-1ea5-43c1-beae-f8994ace1a0d",
-      "title": "סיום סמסטר ב",
-      "course_key": null,
-      "type": "special",
-      "start": "2026-08-01T08:00:00",
-      "end": "2026-08-01T18:00:00",
-      "duration_min": 600,
-      "location": "",
-      "status": "confirmed",
-      "is_allday": true,
-      "group": "both",
-      "lesson_number": null
-    },
-    {
-      "uid": "e52bbda2-763f-4d96-91e3-3464d4bbf640",
+      "uid": "71637ecb-6314-45eb-9f51-5e98842bf4d4",
       "title": "ראש השנה, יום א' - אין לימודים",
       "course_key": null,
       "type": "special",
@@ -34,7 +20,7 @@
       "lesson_number": null
     },
     {
-      "uid": "6c60e938-c904-464a-aa95-92b8dee19925",
+      "uid": "bcb12de6-b1af-48fa-a333-b1d4c7be69fa",
       "title": "ראש השנה, יום ב' - אין לימודים",
       "course_key": null,
       "type": "special",
@@ -48,7 +34,7 @@
       "lesson_number": null
     },
     {
-      "uid": "2032f41e-e9c4-4e81-b5cb-c190b949f129",
+      "uid": "f275da61-16a9-4955-93a1-df476adde89d",
       "title": "יום כיפור - אין לימודים",
       "course_key": null,
       "type": "special",
@@ -62,7 +48,7 @@
       "lesson_number": null
     },
     {
-      "uid": "6ddead42-1487-49ed-ad06-9b28ae90b833",
+      "uid": "cba622bc-9411-407a-be51-1937d24a6805",
       "title": "סוכות - אין לימודים",
       "course_key": null,
       "type": "special",
@@ -76,7 +62,7 @@
       "lesson_number": null
     },
     {
-      "uid": "f0c050d5-9c3e-454e-9a7a-17d401832b16",
+      "uid": "3ab783f5-4d9a-4dcc-b08d-20abd148cd78",
       "title": "שמחת תורה - אין לימודים",
       "course_key": null,
       "type": "special",
