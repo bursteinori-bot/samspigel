@@ -1,12 +1,12 @@
 {
   "meta": {
-    "last_updated": "2026-09-06T06:38:54.914631+00:00",
-    "total_events": 5,
+    "last_updated": "2026-09-06T11:26:18.003455+00:00",
+    "total_events": 12,
     "source": "Yedion ICS"
   },
   "events": [
     {
-      "uid": "c8d2bb18-46ff-4a61-801b-9a3ef098ca10",
+      "uid": "f64756be-c998-44cb-b6d4-0abf289c66f5",
       "title": "ראש השנה, יום א' - אין לימודים",
       "course_key": null,
       "type": "special",
@@ -20,7 +20,7 @@
       "lesson_number": null
     },
     {
-      "uid": "f65759e6-f002-4e8d-82b2-709dd40f4bd6",
+      "uid": "edac8358-3108-4044-863c-38c2f3853cef",
       "title": "ראש השנה, יום ב' - אין לימודים",
       "course_key": null,
       "type": "special",
@@ -34,7 +34,7 @@
       "lesson_number": null
     },
     {
-      "uid": "ca556271-1bc8-4b52-bdf8-cb6b3dcb5927",
+      "uid": "f53afe66-06a6-4280-971e-66abdb89432d",
       "title": "יום כיפור - אין לימודים",
       "course_key": null,
       "type": "special",
@@ -48,7 +48,7 @@
       "lesson_number": null
     },
     {
-      "uid": "9b35439a-0731-4dcf-a29b-5c6e9e00176a",
+      "uid": "861f0fe3-8c30-45dd-835e-43feafd8932b",
       "title": "סוכות - אין לימודים",
       "course_key": null,
       "type": "special",
@@ -62,12 +62,110 @@
       "lesson_number": null
     },
     {
-      "uid": "f74def12-3dc0-49ec-b08b-3adbaf2191c6",
+      "uid": "bb35a865-a3cc-45bd-873e-31b0467672f2",
       "title": "שמחת תורה - אין לימודים",
       "course_key": null,
       "type": "special",
       "start": "2026-10-03T08:00:00",
       "end": "2026-10-03T18:00:00",
+      "duration_min": 600,
+      "location": "",
+      "status": "confirmed",
+      "is_allday": true,
+      "group": "both",
+      "lesson_number": null
+    },
+    {
+      "uid": "05f6bc5d-720e-4eeb-bb57-c388aac3ce6d",
+      "title": "שבוע תחילת סמסטר א",
+      "course_key": null,
+      "type": "special",
+      "start": "2026-10-18T08:00:00",
+      "end": "2026-10-18T18:00:00",
+      "duration_min": 600,
+      "location": "",
+      "status": "confirmed",
+      "is_allday": true,
+      "group": "both",
+      "lesson_number": null
+    },
+    {
+      "uid": "07dc19b8-238a-40af-961f-55ed3b2cf61d",
+      "title": "שבוע תחילת סמסטר א",
+      "course_key": null,
+      "type": "special",
+      "start": "2026-10-19T08:00:00",
+      "end": "2026-10-19T18:00:00",
+      "duration_min": 600,
+      "location": "",
+      "status": "confirmed",
+      "is_allday": true,
+      "group": "both",
+      "lesson_number": null
+    },
+    {
+      "uid": "b70f9bd2-02ad-46fa-a6d3-b5815f4d0701",
+      "title": "שבוע תחילת סמסטר א",
+      "course_key": null,
+      "type": "special",
+      "start": "2026-10-20T08:00:00",
+      "end": "2026-10-20T18:00:00",
+      "duration_min": 600,
+      "location": "",
+      "status": "confirmed",
+      "is_allday": true,
+      "group": "both",
+      "lesson_number": null
+    },
+    {
+      "uid": "bcca49ca-2de0-4093-9027-472cec176238",
+      "title": "שבוע תחילת סמסטר א",
+      "course_key": null,
+      "type": "special",
+      "start": "2026-10-21T08:00:00",
+      "end": "2026-10-21T18:00:00",
+      "duration_min": 600,
+      "location": "",
+      "status": "confirmed",
+      "is_allday": true,
+      "group": "both",
+      "lesson_number": null
+    },
+    {
+      "uid": "dc614e69-24ec-4ebe-9bd7-79827138cea2",
+      "title": "שבוע תחילת סמסטר א",
+      "course_key": null,
+      "type": "special",
+      "start": "2026-10-22T08:00:00",
+      "end": "2026-10-22T18:00:00",
+      "duration_min": 600,
+      "location": "",
+      "status": "confirmed",
+      "is_allday": true,
+      "group": "both",
+      "lesson_number": null
+    },
+    {
+      "uid": "b12ed46d-5109-4d37-b948-3aaaeb616a64",
+      "title": "שבוע תחילת סמסטר א",
+      "course_key": null,
+      "type": "special",
+      "start": "2026-10-23T08:00:00",
+      "end": "2026-10-23T18:00:00",
+      "duration_min": 600,
+      "location": "",
+      "status": "confirmed",
+      "is_allday": true,
+      "group": "both",
+      "lesson_number": null
+    },
+    {
+      "uid": "ffd8fe40-ea5b-43e8-b01d-42df352bcefd",
+      "title": "בחירות - אין לימודים",
+      "course_key": null,
+      "type": "special",
+      "start": "2026-10-27T08:00:00",
+      "end": "2026-10-27T18:00:00",
       "duration_min": 600,
       "location": "",
       "status": "confirmed",
