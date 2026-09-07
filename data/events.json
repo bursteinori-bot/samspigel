@@ -1,12 +1,12 @@
 {
   "meta": {
-    "last_updated": "2026-09-07T18:28:45.776787+00:00",
-    "total_events": 13,
+    "last_updated": "2026-09-07T21:50:24.109931+00:00",
+    "total_events": 14,
     "source": "Yedion ICS"
   },
   "events": [
     {
-      "uid": "261ab44a-240f-4026-8c3e-d8608088fb52",
+      "uid": "2b77c076-20e1-4130-b492-2357c4f9d0b7",
       "title": "ראש השנה, יום א' - אין לימודים",
       "course_key": null,
       "type": "special",
@@ -20,7 +20,7 @@
       "lesson_number": null
     },
     {
-      "uid": "fd2e2014-b220-4acb-9bc8-222ad969a83c",
+      "uid": "486c84f6-1d21-4d66-a5d6-6823cae380d4",
       "title": "ראש השנה, יום ב' - אין לימודים",
       "course_key": null,
       "type": "special",
@@ -34,7 +34,7 @@
       "lesson_number": null
     },
     {
-      "uid": "51efc650-0f8c-49b5-b4a5-9aaf2dde3d3c",
+      "uid": "de0bc3a4-e0f0-483d-a862-2f6417eb656c",
       "title": "יום כיפור - אין לימודים",
       "course_key": null,
       "type": "special",
@@ -48,7 +48,7 @@
       "lesson_number": null
     },
     {
-      "uid": "098f99dd-fdb2-42e6-b326-9e5383a5b2a5",
+      "uid": "fe0b45ef-6083-4d04-9f27-93b2a1475bec",
       "title": "סוכות - אין לימודים",
       "course_key": null,
       "type": "special",
@@ -62,7 +62,7 @@
       "lesson_number": null
     },
     {
-      "uid": "51b47cac-c423-4893-a232-984adf4a54e4",
+      "uid": "fc6e09e6-e891-4cda-b0e0-d58feca97c4a",
       "title": "שמחת תורה - אין לימודים",
       "course_key": null,
       "type": "special",
@@ -76,7 +76,7 @@
       "lesson_number": null
     },
     {
-      "uid": "c74d625a-6d97-4c85-824f-f0a4f174f625",
+      "uid": "c4e7f1a0-0b12-44d8-b9d4-cd6224c9c793",
       "title": "שבוע תחילת סמסטר א",
       "course_key": null,
       "type": "special",
@@ -90,7 +90,7 @@
       "lesson_number": null
     },
     {
-      "uid": "db3cde4e-0271-4683-bc1a-8477eb649593",
+      "uid": "9f50499e-8c0d-4d5d-96e6-9c007cc6d7f8",
       "title": "שבוע תחילת סמסטר א",
       "course_key": null,
       "type": "special",
@@ -104,7 +104,7 @@
       "lesson_number": null
     },
     {
-      "uid": "c1c86933-0bb6-4297-b17d-f7c92e108c9b",
+      "uid": "1a9cc256-e2ed-41b9-8798-f952c3251a40",
       "title": "שבוע תחילת סמסטר א",
       "course_key": null,
       "type": "special",
@@ -118,7 +118,7 @@
       "lesson_number": null
     },
     {
-      "uid": "0b1c02c0-0632-4697-8bf6-4c35a3f70999",
+      "uid": "a2de9323-7847-4774-b19c-df715d6e0e86",
       "title": "שבוע תחילת סמסטר א",
       "course_key": null,
       "type": "special",
@@ -132,7 +132,7 @@
       "lesson_number": null
     },
     {
-      "uid": "f91cc969-9aa7-49a3-a378-d341c03b9d6d",
+      "uid": "89276b26-5f3b-47bf-b419-f630b418ddf1",
       "title": "שבוע תחילת סמסטר א",
       "course_key": null,
       "type": "special",
@@ -146,7 +146,7 @@
       "lesson_number": null
     },
     {
-      "uid": "5f15f089-5588-4b3d-b49a-ccfcec7f2002",
+      "uid": "3229ec21-7676-478d-b209-a985f5e3c419",
       "title": "שבוע תחילת סמסטר א",
       "course_key": null,
       "type": "special",
@@ -160,7 +160,7 @@
       "lesson_number": null
     },
     {
-      "uid": "92efb69a-4934-4d67-8e4b-caecbe5b5015",
+      "uid": "675eabe2-8703-4573-950a-3b556eb24509",
       "title": "בחירות - אין לימודים",
       "course_key": null,
       "type": "special",
@@ -174,12 +174,26 @@
       "lesson_number": null
     },
     {
-      "uid": "7b3e44b4-aa3c-4b0a-aa00-07f7ce7e7721",
+      "uid": "421a7d5e-acee-4639-b432-21c88d0fc93e",
       "title": "חנוכה - אין לימודים",
       "course_key": null,
       "type": "special",
       "start": "2026-12-06T08:00:00",
       "end": "2026-12-06T18:00:00",
+      "duration_min": 600,
+      "location": "",
+      "status": "confirmed",
+      "is_allday": true,
+      "group": "both",
+      "lesson_number": null
+    },
+    {
+      "uid": "ec89c6e0-8aac-4266-be4f-1d5883117eaf",
+      "title": "חנוכה - אין לימודים",
+      "course_key": null,
+      "type": "special",
+      "start": "2026-12-07T08:00:00",
+      "end": "2026-12-07T18:00:00",
       "duration_min": 600,
       "location": "",
       "status": "confirmed",
