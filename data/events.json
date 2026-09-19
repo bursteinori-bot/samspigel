@@ -1,12 +1,12 @@
 {
   "meta": {
-    "last_updated": "2026-09-19T19:04:01.900665+00:00",
+    "last_updated": "2026-09-19T21:55:44.099732+00:00",
     "total_events": 17,
     "source": "Yedion ICS"
   },
   "events": [
     {
-      "uid": "65c92cb0-374f-43ac-99b8-101f13cfe324",
+      "uid": "5545f959-05f8-4aa7-a772-30d0ecc6a6b2",
       "title": "ראש השנה, יום א' - אין לימודים",
       "course_key": null,
       "type": "special",
@@ -20,7 +20,7 @@
       "lesson_number": null
     },
     {
-      "uid": "88c3fca3-299c-4787-95f4-0db9e3cbb21d",
+      "uid": "67c8a43e-5782-4143-bd64-ea13a6f10fad",
       "title": "ראש השנה, יום ב' - אין לימודים",
       "course_key": null,
       "type": "special",
@@ -34,7 +34,7 @@
       "lesson_number": null
     },
     {
-      "uid": "e9a2c97d-30b5-449c-b2e3-d97c4122cbe4",
+      "uid": "2d68eda0-3224-4cd2-8670-c471cc804569",
       "title": "יום כיפור - אין לימודים",
       "course_key": null,
       "type": "special",
@@ -48,7 +48,7 @@
       "lesson_number": null
     },
     {
-      "uid": "0c319890-2f94-4f2b-8d11-6130099be1a8",
+      "uid": "5730ba80-332e-4416-88a7-1ba520813c8e",
       "title": "סוכות - אין לימודים",
       "course_key": null,
       "type": "special",
@@ -62,7 +62,7 @@
       "lesson_number": null
     },
     {
-      "uid": "dd800964-3116-477c-a4e1-063b707cabd5",
+      "uid": "7832e62e-0b08-42f4-9cf8-bdcf9ccbe76d",
       "title": "שמחת תורה - אין לימודים",
       "course_key": null,
       "type": "special",
@@ -76,7 +76,7 @@
       "lesson_number": null
     },
     {
-      "uid": "cd425ad2-5266-4980-8194-dec5edab3320",
+      "uid": "d82a63a2-9341-4dba-a5ff-bc9321c0d2bd",
       "title": "שבוע תחילת סמסטר א",
       "course_key": null,
       "type": "special",
@@ -90,7 +90,7 @@
       "lesson_number": null
     },
     {
-      "uid": "5fc1df43-0bb9-4765-a265-f79cb02e07d1",
+      "uid": "4f4e221c-a38c-4e4a-bda7-ec8013f36419",
       "title": "שבוע תחילת סמסטר א",
       "course_key": null,
       "type": "special",
@@ -104,7 +104,7 @@
       "lesson_number": null
     },
     {
-      "uid": "15afac8f-7aef-416e-ae09-6d001422ec66",
+      "uid": "a7ff466f-15a8-4519-a7b6-4329d0c323d0",
       "title": "שבוע תחילת סמסטר א",
       "course_key": null,
       "type": "special",
@@ -118,7 +118,7 @@
       "lesson_number": null
     },
     {
-      "uid": "174d5250-9d09-4f7f-96b4-dcaa2c316eeb",
+      "uid": "7b803c29-ece5-48c2-bff2-fcb4f4423c91",
       "title": "שבוע תחילת סמסטר א",
       "course_key": null,
       "type": "special",
@@ -132,7 +132,7 @@
       "lesson_number": null
     },
     {
-      "uid": "1313f5db-e664-44f0-876f-508816034d19",
+      "uid": "550844ef-e3e3-44fe-a8bc-dc69606486b8",
       "title": "שבוע תחילת סמסטר א",
       "course_key": null,
       "type": "special",
@@ -146,7 +146,7 @@
       "lesson_number": null
     },
     {
-      "uid": "e5a8079e-e4c2-459c-a533-f022624418bf",
+      "uid": "8af2e49c-4fca-4008-b5e4-b6dfed78d537",
       "title": "שבוע תחילת סמסטר א",
       "course_key": null,
       "type": "special",
@@ -160,7 +160,7 @@
       "lesson_number": null
     },
     {
-      "uid": "48aad509-ab7a-400a-803e-02dba2b9365a",
+      "uid": "bf53c0f9-d205-4a15-952e-bb7b6d052ed8",
       "title": "בחירות - אין לימודים",
       "course_key": null,
       "type": "special",
@@ -174,7 +174,7 @@
       "lesson_number": null
     },
     {
-      "uid": "62a648cf-d2f4-4216-952d-93149d49e220",
+      "uid": "d1ea7a97-f51f-4a3c-b3ad-cc0708bf670e",
       "title": "חנוכה - אין לימודים",
       "course_key": null,
       "type": "special",
@@ -188,7 +188,7 @@
       "lesson_number": null
     },
     {
-      "uid": "fc95b03d-2b0b-408e-b8b4-153f9adc98f4",
+      "uid": "28933da9-dc25-4915-af96-fa9aed0b4705",
       "title": "חנוכה - אין לימודים",
       "course_key": null,
       "type": "special",
@@ -202,7 +202,7 @@
       "lesson_number": null
     },
     {
-      "uid": "8b26956b-330c-425f-bed8-5b950ba9d055",
+      "uid": "bad2aa3f-166e-49ac-81ea-75536aa738dc",
       "title": "חנוכה - אין לימודים",
       "course_key": null,
       "type": "special",
@@ -216,7 +216,7 @@
       "lesson_number": null
     },
     {
-      "uid": "b05cfdab-ae7e-4c7c-acb1-e6d71b09dd65",
+      "uid": "140757dc-5936-40b9-8072-721fc6080198",
       "title": "חנוכה - אין לימודים",
       "course_key": null,
       "type": "special",
@@ -230,7 +230,7 @@
       "lesson_number": null
     },
     {
-      "uid": "87831e73-c06d-4aed-96a8-bd0bc6a12397",
+      "uid": "a5950fab-a200-4227-a970-6ec5dfd4a8b2",
       "title": "חנוכה - אין לימודים",
       "course_key": null,
       "type": "special",
