@@ -1,12 +1,12 @@
 {
   "meta": {
-    "last_updated": "2026-10-11T20:41:58.092927+00:00",
-    "total_events": 90,
+    "last_updated": "2026-10-12T00:06:06.502137+00:00",
+    "total_events": 95,
     "source": "Yedion ICS"
   },
   "events": [
     {
-      "uid": "fde33580-20ff-40d9-976f-82bdd547d0e4",
+      "uid": "bddc567b-fbdb-4454-8845-747420cd61a4",
       "title": "ראש השנה, יום א' - אין לימודים",
       "course_key": null,
       "type": "special",
@@ -20,7 +20,7 @@
       "lesson_number": null
     },
     {
-      "uid": "36c32e5d-cb42-438d-a6f5-9dac9aa15d0b",
+      "uid": "36ed4b96-6b80-416d-b3a2-1b281106e185",
       "title": "ראש השנה, יום ב' - אין לימודים",
       "course_key": null,
       "type": "special",
@@ -34,7 +34,7 @@
       "lesson_number": null
     },
     {
-      "uid": "31de4ff1-965e-4ee6-9a39-ebf84121617f",
+      "uid": "437d3149-a387-4c95-8323-fb8ef86ec1bf",
       "title": "יום כיפור - אין לימודים",
       "course_key": null,
       "type": "special",
@@ -48,7 +48,7 @@
       "lesson_number": null
     },
     {
-      "uid": "6301c83e-55d1-43d5-a282-a6439451948e",
+      "uid": "ac917d76-2a1d-4f02-87d1-e5dac9dfacc6",
       "title": "סוכות - אין לימודים",
       "course_key": null,
       "type": "special",
@@ -62,7 +62,7 @@
       "lesson_number": null
     },
     {
-      "uid": "c5730787-30ea-4a0e-a69c-bc791e4220ea",
+      "uid": "26ae829a-b067-476b-a39e-235729e9c7b9",
       "title": "שמחת תורה - אין לימודים",
       "course_key": null,
       "type": "special",
@@ -76,7 +76,7 @@
       "lesson_number": null
     },
     {
-      "uid": "c761beb5-1139-4628-8ed9-0825398ff04b",
+      "uid": "17f626a2-c1d7-4a9d-8530-8501064b72af",
       "title": "שבוע תחילת סמסטר א",
       "course_key": null,
       "type": "special",
@@ -90,7 +90,21 @@
       "lesson_number": null
     },
     {
-      "uid": "57036850-d157-4793-8cb0-fd631a4f779e",
+      "uid": "8bc26c85-578c-4fed-900f-082f6d4317d4",
+      "title": "הלבשה כ- story telling אייל מלמד קרן",
+      "course_key": null,
+      "type": "special",
+      "start": "2026-10-18T10:00:00",
+      "end": "2026-10-18T18:00:00",
+      "duration_min": 480,
+      "location": "",
+      "status": "confirmed",
+      "is_allday": true,
+      "group": "both",
+      "lesson_number": null
+    },
+    {
+      "uid": "62745f36-d33b-4dd5-a021-c83ddb3f723f",
       "title": "שבוע תחילת סמסטר א",
       "course_key": null,
       "type": "special",
@@ -104,7 +118,7 @@
       "lesson_number": null
     },
     {
-      "uid": "9c0a52df-0009-479a-8e1b-43d09d67cb50",
+      "uid": "b75cb52d-039b-4539-8eb8-875ac1fe4d40",
       "title": "שבוע תחילת סמסטר א",
       "course_key": null,
       "type": "special",
@@ -118,7 +132,7 @@
       "lesson_number": null
     },
     {
-      "uid": "e69c822e-101e-4f1f-b2f7-7a67384fb513",
+      "uid": "000e6256-ce0e-4b62-8c51-83e595bd33d5",
       "title": "שבוע תחילת סמסטר א",
       "course_key": null,
       "type": "special",
@@ -132,7 +146,7 @@
       "lesson_number": null
     },
     {
-      "uid": "6639ccfc-e26f-4f33-b4c3-8fd423ecda51",
+      "uid": "983ab1af-3bec-4697-b304-f937da2aedd9",
       "title": "ברוכות הבאות לטכנוטופיה פתיר רות",
       "course_key": null,
       "type": "lecture",
@@ -146,7 +160,7 @@
       "lesson_number": null
     },
     {
-      "uid": "39754c61-a7f9-4945-bba8-e3901700aad5",
+      "uid": "bb40f925-9721-420c-87a1-3dd76342379d",
       "title": "שבוע תחילת סמסטר א",
       "course_key": null,
       "type": "special",
@@ -160,7 +174,7 @@
       "lesson_number": null
     },
     {
-      "uid": "73831a0d-9b65-4717-9d31-958a7e0bf81f",
+      "uid": "c22dd2d2-76ad-45df-b9fd-0a96ea6ee702",
       "title": "שבוע תחילת סמסטר א",
       "course_key": null,
       "type": "special",
@@ -174,7 +188,7 @@
       "lesson_number": null
     },
     {
-      "uid": "1f9b9317-e45c-4325-ae71-b1174bda4d9a",
+      "uid": "93186981-4ae6-4da0-a350-3f5a43c6216f",
       "title": "בחירות - אין לימודים",
       "course_key": null,
       "type": "special",
@@ -188,7 +202,7 @@
       "lesson_number": null
     },
     {
-      "uid": "77b3b131-eba7-4327-9246-85d0d7151eb1",
+      "uid": "7a338849-7d37-4272-9b41-2a119ef9170f",
       "title": "פיתוח סינופסיס לפיצ'ר רוזנברג דני",
       "course_key": null,
       "type": "workshop",
@@ -202,7 +216,7 @@
       "lesson_number": null
     },
     {
-      "uid": "eb296fcc-ad6a-46e3-b01c-1880473ce4f2",
+      "uid": "1ba235e9-367e-4517-9865-b5cf0a3d6a39",
       "title": "כתיבה ויזואלית יאיר מתן",
       "course_key": null,
       "type": "workshop",
@@ -216,7 +230,7 @@
       "lesson_number": null
     },
     {
-      "uid": "d0111383-6161-4f74-b1d9-d7503fbb8d57",
+      "uid": "b71f44c6-19f8-4daf-9efc-0e2b13ca491e",
       "title": "תולדות הקולנוע -5 דבורה ארז",
       "course_key": "film_history",
       "type": "lecture",
@@ -230,7 +244,7 @@
       "lesson_number": 1
     },
     {
-      "uid": "70bcf8bc-6d2d-4f81-932a-085412c15df7",
+      "uid": "d53abe4a-5245-4f47-8bad-283f0004f7ae",
       "title": "ברוכות הבאות לטכנוטופיה פתיר רות",
       "course_key": null,
       "type": "lecture",
@@ -244,7 +258,7 @@
       "lesson_number": null
     },
     {
-      "uid": "adbc9e30-ffb7-45c9-8b8f-110a61caa603",
+      "uid": "2233c39f-eee0-4530-821f-ad59bf7613ec",
       "title": "עושים סצינות - מתקדמים הדיה יעל",
       "course_key": "scenes",
       "type": "workshop",
@@ -258,7 +272,7 @@
       "lesson_number": 1
     },
     {
-      "uid": "d9a2f0ac-17f4-4a86-a626-3ca57d59671c",
+      "uid": "4101edc5-4688-4451-97ca-e6b494b43a50",
       "title": "פיתוח סידרה ברגר ניר",
       "course_key": null,
       "type": "workshop",
@@ -272,7 +286,7 @@
       "lesson_number": null
     },
     {
-      "uid": "5da0cea5-734c-4b4d-b810-9e9bb948f425",
+      "uid": "9e5b128d-f4ac-4c15-9986-b8fc5f1a04b3",
       "title": "ז'אנרים טלוויזיוניים עכשוויים טושה גפלה אופיר",
       "course_key": null,
       "type": "lecture",
@@ -286,7 +300,7 @@
       "lesson_number": null
     },
     {
-      "uid": "34d8ee87-a943-43f0-a860-3eaabf723e8e",
+      "uid": "a560fc83-45b0-4726-b8a9-0d518e932f9c",
       "title": "סדנת השראה קידר דקלה",
       "course_key": null,
       "type": "workshop",
@@ -300,7 +314,7 @@
       "lesson_number": null
     },
     {
-      "uid": "575afe55-42a2-4a0d-998e-4945ded631a2",
+      "uid": "f1db65c0-167b-43c5-bd5f-16deb327d4e5",
       "title": "פיתוח סינופסיס לפיצ'ר רוזנברג דני",
       "course_key": null,
       "type": "workshop",
@@ -314,7 +328,7 @@
       "lesson_number": null
     },
     {
-      "uid": "3324dc5f-9342-4122-8669-d2198cde354c",
+      "uid": "e45f1a24-1503-4d1e-a639-0647ca291ad3",
       "title": "כתיבה ויזואלית יאיר מתן",
       "course_key": null,
       "type": "workshop",
@@ -328,7 +342,7 @@
       "lesson_number": null
     },
     {
-      "uid": "c845bbf2-ee20-4d7a-a696-9afb78102daa",
+      "uid": "d2f4a8e3-fea3-48fa-aada-262df01903df",
       "title": "תולדות הקולנוע -5 דבורה ארז",
       "course_key": "film_history",
       "type": "lecture",
@@ -342,7 +356,7 @@
       "lesson_number": 2
     },
     {
-      "uid": "6e6d1ee2-5159-4903-a85c-314652f23dc2",
+      "uid": "3b61818c-1f34-4ea5-b0a2-ba1d7d67e652",
       "title": "ברוכות הבאות לטכנוטופיה פתיר רות",
       "course_key": null,
       "type": "lecture",
@@ -356,7 +370,7 @@
       "lesson_number": null
     },
     {
-      "uid": "4d5ffd84-5c62-44e6-a4dd-d384d36a285e",
+      "uid": "1b53a2e2-56a8-444a-ac6b-63ef562ceb2c",
       "title": "עושים סצינות - מתקדמים הדיה יעל",
       "course_key": "scenes",
       "type": "workshop",
@@ -370,7 +384,7 @@
       "lesson_number": 2
     },
     {
-      "uid": "fb01b8d3-b099-4d45-bf33-f0ea15fb35b9",
+      "uid": "d0c5079a-37d6-49b2-b2da-e71b9380c1fd",
       "title": "פיתוח סידרה ברגר ניר",
       "course_key": null,
       "type": "workshop",
@@ -384,7 +398,7 @@
       "lesson_number": null
     },
     {
-      "uid": "ea32f1c2-84d6-4464-a160-a8b5db17d3a1",
+      "uid": "eaf95041-cce0-415a-8512-0ad60a05c140",
       "title": "ז'אנרים טלוויזיוניים עכשוויים טושה גפלה אופיר",
       "course_key": null,
       "type": "lecture",
@@ -398,7 +412,7 @@
       "lesson_number": null
     },
     {
-      "uid": "36a5ec4e-76d1-4c35-91f8-23b7436504f8",
+      "uid": "5b23d559-98c1-44b3-b59a-d3e399288e5a",
       "title": "סדנת השראה קידר דקלה",
       "course_key": null,
       "type": "workshop",
@@ -412,7 +426,7 @@
       "lesson_number": null
     },
     {
-      "uid": "80f84501-83aa-4298-bf6d-b3432f731f8e",
+      "uid": "0ad69aa9-af3e-4615-89bd-a0ab44cb709b",
       "title": "פיתוח סינופסיס לפיצ'ר רוזנברג דני",
       "course_key": null,
       "type": "workshop",
@@ -426,7 +440,7 @@
       "lesson_number": null
     },
     {
-      "uid": "c7441ac6-5925-4dcd-a967-0095263a4ac6",
+      "uid": "2f1938b0-0946-45d4-8765-63838c7dc96a",
       "title": "כתיבה ויזואלית יאיר מתן",
       "course_key": null,
       "type": "workshop",
@@ -440,7 +454,7 @@
       "lesson_number": null
     },
     {
-      "uid": "75e4e714-ed29-43d2-94c4-20f7f3ac1b8f",
+      "uid": "59a2b671-7ee3-4143-a72b-318fcdcab54d",
       "title": "תולדות הקולנוע -5 דבורה ארז",
       "course_key": "film_history",
       "type": "lecture",
@@ -454,7 +468,7 @@
       "lesson_number": 3
     },
     {
-      "uid": "caea06ca-e265-47e0-8544-fef226a01311",
+      "uid": "92e70722-ae1f-4bdf-849a-d26726c6b989",
       "title": "ברוכות הבאות לטכנוטופיה פתיר רות",
       "course_key": null,
       "type": "lecture",
@@ -468,7 +482,7 @@
       "lesson_number": null
     },
     {
-      "uid": "a050073b-e538-4cf2-a2d2-a432c91cd386",
+      "uid": "bfeef492-0153-4c45-904f-644162e32d0f",
       "title": "עושים סצינות - מתקדמים הדיה יעל",
       "course_key": "scenes",
       "type": "workshop",
@@ -482,7 +496,7 @@
       "lesson_number": 3
     },
     {
-      "uid": "8ae58b9c-ede1-41f1-9bfc-43c4c91d782b",
+      "uid": "4197b937-55ae-4962-83f7-17ada8452ec3",
       "title": "פיתוח סידרה ברגר ניר",
       "course_key": null,
       "type": "workshop",
@@ -496,7 +510,7 @@
       "lesson_number": null
     },
     {
-      "uid": "4d381856-392d-4024-b11f-a5a042b171d1",
+      "uid": "051351fa-1f0e-4396-8ecb-3d9c421e805a",
       "title": "ז'אנרים טלוויזיוניים עכשוויים טושה גפלה אופיר",
       "course_key": null,
       "type": "lecture",
@@ -510,7 +524,7 @@
       "lesson_number": null
     },
     {
-      "uid": "4ab1811d-2b48-4d00-901c-8a4004f7651b",
+      "uid": "5c8a4778-3130-46e8-9a4e-710daffc353d",
       "title": "סדנת השראה קידר דקלה",
       "course_key": null,
       "type": "workshop",
@@ -524,7 +538,7 @@
       "lesson_number": null
     },
     {
-      "uid": "a9f2f9ea-8b78-4de3-ab1b-39211c72389c",
+      "uid": "e745056c-81af-420a-929d-9c65e4a50786",
       "title": "פיתוח סינופסיס לפיצ'ר רוזנברג דני",
       "course_key": null,
       "type": "workshop",
@@ -538,7 +552,7 @@
       "lesson_number": null
     },
     {
-      "uid": "b77b4793-b890-4ce3-9f55-38af2c872838",
+      "uid": "2a3e0c1c-3345-4c60-a9aa-4ffc54ac5581",
       "title": "כתיבה ויזואלית יאיר מתן",
       "course_key": null,
       "type": "workshop",
@@ -552,7 +566,7 @@
       "lesson_number": null
     },
     {
-      "uid": "659ef058-4e1c-491f-9d15-f0e1f8e25afe",
+      "uid": "8291f65e-dc93-4a2d-bc2c-164b817f80fc",
       "title": "תולדות הקולנוע -5 דבורה ארז",
       "course_key": "film_history",
       "type": "lecture",
@@ -566,7 +580,7 @@
       "lesson_number": 4
     },
     {
-      "uid": "986c7d44-ad56-47a6-9e65-c0f31dab197d",
+      "uid": "70ef3396-cda5-4244-ba60-90a61356dc4b",
       "title": "ברוכות הבאות לטכנוטופיה פתיר רות",
       "course_key": null,
       "type": "lecture",
@@ -580,7 +594,7 @@
       "lesson_number": null
     },
     {
-      "uid": "a5b11339-4ff0-42f3-a4a0-59861ed9dba1",
+      "uid": "005fbf4a-e74a-4e6b-afd9-442154f1892e",
       "title": "עושים סצינות - מתקדמים הדיה יעל",
       "course_key": "scenes",
       "type": "workshop",
@@ -594,7 +608,7 @@
       "lesson_number": 4
     },
     {
-      "uid": "67b001c0-213d-4da1-91c2-c36afcef94c1",
+      "uid": "26baadd8-1166-4763-9f04-7f30954a815b",
       "title": "פיתוח סידרה ברגר ניר",
       "course_key": null,
       "type": "workshop",
@@ -608,7 +622,7 @@
       "lesson_number": null
     },
     {
-      "uid": "4ba52f21-5cc9-45e7-b853-4a1dcbd5f969",
+      "uid": "839ead6e-0837-459d-936e-54373bb62d91",
       "title": "ז'אנרים טלוויזיוניים עכשוויים טושה גפלה אופיר",
       "course_key": null,
       "type": "lecture",
@@ -622,7 +636,7 @@
       "lesson_number": null
     },
     {
-      "uid": "b7ed6821-f4d3-453b-98dd-8871954e7660",
+      "uid": "c51473ec-4b5c-4413-b0e6-21ed82436df5",
       "title": "סדנת השראה קידר דקלה",
       "course_key": null,
       "type": "workshop",
@@ -636,7 +650,7 @@
       "lesson_number": null
     },
     {
-      "uid": "73815b51-f997-4fa1-9d95-751a53e2670e",
+      "uid": "086be15e-b340-43b8-8f7f-ead293e3c9ea",
       "title": "פיתוח סינופסיס לפיצ'ר רוזנברג דני",
       "course_key": null,
       "type": "workshop",
@@ -650,7 +664,7 @@
       "lesson_number": null
     },
     {
-      "uid": "9f3b96ff-1d88-419b-a034-4a8ffa9235cf",
+      "uid": "c47356d4-bbe2-422a-8af3-afbcf7b28adb",
       "title": "כתיבה ויזואלית יאיר מתן",
       "course_key": null,
       "type": "workshop",
@@ -664,7 +678,7 @@
       "lesson_number": null
     },
     {
-      "uid": "52c38758-37e0-425f-ab06-b0e71331b7f4",
+      "uid": "11f02ba4-f583-4517-a9ef-442d714afffe",
       "title": "תולדות הקולנוע -5 דבורה ארז",
       "course_key": "film_history",
       "type": "lecture",
@@ -678,7 +692,7 @@
       "lesson_number": 5
     },
     {
-      "uid": "26cd0931-063a-4eb6-b97a-50c926f43b00",
+      "uid": "a5a3b4d2-d1aa-4196-b8e2-04451960350a",
       "title": "ברוכות הבאות לטכנוטופיה פתיר רות",
       "course_key": null,
       "type": "lecture",
@@ -692,7 +706,7 @@
       "lesson_number": null
     },
     {
-      "uid": "a9c2987d-b2a9-43a2-9f8c-796d7953a50d",
+      "uid": "d1b193bb-4ea6-48ac-9699-471d30f0eb7a",
       "title": "עושים סצינות - מתקדמים הדיה יעל",
       "course_key": "scenes",
       "type": "workshop",
@@ -706,7 +720,7 @@
       "lesson_number": 5
     },
     {
-      "uid": "93f3b479-ba03-4df9-b8af-6fc9669ffeb1",
+      "uid": "4ad6a2c9-7379-4c6b-8484-9ebf5860118b",
       "title": "פיתוח סידרה ברגר ניר",
       "course_key": null,
       "type": "workshop",
@@ -720,7 +734,7 @@
       "lesson_number": null
     },
     {
-      "uid": "bebac6af-0765-4581-8c41-2b5de17bd4a9",
+      "uid": "2cd6b752-d8e0-42db-afdd-6d655f6650ba",
       "title": "ז'אנרים טלוויזיוניים עכשוויים טושה גפלה אופיר",
       "course_key": null,
       "type": "lecture",
@@ -734,7 +748,7 @@
       "lesson_number": null
     },
     {
-      "uid": "e291fb9e-47f5-4b7d-80de-50b65ff3ff5b",
+      "uid": "25722a3d-b36e-4857-8e4b-e3e0f27697fe",
       "title": "סדנת השראה קידר דקלה",
       "course_key": null,
       "type": "workshop",
@@ -748,7 +762,7 @@
       "lesson_number": null
     },
     {
-      "uid": "84e8028a-7da4-4aab-a3ca-2ead4eaa8d64",
+      "uid": "df7ed7d5-2e7d-49e7-a918-fe7e75318159",
       "title": "חנוכה - אין לימודים",
       "course_key": null,
       "type": "special",
@@ -762,7 +776,7 @@
       "lesson_number": null
     },
     {
-      "uid": "d4825f27-670d-4373-bd78-f08daad7417b",
+      "uid": "a4c8a89b-9dfc-42df-a232-391ff2c7e5f5",
       "title": "חנוכה - אין לימודים",
       "course_key": null,
       "type": "special",
@@ -776,7 +790,7 @@
       "lesson_number": null
     },
     {
-      "uid": "7eb60c56-4ab8-4007-a246-97ab8cc632d1",
+      "uid": "73d9d338-31a6-4d5a-899d-fcbb3a683e33",
       "title": "חנוכה - אין לימודים",
       "course_key": null,
       "type": "special",
@@ -790,7 +804,7 @@
       "lesson_number": null
     },
     {
-      "uid": "f444312e-50ff-4bb9-baf7-d5c0ab24a33f",
+      "uid": "3c809d1d-da84-4d6d-9f3f-b0ec6f190f9d",
       "title": "חנוכה - אין לימודים",
       "course_key": null,
       "type": "special",
@@ -804,7 +818,7 @@
       "lesson_number": null
     },
     {
-      "uid": "b8becaa5-c569-4690-8b85-d48ce7bfd6b4",
+      "uid": "8be5a37d-edb4-4050-991f-9e5838b88247",
       "title": "חנוכה - אין לימודים",
       "course_key": null,
       "type": "special",
@@ -818,7 +832,7 @@
       "lesson_number": null
     },
     {
-      "uid": "b3e4b054-0fc4-43b7-b71d-5a352b2d609b",
+      "uid": "417a1ad2-b015-4f5a-a892-e42ff8ddd39d",
       "title": "פיתוח סינופסיס לפיצ'ר רוזנברג דני",
       "course_key": null,
       "type": "workshop",
@@ -832,7 +846,7 @@
       "lesson_number": null
     },
     {
-      "uid": "32cab6b7-8602-43a3-baa4-7c254f49c06b",
+      "uid": "8b453f28-ac91-41ef-906b-4eb267db2946",
       "title": "כתיבה ויזואלית יאיר מתן",
       "course_key": null,
       "type": "workshop",
@@ -846,7 +860,7 @@
       "lesson_number": null
     },
     {
-      "uid": "575ed93f-8527-434d-857f-4741c72e7083",
+      "uid": "ba8ac951-b46b-46c5-84c5-9b7ac749a707",
       "title": "תולדות הקולנוע -5 דבורה ארז",
       "course_key": "film_history",
       "type": "lecture",
@@ -860,7 +874,7 @@
       "lesson_number": 6
     },
     {
-      "uid": "69dbc4c0-d449-4a7c-9f37-3654be77e3ef",
+      "uid": "723de6f9-e88c-4d86-ad3c-60e32013f7f8",
       "title": "AIכשותף יצירתי - על בינה מלאכותית מרכוס עמרי",
       "course_key": null,
       "type": "lecture",
@@ -874,7 +888,7 @@
       "lesson_number": null
     },
     {
-      "uid": "ba47c879-b438-47f5-afd1-9ed3a7377c21",
+      "uid": "b887e6e2-9b8d-4ee6-9d9b-d2a3f7c7d805",
       "title": "עושים סצינות - מתקדמים הדיה יעל",
       "course_key": "scenes",
       "type": "workshop",
@@ -888,7 +902,7 @@
       "lesson_number": 6
     },
     {
-      "uid": "8f532d24-6e5e-4693-8bfc-cddb2a98d5c2",
+      "uid": "d7d07fc0-8770-4236-be23-6135812a185b",
       "title": "פיתוח סידרה ברגר ניר",
       "course_key": null,
       "type": "workshop",
@@ -902,7 +916,7 @@
       "lesson_number": null
     },
     {
-      "uid": "b7a73afe-1fbd-436d-96e2-fdc8ec1cf4df",
+      "uid": "9ca5e594-9fbd-4b63-a311-2e5d0977dd1c",
       "title": "ז'אנרים טלוויזיוניים עכשוויים טושה גפלה אופיר",
       "course_key": null,
       "type": "lecture",
@@ -916,7 +930,7 @@
       "lesson_number": null
     },
     {
-      "uid": "65baec2e-3c25-4ca2-8a13-d0cb8c59ffbc",
+      "uid": "97654bb8-9f79-4d9b-a180-21a555f37fb3",
       "title": "סדנת השראה קידר דקלה",
       "course_key": null,
       "type": "workshop",
@@ -930,7 +944,7 @@
       "lesson_number": null
     },
     {
-      "uid": "25468d6d-9d6d-4b4d-bf6f-13bdc45e178f",
+      "uid": "632a37ff-32e4-4b38-bd94-524fcff6459d",
       "title": "פיתוח סינופסיס לפיצ'ר רוזנברג דני",
       "course_key": null,
       "type": "workshop",
@@ -944,7 +958,7 @@
       "lesson_number": null
     },
     {
-      "uid": "466ec291-94fa-4287-9e76-8b34bd936a11",
+      "uid": "1e1f4eaa-c5e8-4db7-90bb-98b1e15a4bba",
       "title": "כתיבה ויזואלית יאיר מתן",
       "course_key": null,
       "type": "workshop",
@@ -958,7 +972,7 @@
       "lesson_number": null
     },
     {
-      "uid": "4594c269-4812-40ed-bf8a-7cfac16e4d03",
+      "uid": "5995f058-2645-47a8-a0fe-6c995e297275",
       "title": "תולדות הקולנוע -5 דבורה ארז",
       "course_key": "film_history",
       "type": "lecture",
@@ -972,7 +986,7 @@
       "lesson_number": 7
     },
     {
-      "uid": "a2a5ec4d-7f1e-4931-92eb-121ebffc5157",
+      "uid": "73e9032f-3bb7-4c25-b80f-58691f7378da",
       "title": "AIכשותף יצירתי - על בינה מלאכותית מרכוס עמרי",
       "course_key": null,
       "type": "lecture",
@@ -986,7 +1000,7 @@
       "lesson_number": null
     },
     {
-      "uid": "455c116e-0a22-4be5-9280-ca6e201e53e9",
+      "uid": "3ae740ac-faa5-4a0e-bd42-e0dbd573660c",
       "title": "עושים סצינות - מתקדמים הדיה יעל",
       "course_key": "scenes",
       "type": "workshop",
@@ -1000,7 +1014,7 @@
       "lesson_number": 7
     },
     {
-      "uid": "18964684-7145-4657-aa16-7c939ec41a09",
+      "uid": "5f33e024-b1b8-4050-aaa3-d94f58fae408",
       "title": "פיתוח סידרה ברגר ניר",
       "course_key": null,
       "type": "workshop",
@@ -1014,7 +1028,7 @@
       "lesson_number": null
     },
     {
-      "uid": "5aa2dba9-ed14-49f0-a478-16f3cb69552d",
+      "uid": "80125b8e-e2dd-40d9-80aa-9ff0a77be0a2",
       "title": "ז'אנרים טלוויזיוניים עכשוויים טושה גפלה אופיר",
       "course_key": null,
       "type": "lecture",
@@ -1028,7 +1042,7 @@
       "lesson_number": null
     },
     {
-      "uid": "0003f288-0281-4f32-8b01-3d1aa63eb9fd",
+      "uid": "ccdb64f3-8099-4299-b4b3-0e84f3c18880",
       "title": "סדנת השראה קידר דקלה",
       "course_key": null,
       "type": "workshop",
@@ -1042,7 +1056,7 @@
       "lesson_number": null
     },
     {
-      "uid": "424ff336-aed4-422b-98fd-a93ca6379f00",
+      "uid": "b8073df5-feb0-4a17-b7db-33e9dfdddc76",
       "title": "פיתוח סינופסיס לפיצ'ר רוזנברג דני",
       "course_key": null,
       "type": "workshop",
@@ -1056,7 +1070,7 @@
       "lesson_number": null
     },
     {
-      "uid": "db4f9a53-d624-431f-a1c1-9c03137c0e3d",
+      "uid": "0c66f919-7a68-44c0-9483-90c09343cff2",
       "title": "כתיבה ויזואלית יאיר מתן",
       "course_key": null,
       "type": "workshop",
@@ -1070,7 +1084,7 @@
       "lesson_number": null
     },
     {
-      "uid": "e9c9c5a5-d2fa-4516-b9ae-727d4b6d97b6",
+      "uid": "f93a1dff-305f-40a8-89ff-2395e12cae54",
       "title": "תולדות הקולנוע -5 דבורה ארז",
       "course_key": "film_history",
       "type": "lecture",
@@ -1084,7 +1098,7 @@
       "lesson_number": 8
     },
     {
-      "uid": "f651c282-fec3-46b6-8bb5-e2390449e646",
+      "uid": "3d5e06fb-ab47-4d2b-9d5e-e0ab19c5f3ac",
       "title": "AIכשותף יצירתי - על בינה מלאכותית מרכוס עמרי",
       "course_key": null,
       "type": "lecture",
@@ -1098,7 +1112,7 @@
       "lesson_number": null
     },
     {
-      "uid": "e33900e6-28b7-4b47-bd8c-5d6dcfbdc4ca",
+      "uid": "b1022e41-4f8e-4776-aaf4-e57f3bab7f78",
       "title": "עושים סצינות - מתקדמים הדיה יעל",
       "course_key": "scenes",
       "type": "workshop",
@@ -1112,7 +1126,7 @@
       "lesson_number": 8
     },
     {
-      "uid": "29605033-e129-410b-906e-82b9dfac82b2",
+      "uid": "43716fbf-434f-4dc8-a2af-97c5f8cbd91e",
       "title": "פיתוח סידרה ברגר ניר",
       "course_key": null,
       "type": "workshop",
@@ -1126,7 +1140,7 @@
       "lesson_number": null
     },
     {
-      "uid": "a9d32ff5-0c12-4fbc-8410-8b40cbde6406",
+      "uid": "b8aca553-ba78-4d15-ba00-f7e5a5c2f9ca",
       "title": "ז'אנרים טלוויזיוניים עכשוויים טושה גפלה אופיר",
       "course_key": null,
       "type": "lecture",
@@ -1140,7 +1154,7 @@
       "lesson_number": null
     },
     {
-      "uid": "e9b32555-c4bc-4852-b815-930d1186f481",
+      "uid": "95dbe13c-3996-48ad-aff5-fd02102a5817",
       "title": "סדנת השראה קידר דקלה",
       "course_key": null,
       "type": "workshop",
@@ -1154,7 +1168,7 @@
       "lesson_number": null
     },
     {
-      "uid": "46f0177a-dd05-455a-ac75-9d048fc7622f",
+      "uid": "7583cac2-ddd3-41f7-92c0-e86c0363742b",
       "title": "פיתוח סינופסיס לפיצ'ר רוזנברג דני",
       "course_key": null,
       "type": "workshop",
@@ -1168,7 +1182,7 @@
       "lesson_number": null
     },
     {
-      "uid": "2f2f42d3-e7e3-4fad-ad07-fd453817f8f1",
+      "uid": "38afa563-9775-4c77-b8e9-7d5a30e1e926",
       "title": "כתיבה ויזואלית יאיר מתן",
       "course_key": null,
       "type": "workshop",
@@ -1182,7 +1196,7 @@
       "lesson_number": null
     },
     {
-      "uid": "3bb118ec-2c0b-458d-8289-95ca04f7ffd0",
+      "uid": "86030bc5-9a81-41f5-a8c3-ff4beb1cf1a8",
       "title": "תולדות הקולנוע -5 דבורה ארז",
       "course_key": "film_history",
       "type": "lecture",
@@ -1196,7 +1210,7 @@
       "lesson_number": 9
     },
     {
-      "uid": "ea39ba3a-3601-41eb-ab89-fd984bb09ef8",
+      "uid": "20c9efae-b237-45b3-ac96-90da64ea6454",
       "title": "AIכשותף יצירתי - על בינה מלאכותית מרכוס עמרי",
       "course_key": null,
       "type": "lecture",
@@ -1210,7 +1224,7 @@
       "lesson_number": null
     },
     {
-      "uid": "a08ced7e-0b62-4828-8b96-b2e1d3ac2176",
+      "uid": "57f3bedf-b922-4354-8621-f54a9e9e091c",
       "title": "עושים סצינות - מתקדמים הדיה יעל",
       "course_key": "scenes",
       "type": "workshop",
@@ -1224,7 +1238,7 @@
       "lesson_number": 9
     },
     {
-      "uid": "6af9adbb-ad1b-4eb3-8dcf-76c536d1f905",
+      "uid": "06995519-fe10-43d1-9a75-26325ad6ef3a",
       "title": "פיתוח סידרה ברגר ניר",
       "course_key": null,
       "type": "workshop",
@@ -1238,7 +1252,7 @@
       "lesson_number": null
     },
     {
-      "uid": "e3bad475-3bfe-4079-ba0f-d65d174a0189",
+      "uid": "b11d30f7-71df-4eeb-a521-4d789fac5dd3",
       "title": "ז'אנרים טלוויזיוניים עכשוויים טושה גפלה אופיר",
       "course_key": null,
       "type": "lecture",
@@ -1252,13 +1266,69 @@
       "lesson_number": null
     },
     {
-      "uid": "42d7d215-e2e0-4086-9199-0cd681d899b1",
+      "uid": "7ddfeaa4-c043-4119-b689-7dbc1f518051",
       "title": "סדנת השראה קידר דקלה",
       "course_key": null,
       "type": "workshop",
       "start": "2027-01-06T16:30:00",
       "end": "2027-01-06T18:45:00",
       "duration_min": 135,
+      "location": "",
+      "status": "confirmed",
+      "is_allday": false,
+      "group": "both",
+      "lesson_number": null
+    },
+    {
+      "uid": "08313996-f982-453b-83cb-1f3c2beb924a",
+      "title": "פיתוח סינופסיס לפיצ'ר רוזנברג דני",
+      "course_key": null,
+      "type": "workshop",
+      "start": "2027-01-10T10:00:00",
+      "end": "2027-01-10T11:30:00",
+      "duration_min": 90,
+      "location": "",
+      "status": "confirmed",
+      "is_allday": false,
+      "group": "both",
+      "lesson_number": null
+    },
+    {
+      "uid": "a990a325-7fc3-4b78-a85e-c6a673fd13c2",
+      "title": "כתיבה ויזואלית יאיר מתן",
+      "course_key": null,
+      "type": "workshop",
+      "start": "2027-01-10T11:45:00",
+      "end": "2027-01-10T13:15:00",
+      "duration_min": 90,
+      "location": "",
+      "status": "confirmed",
+      "is_allday": false,
+      "group": "both",
+      "lesson_number": null
+    },
+    {
+      "uid": "87b54d3d-2cd1-4929-bc2c-c4f42d66478b",
+      "title": "תולדות הקולנוע -5 דבורה ארז",
+      "course_key": "film_history",
+      "type": "lecture",
+      "start": "2027-01-10T14:00:00",
+      "end": "2027-01-10T16:15:00",
+      "duration_min": 135,
+      "location": "",
+      "status": "confirmed",
+      "is_allday": false,
+      "group": "both",
+      "lesson_number": 10
+    },
+    {
+      "uid": "b5dd579f-ceb6-436b-ab51-4055ffaf6549",
+      "title": "AIכשותף יצירתי - על בינה מלאכותית מרכוס עמרי",
+      "course_key": null,
+      "type": "lecture",
+      "start": "2027-01-10T17:00:00",
+      "end": "2027-01-10T18:30:00",
+      "duration_min": 90,
       "location": "",
       "status": "confirmed",
       "is_allday": false,
